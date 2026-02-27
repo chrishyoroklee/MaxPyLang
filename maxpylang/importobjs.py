@@ -476,13 +476,106 @@ def get_objinout_info(package, names):
         
         
     return objinout_info
-        
 
 
-    
-    
-    
+#************************************************************
+#*************** GETTING OBJ DOC INFO ***********************
+#************************************************************
 
-    
-    
-        
+
+def strip_xml_text(element):
+    """
+    Extract plain text from an XML element, stripping inline tags like <o>, <m>, <br />.
+    Returns joined text or empty string if element is None.
+    """
+    if element is None:
+        return ""
+    return "".join(element.itertext()).strip()
+
+
+def get_obj_doc_info(refs, names):
+    """
+    Helper func for import_objs.
+
+    Extracts semantic documentation from XML ref files:
+    digest, description, inlets, outlets, methods, and seealso.
+
+    Returns dict of {name: doc_dict}.
+    """
+
+    obj_doc_info = {}
+
+    for ref, name in zip(refs, names):
+
+        xmltree = ET.parse(ref)
+        root = xmltree.getroot()
+
+        doc = {}
+
+        # digest
+        digest_text = strip_xml_text(root.find("digest"))
+        if digest_text and digest_text != "TEXT_HERE":
+            doc["digest"] = digest_text
+
+        # description
+        desc_text = strip_xml_text(root.find("description"))
+        if desc_text and desc_text != "TEXT_HERE":
+            doc["description"] = desc_text
+
+        # inlets
+        inlets = []
+        for inlet in root.findall("./inletlist/inlet"):
+            inlet_info = dict(inlet.attrib)
+            inlet_digest = strip_xml_text(inlet.find("digest"))
+            if inlet_digest and inlet_digest != "TEXT_HERE":
+                inlet_info["digest"] = inlet_digest
+            inlet_desc = strip_xml_text(inlet.find("description"))
+            if inlet_desc and inlet_desc != "TEXT_HERE":
+                inlet_info["description"] = inlet_desc
+            inlets.append(inlet_info)
+        if inlets:
+            doc["inlets"] = inlets
+
+        # outlets
+        outlets = []
+        for outlet in root.findall("./outletlist/outlet"):
+            outlet_info = dict(outlet.attrib)
+            outlet_digest = strip_xml_text(outlet.find("digest"))
+            if outlet_digest and outlet_digest != "TEXT_HERE":
+                outlet_info["digest"] = outlet_digest
+            outlet_desc = strip_xml_text(outlet.find("description"))
+            if outlet_desc and outlet_desc != "TEXT_HERE":
+                outlet_info["description"] = outlet_desc
+            outlets.append(outlet_info)
+        if outlets:
+            doc["outlets"] = outlets
+
+        # methods
+        methods = []
+        for method in root.findall("./methodlist/method"):
+            method_info = dict(method.attrib)
+            method_digest = strip_xml_text(method.find("digest"))
+            if method_digest and method_digest != "TEXT_HERE":
+                method_info["digest"] = method_digest
+            method_desc = strip_xml_text(method.find("description"))
+            if method_desc and method_desc != "TEXT_HERE":
+                method_info["description"] = method_desc
+            # method args
+            arglist = method.find("arglist")
+            if arglist is not None:
+                args = [dict(arg.attrib) for arg in arglist.findall("arg")]
+                if args:
+                    method_info["args"] = args
+            methods.append(method_info)
+        if methods:
+            doc["methods"] = methods
+
+        # seealso
+        seealso = [sa.attrib["name"] for sa in root.findall("./seealsolist/seealso")
+                   if "name" in sa.attrib]
+        if seealso:
+            doc["seealso"] = seealso
+
+        obj_doc_info[name] = doc
+
+    return obj_doc_info
