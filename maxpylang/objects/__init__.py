@@ -1,13 +1,13 @@
-"""Pre-instantiated MaxObject stubs for all Max/MSP/Jitter objects."""
+"""Pre-instantiated MaxObject stubs for all imported packages."""
+try:
+    from .jit import *
+except ImportError:
+    pass
 try:
     from .max import *
 except ImportError:
     pass
 try:
     from .msp import *
-except ImportError:
-    pass
-try:
-    from .jit import *
 except ImportError:
     pass
