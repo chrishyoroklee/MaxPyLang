@@ -9,10 +9,10 @@ Quick start:
     patch.connect([osc.outs[0], dac.ins[0]])
     patch.save("hello_world")
 
-First-time setup (requires Max open):
+Regenerate stubs (optional, requires Max open):
     mp.import_objs()
-    This generates object stubs with full docstrings
-    for IDE autocomplete and AI agent context.
+    Vanilla stubs (max, msp, jit) ship with the package.
+    Use import_objs() to add third-party packages or refresh stubs.
 """
 
 from .tools import constants
