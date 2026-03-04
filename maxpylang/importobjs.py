@@ -581,11 +581,6 @@ def get_obj_doc_info(refs, names):
         if methods:
             doc["methods"] = methods
 
-        # seealso
-        seealso = [sa.attrib["name"] for sa in root.findall("./seealsolist/seealso")
-                   if "name" in sa.attrib]
-        if seealso:
-            doc["seealso"] = seealso
 
         obj_doc_info[name] = doc
 
@@ -691,11 +686,6 @@ def _build_docstring(max_name, obj_info):
             lines.append("")
             lines.append("Attributes: " + ", ".join(attrib_names))
 
-    # See also
-    seealso = doc.get("seealso", [])
-    if seealso:
-        lines.append("")
-        lines.append("See also: " + ", ".join(seealso))
 
     return "\n".join(lines)
 

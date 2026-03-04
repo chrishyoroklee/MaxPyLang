@@ -449,8 +449,6 @@ Outlets:
   3 (list): dumpout
 
 Attributes: max, mean, min
-
-See also: jit.histogram, jit.op
 """
 
 jit_alphablend = MaxObject('jit.alphablend')
@@ -468,8 +466,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: mode
-
-See also: jit.op, jit.pack, jit.unpack, jit.xfade
 """
 
 jit_altern = MaxObject('jit.altern')
@@ -486,8 +482,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: bgcolor, colwidth, ignore_zero, rowheight, thresh, xinterval, yinterval
-
-See also: jit.eclipse, jit.hatch, jit.multiplex
 """
 
 jit_ameba = MaxObject('jit.ameba')
@@ -502,8 +496,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: gain, mode, x, y
-
-See also: jit.matrix, jit.op, jit.plur
 """
 
 jit_anim_drive = MaxObject('jit.anim.drive')
@@ -522,8 +514,6 @@ Outlets:
 Messages: bang, anim_reset, (mouse), dictionary, grow, move, moveto, rotateto, scaleto, springto, turn, ui_dict, ui_key, ui_keyup, ui_mouse, update_drive
 
 Attributes: active, automatic, drawto, ease, easefunc, easein, easeout, evalreport, fixed_delta, name, position, quat, scale, speed, spring_damp, spring_mass, spring_stiff, spring_thresh, ui_dict_layout, targetname, ui_listen, ui_map, ui_map_clone, ui_priority
-
-See also: jit.anim.node, jit.anim.path, jit.gl.camera
 """
 
 jit_anim_node = MaxObject('jit.anim.node')
@@ -542,8 +532,6 @@ Outlets:
 Messages: bang, anim_grow, anim_move, anim_reset, anim_turn, concat, grow, localtoworld, localtoworld_quat, move, reset, turn, update_node, worldtolocal, worldtolocal_quat
 
 Attributes: anchor, anim, animmode, automatic, direction, inherit_position, inherit_rotate, inherit_scale, invtransform, locklook, lockplane, lookat, movemode, name, parentpos, parentquat, parentrot, parentscale, position, quat, rotate, rotate_order, rotatexyz, scale, transform, tripod, turnmode, worlddir, worldpos, worldquat, worldrot, worldscale, worldtransform
-
-See also: jit.anim.drive, jit.anim.path, jit.gl.camera
 """
 
 jit_anim_path = MaxObject('jit.anim.path')
@@ -562,8 +550,6 @@ Outlets:
 Messages: bang, addquat, addrotate, addrotatexyz, addscale, append, calchandles, clear, closepath, delete, edit, edithandle, eval, evallength, evaltime, gethandle, getpoint, insert, next, prev, setquat, setrotate, setrotatexyz, setscale, settime, sorttime, start, stop
 
 Attributes: autohandles, automatic, closed, drawpath, drawto, duration, endreport, evalquat, evalreport, evalscale, fixed_delta, interpmode, length, loop, loopreport, name, play, pointcount, position, quat, rate, scale, shortestrot, targetname, time, timemode
-
-See also: jit.anim.drive, jit.anim.path, jit.path, jit.gl.path
 """
 
 jit_argb2ayuv = MaxObject('jit.argb2ayuv')
@@ -578,8 +564,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.argb2uyvy, jit.ayuv2argb, jit.colorspace, jit.rgb2luma, jit.traffic
 """
 
 jit_argb2grgb = MaxObject('jit.argb2grgb')
@@ -594,8 +578,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.argb2uyvy, jit.grgb2argb, jit.colorspace, jit.rgb2luma, jit.traffic
 """
 
 jit_argb2uyvy = MaxObject('jit.argb2uyvy')
@@ -610,8 +592,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.argb2ayuv, jit.colorspace, jit.rgb2luma, jit.traffic, jit.uyvy2argb
 """
 
 jit_avc = MaxObject('jit.avc')
@@ -628,8 +608,6 @@ Outlets:
   0 (OUTLET_TYPE): dumpout
 
 Messages: close, custom, fastwind, ff, getdevice, gettime, gettransport, open, pause, play, record, recpause, rewind, stop, time
-
-See also: jit.qt.grab, jit.qt.videoout
 """
 
 jit_avg4 = MaxObject('jit.avg4')
@@ -646,8 +624,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: mode, x, y
-
-See also: jit.convolve, jit.fastblur, jit.op
 """
 
 jit_axis2quat = MaxObject('jit.axis2quat')
@@ -666,8 +642,6 @@ Outlets:
 Messages: bang, list
 
 Attributes: angleaxis, normalize, quat
-
-See also: jit.quat, jit.quat2axis, jit.quat2euler, jit.euler2quat, jit.anim.node
 """
 
 jit_ayuv2argb = MaxObject('jit.ayuv2argb')
@@ -682,8 +656,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.argb2ayuv, jit.ayuv2uyvy, jit.ayuv2luma, jit.colorspace, jit.traffic
 """
 
 jit_ayuv2luma = MaxObject('jit.ayuv2luma')
@@ -698,8 +670,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.ayuv2uyvy, jit.luma2ayuv, jit.colorspace, jit.traffic
 """
 
 jit_ayuv2uyvy = MaxObject('jit.ayuv2uyvy')
@@ -714,8 +684,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.ayuv2argb, jit.ayuv2luma, jit.ayuv2uyvy, jit.colorspace, jit.traffic
 """
 
 jit_bfg = MaxObject('jit.bfg')
@@ -734,8 +702,6 @@ Outlets:
 Messages: setattr
 
 Attributes: align, autocenter, basis, classname, offset, origin, precision, rotation, scale, seed, weight
-
-See also: jit.gencoord, jit.matrix, jit.normalize
 """
 
 jit_brass = MaxObject('jit.brass')
@@ -752,8 +718,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: atint, btint, gtint, mask, rtint
-
-See also: jit.convolve, jit.op
 """
 
 jit_brcosa = MaxObject('jit.brcosa')
@@ -770,8 +734,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: brightness, contrast, saturation
-
-See also: jit.op, jit.scalebias, jit.traffic, jit.qt.effect
 """
 
 jit_bsort = MaxObject('jit.bsort')
@@ -788,8 +750,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: dimmode, maxiter, planemode, summode
-
-See also: jit.3m, jit.histogram
 """
 
 jit_buffer_tilde = MaxObject('jit.buffer~')
@@ -809,8 +769,6 @@ Outlets:
 Messages: anything, (mouse), getframes, getlength, output, viz
 
 Attributes: inputfirst, inputstart, outputfirst, outputlast, outputlength, outputstart, vizchecktime, vizfirst, vizheight, vizmode, vizlast, vizlength, vizmemoryratio, vizstart, vizwidth
-
-See also: buffer~, jit.catch~, jit.graph, jit.peek~, jit.poke~, jit.release~, peek~, poke~
 """
 
 jit_catch_tilde = MaxObject('jit.catch~')
@@ -829,8 +787,6 @@ Outlets:
 Messages: bang, bufsize, signal
 
 Attributes: downsample, framesize, mode, trigdir, trigchan, trigthresh
-
-See also: jit.buffer~, jit.graph, jit.gl.graph, jit.peek~, jit.poke~, jit.release~, peek~, poke~
 """
 
 jit_change = MaxObject('jit.change')
@@ -847,8 +803,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: mode, report, thresh
-
-See also: jit.op
 """
 
 jit_charmap = MaxObject('jit.charmap')
@@ -864,8 +818,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.map, jit.op, jit.scalebias
 """
 
 jit_chromakey = MaxObject('jit.chromakey')
@@ -883,8 +835,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: alphaignore, color, fade, maxkey, minkey, mode, tol
-
-See also: jit.alphablend, jit.keyscreen, jit.lumakey, jit.op
 """
 
 jit_clip = MaxObject('jit.clip')
@@ -901,8 +851,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: max, min
-
-See also: jit.3m, jit.op
 """
 
 jit_coerce = MaxObject('jit.coerce')
@@ -920,8 +868,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.matrix, jit.pack, jit.unpack, jit.submatrix
 """
 
 jit_colorspace = MaxObject('jit.colorspace')
@@ -938,8 +884,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: input, output
-
-See also: jit.rgb2luma, jit.hsl2rgb, jit.traffic, jit.rgb2hsl
 """
 
 jit_concat = MaxObject('jit.concat')
@@ -957,8 +901,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: autoclear, concatdim, mode, truncate
-
-See also: jit.demultiplex, jit.glue, jit.matrix, jit.multiplex, jit.scissors, jit.split
 """
 
 jit_convolve = MaxObject('jit.convolve')
@@ -976,8 +918,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: boundmode, origin
-
-See also: jit.fastblur, jit.op
 """
 
 jit_conway = MaxObject('jit.conway')
@@ -994,8 +934,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: birthmark, deathmask, lifemask, neighborhood
-
-See also: jit.linden
 """
 
 jit_cycle = MaxObject('jit.cycle')
@@ -1014,8 +952,6 @@ Outlets:
 Messages: bang, int, float, list, anything, reset
 
 Attributes: index, hi, mode, lo
-
-See also: cycle, jit.reverse, router
 """
 
 jit_demultiplex = MaxObject('jit.demultiplex')
@@ -1033,8 +969,6 @@ Outlets:
   2 (matrix): dumpout
 
 Attributes: autoclear, demultiplexdim, scan_a, scan_b
-
-See also: jit.concat, jit.glue, jit.matrix, jit.multiplex, jit.scissors, jit.split
 """
 
 jit_desktop = MaxObject('jit.desktop')
@@ -1051,8 +985,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: rect
-
-See also: jit.displays
 """
 
 jit_dimmap = MaxObject('jit.dimmap')
@@ -1069,8 +1001,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: invert, map
-
-See also: jit.matrix, jit.transpose
 """
 
 jit_dimop = MaxObject('jit.dimop')
@@ -1087,8 +1017,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: op, step
-
-See also: jit.op, jit.planeop, jit.expr
 """
 
 jit_displays = MaxObject('jit.displays')
@@ -1108,8 +1036,6 @@ Outlets:
 Messages: bang, coords, count, currentstate, getmode, manual, mirror, move, reset, setmode, snapshot, unmirror
 
 Attributes: resetmode
-
-See also: jit.desktop, screensize
 """
 
 jit_dx_grab = MaxObject('jit.dx.grab')
@@ -1129,8 +1055,6 @@ Outlets:
 Messages: settings, snd_settings, stop, defaults, exportimage, open, close, write, getvdevlist, getinputlist, getsnddevlist, getsndinputlist, getformatlist
 
 Attributes: backlight, bitrate, brightness, channels, colorenable, colormode, contrast, dropreport, dstrect, format, gain, gamma, hue, input, interp, resolution, samplerate, saturation, sharpness, snddevice, srcrect, unique, uniqueid, usedstrect, usesrcrect, vdevice, whitebalance, write_audio, write_video
-
-See also: jit.qt.effect, jit.qt.grab, jit.qt.movie, jit.qt.record, jit.qt.videoout
 """
 
 jit_dx_videoout = MaxObject('jit.dx.videoout')
@@ -1148,8 +1072,6 @@ Outlets:
   1 (matrix): dumpout
 
 Messages: open, close
-
-See also: jit.qt.effect, jit.dx.grab, jit.qt.grab, jit.qt.movie, jit.qt.record, jit.qt.videoout
 """
 
 jit_eclipse = MaxObject('jit.eclipse')
@@ -1167,8 +1089,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: blue, columns, green, inv, mode, op, red, rows, thresh, tint
-
-See also: jit.altern, jit.roy
 """
 
 jit_euler2quat = MaxObject('jit.euler2quat')
@@ -1187,8 +1107,6 @@ Outlets:
 Messages: bang, list
 
 Attributes: euler, normalize, quat, rotate_order
-
-See also: jit.quat, jit.quat2euler, jit.quat2axis, jit.axis2quat, jit.anim.node
 """
 
 jit_expr = MaxObject('jit.expr')
@@ -1208,8 +1126,6 @@ Outlets:
 Messages: int, float, list
 
 Attributes: cache, expr, inputs, precision, verbose
-
-See also: expr, jit.charmap, jit.op, jit.bfg, vexpr
 """
 
 jit_fastblur = MaxObject('jit.fastblur')
@@ -1226,8 +1142,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: center, mode, range, ring, ripple
-
-See also: jit.convolve, jit.op
 """
 
 jit_fft = MaxObject('jit.fft')
@@ -1244,8 +1158,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: inverse
-
-See also: jit.convolve, jit.histogram, jit.op
 """
 
 jit_fill = MaxObject('jit.fill')
@@ -1264,8 +1176,6 @@ Outlets:
 Messages: int, float, list
 
 Attributes: matrix_name, plane, offset
-
-See also: jit.iter, jit.matrix, jit.spill, zl
 """
 
 jit_findbounds = MaxObject('jit.findbounds')
@@ -1283,8 +1193,6 @@ Outlets:
   2 (list): dumpout
 
 Attributes: boundmax, boundmin, max, min
-
-See also: jit.3m, jit.op
 """
 
 jit_fluoride = MaxObject('jit.fluoride')
@@ -1301,8 +1209,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: glow, lum, mode, tol
-
-See also: jit.chromakey, jit.lumakey
 """
 
 jit_fprint = MaxObject('jit.fprint')
@@ -1321,8 +1227,6 @@ Outlets:
 Messages: read, write
 
 Attributes: default_dir, defaultdir, coldelim, planedelim, precision, rowdelim, writemode
-
-See also: jit.print, jit.textfile
 """
 
 jit_fpsgui = MaxObject('jit.fpsgui')
@@ -1341,8 +1245,6 @@ Outlets:
 Messages: anything, getstate, jit_gl_texture, (mouse)
 
 Attributes: bgcolor, bgcolor2, bordercolor, dim, fps, htextcolor, interval, mode, ms, name, planecount, style, textcolor, timeout, type, usetimeout
-
-See also: jit.matrixinfo
 """
 
 jit_freeframe = MaxObject('jit.freeframe')
@@ -1380,8 +1282,6 @@ Outlets:
 Messages: anything, (drag), compile, (mouse), destroy, open, param, wclose
 
 Attributes: dirty, gen, precision, t, title
-
-See also: gen/gen_common_operators, gen/gen_genexpr, gen/gen_jitter_operators, gen/gen_overview, jit.pix, jit.gl.pix, jit.gl.slab, jit.op, jit.expr, jit.matrix, gen~
 """
 
 jit_gen_codebox = MaxObject('jit.gen.codebox')
@@ -1400,8 +1300,6 @@ Outlets:
 Messages: anything, (drag), (mouse), open, param, wclose, compile, destroy
 
 Attributes: bgcolor, linenumbers, linenumberwidth, margin, style, textcolor, gen, dirty, precision, t, title
-
-See also: jit.gen, jit.pix, jit.gl.pix, jit.pix.codebox, jit.gl.pix.codebox
 """
 
 jit_gencoord = MaxObject('jit.gencoord')
@@ -1418,8 +1316,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: offset, scale
-
-See also: jit.matrix, jit.bfg
 """
 
 jit_gl_asyncread = MaxObject('jit.gl.asyncread')
@@ -1436,8 +1332,6 @@ Outlets:
   1 (OUTLET_TYPE): dumpout
 
 Attributes: matrixoutput, mode, out_name, texture
-
-See also: jit.gl.node, jit.gl.pix, jit.gl.slab, jit.gl.videoplane, jit.world
 """
 
 jit_gl_bfg = MaxObject('jit.gl.bfg')
@@ -1456,8 +1350,6 @@ Outlets:
 Messages: full_source_code, getparamdefault, getparamdescription, getparamlist, getparamtype, getparamval, param, sendinput, sendoutput, sendshader
 
 Attributes: activeinput, adapt, basis, basis.inner, basis.outer, colorize, colormode, dim, dimscale, distortion, file, filter, fractal_params, inputs, offset, out_name, outputs, palette, rect, rectangle, scale, time, type, voronoi_crackle, voronoi_jitter, voronoi_shade, voronoi_smooth, voronoise_amt, zoom
-
-See also: jit.bfg, jit.gl.pix, jit.gl.shader, jit.gl.slab, jit.gl.texture
 """
 
 jit_gl_camera = MaxObject('jit.gl.camera')
@@ -1476,8 +1368,6 @@ Outlets:
 Messages: getviewportray, screentoworld, sendoutput, worldtoscreen
 
 Attributes: adapt, capture, colormask, dim, direction, drawto, erase_color, far_clip, frustum, fsaa, layer, lens_angle, locklook, lookat, near_clip, ortho, out_name, out_names, proj_matrix, projection_mode, tripod, type, view_matrix, viewport, viewproj_matrix, vp_mode
-
-See also: jit.gl.render, jit.gl.sketch, jit.anim.node, jit.anim.drive
 """
 
 jit_gl_cornerpin = MaxObject('jit.gl.cornerpin')
@@ -1496,8 +1386,6 @@ Outlets:
 Messages: reset, sendtexture
 
 Attributes: colormode, corner_color, corner_radius, cornermode, drawcorners, enable_mouse, hover, interp, invert_corners, lower_left, lower_right, mousereport, preserve_aspect, rect_tex, texturename, ui_priority, upper_left, upper_right
-
-See also: jit.gl.render, jit.gl.videoplane, jit.gl.texture, jit.gl.slab, jit.gl.skybox
 """
 
 jit_gl_cubemap = MaxObject('jit.gl.cubemap')
@@ -1521,8 +1409,6 @@ Outlets:
 Messages: (drag), bind, equirect_matrix, panorama_matrix, read, unbind
 
 Attributes: adapt, autotype, bordercolor, edge_length, file, filter, gamma_correct, gamma_correction, level, matrix_name, mipmap, type, wrap
-
-See also: jit.gl.texture, jit.gl.shader, jit.gl.material, jit.gl.pbr, jit.gl.skybox, jit.gl.environment
 """
 
 jit_gl_graph = MaxObject('jit.gl.graph')
@@ -1539,8 +1425,6 @@ Outlets:
   1 (disabled): dumpout
 
 Attributes: circpoints, radial, radialphase, radialradius
-
-See also: jit.buffer~, jit.catch~, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume, jit.graph, jit.plot
 """
 
 jit_gl_gridshape = MaxObject('jit.gl.gridshape')
@@ -1559,8 +1443,6 @@ Outlets:
 Messages: (drag)
 
 Attributes: dim, gridmode, rad_minor, shape
-
-See also: jit.gl.graph, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.multiple, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_handle = MaxObject('jit.gl.handle')
@@ -1579,8 +1461,6 @@ Outlets:
 Messages: reset
 
 Attributes: auto_handle, auto_rotate, auto_time, filters, fixed_delta, hilite_color, hover, radius, rgb_axes, select_mode, tracking, ui_priority, visible
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_isosurf = MaxObject('jit.gl.isosurf')
@@ -1599,8 +1479,6 @@ Outlets:
 Messages: (drag)
 
 Attributes: autocolor, autonormals, dim, epsilon, isolevel, mode, trianglecount
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_light = MaxObject('jit.gl.light')
@@ -1618,8 +1496,6 @@ Outlets:
 Messages: sendoutput
 
 Attributes: ambient, atten_const, atten_linear, atten_quad, diffuse, direction, layer, lookat, shadowblur, shadowquality, shadowrange, shadows, shadowtexoutname, specular, spot_angle, spot_falloff, type, viewproj_matrix
-
-See also: jit.gl.render, jit.gl.sketch, jit.gl.material
 """
 
 jit_gl_lua = MaxObject('jit.gl.lua')
@@ -1638,8 +1514,6 @@ Outlets:
 Messages: int, float, list, anything, call, closebang, (mouse), loadbang, open, read, wclose
 
 Attributes: args, autowatch, file, gc, inlets, last_inlet, outlets, path
-
-See also: lua/jit_gl_lua_color_bindings, lua/jit_gl_lua_opengl_bindings, lua/jit_gl_lua_overview, lua/jit_gl_lua_vector_math, js, jit.gl.sketch
 """
 
 jit_gl_material = MaxObject('jit.gl.material')
@@ -1665,8 +1539,6 @@ Outlets:
 Messages: (drag), ambient_texture, clear, (mouse), diffuse_texture, emission_texture, environment_texture, getparamdefault, getparamlist, getparamtype, getparamval, glossmap_texture, heightmap_texture, normals_texture, open, param, reset, reset_colors, reset_shading_model, specular_texture, wclose
 
 Attributes: darkness, diffuse_model, diffuse_size, diffuse_smooth, drawto, fog, heightmap_mode, override, roughness, shadow_eps, shadow_hard, shadow_radius, shadow_soft, specular_model, specular_size, specular_smooth, type
-
-See also: jit.gl.pbr, jit.gl.cubemap, jit.gl.model, jit.gl.pass, jit.gl.shader, jit.gl.texture, jit.gl.environment
 """
 
 jit_gl_mesh = MaxObject('jit.gl.mesh')
@@ -1693,8 +1565,6 @@ Outlets:
 Messages: (drag), color_matrix, index_matrix, jit_gl_buffer, normal_matrix, reset, tangent_matrix, texcoord_matrix, vertex_attr_matrix, vertex_matrix
 
 Attributes: auto_colors, auto_normals, auto_tangents, color_mode, draw_mode, input_type, smooth_tangents, tf_name
-
-See also: jitter/graphics_processing, jit.gl.gridshape, jit.gl.isosurf, jit.gl.model, jit.gl.multiple, jit.gl.nurbs, jit.gl.plato, jit.gl.shader, jit.gl.sketch, jit.gl.text, jit.gl.texture, jit.gl.material, jit.gl.pbr, jit.gl.tf, jit.gl.buffer, jit.geom.shape, jit.geom.tomesh, jit.geom.tomatrix
 """
 
 jit_gl_model = MaxObject('jit.gl.model')
@@ -1713,8 +1583,6 @@ Outlets:
 Messages: (drag), animenable, animloop, animlooppoints, animrate, animreset, animtime, animweight, copynodestoclipboard, dispose, getanim_dict, getanimnames, getbonenames, getmaterial_dict, getnodenames, gettexnames, nodeanimenable, nodebind, nodereset, nodesetinitial, read, sendmaterial, sendtexture, texgroup
 
 Attributes: animblendmode, drawgroup, drawskeleton, file, find_instances, fix_normals, gen_normals, gen_tangents, hasbones, index_matrixoutput, material_mode, nodeaxes, normalize, numanimations, numgroups, optimize, smoothing_angle, verbose
-
-See also: jit.gl.mesh, jit.gl.multiple, jit.gl.node, jit.gl.render, jit.gl.texture, jit.gl.material, jit.gl.camera
 """
 
 jit_gl_multiple = MaxObject('jit.gl.multiple')
@@ -1734,8 +1602,6 @@ Outlets:
 Messages: (drag), color_matrix, position_matrix, rotate_matrix, rotatexyz_matrix, scale_matrix, texture_matrix
 
 Attributes: dimparam, glparams, targetmode, targetname, texture
-
-See also: jit.gl.gridshape, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.text, jit.gl.mesh, jit.gl.node, jit.gl.texture, jit.gl.shader, jit.gl.material, jit.gl.pbr, jit.phys.multiple
 """
 
 jit_gl_node = MaxObject('jit.gl.node')
@@ -1755,8 +1621,6 @@ Outlets:
 Messages: draw, getscene_dict, sendoutput
 
 Attributes: adapt, capture, dim, erase_color, fsaa, out_name, out_names, type
-
-See also: jit.gl.gridshape, jit.gl.render, jit.gl.texture, jit.gl.multiple
 """
 
 jit_gl_nurbs = MaxObject('jit.gl.nurbs')
@@ -1775,8 +1639,6 @@ Outlets:
 Messages: ctlmatrix, rand
 
 Attributes: auto_tangents, closed, ctlshow, dim, order
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_pass = MaxObject('jit.gl.pass')
@@ -1796,8 +1658,6 @@ Outlets:
 Messages: anything, (drag), (mouse), param, read
 
 Attributes: amount, autowatch, child, embed, depth_drawto, file, fxname, out_name, quality
-
-See also: external_text_editor, jitter/render_passes, jit.gl.node, jit.gl.slab, jit.gl.pix, jit.gl.shader, jit.gl.camera, jit.gl.light
 """
 
 jit_gl_path = MaxObject('jit.gl.path')
@@ -1820,8 +1680,6 @@ Outlets:
 Messages: addcolor, addcontour, addorient, addscale, append, calchandles, clear, closepath, delete, edit, edithandle, gethandle, getpoint, insert, setcolor, setorient, setscale
 
 Attributes: autohandles, closed, displaylist, drawhandles, endcap, evalin, evalout, extrudescale, interpmode, joinstyle, normgen, pathstyle, pointcount, segments, texscale, texturemode
-
-See also: jit.path, jit.anim.path, jit.gl.sketch
 """
 
 jit_gl_physdraw = MaxObject('jit.gl.physdraw')
@@ -1837,8 +1695,6 @@ Outlets:
   0 (OUTLET_TYPE)
 
 Attributes: constraintsize, contactsize, draw_aabb, draw_bodies, draw_worldbox, rgb, worldname
-
-See also: jit.phys.body, jit.phys.world, jit.phys.multiple
 """
 
 jit_gl_picker = MaxObject('jit.gl.picker')
@@ -1857,8 +1713,6 @@ Outlets:
 Messages: touch, touch_ray
 
 Attributes: filters, fixed_delta, hover, ui_priority
-
-See also: jit.phys.picker, jit.gl.handle
 """
 
 jit_gl_pix = MaxObject('jit.gl.pix')
@@ -1878,8 +1732,6 @@ Outlets:
 Messages: anything, (drag), compile, (mouse), exportcode, full_source_code, getparamdefault, getparamdescription, getparamlist, getparamtype, getparamval, open, param, sendinput, sendoutput, sendshader, wclose
 
 Attributes: bypass, activeinput, adapt, colormode, dim, dimscale, dirty, exportfolder, file, filter, gen, inputs, out_name, outputs, rect, rectangle, t, thru, title, type
-
-See also: gen/gen_common_operators, gen/gen_genexpr, gen/gen_jitter_operators, gen/gen_overview, jit.gen, jit.pix, jit.gl.slab, jit.expr, jit.matrix, gen~
 """
 
 jit_gl_pix_codebox = MaxObject('jit.gl.pix.codebox')
@@ -1899,8 +1751,6 @@ Outlets:
 Messages: anything, (drag), (mouse), exportcode, full_source_code, getparamdefault, getparamlist, getparamtype, getparamval, open, param, sendinput, sendoutput, sendshader, wclose, compile, getparamdescription
 
 Attributes: bgcolor, linenumbers, linenumberwidth, margin, style, textcolor, displaylist, edges, file, shape, subdiv, wrap, title, t, dirty, type, thru, texrect, rectangle, rect, outputs, out_name, inputs, gen, exportfolder, dimscale, dim, depth, colormode, adapt, activeinput, filter
-
-See also: jit.gen, jit.pix, jit.gl.pix, jit.gen.codebox, jit.pix.codebox
 """
 
 jit_gl_plato = MaxObject('jit.gl.plato')
@@ -1919,8 +1769,6 @@ Outlets:
 Messages: (drag)
 
 Attributes: shape
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_render = MaxObject('jit.gl.render')
@@ -1939,8 +1787,6 @@ Outlets:
 Messages: drawclients, drawswap, erase, getscene_dict, screentoworld, swap, worldtoscreen
 
 Attributes: camera, drawto, erase_color, far_clip, geom_rows, high_res, lens_angle, light_ambient, light_diffuse, light_global_ambient, light_position, light_specular, lookat, near_clip, primitive, rotate_order, up
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_shader = MaxObject('jit.gl.shader')
@@ -1959,8 +1805,6 @@ Outlets:
 Messages: (drag), bind, compile, (mouse), dispose, dump, getparamdefault, getparamdescription, getparamlist, getparamtype, getparamval, link, param, program_param, read, unbind
 
 Attributes: autowatch, embed, file, verbose
-
-See also: external_text_editor, jitter/jxs_file_format, jit.gl.mesh, jit.gl.pix, jit.gl.slab, jit.gl.texture, jit.gl.material, jit.gl.pass
 """
 
 jit_gl_sketch = MaxObject('jit.gl.sketch')
@@ -1977,8 +1821,6 @@ Outlets:
   1 (OUTLET_TYPE): dumpout
 
 Messages: beginstroke, circle, cmd_delete, cmd_enable, cmd_insert, cmd_replace, cube, cylinder, drawmatrix, drawobject, ellipse, endstroke, framecircle, frameellipse, framequad, frametri, getcamera, getcmd_index, getcmdlist, glbegin, glcolor, glcullface, gldisable, glenable, glend, glget, gllinestipple, gllinewidth, glnormal, glpointsize, glpolygonmode, glpolygonoffset, glpopmatrix, glpushmatrix, glrect, glrotate, glscale, glshademodel, gltexcoord, gltranslate, glvertex, line, linesegment, lineto, move, moveto, plane, point, quad, reset, roundedplane, screentoworld, shapeorient, shapeprim, shapeslice, sphere, strokeparam, strokepoint, torus, tri, worldtoscreen
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_skybox = MaxObject('jit.gl.skybox')
@@ -1995,8 +1837,6 @@ Outlets:
   1 (OUTLET_TYPE): dumpout
 
 Attributes: displaylist, infinite
-
-See also: jit.gl.camera, jit.gl.cubemap, jit.gl.material, jit.gl.pbr, jit.gl.environment
 """
 
 jit_gl_slab = MaxObject('jit.gl.slab')
@@ -2016,8 +1856,6 @@ Outlets:
 Messages: anything, (drag), (mouse), getparamdefault, getparamdescription, getparamlist, getparamtype, getparamval, param, read, sendinput, sendoutput, sendshader
 
 Attributes: autowatch, bypass, activeinput, adapt, colormode, embed, dim, dimscale, file, filter, inputs, out_name, outputs, rect, rectangle, thru, scale, type
-
-See also: external_text_editor, jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_text = MaxObject('jit.gl.text')
@@ -2036,8 +1874,6 @@ Outlets:
 Messages: append, clear, face, font, size, style, text
 
 Attributes: align, concat_geometry, depth, floatchomp, floatplaces, fontname, fontsize, leadscale, line_length, mode, plane, precision, screenmode, slant, tracking, weight
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.texture, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_texture = MaxObject('jit.gl.texture')
@@ -2056,8 +1892,6 @@ Outlets:
 Messages: (drag), begin_capture, bind, end_capture, read, subtex_matrix, tomatrix, unbind
 
 Attributes: adapt, anisotropy, autoclear, autoscale, autotype, bordercolor, colormode, compare_func, compare_mode, defaultimage, dim, dstdimend, dstdimstart, erase_color, file, filter, flip, level, mipmap, rectangle, thru, slice, srcdimend, srcdimstart, type, usedstdim, usesrcdim, wrap
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.videoplane, jit.gl.volume
 """
 
 jit_gl_videoplane = MaxObject('jit.gl.videoplane')
@@ -2076,8 +1910,6 @@ Outlets:
 Messages: sendtexture
 
 Attributes: colormode, dim, interp, preserve_aspect, rect_tex, texturename
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.volume
 """
 
 jit_gl_volume = MaxObject('jit.gl.volume')
@@ -2094,8 +1926,6 @@ Outlets:
   1 (disabled): dumpout
 
 Attributes: bounds, density, distance, intensity, slices
-
-See also: jit.gl.graph, jit.gl.gridshape, jit.gl.handle, jit.gl.isosurf, jit.gl.mesh, jit.gl.model, jit.gl.nurbs, jit.gl.plato, jit.gl.render, jit.gl.shader, jit.gl.sketch, jit.gl.slab, jit.gl.text2d, jit.gl.text3d, jit.gl.texture, jit.gl.videoplane
 """
 
 jit_glop = MaxObject('jit.glop')
@@ -2112,8 +1942,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: gain, mode
-
-See also: jit.op, jit.wake
 """
 
 jit_glue = MaxObject('jit.glue')
@@ -2130,8 +1958,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: columns, syncinlet, rows
-
-See also: jit.concat, jit.demultiplex, jit.matrix, jit.multiplex, jit.scissors, jit.split
 """
 
 jit_grab = MaxObject('jit.grab')
@@ -2150,8 +1976,6 @@ Outlets:
 Messages: int, close, exportimage, getformatlist, getframeratelist, getinputlist, getvdevlist, open
 
 Attributes: adapt, automatic, colormode, drawto, dstrect, engine, format, framerate, framereport, input, interp, output_texture, srcrect, texture_name, unique, uniqueid, usedstrect, usesrcrect, vdevice
-
-See also: jit.qt.movie, jit.qt.record
 """
 
 jit_gradient = MaxObject('jit.gradient')
@@ -2168,8 +1992,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: cheby, end, start
-
-See also: jit.alphablend, jit.charmap
 """
 
 jit_graph = MaxObject('jit.graph')
@@ -2179,8 +2001,6 @@ jit.graph - Perform floating-point data visualization
 Renders floating point data as a two-dimensional plot.
 
 Attributes: brgb, clearit, frgb, height, mode, rangehi, rangelo
-
-See also: jit.gl.graph, jit.buffer~, jit.catch~, jit.peek~, jit.poke~, jit.release~, peek~, poke~
 """
 
 jit_grgb2argb = MaxObject('jit.grgb2argb')
@@ -2195,8 +2015,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.argb2grgb, jit.argb2uyvy, jit.colorspace, jit.traffic
 """
 
 jit_hatch = MaxObject('jit.hatch')
@@ -2213,8 +2031,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: bgcolor, grid, thresh
-
-See also: jit.altern, jit.eclipse, jit.roy
 """
 
 jit_hello = MaxObject('jit.hello')
@@ -2246,8 +2062,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: autoclear, normalize, normval
-
-See also: jit.3m, jit.fft
 """
 
 jit_hsl2rgb = MaxObject('jit.hsl2rgb')
@@ -2262,8 +2076,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.colorspace, jit.hue, jit.rgb2luma, jit.rgb2hsl, jit.traffic
 """
 
 jit_hue = MaxObject('jit.hue')
@@ -2280,8 +2092,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: hue_angle
-
-See also: jit.hue, jit.hsl2rgb, jit.rgb2hsl, jit.traffic
 """
 
 jit_iter = MaxObject('jit.iter')
@@ -2299,8 +2109,6 @@ Outlets:
   2 (list): dumpout
 
 Attributes: mode
-
-See also: iter, jit.fill, jit.matrix, jit.spill
 """
 
 jit_keyscreen = MaxObject('jit.keyscreen')
@@ -2319,8 +2127,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: alpha, alphatol, blue, bluetol, green, greentol, key, mask, mode, red, redtol, target
-
-See also: jit.alphablend, jit.chromakey, jit.lumakey, jit.op
 """
 
 jit_la_determinant = MaxObject('jit.la.determinant')
@@ -2337,8 +2143,6 @@ Outlets:
   1 (float/list): dumpout
 
 Attributes: thresh
-
-See also: jit.la.diagproduct, jit.la.inverse, jit.la.mult, jit.la.trace, jit.la.uppertri
 """
 
 jit_la_diagproduct = MaxObject('jit.la.diagproduct')
@@ -2353,8 +2157,6 @@ Inlets:
 Outlets:
   0 (float/list): diagproduct
   1 (float/list): dumpout
-
-See also: jit.la.determinant, jit.la.inverse, jit.la.mult, jit.la.trace, jit.la.uppertri
 """
 
 jit_la_inverse = MaxObject('jit.la.inverse')
@@ -2371,8 +2173,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: thresh
-
-See also: jit.la.determinant, jit.la.diagproduct, jit.la.inverse, jit.la.mult, jit.la.trace, jit.la.uppertri
 """
 
 jit_la_mult = MaxObject('jit.la.mult')
@@ -2388,8 +2188,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.la.determinant, jit.la.diagproduct, jit.la.inverse, jit.la.trace, jit.la.uppertri, jit.op
 """
 
 jit_la_trace = MaxObject('jit.la.trace')
@@ -2404,8 +2202,6 @@ Inlets:
 Outlets:
   0 (float/list): trace
   1 (float/list): dumpout
-
-See also: jit.la.determinant, jit.la.diagproduct, jit.la.inverse, jit.la.mult, jit.la.uppertri
 """
 
 jit_la_uppertri = MaxObject('jit.la.uppertri')
@@ -2422,8 +2218,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: swapcount, thresh
-
-See also: jit.la.determinant, jit.la.diagproduct, jit.la.inverse, jit.la.mult, jit.la.trace
 """
 
 jit_lcd = MaxObject('jit.lcd')
@@ -2440,8 +2234,6 @@ Outlets:
   1 (matrix): dumpout
 
 Messages: ascii, brgb, clearpicts, clipoval, clippoly, cliprect, cliproundrect, color, deletepict, drawpict, font, framearc, frameoval, framepoly, framerect, frameroundrect, frgb, getpenloc, getpixel, line, linesegment, lineto, move, moveto, noclip, oprgb, paintarc, paintoval, paintpoly, paintrect, paintroundrect, penmode, pensize, readpict, reset, scrollrect, setpixel, textface, textmode, tilepict, write, writepict
-
-See also: jit.gl.sketch, lcd
 """
 
 jit_linden = MaxObject('jit.linden')
@@ -2458,8 +2250,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: boundmode, ignore, leftbranch, production, rightbranch, wildcard
-
-See also: jit.conway, jit.turtle
 """
 
 jit_luma2ayuv = MaxObject('jit.luma2ayuv')
@@ -2474,8 +2264,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.ayuv2uyvy, jit.luma2ayuv, jit.colorspace, jit.traffic
 """
 
 jit_luma2uyvy = MaxObject('jit.luma2uyvy')
@@ -2490,8 +2278,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.ayuv2uyvy, jit.luma2ayuv, jit.colorspace, jit.traffic
 """
 
 jit_lumakey = MaxObject('jit.lumakey')
@@ -2509,8 +2295,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: ascale, bscale, fade, gscale, lum, maxkey, minkey, mode, rscale, tol
-
-See also: jit.alphablend, jit.chromakey, jit.keyscreen, jit.rgb2luma
 """
 
 jit_map = MaxObject('jit.map')
@@ -2527,8 +2311,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: clip, map
-
-See also: jit.charmap, jit.clip, jit.op, jit.scalebias
 """
 
 jit_matrix = MaxObject('jit.matrix')
@@ -2547,8 +2329,6 @@ Outlets:
 Messages: bang, int, float, list, (drag), clear, exportimage, exportmovie, exprfill, fillplane, getcell, importmovie, jit_gl_texture, op, read, setall, setcell, setcell1d, setcell2d, setcell3d, setplane1d, setplane2d, setplane3d, val, write
 
 Attributes: adapt, dim, dimstride, dstdimend, dstdimstart, interp, name, planecount, planemap, thru, size, srcdimend, srcdimstart, usedstdim, usesrcdim, type
-
-See also: jit.coerce, jit.fill, jit.matrixset, jit.matrixinfo, jit.peek~, jit.poke~, jit.spill, jit.submatrix
 """
 
 jit_matrixinfo = MaxObject('jit.matrixinfo')
@@ -2566,8 +2346,6 @@ Inlets:
 
 Outlets:
   0 (matrix): out
-
-See also: jit.matrix, jit.fpsgui, jit.print
 """
 
 jit_matrixset = MaxObject('jit.matrixset')
@@ -2586,8 +2364,6 @@ Outlets:
 Messages: bang, clear, exportmovie, importmovie, read, write
 
 Attributes: dim, dstdimend, dstdimstart, index, interp, matrixcount, planecount, planemap, thru, type, srcdimend, srcdimstart, usedstdim, usesrcdim
-
-See also: jit.matrix
 """
 
 jit_mgraphics = MaxObject('jit.mgraphics')
@@ -2606,8 +2382,6 @@ Outlets:
 Messages: append_path, arc, arc_negative, attr_setfill, clear_surface, close_path, curve_to, device_to_user, ellipse, fill, fill_extents, fill_preserve, fill_preserve_with_alpha, fill_with_alpha, font_extents, get_current_point, get_line_cap, get_line_join, get_line_width, get_matrix, getfontlist, identity_matrix, image_surface_create, image_surface_destroy, image_surface_draw, image_surface_draw_fast, image_surface_get_size, in_fill, line_to, move_to, new_path, ovalarc, paint, paint_with_alpha, parentpaint, path_roundcorners, pattern_add_color_stop_rgba, pattern_create_for_surface, pattern_create_linear, pattern_create_radial, pattern_create_rgba, pattern_destroy, pattern_get_extend, pattern_get_matrix, pattern_get_type, pattern_identity_matrix, pattern_rotate, pattern_scale, pattern_set_extend, pattern_set_matrix, pattern_translate, pop_group_to_source, push_group, rectangle, rectangle_rounded, rel_curve_to, rel_line_to, rel_move_to, restore, rotate, save, scale, scale_source_rgba, select_font_face, set_dash, set_font_size, set_line_cap, set_line_join, set_line_width, set_matrix, set_source, set_source_rgb, set_source_rgba, set_source_surface, show_text, stroke, stroke_preserve, stroke_preserve_with_alpha, stroke_with_alpha, svg_create, svg_destroy, svg_get_size, svg_render, svg_set, text_measure, text_path, transform, translate, translate_source_rgba, user_to_device
 
 Attributes: autofill, dim, relative_coords, textfieldvisible
-
-See also: JS MGraphics API, jit.lcd, jit.gl.sketch, jsui
 """
 
 jit_movie = MaxObject('jit.movie')
@@ -2626,8 +2400,6 @@ Outlets:
 Messages: (drag), asyncread, cancelframedump, dispose, frame, frame_coarse, framedump, jump, jump_coarse, read, start, stop
 
 Attributes: adapt, automatic, autostart, colormode, drawto, dstrect, duration, engine, fps, framecount, framereport, interp, loop, loopend, looppoints, looppoints_ms, looppoints_secs, loopreport, loopstart, milliseconds, movie_dim, moviedim, moviefile, moviename, moviepath, output_texture, position, rate, seamless_loopcount, seconds, srcrect, texture_name, time, time_ms, time_secs, timescale, unique, usedstrect, usesrcrect, vol
-
-See also: jitter/textures?panchor=texture-output, jitter/video_engine, jit.movie~, jit.playlist, jit.grab, jit.record, jit.pwindow, jit.window, jit.world, jit.gl.texture
 """
 
 jit_multiplex = MaxObject('jit.multiplex')
@@ -2645,8 +2417,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: autoclear, mode, multiplexdim, scan_a, scan_b, truncate
-
-See also: jit.concat, jit.demultiplex, jit.glue, jit.matrix, jit.scissors, jit.split
 """
 
 jit_mxform2d = MaxObject('jit.mxform2d')
@@ -2663,8 +2433,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: boundmode, interp, mxform, offset_x, offset_y
-
-See also: jit.repos, jit.rota
 """
 
 jit_net_recv = MaxObject('jit.net.recv')
@@ -2684,8 +2452,6 @@ Outlets:
 Messages: getmatrix, getmessage
 
 Attributes: connected, ip, port
-
-See also: jit.broadcast, jit.net.send, jit.qt.broadcast
 """
 
 jit_net_send = MaxObject('jit.net.send')
@@ -2704,8 +2470,6 @@ Outlets:
 Messages: int, float, list, anything
 
 Attributes: connected, host, ip, latency, nagle, port, report
-
-See also: jit.broadcast, jit.net.recv, jit.qt.broadcast
 """
 
 jit_noise = MaxObject('jit.noise')
@@ -2722,8 +2486,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: seed
-
-See also: drunk, jit.sprinkle, random
 """
 
 jit_normalize = MaxObject('jit.normalize')
@@ -2740,8 +2502,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: amp, global
-
-See also: jit.matrix, jit.bfg
 """
 
 jit_obref = MaxObject('jit.obref')
@@ -2754,8 +2514,6 @@ Inlets:
   0 (INLET_TYPE): anything
 
 Messages: bang, anything, (mouse)
-
-See also: jit.uldl
 """
 
 jit_op = MaxObject('jit.op')
@@ -2775,8 +2533,6 @@ Outlets:
 Messages: int, float, list
 
 Attributes: op, val
-
-See also: expr, jit.expr, jit.dimop, jit.planeop, vexpr
 """
 
 jit_openexr = MaxObject('jit.openexr')
@@ -2795,8 +2551,6 @@ Outlets:
 Messages: (drag), read, write
 
 Attributes: adjust, channels, defog, exposure, gamma, kneehigh, kneelow, normalize, outputfile, verbose
-
-See also: jit.matrix, jit.bfg
 """
 
 jit_p_bounds = MaxObject('jit.p.bounds')
@@ -2813,8 +2567,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: bounds_hi, bounds_lo, mode, squish, squish_var
-
-See also: jit.p.shiva, jit.p.vishnu
 """
 
 jit_p_shiva = MaxObject('jit.p.shiva')
@@ -2831,8 +2583,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: emit, emit_var, init, init_var, life, life_var, mode
-
-See also: jit.p.bounds, jit.p.vishnu
 """
 
 jit_p_vishnu = MaxObject('jit.p.vishnu')
@@ -2849,8 +2599,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: force, mode, pitch, pitch_var, pos, pos_var, speed, speed_var, yaw, yaw_var
-
-See also: jit.p.bounds, jit.p.shiva
 """
 
 jit_pack = MaxObject('jit.pack')
@@ -2870,8 +2618,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: index, jump, offset, plane
-
-See also: jit.coerce, jit.concat, jit.split, jit.unpack
 """
 
 jit_path = MaxObject('jit.path')
@@ -2892,8 +2638,6 @@ Outlets:
 Messages: bang, append, calc_evalmatrix, calc_outmatrix, calchandles, clear, closepath, delete, edit, edithandle, eval, evallength, evaltime, gethandle, getpoint, insert, next, outputeval, prev, settime, sorttime, start, stop
 
 Attributes: autohandles, closed, dim, duration, evalmatrixmode, evalmatrixname, evalmatrixsize, grain, interpmode, length, loop, outmatrixname, play, pointcount, rate, thru, time, timemode, usetime
-
-See also: jit.anim.path, jit.gl.path
 """
 
 jit_peek_tilde = MaxObject('jit.peek~')
@@ -2913,8 +2657,6 @@ Outlets:
 Messages: signal
 
 Attributes: interp, matrix_name, normalize, plane
-
-See also: jit.poke~, peek~, poke~, jit.buffer~
 """
 
 jit_phys_6dof = MaxObject('jit.phys.6dof')
@@ -2934,8 +2676,6 @@ Outlets:
 Messages: reset
 
 Attributes: bias, body1, body2, collisions, enable, lowerlimit_ang, lowerlimit_lin, motorstrength, motorvelocity_ang, motorvelocity_lin, position1, position2, quat1, quat2, relaxation, rotate1, rotate2, rotatexyz1, rotatexyz2, spring_ang, spring_lin, springdamp_ang, springdamp_lin, springeq_ang, springeq_lin, springstiff_ang, springstiff_lin, strength, stretch, upperlimit_ang, upperlimit_lin, worldname, worldpos, worldquat
-
-See also: jit.phys.world, jit.phys.body, jit.phys.barslide, jit.phys.conetwist, jit.phys.hinge, jit.phys.point2point
 """
 
 jit_phys_barslide = MaxObject('jit.phys.barslide')
@@ -2955,8 +2695,6 @@ Outlets:
 Messages: reset
 
 Attributes: body1, body2, collisions, damping, enable, linearposition, lowerlimit_ang, lowerlimit_lin, motorstrength_ang, motorstrength_lin, motorvelocity_ang, motorvelocity_lin, position1, position2, quat1, quat2, restitution, rotate1, rotate2, rotatexyz1, rotatexyz2, softness, strength, stretch, upperlimit_ang, upperlimit_lin, worldname, worldpos, worldquat
-
-See also: jit.phys.world, jit.phys.body, jit.phys.conetwist, jit.phys.hinge, jit.phys.point2point, jit.phys.6dof
 """
 
 jit_phys_body = MaxObject('jit.phys.body')
@@ -2975,8 +2713,6 @@ Outlets:
 Messages: bang, addchild, getchild_dict, impulse, removechild, removechildren, reset, setchild_position, setchild_quat, setchild_scale, setchild_shape, setresetstate, torque_impulse
 
 Attributes: anim, collisions, damping, enable, enable_sleep, filterclass, filters, force, forces_relative, friction, kinematic, local_scaling, mass, name, position, quat, reduce_hull, resetpos, resetquat, restitution, rolling_friction, rotate, rotate_order, rotatexyz, scale, send_scale, shape, targetname, torque, total_force, total_torque, velocity, velocity_ang, worldname
-
-See also: jit.phys.world, jit.phys.multiple, jit.phys.picker, jit.gl.physdraw, jit.gl.gridshape
 """
 
 jit_phys_conetwist = MaxObject('jit.phys.conetwist')
@@ -2996,8 +2732,6 @@ Outlets:
 Messages: reset
 
 Attributes: bias, body1, body2, collisions, enable, position1, position2, quat1, quat2, relaxation, rotate1, rotate2, rotatexyz1, rotatexyz2, strength, stretch, swing1limit, swing2limit, twistlimit, worldname, worldpos, worldquat
-
-See also: jit.phys.world, jit.phys.body, jit.phys.barslide, jit.phys.hinge, jit.phys.point2point, jit.phys.6dof
 """
 
 jit_phys_ghost = MaxObject('jit.phys.ghost')
@@ -3016,8 +2750,6 @@ Outlets:
 Messages: bang, central_impulse, impulse, reset, torque_impulse
 
 Attributes: central_exp, central_force, central_mode, collision_mode, collisions, enable, filters, force, name, position, quat, rotate, rotate_order, rotatexyz, scale, shape, torque, worldname
-
-See also: jit.phys.world, jit.phys.body, jit.phys.multiple, jit.phys.picker, jit.gl.physdraw
 """
 
 jit_phys_hinge = MaxObject('jit.phys.hinge')
@@ -3037,8 +2769,6 @@ Outlets:
 Messages: reset
 
 Attributes: bias, body1, body2, collisions, enable, hingeangle, lowerlimit, motorstrength, motortarget, motorvelocity, position1, position2, quat1, quat2, relaxation, rotate1, rotate2, rotatexyz1, rotatexyz2, strength, stretch, upperlimit, worldname, worldpos, worldquat
-
-See also: jit.phys.world, jit.phys.body, jit.phys.barslide, jit.phys.conetwist, jit.phys.point2point, jit.phys.6dof
 """
 
 jit_phys_multiple = MaxObject('jit.phys.multiple')
@@ -3059,8 +2789,6 @@ Outlets:
 Messages: bang, damping_matrix, force_matrix, friction_matrix, getconstraint_dict, impulse, mass_matrix, mesh_matrix, position_matrix, reset, restitution_matrix, rotate_matrix, rotatexyz_matrix, scale_matrix, sendbody, sendbody_reset, sendconstraint, torque_impulse, torque_matrix
 
 Attributes: constraint, constraint_matrix, constraintoutname, damping, enable, enable_sleep, filterclass, filters, force, forces_relative, friction, kinematic, local_scaling, mass, name, physparams, posoutname, reduce_hull, restitution, rolling_friction, rotoutname, shape, shareshape, torque, worldname
-
-See also: jit.phys.world, jit.phys.body, jit.phys.ghost, jit.phys.picker, jit.gl.physdraw, jit.gl.multiple, jit.gl.gridshape
 """
 
 jit_phys_picker = MaxObject('jit.phys.picker')
@@ -3079,8 +2807,6 @@ Outlets:
 Messages: touch
 
 Attributes: body, dynamics, enable, filterclass, filters, hover, local_position, output_positions, pickmode, position, strength, stretch, ui_priority, worldname
-
-See also: jit.phys.world, jit.phys.body, jit.gl.picker
 """
 
 jit_phys_point2point = MaxObject('jit.phys.point2point')
@@ -3100,8 +2826,6 @@ Outlets:
 Messages: reset
 
 Attributes: body1, body2, collisions, enable, position1, position2, strength, stretch, worldname, worldpos, worldquat
-
-See also: jit.phys.world, jit.phys.body, jit.phys.hinge, jit.phys.conetwist, jit.phys.barslide, jit.phys.6dof
 """
 
 jit_phys_world = MaxObject('jit.phys.world')
@@ -3120,8 +2844,6 @@ Outlets:
 Messages: bang, raytest, reset, screenraytest
 
 Attributes: automatic, collision_mode, collisions, drawto, dynamics, enable, fixed_delta, fixedtimestep, gravity, maxsubsteps, name, numcollisions, numthreads, raytest_mode, remove_plane, split_impulse, targetname, worldbox, worldbox_scale
-
-See also: jit.phys.body, jit.phys.multiple, jit.phys.ghost, jit.phys.picker, jit.gl.physdraw
 """
 
 jit_pix = MaxObject('jit.pix')
@@ -3140,8 +2862,6 @@ Outlets:
 Messages: anything, (drag), compile, (mouse), destroy, open, param, wclose
 
 Attributes: dirty, gen, precision, t, title
-
-See also: gen/gen_common_operators, gen/gen_genexpr, gen/gen_jitter_operators, gen/gen_overview, jit.gen, jit.gl.pix, jit.expr, jit.matrix, gen~
 """
 
 jit_pix_codebox = MaxObject('jit.pix.codebox')
@@ -3160,8 +2880,6 @@ Outlets:
 Messages: anything, (drag), compile, (mouse), destroy, open, param, wclose
 
 Attributes: bgcolor, linenumbers, linenumberwidth, margin, style, textcolor, dirty, gen, precision, t, title
-
-See also: jit.gen, jit.pix, jit.gl.pix, jit.gen.codebox, jit.gl.pix.codebox
 """
 
 jit_planeop = MaxObject('jit.planeop')
@@ -3178,8 +2896,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: op
-
-See also: jit.op, jit.dimop, jit.expr
 """
 
 jit_playlist = MaxObject('jit.playlist')
@@ -3199,8 +2915,6 @@ Outlets:
 Messages: int, append, clear, (drag), getclipattr, getcontent, (mouse), next, pause, remove, resume, selection, selectionms, setclip
 
 Attributes: accentcolor, allowreorder, bgcolor, clipheight, color, drawto, elementcolor, expansion, loop, loopreport, output_texture, parameter_enable, parameter_mappable, reportprogress, selectioncolor, showname, style, textcolor
-
-See also: jit.movie, playlist~, mc.playlist~, jit.world, jit.pworld
 """
 
 jit_plot = MaxObject('jit.plot')
@@ -3210,8 +2924,6 @@ jit.plot - (x,y) plotting of a two-plane matrix
 Use jit.plot to render a cartesian plot of a two-plane matrix.
 
 Attributes: brgb, clearit, frgb, height, width, xmax, xmin, ymax, ymin
-
-See also: jit.buffer~, jit.graph, jit.peek~, jit.poke~, jit.release~, peek~, poke~
 """
 
 jit_plume = MaxObject('jit.plume')
@@ -3231,8 +2943,6 @@ Outlets:
 Messages: planeselect
 
 Attributes: intervalmode, wrap, x_interval, xamount, xinterval, xoffset, y_interval, yamount, yinterval, yoffset
-
-See also: jit.repos
 """
 
 jit_plur = MaxObject('jit.plur')
@@ -3249,8 +2959,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: colormode, gang, hi, lo, mode, scale, x_range, x_step, y_range, y_step
-
-See also: jit.ameba
 """
 
 jit_poke_tilde = MaxObject('jit.poke~')
@@ -3270,8 +2978,6 @@ Outlets:
 Messages: signal
 
 Attributes: matrix_name, normalize, plane
-
-See also: jit.peek~, peek~, poke~, jit.buffer~
 """
 
 jit_print = MaxObject('jit.print')
@@ -3288,8 +2994,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: coldelim, fieldwidth, info, mode, planedelim, precision, rowdelim, title, zeropad
-
-See also: jit.fpsgui, jit.fprint, jit.matrixinfo
 """
 
 jit_proxy = MaxObject('jit.proxy')
@@ -3326,8 +3030,6 @@ Outlets:
 Messages: bang, jit_gl_texture, jit_matrix, (mouse)
 
 Attributes: border, bordercolor, colormode, depthbuffer, doublebuffer, dstrect, fsaa, idlemouse, interp, name, onscreen, pickray, planemap, shared, size, srcrect, stereo, sync, usedstrect, usesrcrect
-
-See also: jit.window, jit.world, jit.pworld, jit.gl.render
 """
 
 jit_pworld = MaxObject('jit.pworld')
@@ -3346,8 +3048,6 @@ Outlets:
 Messages: bang, int, jit_gl_texture, jit_matrix, (mouse), sendrender, sendvideoplane
 
 Attributes: auto_handle, border, bordercolor, colormode, depthbuffer, doublebuffer, dstrect, enable, erase_color, fps, fsaa, gizmos, idlemouse, interp, name, onscreen, pickray, planemap, running_fps, shared, size, srcrect, stereo, sync, usedstrect, usesrcrect
-
-See also: jit.pwindow, jit.gl.render, jit.world
 """
 
 jit_qball = MaxObject('jit.qball')
@@ -3366,8 +3066,6 @@ Outlets:
 Messages: bang, int, float, list, anything, defer, usurp
 
 Attributes: mode
-
-See also: jit.qfaker
 """
 
 jit_qfaker = MaxObject('jit.qfaker')
@@ -3384,8 +3082,6 @@ Outlets:
   1 (OUTLET_TYPE): dumpout
 
 Messages: bang, int, float, list, anything
-
-See also: jit.qball
 """
 
 jit_qt_grab = MaxObject('jit.qt.grab')
@@ -3405,8 +3101,6 @@ Outlets:
 Messages: close, exportimage, getinputlist, getvdevlist, open, int
 
 Attributes: adapt, automatic, colormode, drawto, dstrect, engine, framerate, framereport, input, interp, output_texture, srcrect, texture_name, unique, usedstrect, usesrcrect, vdevice, format
-
-See also: jit.qt.movie, jit.qt.record
 """
 
 jit_qt_movie = MaxObject('jit.qt.movie')
@@ -3426,8 +3120,6 @@ Outlets:
 Messages: read, framedump, cancelframedump, asyncread, (drag)
 
 Attributes: adapt, automatic, autostart, colormode, drawto, dstrect, duration, engine, fps, framecount, framereport, interp, loop, loopend, looppoints, loopreport, loopstart, movie_dim, moviedim, moviefile, moviename, moviepath, output_texture, rate, srcrect, texture_name, time, timescale, unique, usedstrect, usesrcrect, vol, time_secs, time_ms, seconds, position, milliseconds, looppoints_secs, looppoints_ms
-
-See also: jit.qt.grab, jit.qt.record
 """
 
 jit_qt_record = MaxObject('jit.qt.record')
@@ -3447,8 +3139,6 @@ Outlets:
 Messages: stop
 
 Attributes: adapt, engine, preview, dstrect, interp, planemap, realtime, srcrect, time, usedstrect, usesrcrect, fps, codec
-
-See also: jit.qt.movie, jit.qt.record, jit.vcr
 """
 
 jit_qt_videoout = MaxObject('jit.qt.videoout')
@@ -3468,8 +3158,6 @@ Outlets:
 Messages: close, getvoclist, getvocmodes, open
 
 Attributes: codecquality, colormode, voc, vocmode
-
-See also: jit.qt.effect, jit.qt.grab, jit.qt.movie, jit.qt.record
 """
 
 jit_quat = MaxObject('jit.quat')
@@ -3489,8 +3177,6 @@ Outlets:
 Messages: bang, list
 
 Attributes: inverse, normalize, quat1, quat2, quatout, xaxis, yaxis, zaxis
-
-See also: jit.quat2axis, jit.axis2quat, jit.quat2euler, jit.euler2quat, jit.anim.node
 """
 
 jit_quat2axis = MaxObject('jit.quat2axis')
@@ -3509,8 +3195,6 @@ Outlets:
 Messages: bang, list
 
 Attributes: angleaxis, normalize, quat
-
-See also: jit.quat, jit.axis2quat, jit.quat2euler, jit.euler2quat, jit.anim.node
 """
 
 jit_quat2euler = MaxObject('jit.quat2euler')
@@ -3529,8 +3213,6 @@ Outlets:
 Messages: bang, list
 
 Attributes: euler, normalize, quat, rotate_order
-
-See also: jit.quat, jit.euler2quat, jit.axis2quat, jit.quat2axis, jit.anim.node
 """
 
 jit_record = MaxObject('jit.record')
@@ -3549,8 +3231,6 @@ Outlets:
 Messages: stop, write
 
 Attributes: adapt, codec, dstrect, engine, fps, interp, planemap, preview, realtime, srcrect, time, usedstrect, usesrcrect
-
-See also: jit.qt.grab, jit.qt.movie, jit.vcr
 """
 
 jit_release_tilde = MaxObject('jit.release~')
@@ -3567,8 +3247,6 @@ Outlets:
   1 (signal): dumpout
 
 Attributes: mode, latency
-
-See also: jit.buffer~, jit.peek~, jit.poke~, jit.catch~, peek~, poke~
 """
 
 jit_repos = MaxObject('jit.repos')
@@ -3586,8 +3264,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: boundmode, interpbits, mode, offset_x, offset_y
-
-See also: jit.mxform2d, jit.plume, jit.rota
 """
 
 jit_resamp = MaxObject('jit.resamp')
@@ -3604,8 +3280,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: interp_x, interp_y, wrap, xscale, xshift, yscale, yshift
-
-See also: jit.matrix, jit.mxform2d, jit.rota
 """
 
 jit_reverse = MaxObject('jit.reverse')
@@ -3625,8 +3299,6 @@ Outlets:
 Messages: bang, int, float, list, anything, clear
 
 Attributes: immediate, reverse
-
-See also: jit.cycle, swap
 """
 
 jit_rgb2hsl = MaxObject('jit.rgb2hsl')
@@ -3643,8 +3315,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: hoffset, hscale, loffset, lscale, soffset, sscale
-
-See also: jit.colorspace, jit.hue, jit.hsl2rgb, jit.rgb2luma, jit.traffic
 """
 
 jit_rgb2luma = MaxObject('jit.rgb2luma')
@@ -3661,8 +3331,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: ascale, bscale, gscale, rscale
-
-See also: jit.colorspace, jit.hue, jit.hsl2rgb, jit.rgb2hsl, jit.traffic
 """
 
 jit_robcross = MaxObject('jit.robcross')
@@ -3679,8 +3347,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: thresh
-
-See also: jit.brass, jit.qt.effect, jit.sobel
 """
 
 jit_rota = MaxObject('jit.rota')
@@ -3697,8 +3363,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: anchor_x, anchor_y, boundmode, cosoffset_x, cosoffset_y, cosscale_x, cosscale_y, interp, offset_x, offset_y, sinoffset_x, sinoffset_y, sinscale_x, sinscale_y, theta, thetaoffsetcos_x, thetaoffsetcos_y, thetaoffsetsin_x, thetaoffsetsin_y, thetascalecos_x, thetascalecos_y, thetascalesin_x, thetascalesin_y, zoom_x, zoom_y
-
-See also: jit.mxform2d, jit.repos, jit.resamp
 """
 
 jit_roy = MaxObject('jit.roy')
@@ -3716,8 +3380,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: shades, x, y
-
-See also: jit.eclipse, jit.hatch
 """
 
 jit_rubix = MaxObject('jit.rubix')
@@ -3736,8 +3398,6 @@ Outlets:
 Messages: colrot, freeze, hflip, mono, nomono, reset, rowrot, setcell, vflip
 
 Attributes: cols, dots, prob, probmono, rows
-
-See also: jit.glue, jit.resamp, jit.scissors, jit.tiffany
 """
 
 jit_scalebias = MaxObject('jit.scalebias')
@@ -3754,8 +3414,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: abias, ascale, bbias, bias, bscale, gbias, gscale, mode, rbias, rscale, scale
-
-See also: jit.charmap, jit.map, jit.op, jit.rgb2luma
 """
 
 jit_scanoffset = MaxObject('jit.scanoffset')
@@ -3773,8 +3431,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: displacement_map, interp, mode, offset, scale
-
-See also: jit.repos, jit.scanwrap
 """
 
 jit_scanslide = MaxObject('jit.scanslide')
@@ -3791,8 +3447,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: dimmode, mode, offset, slide_down, slide_up
-
-See also: jit.op, jit.slide, slide, slide~
 """
 
 jit_scanwrap = MaxObject('jit.scanwrap')
@@ -3811,8 +3465,6 @@ Outlets:
 Messages: purge, reset
 
 Attributes: mode
-
-See also: jit.scanoffset
 """
 
 jit_scissors = MaxObject('jit.scissors')
@@ -3831,8 +3483,6 @@ Outlets:
 Messages: anything
 
 Attributes: columns, rows
-
-See also: jit.concat, jit.demultiplex, jit.glue, jit.matrix, jit.multiplex, jit.split
 """
 
 jit_scope = MaxObject('jit.scope')
@@ -3851,8 +3501,6 @@ Outlets:
 Messages: bang, jit_matrix, (mouse)
 
 Attributes: accum, accum_desat, bgcolor, border, colormode, dstrect, graphcolor, graphmode, hgraphcolor, hpopupbackgcolor, hpopupcolor, interp, mode, planemap, popupbackgcolor, popupcolor, size, srcrect, style
-
-See also: jit.grab, jit.histogram, jit.movie
 """
 
 jit_shade = MaxObject('jit.shade')
@@ -3873,8 +3521,6 @@ Outlets:
 Messages: reset
 
 Attributes: max, min, mode
-
-See also: jit.alphablend, jit.op
 """
 
 jit_slide = MaxObject('jit.slide')
@@ -3891,8 +3537,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: slide_down, slide_up
-
-See also: jit.scanslide, slide, slide~
 """
 
 jit_sobel = MaxObject('jit.sobel')
@@ -3909,8 +3553,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: mode, thresh
-
-See also: jit.brass, jit.qt.effect, jit.robcross
 """
 
 jit_spill = MaxObject('jit.spill')
@@ -3927,8 +3569,6 @@ Outlets:
   1 (list): spill
 
 Attributes: listlength, offset, plane
-
-See also: jit.fill, jit.iter, jit.matrix, zl
 """
 
 jit_split = MaxObject('jit.split')
@@ -3946,8 +3586,6 @@ Outlets:
   2 (matrix): dumpout
 
 Attributes: autoclear, splitdim, splitpoint
-
-See also: jit.concat, jit.demultiplex, jit.glue, jit.matrix, jit.multiplex, jit.scissors
 """
 
 jit_sprinkle = MaxObject('jit.sprinkle')
@@ -3964,8 +3602,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: prob, x_range, y_range
-
-See also: jit.noise, jit.repos, jit.streak
 """
 
 jit_str_fromsymbol = MaxObject('jit.str.fromsymbol')
@@ -3982,8 +3618,6 @@ Outlets:
   1 (matrix): dumpout
 
 Messages: int, float, list, anything
-
-See also: jit.str.op, jit.str.tosymbol, jit.str.regexp, jit.textfile
 """
 
 jit_str_op = MaxObject('jit.str.op')
@@ -4001,8 +3635,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: end, multiline_in, multiline_out, op, start
-
-See also: jit.op, jit.str.fromsymbol, jit.str.tosymbol, jit.str.regexp, jit.textfile
 """
 
 jit_str_regexp = MaxObject('jit.str.regexp')
@@ -4022,8 +3654,6 @@ Outlets:
   4 (matrix): dumpout
 
 Attributes: descriptor, re, substitute
-
-See also: jit.op, jit.str.fromsymbol, jit.str.tosymbol, jit.textfile, regexp
 """
 
 jit_str_tosymbol = MaxObject('jit.str.tosymbol')
@@ -4040,8 +3670,6 @@ Outlets:
   1 (symbol): dumpout
 
 Attributes: outsym
-
-See also: jit.str.fromsymbol, jit.str.op, jit.str.regexp, jit.textfile, tosymbol
 """
 
 jit_streak = MaxObject('jit.streak')
@@ -4058,8 +3686,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: direction, mode, prob, scale
-
-See also: jit.noise, jit.repos, jit.sprinkle
 """
 
 jit_submatrix = MaxObject('jit.submatrix')
@@ -4079,8 +3705,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: offset
-
-See also: jit.coerce, jit.matrix, jit.scissors
 """
 
 jit_textfile = MaxObject('jit.textfile')
@@ -4100,8 +3724,6 @@ Outlets:
 Messages: (mouse), erase, line, open, outputline, read, wclose, write
 
 Attributes: autoclear, defaultdir, convert, title
-
-See also: jit.fprint, jit.matrix, text
 """
 
 jit_thin = MaxObject('jit.thin')
@@ -4116,8 +3738,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.concat, jit.dimmap, jit.matrix, jit.split
 """
 
 jit_tiffany = MaxObject('jit.tiffany')
@@ -4136,8 +3756,6 @@ Outlets:
 Messages: x, xy, y
 
 Attributes: bgcolor, grid, xrange, xskip, yrange, yskip
-
-See also: jit.resamp, jit.rubix
 """
 
 jit_traffic = MaxObject('jit.traffic')
@@ -4153,8 +3771,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.colorspace, jit.hsl2rgb, jit.rgb2luma, jit.rgb2hsl
 """
 
 jit_transpose = MaxObject('jit.transpose')
@@ -4169,8 +3785,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.dimmap, jit.matrix, jit.rota
 """
 
 jit_turtle = MaxObject('jit.turtle')
@@ -4189,8 +3803,6 @@ Outlets:
 Messages: int, reset
 
 Attributes: angle, clearmode, origin, scale
-
-See also: jit.lcd, jit.linden
 """
 
 jit_uldl = MaxObject('jit.uldl')
@@ -4209,8 +3821,6 @@ Outlets:
 Messages: abort, download, upload
 
 Attributes: defaultdir, convert, dir_list, dirlist, passive, password, percent, report, url_dl, url_ul, urldl, urlul, username
-
-See also: jit.qt.movie, jit.textfile
 """
 
 jit_unpack = MaxObject('jit.unpack')
@@ -4232,8 +3842,6 @@ Outlets:
 Messages: anything
 
 Attributes: jump, offset
-
-See also: jit.coerce, jit.concat, jit.pack, jit.split
 """
 
 jit_uyvy2argb = MaxObject('jit.uyvy2argb')
@@ -4250,8 +3858,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: noalpha
-
-See also: jit.argb2uyvy, jit.colorspace, jit.traffic, jit.uyvy2ayuv, jit.uyvy2luma
 """
 
 jit_uyvy2ayuv = MaxObject('jit.uyvy2ayuv')
@@ -4268,8 +3874,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: noalpha
-
-See also: jit.ayuv2uyvy, jit.colorspace, jit.traffic, jit.uyvy2argb, jit.uyvy2luma
 """
 
 jit_uyvy2luma = MaxObject('jit.uyvy2luma')
@@ -4284,8 +3888,6 @@ Inlets:
 Outlets:
   0 (matrix): out
   1 (matrix): dumpout
-
-See also: jit.colorspace, jit.luma2uyvy, jit.traffic, jit.uyvy2ayuv, jit.uyvy2argb
 """
 
 jit_vcr = MaxObject('jit.vcr')
@@ -4306,8 +3908,6 @@ Outlets:
 Messages: signal, stop, write
 
 Attributes: adapt, codec, dstrect, engine, fps, interp, planemap, preview, srcrect, time, usedstrect, usesrcrect
-
-See also: jit.qt.grab, jit.qt.movie, jit.qt.record
 """
 
 jit_wake = MaxObject('jit.wake')
@@ -4324,8 +3924,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: bdownbleed, bfb, bff, bgain, bleed, bleftbleed, brightbleed, bupbleed, fb, ff, gain, gdownbleed, gfb, gff, ggain, gleftbleed, grightbleed, gupbleed, normalize, rdownbleed, rfb, rff, rgain, rleftbleed, rrightbleed, rupbleed
-
-See also: jit.convolve, jit.glop, jit.op
 """
 
 jit_window = MaxObject('jit.window')
@@ -4366,8 +3964,6 @@ Outlets:
 Messages: bang, int, clear, (mouse), draw, front, jit_gl_texture, sendcornerpin, sendhandle, sendnode, sendphys, sendrender, sendwindow
 
 Attributes: border, auto_handle, enable, depth_sort, dim, displaylink, drawbang, drawto, capture, fixed_delta, floating, fps, fsaa, fsmenubar, fullscreen, enable_cornerpin, erase_color, esc_fullscreen, interval, high_res, gizmos, matrix_mode_async, ortho, output_matrix, output_texture, name, phys_worldname, position, preserve_aspect, size, rect, shared, sync, rotate, quat, rotatexyz, scale, running_fps, transparency, windowposition, visible
-
-See also: jit.window, jit.gl.render, jit.gl.node, jit.gl.cornerpin, jit.phys.world, jit.pworld
 """
 
 jit_xfade = MaxObject('jit.xfade')
@@ -4385,8 +3981,6 @@ Outlets:
   1 (matrix): dumpout
 
 Attributes: xfade
-
-See also: jit.alphablend, jit.op
 """
 
 mc_jit_peek_tilde = MaxObject('mc.jit.peek~')
@@ -4406,8 +4000,6 @@ Outlets:
 Messages: signal
 
 Attributes: interp, matrix_name, normalize, plane
-
-See also: jit.poke~, peek~, poke~, jit.buffer~
 """
 
 _sys.stdout = _old_stdout

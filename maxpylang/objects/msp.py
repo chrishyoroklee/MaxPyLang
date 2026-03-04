@@ -941,8 +941,6 @@ Outlets:
   0 (signal): (signal) Channel 1 Output
 
 Messages: int, float, list, (mouse), rows, set, signal
-
-See also: buffer~, groove~, phasor~, play~, wave~
 """
 
 abs_tilde = MaxObject('abs~')
@@ -958,8 +956,6 @@ Outlets:
   0 (signal): (signal) Absolute Value of Input
 
 Messages: signal
-
-See also: avg~
 """
 
 acos_tilde = MaxObject('acos~')
@@ -975,8 +971,6 @@ Outlets:
   0 (signal): Acos (x) Out
 
 Messages: signal
-
-See also: acosh~, cos~, cosh~, cosx~
 """
 
 acosh_tilde = MaxObject('acosh~')
@@ -992,8 +986,6 @@ Outlets:
   0 (signal): Acosh (x) Out
 
 Messages: signal
-
-See also: acos~, cos~, cosh~, cosx~
 """
 
 adc_tilde = MaxObject('adc~')
@@ -1013,8 +1005,6 @@ Outlets:
   1 (signal): (signal) Audio In Ch 2
 
 Messages: int, list, (mouse), open, set, start, startwindow, stop, wclose
-
-See also: mc.adc~, adstatus, ezadc~, ezdac~, dac~
 """
 
 adoutput_tilde = MaxObject('adoutput~')
@@ -1034,8 +1024,6 @@ Outlets:
   1 (signal): (signal) Output of Audio Channel 2
 
 Messages: set
-
-See also: adstatus, dac~
 """
 
 adsr_tilde = MaxObject('adsr~')
@@ -1066,8 +1054,6 @@ Outlets:
 Messages: int, float, list, anything, signal
 
 Attributes: attack, decay, legato, maxsustain, release, retrigger, sustain, triggermode
-
-See also: function, line~, techno~, transport, zigzag~
 """
 
 adstatus = MaxObject('adstatus')
@@ -1080,8 +1066,6 @@ Args:
   Controllable-settings: (symbol, required)
 
 Messages: bang, int, float, in1, loadbang, override, set, update
-
-See also: dspstate~, adoutput~
 """
 
 allpass_tilde = MaxObject('allpass~')
@@ -1104,8 +1088,6 @@ Outlets:
   0 (signal): (signal) Filter Output
 
 Messages: float, clear, signal
-
-See also: biquad~, comb~, cross~, lores~, phaseshift~, reson~, svf~, teeth~
 """
 
 amxd_tilde = MaxObject('amxd~')
@@ -1131,8 +1113,6 @@ Outlets:
 Messages: anything, (drag), (mouse), drag_replace, getinfo, getparams, getvalue, midievent, midiin, open, signal
 
 Attributes: active, annotation_name, autosave, autosize, latency, mcisolate, parameter_enable, patchername, realtime_params, showheader
-
-See also: vst~, mcs.amxd~
 """
 
 asin_tilde = MaxObject('asin~')
@@ -1148,8 +1128,6 @@ Outlets:
   0 (signal): Asin (x) Out
 
 Messages: signal
-
-See also: asinh~, sinh~, sinx~
 """
 
 asinh_tilde = MaxObject('asinh~')
@@ -1165,8 +1143,6 @@ Outlets:
   0 (signal): Asinh (x) Out
 
 Messages: signal
-
-See also: asin~, sinh~, sinx~
 """
 
 atan2_tilde = MaxObject('atan2~')
@@ -1185,8 +1161,6 @@ Outlets:
   0 (signal): atan2(y/x)
 
 Messages: int, float, signal
-
-See also: atan~, atanh~, tanx~
 """
 
 atan_tilde = MaxObject('atan~')
@@ -1202,8 +1176,6 @@ Outlets:
   0 (signal): Atan (x) Out
 
 Messages: signal
-
-See also: atanh~, atan2~, tanh~, tanx~
 """
 
 atanh_tilde = MaxObject('atanh~')
@@ -1219,8 +1191,6 @@ Outlets:
   0 (signal): Atanh (x) Out
 
 Messages: signal
-
-See also: atan~, atan2~, tanh~, tanx~
 """
 
 atodb_tilde = MaxObject('atodb~')
@@ -1236,8 +1206,6 @@ Outlets:
   0 (signal): (signal) Gain/Attenuation dB
 
 Messages: signal
-
-See also: expr, atodb, dbtoa, dbtoa~
 """
 
 average_tilde = MaxObject('average~')
@@ -1259,8 +1227,6 @@ Outlets:
 Messages: int, absolute, bipolar, rms, signal
 
 Attributes: mode
-
-See also: avg~, meter~
 """
 
 avg_tilde = MaxObject('avg~')
@@ -1276,8 +1242,6 @@ Outlets:
   0 (float): (float) Average Value of Input Signal
 
 Messages: bang, signal
-
-See also: average~, meter~
 """
 
 begin_tilde = MaxObject('begin~')
@@ -1288,8 +1252,6 @@ The begin~ object is OBSOLETE. For controlling audio processing in a patcher, pl
 
 Outlets:
   0 (signal): (signal) Connect to Objects to Turn On and Off
-
-See also: selector~, gate~
 """
 
 biquad_tilde = MaxObject('biquad~')
@@ -1325,8 +1287,6 @@ Outlets:
 Messages: int, float, list, clear, dictionary, signal, stoke
 
 Attributes: smooth
-
-See also: buffir~, cascade~, comb~, cross~, filtercoeff~, filtergraph~, lores~, onepole~, reson~, svf~, teeth~
 """
 
 bitand_tilde = MaxObject('bitand~')
@@ -1349,8 +1309,6 @@ Outlets:
 Messages: int, float, bits, signal
 
 Attributes: mode
-
-See also: bitshift~, bitor~, bitxor~, bitnot~
 """
 
 bitnot_tilde = MaxObject('bitnot~')
@@ -1371,8 +1329,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: mode
-
-See also: bitshift~, bitor~, bitxor~, bitand~
 """
 
 bitor_tilde = MaxObject('bitor~')
@@ -1395,8 +1351,6 @@ Outlets:
 Messages: int, float, bits, signal
 
 Attributes: mode
-
-See also: bitshift~, bitand~, bitxor~, bitnot~
 """
 
 bitsafe_tilde = MaxObject('bitsafe~')
@@ -1412,8 +1366,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: signal
-
-See also: bitshift~, bitor~, bitxor~, bitnot~, bitand~
 """
 
 bitshift_tilde = MaxObject('bitshift~')
@@ -1435,8 +1387,6 @@ Outlets:
 Messages: int, float, shift, signal
 
 Attributes: mode
-
-See also: bitand~, bitor~, bitxor~, bitnot~
 """
 
 bitxor_tilde = MaxObject('bitxor~')
@@ -1459,8 +1409,6 @@ Outlets:
 Messages: int, bits, signal
 
 Attributes: mode
-
-See also: bitshift~, bitand~, bitor~, bitnot~
 """
 
 buffer_tilde = MaxObject('buffer~')
@@ -1485,8 +1433,6 @@ Outlets:
 Messages: bang, (remote), (drag), apply, clear, clearlow, crop, (mouse), duplicate, enumerate, fill, import, importreplace, name, normalize, open, printmodtime, read, readagain, readraw, replace, samptype, set, setsize, sizeinsamps, wclose, write, writeaiff, writeflac, writeraw, writewave
 
 Attributes: chans, dither, file, filetype, format, quantization, samps, size, sr
-
-See also: 2d.wave~, buffir~, cycle~, groove~, info~, lookup~, peek~, play~, poke~, polybuffer~, record~, sfplay~, sfrecord~, stretch~, wave~
 """
 
 buffir_tilde = MaxObject('buffir~')
@@ -1509,8 +1455,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, clear, (mouse), set, signal
-
-See also: biquad~, buffer~, cascade~
 """
 
 capture_tilde = MaxObject('capture~')
@@ -1528,8 +1472,6 @@ Inlets:
   0 (INLET_TYPE): (signal) Data to be Captured, write Saves File
 
 Messages: clear, (mouse), open, signal, wclose, write
-
-See also: scope~
 """
 
 cartopol_tilde = MaxObject('cartopol~')
@@ -1547,8 +1489,6 @@ Outlets:
   1 (signal): (signal) phase/theta output
 
 Messages: signal
-
-See also: cartopol, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, pfft~, poltocar, poltocar~, vectral~
 """
 
 cascade_tilde = MaxObject('cascade~')
@@ -1565,8 +1505,6 @@ Outlets:
   0 (signal): (signal) filtered signal out
 
 Messages: list, bypass, clear, dictionary, signal, zero
-
-See also: biquad~, buffir~, comb~, filtergraph~, lores~, onepole~, reson~, teeth~
 """
 
 change_tilde = MaxObject('change~')
@@ -1582,8 +1520,6 @@ Outlets:
   0 (signal): (signal) 0. if Unchanged; -1. (decreasing) or 1. (increasing) if Changed.
 
 Messages: float, signal
-
-See also: edge~, thresh~, zerox~
 """
 
 click_tilde = MaxObject('click~')
@@ -1602,8 +1538,6 @@ Outlets:
   0 (signal): (signal) Impulse Signal Out
 
 Messages: bang, int, float, set, signal
-
-See also: buffer~, buffir~, line~
 """
 
 clip_tilde = MaxObject('clip~')
@@ -1627,8 +1561,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: mode
-
-See also: <~, >~, trunc~
 """
 
 comb_tilde = MaxObject('comb~')
@@ -1661,8 +1593,6 @@ Outlets:
   0 (signal): (signal) Filter Output
 
 Messages: float, clear, signal
-
-See also: allpass~, delay~, reson~, teeth~
 """
 
 cos_tilde = MaxObject('cos~')
@@ -1678,8 +1608,6 @@ Outlets:
   0 (signal): (signal) Cosine Output
 
 Messages: signal
-
-See also: acos~, acosh~, asin~, asinh~, atan~, atanh~, atan2~, cosh~, cosx~, cycle~, phasor~, sinh~, sinx~, tanh~, tanx~, trapezoid~, triangle~, wave~, 2d.wave~
 """
 
 cosh_tilde = MaxObject('cosh~')
@@ -1695,8 +1623,6 @@ Outlets:
   0 (OUTLET_TYPE): Cosh (x) Out
 
 Messages: signal
-
-See also: acos~, acosh~, asin~, asinh~, atan~, atanh~, atan2~, cos~, cosx~, sinh~, sinx~, tanh~, tanx~
 """
 
 cosx_tilde = MaxObject('cosx~')
@@ -1712,8 +1638,6 @@ Outlets:
   0 (OUTLET_TYPE): Cos (x) Out
 
 Messages: signal
-
-See also: acos~, acosh~, asin~, asinh~, atan~, atanh~, atan2~, cos~, cosh~, sinh~, sinx~, tanh~, tanx~
 """
 
 count_tilde = MaxObject('count~')
@@ -1738,8 +1662,6 @@ Outlets:
 Messages: bang, int, float, list, in1, min, set, signal, stop
 
 Attributes: autoreset
-
-See also: index~, mstosamps~, sampstoms~, +=~, counter
 """
 
 cross_tilde = MaxObject('cross~')
@@ -1760,8 +1682,6 @@ Outlets:
   1 (signal): (signal) Highpass Filtered Output
 
 Messages: int, float, clear, signal
-
-See also: allpass~, biquad~, filtergraph~, lores~, onepole~, reson~, svf~
 """
 
 curve_tilde = MaxObject('curve~')
@@ -1786,8 +1706,6 @@ Outlets:
 Messages: int, float, list, anything, factor, pause, resume, stop
 
 Attributes: activeout, maxpoints, shapemode
-
-See also: line~, transport
 """
 
 cycle_tilde = MaxObject('cycle~')
@@ -1811,8 +1729,6 @@ Outlets:
 Messages: float, (mouse), reset, set, setall, signal
 
 Attributes: buffer, buffer_offset, buffer_sizeinsamps, frequency, phase
-
-See also: buffer~, buffir~, cos~, line~, phasor~, rect~, saw~, techno~, trapezoid~, tri~, triangle~, wave~, 2d.wave~
 """
 
 dac_tilde = MaxObject('dac~')
@@ -1829,8 +1745,6 @@ Inlets:
   1 (signal): (signal) Audio Out Ch 2
 
 Messages: int, list, (mouse), open, set, signal, start, startwindow, stop, wclose
-
-See also: mc.dac~, adc~, adstatus, ezadc~, ezdac~
 """
 
 dbtoa_tilde = MaxObject('dbtoa~')
@@ -1846,8 +1760,6 @@ Outlets:
   0 (signal): (signal) Amplitude Scalar
 
 Messages: signal
-
-See also: expr, atodb, atodb~, dbtoa
 """
 
 degrade_tilde = MaxObject('degrade~')
@@ -1869,8 +1781,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, signal
-
-See also: downsamp~, round~
 """
 
 delay_tilde = MaxObject('delay~')
@@ -1894,8 +1804,6 @@ Outlets:
 Messages: int, float, list, anything, clear, maxsize, ramp, signal
 
 Attributes: delay
-
-See also: comb~, tapin~, tapout~, mstosamps~, sampstoms~, pipe, transport
 """
 
 delta_tilde = MaxObject('delta~')
@@ -1911,8 +1819,6 @@ Outlets:
   0 (signal): (signal) Differences Between Input Samples
 
 Messages: signal
-
-See also: average~, avg~
 """
 
 deltaclip_tilde = MaxObject('deltaclip~')
@@ -1934,8 +1840,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, ft1, ft2, reset, signal
-
-See also: clip~
 """
 
 div_tilde = MaxObject('div~')
@@ -1955,8 +1859,6 @@ Outlets:
   0 (signal): (signal) Division Result
 
 Messages: int, float, signal
-
-See also: !/~, *~, %~
 """
 
 downsamp_tilde = MaxObject('downsamp~')
@@ -1976,8 +1878,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, signal
-
-See also: degrade~, sah~
 """
 
 dspstate_tilde = MaxObject('dspstate~')
@@ -1996,8 +1896,6 @@ Outlets:
   3 (OUTLET_TYPE): Current I/O Vector Size
 
 Messages: bang, signal
-
-See also: adstatus, sampstoms~, mstosamps~
 """
 
 dsptime_tilde = MaxObject('dsptime~')
@@ -2013,8 +1911,6 @@ Outlets:
   0 (OUTLET_TYPE): Milliseconds of Samples Processed
 
 Messages: bang, signal
-
-See also: adstatus
 """
 
 edge_tilde = MaxObject('edge~')
@@ -2031,8 +1927,6 @@ Outlets:
   1 (bang): (bang) Output on non-zero to zero transition
 
 Messages: signal
-
-See also: change~, thresh~, zerox~
 """
 
 equals_tilde = MaxObject('equals~')
@@ -2054,8 +1948,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: fuzzy
-
-See also: <~, <=~, >~, >=~, !=~, change~, edge~
 """
 
 ezadc_tilde = MaxObject('ezadc~')
@@ -2074,8 +1966,6 @@ Outlets:
 Messages: int, list, (mouse), local, open, set, start, startwindow, stop, wclose
 
 Attributes: bgcolor, border, bordercolor, color, elementcolor, local, offgradcolor1, offgradcolor2, ongradcolor1, ongradcolor2, style
-
-See also: adc~, adstatus, dac~, ezdac~
 """
 
 ezdac_tilde = MaxObject('ezdac~')
@@ -2091,8 +1981,6 @@ Inlets:
 Messages: int, list, (mouse), local, open, set, signal, start, startwindow, stop, wclose
 
 Attributes: bgcolor, border, bordercolor, color, elementcolor, local, offgradcolor1, offgradcolor2, ongradcolor1, ongradcolor2, style
-
-See also: adstatus, ezadc~, adc~
 """
 
 fbinshift_tilde = MaxObject('fbinshift~')
@@ -2115,8 +2003,6 @@ Outlets:
   1 (signal): bin-shifted imaginary/y output
 
 Messages: ft2, signal
-
-See also: freqshift~, gizmo~, hilbert~
 """
 
 fffb_tilde = MaxObject('fffb~')
@@ -2142,8 +2028,6 @@ Outlets:
   3 (signal): Output from Filter 3
 
 Messages: list, anything, Q, QAll, clear, freq, freqAll, freqRatio, gain, gainAll, signal
-
-See also: reson~
 """
 
 fft_tilde = MaxObject('fft~')
@@ -2169,8 +2053,6 @@ Outlets:
 Messages: phase, signal
 
 Attributes: fftsize, float32, interval, legacy, offset
-
-See also: cartopol, cartopol~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, index~, pfft~, poltocar, poltocar~, vectral~
 """
 
 fftin_tilde = MaxObject('fftin~')
@@ -2194,8 +2076,6 @@ Outlets:
 Messages: signal
 
 Attributes: nofft, userwindow, window
-
-See also: cartopol, cartopol~, fft~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, in, out, pfft~, poltocar, poltocar~, vectral~
 """
 
 fftinfo_tilde = MaxObject('fftinfo~')
@@ -2214,8 +2094,6 @@ Outlets:
   3 (int): (int) Full Spectrum Flag (0/1)
 
 Messages: bang, signal
-
-See also: cartopol, cartopol~, fft~, fftin~, fftout~, frameaccum~, framedelta~, ifft~, pfft~, poltocar, poltocar~, vectral~
 """
 
 fftout_tilde = MaxObject('fftout~')
@@ -2236,8 +2114,6 @@ Inlets:
 Messages: signal
 
 Attributes: nofft, overlapscale, userwindow, window, windowsqueeze
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, frameaccum~, framedelta~, ifft~, out, pfft~, poltocar, poltocar~, vectral~
 """
 
 filtercoeff_tilde = MaxObject('filtercoeff~')
@@ -2263,8 +2139,6 @@ Outlets:
   4 (signal): (signal) FB Coefficient 2
 
 Messages: int, float, list, allpass, bandpass, bandstop, gainapass, gainbpass, gainbstop, gainhpass, gainlpass, gainresonant, highpass, highshelf, lowpass, lowshelf, off, peaknotch, resamp, resonant, signal
-
-See also: allpass~, biquad~, cascade~, delay~, filtergraph~, lores~, reson~, teeth~
 """
 
 filterdesign = MaxObject('filterdesign')
@@ -2282,8 +2156,6 @@ Outlets:
 Messages: bang, (mouse)
 
 Attributes: frequency, name, order, passband_ripple, response, samplerate, sos_output, stopband_attenuation, tf_output, topology, units, zpk_output
-
-See also: filterdetail, plot~, cascade~
 """
 
 filterdetail = MaxObject('filterdetail')
@@ -2306,8 +2178,6 @@ Outlets:
 Messages: list, dictionary
 
 Attributes: numpoints
-
-See also: filterdesign, plot~, cascade~, biquad~
 """
 
 filtergraph_tilde = MaxObject('filtergraph~')
@@ -2338,8 +2208,6 @@ Outlets:
 Messages: bang, int, float, list, anything, allpass, analog, bandpass, bandstop, cascade, constraints, dictionary, display, displaydot, flat, gainmode, highorder, highpass, highshelf, lowpass, lowshelf, markers, mode, (mouse), options, params, peaknotch, query, resonant, selectfilt, set, setconstraints, setfilter, setoptions, setparams, whichfilt
 
 Attributes: annotation_name, autoout, bgcolor, bordercolor, bwidthcolor, curvecolor, dbdisplay, display_flat, domain, edit_Q, edit_amp, edit_analog, edit_displaydot, edit_filter, edit_freq, edit_gainmode, edit_maxQ, edit_maxamp, edit_maxfreq, edit_minQ, edit_minamp, edit_minfreq, edit_mode, fgcolor, fullspect, hbwidthcolor, hcurvecolor, hfgcolor, linmarkers, logamp, logfreq, logmarkers, markercolor, nfilters, numdisplay, param_connect, parameter_enable, parameter_mappable, phasespect, range, style, textcolor
-
-See also: allpass~, biquad~, cascade~, delay~, filtercoeff~, lores~, reson~, teeth~, zplane~
 """
 
 frame_tilde = MaxObject('frame~')
@@ -2355,8 +2223,6 @@ Outlets:
   0 (signal): output frame
 
 Messages: int, float, list, anything, fill, mirror
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, framesnap~, ifft~, in, out, poltocar, poltocar~, vectral~
 """
 
 frameaccum_tilde = MaxObject('frameaccum~')
@@ -2375,8 +2241,6 @@ Outlets:
   0 (signal): (signal) FFT Running Phase Output
 
 Messages: clear, signal
-
-See also: framedelta~
 """
 
 frameaverage_tilde = MaxObject('frameaverage~')
@@ -2394,8 +2258,6 @@ Outlets:
 Messages: clear, signal
 
 Attributes: framecount, framesize
-
-See also: average~, fft~, framesmooth~, plot~, vectral~
 """
 
 framedelta_tilde = MaxObject('framedelta~')
@@ -2411,8 +2273,6 @@ Outlets:
   0 (signal): (signal) FFT Phase Deviation
 
 Messages: clear, signal
-
-See also: frameaccum~
 """
 
 framesmooth_tilde = MaxObject('framesmooth~')
@@ -2430,8 +2290,6 @@ Outlets:
 Messages: clear, signal
 
 Attributes: framesize, smoothness
-
-See also: fft~, frameaverage~, plot~, vectral~
 """
 
 framesnap_tilde = MaxObject('framesnap~')
@@ -2453,8 +2311,6 @@ Outlets:
 Messages: bang, int, float, list, anything, sampleinterval, signal, start, stop
 
 Attributes: active, interval
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, fftout~, frame~, frameaccum~, framedelta~, ifft~, in, out, poltocar, poltocar~, vectral~
 """
 
 freqshift_tilde = MaxObject('freqshift~')
@@ -2476,8 +2332,6 @@ Outlets:
   1 (signal): (signal) Frequency-shifted Signal (Negative Sideband)
 
 Messages: int, float, clear, resetphase, signal
-
-See also: fbinshift~, gizmo~, hilbert~
 """
 
 ftom_tilde = MaxObject('ftom~')
@@ -2495,8 +2349,6 @@ Outlets:
 Messages: signal
 
 Attributes: base, map, mapname, mid, ref, scale, scalename
-
-See also: expr, ftom, mtof, mtof~
 """
 
 fzero_tilde = MaxObject('fzero~')
@@ -2516,8 +2368,6 @@ Outlets:
 Messages: signal
 
 Attributes: freqmax, freqmin, onsetamp, onsetlist, onsetperiod, onsetpitch, period, quiet, size, threshold
-
-See also: ftom, mtof, peakamp~, retune~, thresh~
 """
 
 gain_tilde = MaxObject('gain~')
@@ -2536,8 +2386,6 @@ Outlets:
 Messages: bang, int, float, list, color, ft1, (mouse), set, setvalue, signal
 
 Attributes: annotation_name, bgcolor, bordercolor, inc, interp, interpinlet, knobcolor, multislider, orientation, param_connect, parameter_enable, parameter_mappable, relative, scale, size, stripecolor, style
-
-See also: linedrive
 """
 
 gate_tilde = MaxObject('gate~')
@@ -2562,8 +2410,6 @@ Outlets:
 Messages: bang, int, float, next, signal
 
 Attributes: ramptime, stepmode
-
-See also: crosspatch, selector~, matrix~, gate
 """
 
 gen = MaxObject('gen')
@@ -2585,8 +2431,6 @@ Outlets:
 Messages: bang, int, float, (mouse), exportcode, open, reload, reset, reset_param, set, wclose
 
 Attributes: active, autoexport, cpu, cpumeasure, dumpoutlet, exportfolder, exportname, exportnotifier, exportscript, exportscriptargs, gen, hot, interval, nocache, poll, title
-
-See also: gen/gen_common_operators, gen/gen_overview, gen/gen~_operators, gen~
 """
 
 gen_codebox = MaxObject('gen.codebox')
@@ -2603,8 +2447,6 @@ Outlets:
 Messages: (mouse), exportcode, open, int, float, set, bang, reload, wclose, reset, reset_param
 
 Attributes: bgcolor, linenumbers, linenumberwidth, margin, style, textcolor, title, poll, exportscriptargs, exportscript, exportnotifier, exportname, exportfolder, dumpoutlet, gen, cpumeasure, cpu, autoexport, hot, active, interval, nocache
-
-See also: bogus
 """
 
 gen_codebox_tilde = MaxObject('gen.codebox~')
@@ -2623,8 +2465,6 @@ Outlets:
 Messages: reset_param, reset, wclose, reload, float, int, signal, open, exportcode, (mouse)
 
 Attributes: bgcolor, linenumbers, linenumberwidth, margin, style, textcolor, autoexport, cpu, cpumeasure, gen, dumpoutlet, exportfolder, title, nocache, poll, exportscriptargs, exportscript, exportnotifier, exportname
-
-See also: gen~, gen, gen.codebox
 """
 
 gen_tilde = MaxObject('gen~')
@@ -2646,8 +2486,6 @@ Outlets:
 Messages: int, float, (mouse), exportcode, open, reload, reset, reset_param, signal, wclose
 
 Attributes: autoexport, cpu, cpumeasure, dumpoutlet, exportfolder, exportname, exportnotifier, exportscript, exportscriptargs, gen, nocache, poll, title
-
-See also: gen/gen_common_operators, gen/gen_overview, gen/gen~_operators, mcs.gen~, mc.gen~, jit.gen, jit.pix
 """
 
 gizmo_tilde = MaxObject('gizmo~')
@@ -2669,8 +2507,6 @@ Outlets:
   1 (signal): (signal) Pitch-shifted Imaginary Signal
 
 Messages: clip, freqshift, ft2, signal
-
-See also: fbinshift~, freqshift~, hilbert~, pitchshift~, retune~
 """
 
 greaterthan_tilde = MaxObject('greaterthan~')
@@ -2690,8 +2526,6 @@ Outlets:
   0 (signal): (signal) Comparison Result (1 or 0)
 
 Messages: int, float, signal
-
-See also: <~, <=~, >=~, ==~, !=~, sah~
 """
 
 greaterthaneq_tilde = MaxObject('greaterthaneq~')
@@ -2713,8 +2547,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: fuzzy
-
-See also: <~, <=~, >~, ==~, !=~, sah~
 """
 
 gridmeter_tilde = MaxObject('gridmeter~')
@@ -2732,8 +2564,6 @@ Outlets:
 Messages: int, float, list, (mouse), mute, muteall, signal, solo
 
 Attributes: attack, bgcolor, cellheight, cellwidth, color, columns, contrast, dividersize, elementcolor, hotcolor, interval, range, release, shape, style
-
-See also: average~, levelmeter~, live.meter~, meter~, scope~
 """
 
 groove_tilde = MaxObject('groove~')
@@ -2758,8 +2588,6 @@ Outlets:
 Messages: int, float, list, anything, clearspeedcues, (mouse), dictionary, endloop, printspeedcues, reset, set, setloop, signal, startloop, stop
 
 Attributes: basictuning, followglobaltempo, formant, formantcorrection, lock, loop, loopend, loopinterp, loopstart, mode, name, originallength, originaltempo, phase, pitchcorrection, pitchshift, pitchshiftcent, quality, slurtime, timestretch, transport
-
-See also: 2d.wave~, buffer~, mcs.groove~, play~, phasegroove~, wave~, index~, record~, transport
 """
 
 hilbert_tilde = MaxObject('hilbert~')
@@ -2776,8 +2604,6 @@ Outlets:
   1 (signal): (signal) sine/imag output
 
 Messages: clear, signal
-
-See also: fbinshift~, freqshift~, gizmo~
 """
 
 ifft_tilde = MaxObject('ifft~')
@@ -2803,8 +2629,6 @@ Outlets:
 Messages: phase, signal
 
 Attributes: fftsize, float32, interval, legacy, offset
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, pfft~, poltocar, poltocar~, vectral~
 """
 
 in_ = MaxObject('in')
@@ -2825,8 +2649,6 @@ Outlets:
 Messages: comment
 
 Attributes: attr_comment
-
-See also: in~, inlet, out, out~, outlet, pfft~, poly~, thispoly~
 """
 
 in_tilde = MaxObject('in~')
@@ -2847,8 +2669,6 @@ Outlets:
 Messages: comment, signal
 
 Attributes: attr_comment, chans
-
-See also: mc.in~, in, out, out~, mc.out~, poly~, mc.poly~, mcs.poly~, thispoly~
 """
 
 index_tilde = MaxObject('index~')
@@ -2870,8 +2690,6 @@ Outlets:
   1 (signal): Audio Channel In buffer~
 
 Messages: int, float, (mouse), set, signal
-
-See also: buffer~, buffir~, count~, fft~
 """
 
 info_tilde = MaxObject('info~')
@@ -2899,8 +2717,6 @@ Outlets:
   9 (OUTLET_TYPE): Most Recent File Full Pathname
 
 Messages: bang, (mouse), set
-
-See also: buffer~, mstosamps~, sfinfo~
 """
 
 ioscbank_tilde = MaxObject('ioscbank~')
@@ -2924,8 +2740,6 @@ Outlets:
   0 (signal): (signal) output
 
 Messages: int, float, clear, copybuf, framesync, freqsmooth, magsmooth, set, signal, silence, size
-
-See also: oscbank~
 """
 
 kink_tilde = MaxObject('kink~')
@@ -2945,8 +2759,6 @@ Outlets:
   0 (signal): (signal) Disorted Phase Output
 
 Messages: int, float, signal
-
-See also: phasor~, triangle~
 """
 
 lessthan_tilde = MaxObject('lessthan~')
@@ -2966,8 +2778,6 @@ Outlets:
   0 (signal): (signal) Comparison Result (1 or 0)
 
 Messages: int, float, signal
-
-See also: <=~, >~, >=~, ==~, !=~
 """
 
 lessthaneq_tilde = MaxObject('lessthaneq~')
@@ -2989,8 +2799,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: fuzzy
-
-See also: <~, >~, >=~, ==~, !=~
 """
 
 levelmeter_tilde = MaxObject('levelmeter~')
@@ -3008,8 +2816,6 @@ Outlets:
 Messages: bang, int, clear, mode, (mouse), signal
 
 Attributes: attack, bgcolor, bordercolor, coolcolor, displaychan, fgcolor, hotcolor, inactivealpha, interval, markercolor, markers, markersused, needlecolor, offset, overloadcolor, range, release, rounded, style, tepidcolor, warmcolor
-
-See also: average~, gridmeter~, meter~, scope~
 """
 
 limi_tilde = MaxObject('limi~')
@@ -3031,8 +2837,6 @@ Outlets:
 Messages: clear, signal
 
 Attributes: bypass, dcblock, lookahead, mode, postamp, preamp, release, threshold
-
-See also: mc.limi~, mcs.limi~, omx.peaklim~
 """
 
 line_tilde = MaxObject('line~')
@@ -3055,8 +2859,6 @@ Outlets:
 Messages: int, float, list, anything, pause, resume, stop
 
 Attributes: activeout, maxpoints
-
-See also: adsr~, click~, curve~, line, transport, zigzag~
 """
 
 log_tilde = MaxObject('log~')
@@ -3076,8 +2878,6 @@ Outlets:
   0 (signal): (signal) log of Input to Base
 
 Messages: float, signal
-
-See also: pow~, curve~, sqrt~
 """
 
 lookup_tilde = MaxObject('lookup~')
@@ -3101,8 +2901,6 @@ Outlets:
 Messages: int, float, (mouse), set, signal
 
 Attributes: chan, offset, size
-
-See also: buffer~, peek~
 """
 
 lores_tilde = MaxObject('lores~')
@@ -3126,8 +2924,6 @@ Outlets:
 Messages: int, float, clear, signal
 
 Attributes: cutoff, resonance
-
-See also: biquad~, buffir~, comb~, cross~, onepole~, svf~, reson~
 """
 
 loudness_tilde = MaxObject('loudness~')
@@ -3153,8 +2949,6 @@ Outlets:
 Messages: bang, int, float, reset, signal
 
 Attributes: channel, inputs, interval
-
-See also: meter~, levelmeter~, snapshot~, mcs.loudness~, average~, avg~, peakamp~
 """
 
 matrix_tilde = MaxObject('matrix~')
@@ -3182,8 +2976,6 @@ Outlets:
 Messages: list, clear, connect, dictionary, disconnect, dump, dumpconnections, dumptarget, print
 
 Attributes: exclusive, ramp
-
-See also: crosspatch, gate~, mcs.matrix~, matrix, matrixctrl, receive~, router, selector~, send~
 """
 
 maximum_tilde = MaxObject('maximum~')
@@ -3203,8 +2995,6 @@ Outlets:
   0 (Signal): (signal) Maximum of Left and Right Signals
 
 Messages: int, float, signal
-
-See also: <=~, >~, >=~, ==~, !=~, minimum~
 """
 
 mc_2d_wave_tilde = MaxObject('mc.2d.wave~')
@@ -3229,8 +3019,6 @@ Outlets:
   0 (signal): (signal) Channel 1 Output
 
 Messages: int, float, list, (mouse), rows, set, signal
-
-See also: buffer~, groove~, phasor~, play~, wave~
 """
 
 mc_abs_tilde = MaxObject('mc.abs~')
@@ -3246,8 +3034,6 @@ Outlets:
   0 (signal): (signal) Absolute Value of Input
 
 Messages: signal
-
-See also: avg~
 """
 
 mc_acos_tilde = MaxObject('mc.acos~')
@@ -3263,8 +3049,6 @@ Outlets:
   0 (signal): Acos (x) Out
 
 Messages: signal
-
-See also: acosh~, cos~, cosh~, cosx~
 """
 
 mc_acosh_tilde = MaxObject('mc.acosh~')
@@ -3280,8 +3064,6 @@ Outlets:
   0 (signal): Acosh (x) Out
 
 Messages: signal
-
-See also: acos~, cos~, cosh~, cosx~
 """
 
 mc_adc_tilde = MaxObject('mc.adc~')
@@ -3300,8 +3082,6 @@ Outlets:
   0 (multi-channel signal): Audio Input (multichannel)
 
 Messages: int, list, (mouse), open, set, start, startwindow, stop, wclose
-
-See also: mc, adc~, adstatus, mc.ezadc~, mc.ezdac~, mc.dac~
 """
 
 mc_adsr_tilde = MaxObject('mc.adsr~')
@@ -3332,8 +3112,6 @@ Outlets:
 Messages: int, float, list, anything, signal
 
 Attributes: attack, decay, legato, maxsustain, release, retrigger, sustain, triggermode
-
-See also: function, line~, techno~, transport, zigzag~
 """
 
 mc_allpass_tilde = MaxObject('mc.allpass~')
@@ -3356,8 +3134,6 @@ Outlets:
   0 (signal): (signal) Filter Output
 
 Messages: float, clear, signal
-
-See also: biquad~, comb~, cross~, lores~, phaseshift~, reson~, svf~, teeth~
 """
 
 mc_amxd_tilde = MaxObject('mc.amxd~')
@@ -3383,8 +3159,6 @@ Outlets:
 Messages: anything, (drag), (mouse), drag_replace, getinfo, getparams, getvalue, midievent, midiin, open, signal
 
 Attributes: active, annotation_name, autosave, autosize, latency, mcisolate, parameter_enable, patchername, realtime_params, showheader
-
-See also: vst~, mcs.amxd~
 """
 
 mc_apply_tilde = MaxObject('mc.apply~')
@@ -3407,8 +3181,6 @@ Outlets:
 Messages: int, float, list, signal
 
 Attributes: chans, functions, ramptime
-
-See also: function, mc.function, mc.gradient~, mc.range~, phasor~
 """
 
 mc_asin_tilde = MaxObject('mc.asin~')
@@ -3424,8 +3196,6 @@ Outlets:
   0 (signal): Asin (x) Out
 
 Messages: signal
-
-See also: asinh~, sinh~, sinx~
 """
 
 mc_asinh_tilde = MaxObject('mc.asinh~')
@@ -3441,8 +3211,6 @@ Outlets:
   0 (signal): Asinh (x) Out
 
 Messages: signal
-
-See also: asin~, sinh~, sinx~
 """
 
 mc_assign = MaxObject('mc.assign')
@@ -3460,8 +3228,6 @@ Outlets:
 Messages: bang, int, float, list, anything
 
 Attributes: chans, delays, density, mode, pattern, pos
-
-See also: mc/mc_events_newobjects, mc/mc_events_newfunctions, mc.target, mc.makelist, mc.route
 """
 
 mc_atan2_tilde = MaxObject('mc.atan2~')
@@ -3480,8 +3246,6 @@ Outlets:
   0 (signal): atan2(y/x)
 
 Messages: int, float, signal
-
-See also: atan~, atanh~, tanx~
 """
 
 mc_atan_tilde = MaxObject('mc.atan~')
@@ -3497,8 +3261,6 @@ Outlets:
   0 (signal): Atan (x) Out
 
 Messages: signal
-
-See also: atanh~, atan2~, tanh~, tanx~
 """
 
 mc_atanh_tilde = MaxObject('mc.atanh~')
@@ -3514,8 +3276,6 @@ Outlets:
   0 (signal): Atanh (x) Out
 
 Messages: signal
-
-See also: atan~, atan2~, tanh~, tanx~
 """
 
 mc_atodb_tilde = MaxObject('mc.atodb~')
@@ -3531,8 +3291,6 @@ Outlets:
   0 (signal): (signal) Gain/Attenuation dB
 
 Messages: signal
-
-See also: expr, atodb, dbtoa, dbtoa~
 """
 
 mc_average_tilde = MaxObject('mc.average~')
@@ -3554,8 +3312,6 @@ Outlets:
 Messages: int, absolute, bipolar, rms, signal
 
 Attributes: mode
-
-See also: avg~, meter~
 """
 
 mc_avg_tilde = MaxObject('mc.avg~')
@@ -3571,8 +3327,6 @@ Outlets:
   0 (float): (float) Average Value of Input Signal
 
 Messages: bang, signal
-
-See also: average~, meter~
 """
 
 mc_bands_tilde = MaxObject('mc.bands~')
@@ -3586,8 +3340,6 @@ Args:
   number-of-bands (int, required)
 
 Messages: signal, float
-
-See also: fffb~, mc.reson~
 """
 
 mc_biquad_tilde = MaxObject('mc.biquad~')
@@ -3623,8 +3375,6 @@ Outlets:
 Messages: int, float, list, clear, dictionary, signal, stoke
 
 Attributes: smooth
-
-See also: buffir~, cascade~, comb~, cross~, filtercoeff~, filtergraph~, lores~, onepole~, reson~, svf~, teeth~
 """
 
 mc_bitand_tilde = MaxObject('mc.bitand~')
@@ -3647,8 +3397,6 @@ Outlets:
 Messages: int, float, bits, signal
 
 Attributes: mode
-
-See also: bitshift~, bitor~, bitxor~, bitnot~
 """
 
 mc_bitnot_tilde = MaxObject('mc.bitnot~')
@@ -3669,8 +3417,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: mode
-
-See also: bitshift~, bitor~, bitxor~, bitand~
 """
 
 mc_bitor_tilde = MaxObject('mc.bitor~')
@@ -3693,8 +3439,6 @@ Outlets:
 Messages: int, float, bits, signal
 
 Attributes: mode
-
-See also: bitshift~, bitand~, bitxor~, bitnot~
 """
 
 mc_bitsafe_tilde = MaxObject('mc.bitsafe~')
@@ -3710,8 +3454,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: signal
-
-See also: bitshift~, bitor~, bitxor~, bitnot~, bitand~
 """
 
 mc_bitshift_tilde = MaxObject('mc.bitshift~')
@@ -3733,8 +3475,6 @@ Outlets:
 Messages: int, float, shift, signal
 
 Attributes: mode
-
-See also: bitand~, bitor~, bitxor~, bitnot~
 """
 
 mc_bitxor_tilde = MaxObject('mc.bitxor~')
@@ -3757,8 +3497,6 @@ Outlets:
 Messages: int, bits, signal
 
 Attributes: mode
-
-See also: bitshift~, bitand~, bitor~, bitnot~
 """
 
 mc_buffir_tilde = MaxObject('mc.buffir~')
@@ -3781,8 +3519,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, clear, (mouse), set, signal
-
-See also: biquad~, buffer~, cascade~
 """
 
 mc_cartopol_tilde = MaxObject('mc.cartopol~')
@@ -3800,8 +3536,6 @@ Outlets:
   1 (signal): (signal) phase/theta output
 
 Messages: signal
-
-See also: cartopol, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, pfft~, poltocar, poltocar~, vectral~
 """
 
 mc_cascade_tilde = MaxObject('mc.cascade~')
@@ -3818,8 +3552,6 @@ Outlets:
   0 (signal): (signal) filtered signal out
 
 Messages: list, bypass, clear, dictionary, signal, zero
-
-See also: biquad~, buffir~, comb~, filtergraph~, lores~, onepole~, reson~, teeth~
 """
 
 mc_cell = MaxObject('mc.cell')
@@ -3837,8 +3569,6 @@ Outlets:
 Messages: list
 
 Attributes: columns, constant, message, numeric, row
-
-See also: mc, jit.cellblock
 """
 
 mc_change_tilde = MaxObject('mc.change~')
@@ -3854,8 +3584,6 @@ Outlets:
   0 (signal): (signal) 0. if Unchanged; -1. (decreasing) or 1. (increasing) if Changed.
 
 Messages: float, signal
-
-See also: edge~, thresh~, zerox~
 """
 
 mc_channelcount_tilde = MaxObject('mc.channelcount~')
@@ -3874,8 +3602,6 @@ Outlets:
 Messages: bang, int, float, anything, signal
 
 Attributes: active
-
-See also: mc, dspstate~
 """
 
 mc_chord_tilde = MaxObject('mc.chord~')
@@ -3899,8 +3625,6 @@ Outlets:
 Messages: bang, int, float, list, clear, delete, dictionary, signal, store
 
 Attributes: allocmode, busymapname, chans, embed, extendmode, inputmode, offmode, triggermode, usebusymap
-
-See also: coll, mc.op~, mc.snowphasor~
 """
 
 mc_click_tilde = MaxObject('mc.click~')
@@ -3919,8 +3643,6 @@ Outlets:
   0 (signal): (signal) Impulse Signal Out
 
 Messages: bang, int, float, set, signal
-
-See also: buffer~, buffir~, line~
 """
 
 mc_clip_tilde = MaxObject('mc.clip~')
@@ -3944,8 +3666,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: mode
-
-See also: <~, >~, trunc~
 """
 
 mc_comb_tilde = MaxObject('mc.comb~')
@@ -3978,8 +3698,6 @@ Outlets:
   0 (signal): (signal) Filter Output
 
 Messages: float, clear, signal
-
-See also: allpass~, delay~, reson~, teeth~
 """
 
 mc_combine_tilde = MaxObject('mc.combine~')
@@ -4001,8 +3719,6 @@ Outlets:
 Messages: int, float, list, mute, signal
 
 Attributes: chans
-
-See also: mc.pack~, mc.unpack~, mc.resize~, mc.separate~
 """
 
 mc_cos_tilde = MaxObject('mc.cos~')
@@ -4018,8 +3734,6 @@ Outlets:
   0 (signal): (signal) Cosine Output
 
 Messages: signal
-
-See also: acos~, acosh~, asin~, asinh~, atan~, atanh~, atan2~, cosh~, cosx~, cycle~, phasor~, sinh~, sinx~, tanh~, tanx~, trapezoid~, triangle~, wave~, 2d.wave~
 """
 
 mc_cosh_tilde = MaxObject('mc.cosh~')
@@ -4035,8 +3749,6 @@ Outlets:
   0 (OUTLET_TYPE): Cosh (x) Out
 
 Messages: signal
-
-See also: acos~, acosh~, asin~, asinh~, atan~, atanh~, atan2~, cos~, cosx~, sinh~, sinx~, tanh~, tanx~
 """
 
 mc_cosx_tilde = MaxObject('mc.cosx~')
@@ -4052,8 +3764,6 @@ Outlets:
   0 (OUTLET_TYPE): Cos (x) Out
 
 Messages: signal
-
-See also: acos~, acosh~, asin~, asinh~, atan~, atanh~, atan2~, cos~, cosh~, sinh~, sinx~, tanh~, tanx~
 """
 
 mc_count_tilde = MaxObject('mc.count~')
@@ -4078,8 +3788,6 @@ Outlets:
 Messages: bang, int, float, list, in1, min, set, signal, stop
 
 Attributes: autoreset
-
-See also: index~, mstosamps~, sampstoms~, +=~, counter
 """
 
 mc_cross_tilde = MaxObject('mc.cross~')
@@ -4100,8 +3808,6 @@ Outlets:
   1 (signal): (signal) Highpass Filtered Output
 
 Messages: int, float, clear, signal
-
-See also: allpass~, biquad~, filtergraph~, lores~, onepole~, reson~, svf~
 """
 
 mc_curve_tilde = MaxObject('mc.curve~')
@@ -4126,8 +3832,6 @@ Outlets:
 Messages: int, float, list, anything, factor, pause, resume, stop
 
 Attributes: activeout, maxpoints, shapemode
-
-See also: line~, transport
 """
 
 mc_cycle_tilde = MaxObject('mc.cycle~')
@@ -4151,8 +3855,6 @@ Outlets:
 Messages: float, (mouse), reset, set, setall, signal
 
 Attributes: buffer, buffer_offset, buffer_sizeinsamps, frequency, phase
-
-See also: buffer~, buffir~, cos~, line~, phasor~, rect~, saw~, techno~, trapezoid~, tri~, triangle~, wave~, 2d.wave~
 """
 
 mc_dac_tilde = MaxObject('mc.dac~')
@@ -4168,8 +3870,6 @@ Inlets:
   0 (multi-channel signal): Audio outputs, start (1) and stop (0)
 
 Messages: int, list, (mouse), open, set, signal, start, startwindow, stop, wclose
-
-See also: mc, mc.adc~, dac~, ezdac~, adstatus, mc.ezadc~, mc.ezdac~
 """
 
 mc_dbtoa_tilde = MaxObject('mc.dbtoa~')
@@ -4185,8 +3885,6 @@ Outlets:
   0 (signal): (signal) Amplitude Scalar
 
 Messages: signal
-
-See also: expr, atodb, atodb~, dbtoa
 """
 
 mc_degrade_tilde = MaxObject('mc.degrade~')
@@ -4208,8 +3906,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, signal
-
-See also: downsamp~, round~
 """
 
 mc_deinterleave_tilde = MaxObject('mc.deinterleave~')
@@ -4229,8 +3925,6 @@ Outlets:
   1 (multi-channel signal): Deinterleaved Output
 
 Messages: signal
-
-See also: mc/mc_channel_topology, mc, mc.interleave~, mc.resize~, mc.separate~, mc.transpose~, mc.unpack~
 """
 
 mc_delay_tilde = MaxObject('mc.delay~')
@@ -4254,8 +3948,6 @@ Outlets:
 Messages: int, float, list, anything, clear, maxsize, ramp, signal
 
 Attributes: delay
-
-See also: comb~, tapin~, tapout~, mstosamps~, sampstoms~, pipe, transport
 """
 
 mc_delta_tilde = MaxObject('mc.delta~')
@@ -4271,8 +3963,6 @@ Outlets:
   0 (signal): (signal) Differences Between Input Samples
 
 Messages: signal
-
-See also: average~, avg~
 """
 
 mc_deltaclip_tilde = MaxObject('mc.deltaclip~')
@@ -4294,8 +3984,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, ft1, ft2, reset, signal
-
-See also: clip~
 """
 
 mc_div_tilde = MaxObject('mc.div~')
@@ -4315,8 +4003,6 @@ Outlets:
   0 (signal): (signal) Division Result
 
 Messages: int, float, signal
-
-See also: !/~, *~, %~
 """
 
 mc_downsamp_tilde = MaxObject('mc.downsamp~')
@@ -4336,8 +4022,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, signal
-
-See also: degrade~, sah~
 """
 
 mc_dup_tilde = MaxObject('mc.dup~')
@@ -4358,8 +4042,6 @@ Outlets:
 Messages: signal
 
 Attributes: chans
-
-See also: mc.resize~, mc.channelcount~, mc.list~, mc.pack~, mc.separate~, mc.unpack~
 """
 
 mc_edge_tilde = MaxObject('mc.edge~')
@@ -4376,8 +4058,6 @@ Outlets:
   1 (bang): (bang) Output on non-zero to zero transition
 
 Messages: signal
-
-See also: change~, thresh~, zerox~
 """
 
 mc_equals_tilde = MaxObject('mc.equals~')
@@ -4399,8 +4079,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: fuzzy
-
-See also: <~, <=~, >~, >=~, !=~, change~, edge~
 """
 
 mc_evolve_tilde = MaxObject('mc.evolve~')
@@ -4423,8 +4101,6 @@ Outlets:
 Messages: int, float, list, chanval, clear, printfunction, signal
 
 Attributes: chans, inclusive
-
-See also: mc/mc_function_generators, multirange, mc.gradient~, mc.range~
 """
 
 mc_ezadc_tilde = MaxObject('mc.ezadc~')
@@ -4442,8 +4118,6 @@ Outlets:
 Messages: int, list, (mouse), local, open, set, start, startwindow, stop, wclose
 
 Attributes: bgcolor, border, bordercolor, color, elementcolor, local, offgradcolor1, offgradcolor2, ongradcolor1, ongradcolor2, style
-
-See also: ezadc~, mc.adc~, adstatus, mc.dac~, mc.ezdac~
 """
 
 mc_ezdac_tilde = MaxObject('mc.ezdac~')
@@ -4458,8 +4132,6 @@ Inlets:
 Messages: int, list, (mouse), local, open, set, signal, start, startwindow, stop, wclose
 
 Attributes: bgcolor, border, bordercolor, color, elementcolor, local, offgradcolor1, offgradcolor2, ongradcolor1, ongradcolor2, style
-
-See also: ezdac~, mc.dac~, adstatus, mc.ezadc~
 """
 
 mc_fffb_tilde = MaxObject('mc.fffb~')
@@ -4485,8 +4157,6 @@ Outlets:
   3 (signal): Output from Filter 3
 
 Messages: list, anything, Q, QAll, clear, freq, freqAll, freqRatio, gain, gainAll, signal
-
-See also: reson~
 """
 
 mc_fft_tilde = MaxObject('mc.fft~')
@@ -4512,8 +4182,6 @@ Outlets:
 Messages: phase, signal
 
 Attributes: fftsize, float32, interval, legacy, offset
-
-See also: cartopol, cartopol~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, index~, pfft~, poltocar, poltocar~, vectral~
 """
 
 mc_filtercoeff_tilde = MaxObject('mc.filtercoeff~')
@@ -4539,8 +4207,6 @@ Outlets:
   4 (signal): (signal) FB Coefficient 2
 
 Messages: int, float, list, allpass, bandpass, bandstop, gainapass, gainbpass, gainbstop, gainhpass, gainlpass, gainresonant, highpass, highshelf, lowpass, lowshelf, off, peaknotch, resamp, resonant, signal
-
-See also: allpass~, biquad~, cascade~, delay~, filtergraph~, lores~, reson~, teeth~
 """
 
 mc_frameaccum_tilde = MaxObject('mc.frameaccum~')
@@ -4559,8 +4225,6 @@ Outlets:
   0 (signal): (signal) FFT Running Phase Output
 
 Messages: clear, signal
-
-See also: framedelta~
 """
 
 mc_frameaverage_tilde = MaxObject('mc.frameaverage~')
@@ -4578,8 +4242,6 @@ Outlets:
 Messages: clear, signal
 
 Attributes: framecount, framesize
-
-See also: average~, fft~, framesmooth~, plot~, vectral~
 """
 
 mc_framedelta_tilde = MaxObject('mc.framedelta~')
@@ -4595,8 +4257,6 @@ Outlets:
   0 (signal): (signal) FFT Phase Deviation
 
 Messages: clear, signal
-
-See also: frameaccum~
 """
 
 mc_framesmooth_tilde = MaxObject('mc.framesmooth~')
@@ -4614,8 +4274,6 @@ Outlets:
 Messages: clear, signal
 
 Attributes: framesize, smoothness
-
-See also: fft~, frameaverage~, plot~, vectral~
 """
 
 mc_freqshift_tilde = MaxObject('mc.freqshift~')
@@ -4637,8 +4295,6 @@ Outlets:
   1 (signal): (signal) Frequency-shifted Signal (Negative Sideband)
 
 Messages: int, float, clear, resetphase, signal
-
-See also: fbinshift~, gizmo~, hilbert~
 """
 
 mc_ftom_tilde = MaxObject('mc.ftom~')
@@ -4656,8 +4312,6 @@ Outlets:
 Messages: signal
 
 Attributes: base, map, mapname, mid, ref, scale, scalename
-
-See also: expr, ftom, mtof, mtof~
 """
 
 mc_fzero_tilde = MaxObject('mc.fzero~')
@@ -4677,8 +4331,6 @@ Outlets:
 Messages: signal
 
 Attributes: freqmax, freqmin, onsetamp, onsetlist, onsetperiod, onsetpitch, period, quiet, size, threshold
-
-See also: ftom, mtof, peakamp~, retune~, thresh~
 """
 
 mc_gain_tilde = MaxObject('mc.gain~')
@@ -4697,8 +4349,6 @@ Outlets:
 Messages: bang, int, float, list, color, ft1, (mouse), set, setvalue, signal
 
 Attributes: annotation_name, bgcolor, bordercolor, inc, interp, interpinlet, knobcolor, multislider, orientation, param_connect, parameter_enable, parameter_mappable, relative, scale, size, stripecolor, style
-
-See also: linedrive, gain~, live.gain~
 """
 
 mc_gate_tilde = MaxObject('mc.gate~')
@@ -4723,8 +4373,6 @@ Outlets:
 Messages: bang, int, float, next, signal
 
 Attributes: ramptime, stepmode
-
-See also: crosspatch, selector~, matrix~, gate
 """
 
 mc_gen = MaxObject('mc.gen')
@@ -4746,8 +4394,6 @@ Outlets:
 Messages: bang, int, float, (mouse), exportcode, open, reload, reset, reset_param, set, wclose
 
 Attributes: active, autoexport, cpu, cpumeasure, dumpoutlet, exportfolder, exportname, exportnotifier, exportscript, exportscriptargs, gen, hot, interval, nocache, poll, title
-
-See also: gen/gen_common_operators, gen/gen_overview, gen/gen~_operators, gen~
 """
 
 mc_gen_tilde = MaxObject('mc.gen~')
@@ -4769,8 +4415,6 @@ Outlets:
 Messages: int, float, (mouse), exportcode, open, reload, reset, reset_param, signal, wclose
 
 Attributes: autoexport, cpu, cpumeasure, dumpoutlet, exportfolder, exportname, exportnotifier, exportscript, exportscriptargs, gen, nocache, poll, title
-
-See also: gen/gen_common_operators, gen/gen_overview, gen/gen~_operators, mcs.gen~, mc.gen~, jit.gen, jit.pix
 """
 
 mc_generate_tilde = MaxObject('mc.generate~')
@@ -4818,8 +4462,6 @@ Outlets:
 Messages: int, float, list, chanval, clear, printfunction, signal
 
 Attributes: chans, mode
-
-See also: mc, cycle~, function, line~, mc.cycle~, mc.evolve~, mc.line~, mc.phasor~, phasor~
 """
 
 mc_greaterthan_tilde = MaxObject('mc.greaterthan~')
@@ -4839,8 +4481,6 @@ Outlets:
   0 (signal): (signal) Comparison Result (1 or 0)
 
 Messages: int, float, signal
-
-See also: <~, <=~, >=~, ==~, !=~, sah~
 """
 
 mc_greaterthaneq_tilde = MaxObject('mc.greaterthaneq~')
@@ -4862,8 +4502,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: fuzzy
-
-See also: <~, <=~, >~, ==~, !=~, sah~
 """
 
 mc_groove_tilde = MaxObject('mc.groove~')
@@ -4888,8 +4526,6 @@ Outlets:
 Messages: int, float, list, anything, clearspeedcues, (mouse), dictionary, endloop, printspeedcues, reset, set, setloop, signal, startloop, stop
 
 Attributes: basictuning, followglobaltempo, formant, formantcorrection, lock, loop, loopend, loopinterp, loopstart, mode, name, originallength, originaltempo, phase, pitchcorrection, pitchshift, pitchshiftcent, quality, slurtime, timestretch, transport
-
-See also: 2d.wave~, buffer~, mcs.groove~, play~, phasegroove~, wave~, index~, record~, transport
 """
 
 mc_hilbert_tilde = MaxObject('mc.hilbert~')
@@ -4906,8 +4542,6 @@ Outlets:
   1 (signal): (signal) sine/imag output
 
 Messages: clear, signal
-
-See also: fbinshift~, freqshift~, gizmo~
 """
 
 mc_ifft_tilde = MaxObject('mc.ifft~')
@@ -4933,8 +4567,6 @@ Outlets:
 Messages: phase, signal
 
 Attributes: fftsize, float32, interval, legacy, offset
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, pfft~, poltocar, poltocar~, vectral~
 """
 
 mc_in_tilde = MaxObject('mc.in~')
@@ -4955,8 +4587,6 @@ Outlets:
 Messages: comment, signal
 
 Attributes: attr_comment, chans
-
-See also: in~, in, out, out~, mc.out~, poly~, mc.poly~, mcs.poly~, thispoly~
 """
 
 mc_index_tilde = MaxObject('mc.index~')
@@ -4978,8 +4608,6 @@ Outlets:
   1 (signal): Audio Channel In buffer~
 
 Messages: int, float, (mouse), set, signal
-
-See also: buffer~, buffir~, count~, fft~
 """
 
 mc_interleave_tilde = MaxObject('mc.interleave~')
@@ -4999,8 +4627,6 @@ Outlets:
   0 (multi-channel signal): Interleaved Output
 
 Messages: signal
-
-See also: mc/mc_channel_topology, mc, mc.deinterleave~, mc.transpose~, mc.pack~, mc.resize~, mc.combine~, mc.mixdown~
 """
 
 mc_kink_tilde = MaxObject('mc.kink~')
@@ -5020,8 +4646,6 @@ Outlets:
   0 (signal): (signal) Disorted Phase Output
 
 Messages: int, float, signal
-
-See also: phasor~, triangle~
 """
 
 mc_lessthan_tilde = MaxObject('mc.lessthan~')
@@ -5041,8 +4665,6 @@ Outlets:
   0 (signal): (signal) Comparison Result (1 or 0)
 
 Messages: int, float, signal
-
-See also: <=~, >~, >=~, ==~, !=~
 """
 
 mc_lessthaneq_tilde = MaxObject('mc.lessthaneq~')
@@ -5064,8 +4686,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: fuzzy
-
-See also: <~, >~, >=~, ==~, !=~
 """
 
 mc_limi_tilde = MaxObject('mc.limi~')
@@ -5087,8 +4707,6 @@ Outlets:
 Messages: clear, signal
 
 Attributes: bypass, dcblock, lookahead, mode, postamp, preamp, release, threshold
-
-See also: mc.limi~, mcs.limi~, omx.peaklim~
 """
 
 mc_line_tilde = MaxObject('mc.line~')
@@ -5111,8 +4729,6 @@ Outlets:
 Messages: int, float, list, anything, pause, resume, stop
 
 Attributes: activeout, maxpoints
-
-See also: adsr~, click~, curve~, line, transport, zigzag~
 """
 
 mc_list_tilde = MaxObject('mc.list~')
@@ -5133,8 +4749,6 @@ Outlets:
 Messages: int, float, list, signal
 
 Attributes: chans
-
-See also: mc, mc.channelcount~, mc.dup~, mc.pack~, mc.resize~, mc.unpack~, mc.sig~
 """
 
 mc_log_tilde = MaxObject('mc.log~')
@@ -5154,8 +4768,6 @@ Outlets:
   0 (signal): (signal) log of Input to Base
 
 Messages: float, signal
-
-See also: pow~, curve~, sqrt~
 """
 
 mc_lookup_tilde = MaxObject('mc.lookup~')
@@ -5179,8 +4791,6 @@ Outlets:
 Messages: int, float, (mouse), set, signal
 
 Attributes: chan, offset, size
-
-See also: buffer~, peek~
 """
 
 mc_lores_tilde = MaxObject('mc.lores~')
@@ -5204,8 +4814,6 @@ Outlets:
 Messages: int, float, clear, signal
 
 Attributes: cutoff, resonance
-
-See also: biquad~, buffir~, comb~, cross~, onepole~, svf~, reson~
 """
 
 mc_loudness_tilde = MaxObject('mc.loudness~')
@@ -5231,8 +4839,6 @@ Outlets:
 Messages: bang, int, float, reset, signal
 
 Attributes: channel, inputs, interval
-
-See also: meter~, levelmeter~, snapshot~, mcs.loudness~, average~, avg~, peakamp~
 """
 
 mc_makelist = MaxObject('mc.makelist')
@@ -5252,8 +4858,6 @@ Outlets:
 Messages: bang, int, float, list, anything, clear, voice
 
 Attributes: fixed, mode, voices
-
-See also: mc/mc_events_newfunctions, mc/mc_events_newobjects, mc/mc_poly_newfeatures, mc.route, mc.target
 """
 
 mc_matrix_tilde = MaxObject('mc.matrix~')
@@ -5281,8 +4885,6 @@ Outlets:
 Messages: list, clear, connect, dictionary, disconnect, dump, dumpconnections, dumptarget, print
 
 Attributes: exclusive, ramp
-
-See also: crosspatch, gate~, mcs.matrix~, matrix, matrixctrl, receive~, router, selector~, send~
 """
 
 mc_maximum_tilde = MaxObject('mc.maximum~')
@@ -5302,8 +4904,6 @@ Outlets:
   0 (Signal): (signal) Maximum of Left and Right Signals
 
 Messages: int, float, signal
-
-See also: <=~, >~, >=~, ==~, !=~, minimum~
 """
 
 mc_midiplayer_tilde = MaxObject('mc.midiplayer~')
@@ -5324,8 +4924,6 @@ Outlets:
 Messages: int, float, setvalue, signal
 
 Attributes: chanmod, defaultdur, defaultnote, defaultvelocity, mpemode, playzero, triggermode, velcurve
-
-See also: phasor~, vst~
 """
 
 mc_miditarget = MaxObject('mc.miditarget')
@@ -5343,8 +4941,6 @@ Outlets:
 Messages: midievent
 
 Attributes: mpemode
-
-See also: midiparse, vst~, sfizz~, mc.midiplayer~
 """
 
 mc_minimum_tilde = MaxObject('mc.minimum~')
@@ -5364,8 +4960,6 @@ Outlets:
   0 (Signal): (signal) Minimum of Left and Right Signals
 
 Messages: int, float, signal
-
-See also: <=~, >~, >=~, ==~, !=~, maximum~
 """
 
 mc_minmax_tilde = MaxObject('mc.minmax~')
@@ -5385,8 +4979,6 @@ Outlets:
   3 (double): (float) Maximum
 
 Messages: bang, reset, signal
-
-See also: meter~, peakamp~, snapshot~
 """
 
 mc_minus_tilde = MaxObject('mc.minus~')
@@ -5406,8 +4998,6 @@ Outlets:
   0 (signal): (signal) Subtraction Result
 
 Messages: int, float, signal
-
-See also: +~, !-~
 """
 
 mc_mixdown_tilde = MaxObject('mc.mixdown~')
@@ -5429,8 +5019,6 @@ Outlets:
 Messages: signal
 
 Attributes: activechans, autogain, busymapname, chans, linearpanmode, linearpanscalefactor, pancontrolmode, pans, usebusymap
-
-See also: mc/mc_channel_topology, mc/mc_mixing_panning, audio_channels?panchor=mc-hardware-interfacing, mc.dac~, mc.live.gain~, gain~, mc.op~
 """
 
 mc_modulo_tilde = MaxObject('mc.modulo~')
@@ -5450,8 +5038,6 @@ Outlets:
   0 (signal): (signal) Modulo Result
 
 Messages: int, float, signal
-
-See also: !/~, /~
 """
 
 mc_mstosamps_tilde = MaxObject('mc.mstosamps~')
@@ -5468,8 +5054,6 @@ Outlets:
   1 (double): (float) Samples At Input signal or Current Sampling Rate
 
 Messages: int, float, list, signal
-
-See also: dspstate~, sampstoms~
 """
 
 mc_mtof_tilde = MaxObject('mc.mtof~')
@@ -5487,8 +5071,6 @@ Outlets:
 Messages: signal
 
 Attributes: base, map, mapname, mid, ref, scale, scalename
-
-See also: expr, ftom, ftom~, mtof
 """
 
 mc_noise_tilde = MaxObject('mc.noise~')
@@ -5504,8 +5086,6 @@ Outlets:
   0 (signal): (signal) The Noise
 
 Attributes: classic
-
-See also: biquad~, pink~, reson~
 """
 
 mc_normalize_tilde = MaxObject('mc.normalize~')
@@ -5525,8 +5105,6 @@ Outlets:
   0 (signal): (signal) Normalized Output
 
 Messages: int, float, reset, signal
-
-See also: *~
 """
 
 mc_noteallocator_tilde = MaxObject('mc.noteallocator~')
@@ -5552,8 +5130,6 @@ Outlets:
 Messages: midievent, mpeevent, signal
 
 Attributes: direct, hires, mpemode, name, steal, voices
-
-See also: mc/mc_poly_without_polytilde, mc/mc_polyphony, mc.voiceallocator~
 """
 
 mc_notequals_tilde = MaxObject('mc.notequals~')
@@ -5575,8 +5151,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: fuzzy
-
-See also: ==~, <~, <=~, >~, >=~, change~, edge~
 """
 
 mc_number_tilde = MaxObject('mc.number~')
@@ -5597,8 +5171,6 @@ Outlets:
 Messages: bang, int, float, list, allow, flags, ft1, max, min, mode, (mouse), set, signal
 
 Attributes: bgcolor, bgcolor2, bordercolor, chans, color, displaychan, ft1, hbgcolor, htextcolor, interval, maximum, minimum, monitormode, numdecimalplaces, sigoutmode, style, textcolor
-
-See also: mc/mc_visualization, number~, line~, sig~, snapshot~
 """
 
 mc_omx_4band_tilde = MaxObject('mc.omx.4band~')
@@ -5618,8 +5190,6 @@ Outlets:
   3 (list): (list) Meter Output
 
 Messages: bypass, choosePreset, gating_threshold, inagc_b1_atk, inagc_b1_rel, inagc_range, lim_drive, mbagc_b1_atk, mbagc_b1_drv, mbagc_b1_rel, mbagc_b2_atk, mbagc_b2_drv, mbagc_b2_rel, mbagc_b3_atk, mbagc_b3_drv, mbagc_b3_rel, mbagc_b4_atk, mbagc_b4_drv, mbagc_b4_rel, mbagc_range, meterData, meterRate, meters, ngenabled, ngthresh1, ngthresh2, noisegate, outmix1, outmix2, outmix3, outmix4, saveSettings, signal
-
-See also: omx.5band~, omx.comp~, omx.peaklim~
 """
 
 mc_omx_5band_tilde = MaxObject('mc.omx.5band~')
@@ -5639,8 +5209,6 @@ Outlets:
   3 (list): (list) Meter Output
 
 Messages: bands_enum, bassenhancement, bassenhancement_mixlevel, bypass, choosePreset, freeze_threshold, gating_threshold, inagc_atk, inagc_progressive, inagc_range, inagc_ratio, inagc_rel, inagc_threshold, inf_ratio_above_threshold_1, inf_ratio_above_threshold_2, inf_ratio_above_threshold_3, inf_ratio_above_threshold_4, inf_ratio_above_threshold_5, lim_drive, lim_smoothrelease, mbagc_b1_atk, mbagc_b1_drv, mbagc_b1_rel, mbagc_b1_threshold, mbagc_b2_atk, mbagc_b2_drv, mbagc_b2_rel, mbagc_b2_threshold, mbagc_b3_atk, mbagc_b3_drv, mbagc_b3_rel, mbagc_b3_threshold, mbagc_b4_atk, mbagc_b4_drv, mbagc_b4_rel, mbagc_b4_threshold, mbagc_b5_atk, mbagc_b5_drv, mbagc_b5_rel, mbagc_b5_threshold, mbagc_progressive, mbclip_b1_threshold, mblim_b1_threshold, mblim_b2_threshold, mblim_b3_threshold, mblim_b4_threshold, mblim_b5_threshold, mbrange, mbratio, meterData, meterRate, meters, multiband_limiters, ng_enabled_maxch, ngenabled, ngthresh1, ngthresh2, ngthresh3, ngthresh4, ngthresh5, outlevel_lf, outlevel_rf, outmix1, outmix2, outmix3, outmix4, outmix5, output_level, saveSettings, signal, spatial_desired, spatial_enabled, spatial_maximum, spatial_speed
-
-See also: omx.4band~, omx.comp~, omx.peaklim~
 """
 
 mc_omx_comp_tilde = MaxObject('mc.omx.comp~')
@@ -5660,8 +5228,6 @@ Outlets:
   3 (list): (list) Meter Output
 
 Messages: agcEnabled, agcThreshold, attack, bypass, channelCoupling, choosePreset, delay, dualBandEnabled, freezeLevel, gatingLevel, limEnabled, limMode, meterData, meterRate, meters, ngEnabled, ngThreshold, progressiveRelease, range, ratio, release, saveSettings, sidechainFilterEnabled, signal, smoothGain
-
-See also: omx.4band~, omx.5band~, omx.peaklim~
 """
 
 mc_omx_peaklim_tilde = MaxObject('mc.omx.peaklim~')
@@ -5681,8 +5247,6 @@ Outlets:
   3 (list): (list) Meter Output
 
 Messages: bypass, ingain, meterData, meterRate, meters, mode, outgain, saveSettings, signal, threshold
-
-See also: omx.4band~, omx.5band~, omx.comp~
 """
 
 mc_onepole_tilde = MaxObject('mc.onepole~')
@@ -5703,8 +5267,6 @@ Outlets:
   0 (signal): (signal) filter output
 
 Messages: int, float, Hz, clear, linear, radians, signal
-
-See also: biquad~, comb~, cross~, lores~, reson~, svf~
 """
 
 mc_op_tilde = MaxObject('mc.op~')
@@ -5722,8 +5284,6 @@ Outlets:
 Messages: signal
 
 Attributes: op
-
-See also: mc, mc.mixdown~, mc.dup~
 """
 
 mc_out_tilde = MaxObject('mc.out~')
@@ -5741,8 +5301,6 @@ Inlets:
 Messages: comment, signal
 
 Attributes: attr_comment, chans
-
-See also: in, in~, mc.in~, out, out~, poly~, mc.poly~, mcs.poly~, thispoly~
 """
 
 mc_overdrive_tilde = MaxObject('mc.overdrive~')
@@ -5763,8 +5321,6 @@ Outlets:
   0 (OUTLET_TYPE): Signal Output
 
 Messages: int, float, signal
-
-See also: kink~, lookup~
 """
 
 mc_pack_tilde = MaxObject('mc.pack~')
@@ -5786,8 +5342,6 @@ Outlets:
 Messages: int, float, list, mute, signal
 
 Attributes: chans
-
-See also: mc/mc_signals_newobjects, mc, join, mc.combine~, mc.resize~, mc.separate~, mc.unpack~, pack, pak, unjoin, unpack
 """
 
 mc_pattern_tilde = MaxObject('mc.pattern~')
@@ -5810,8 +5364,6 @@ Outlets:
 Messages: int, float, list, add, addrange, addrangeinclusive, clear, delete, deleterange, dictionary, dump, filldeviate, fillrange, getcontent, mute, quantize, ramp, read, record, setvalue, signal, wrap, write
 
 Attributes: autorecord, chans, defaultmute, defaultquantize, defaultramp, defaultwrap, embed, immediate, in, individual, ref
-
-See also: seq~, phasor~, zigzag~
 """
 
 mc_peakamp_tilde = MaxObject('mc.peakamp~')
@@ -5833,8 +5385,6 @@ Outlets:
 Messages: bang, ft1, in1, signal
 
 Attributes: interval, signed
-
-See also: meter~, levelmeter~, snapshot~, loudness~, average~, avg~
 """
 
 mc_peek_tilde = MaxObject('mc.peek~')
@@ -5857,8 +5407,6 @@ Outlets:
   0 (OUTLET_TYPE): buffer~ Value at Sample Index
 
 Messages: int, float, list, clip, (mouse), set
-
-See also: buffer~, buffir~, index~, poke~, table
 """
 
 mc_pfft_tilde = MaxObject('mc.pfft~')
@@ -5881,8 +5429,6 @@ Inlets:
 Messages: bang, int, float, list, anything, clear, (mouse), mute, open, wclose
 
 Attributes: args, fftsize, float32, fullspectrum, legacy, overlap, patchername, startoffset
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, in, out, poltocar, poltocar~, vectral~
 """
 
 mc_phasegroove_tilde = MaxObject('mc.phasegroove~')
@@ -5900,8 +5446,6 @@ Outlets:
 Messages: signal
 
 Attributes: conflict
-
-See also: buffer~, groove~, mcs.groove~, phasor~, ramp~
 """
 
 mc_phaseshift_tilde = MaxObject('mc.phaseshift~')
@@ -5923,8 +5467,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: float, clear, signal
-
-See also: allpass~, comb~
 """
 
 mc_phasewrap_tilde = MaxObject('mc.phasewrap~')
@@ -5940,8 +5482,6 @@ Outlets:
   0 (OUTLET_TYPE): Phase-Wrapped Signal Out
 
 Messages: signal
-
-See also: cartopol~, pfft~, pong~
 """
 
 mc_phasor_tilde = MaxObject('mc.phasor~')
@@ -5963,8 +5503,6 @@ Outlets:
 Messages: bang, int, float, list, anything, reset, signal
 
 Attributes: frequency, jitter, limit, lock, phaseoffset, syncupdate, transport
-
-See also: 2d.wave~, cycle~, kink~, line~, saw~, subdiv~, swing~, sync~, techno~, transport, trapezoid~, triangle~, updown~, wave~
 """
 
 mc_pink_tilde = MaxObject('mc.pink~')
@@ -5978,8 +5516,6 @@ Inlets:
 
 Outlets:
   0 (signal): (signal) The Noise
-
-See also: noise~
 """
 
 mc_pitchshift_tilde = MaxObject('mc.pitchshift~')
@@ -6002,8 +5538,6 @@ Outlets:
 Messages: getlatency, signal
 
 Attributes: constantlatency, enabled, pitchshift, pitchshiftcent, quality, reportlatency, usecents
-
-See also: retune~
 """
 
 mc_play_tilde = MaxObject('mc.play~')
@@ -6028,8 +5562,6 @@ Outlets:
 Messages: int, (mouse), pause, resume, set, signal, start, stop
 
 Attributes: interptime, loop, loopinterp
-
-See also: 2d.wave~, buffer~, buffir~, groove~, record~, wave~, index~
 """
 
 mc_playlist_tilde = MaxObject('mc.playlist~')
@@ -6050,8 +5582,6 @@ Outlets:
 Messages: int, append, clear, (drag), getcontent, (mouse), next, pause, remove, resume, selection, selectionms, setclip, signal
 
 Attributes: accentcolor, allowreorder, annotation_name, basictuning, bgcolor, candicane2, candicane3, candicane4, candicane5, candicane6, candicane7, candicane8, candycane, channelcount, clipheight, color, elementcolor, expansion, followglobaltempo, formant, formantcorrection, loop, loopreport, mode, name, originallength, originaltempo, parameter_enable, parameter_mappable, pitchcorrection, pitchshift, pitchshiftcent, quality, reportprogress, selectioncolor, shadowalpha, shadowblend, shadowproportion, showname, slurtime, speed, style, textcolor, timestretch, waveformdisplay
-
-See also: mc/mc_multichannel_sources, mc, playlist~, jit.playlist, sfplay~, mc.sfplay~, waveform~
 """
 
 mc_plus_tilde = MaxObject('mc.plus~')
@@ -6071,8 +5601,6 @@ Outlets:
   0 (signal): (signal) Addition Result
 
 Messages: int, float, signal
-
-See also: +=~, -~, !-~
 """
 
 mc_plusequals_tilde = MaxObject('mc.plusequals~')
@@ -6092,8 +5620,6 @@ Outlets:
   0 (signal): (signal) Accumulator Output
 
 Messages: bang, set, signal
-
-See also: +~
 """
 
 mc_poltocar_tilde = MaxObject('mc.poltocar~')
@@ -6111,8 +5637,6 @@ Outlets:
   1 (OUTLET_TYPE): imaginary/y output
 
 Messages: signal
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, pfft~, poltocar, vectral~
 """
 
 mc_poly_tilde = MaxObject('mc.poly~')
@@ -6135,8 +5659,6 @@ Inlets:
 Messages: bang, int, float, list, anything, (drag), allnotesoff, assignpatcher, busymap, bypass, (mouse), down, exclude, midievent, midinote, mpeevent, mute, mutemap, note, notemessage, open, setvalue, threadcount, up, wclose
 
 Attributes: args, filterparams, legacynotemode, midimode, mpemode, parallel, patchername, replicate, resampling, steal, target, voices, vs, zone
-
-See also: in, in~, out, out~, mcs.poly~, patcher, poly~, thispoly~
 """
 
 mc_pong_tilde = MaxObject('mc.pong~')
@@ -6161,8 +5683,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: mode, range
-
-See also: phasewrap~
 """
 
 mc_pow_tilde = MaxObject('mc.pow~')
@@ -6182,8 +5702,6 @@ Outlets:
   0 (signal): (signal) Base raised to Input
 
 Messages: int, float, signal
-
-See also: log~, curve~
 """
 
 mc_ramp_tilde = MaxObject('mc.ramp~')
@@ -6208,8 +5726,6 @@ Outlets:
 Messages: int, float, anything, signal
 
 Attributes: curve, duration, end, interval, mode, reset, retrigger, start
-
-See also: click~, line~, mc.snowphasor~, rate~, phasor~, pong~, trapezoid~, triangle~, zigzag~
 """
 
 mc_rampsmooth_tilde = MaxObject('mc.rampsmooth~')
@@ -6233,8 +5749,6 @@ Outlets:
 Messages: int, float, ramp, signal
 
 Attributes: rampdown, rampup
-
-See also: line~, slide~
 """
 
 mc_rand_tilde = MaxObject('mc.rand~')
@@ -6253,8 +5767,6 @@ Outlets:
   0 (signal): (signal) The Noise Path
 
 Messages: int, float, signal
-
-See also: line~, noise~, pink~
 """
 
 mc_range_tilde = MaxObject('mc.range~')
@@ -6277,8 +5789,6 @@ Outlets:
 Messages: bang, signal
 
 Attributes: chans, exp, hi, inclusive, lo, reflection
-
-See also: mc/mc_function_generators, mc.list~, mc.evolve~, mc.gradient~, multirange
 """
 
 mc_rate_tilde = MaxObject('mc.rate~')
@@ -6301,8 +5811,6 @@ Outlets:
 Messages: int, float, goto, oneshot, reset, signal
 
 Attributes: sync
-
-See also: phasor~, sync~, techno~
 """
 
 mc_rdiv_tilde = MaxObject('mc.rdiv~')
@@ -6322,8 +5830,6 @@ Outlets:
   0 (signal): (signal) Quotient Out
 
 Messages: int, float, signal
-
-See also: *~
 """
 
 mc_receive_tilde = MaxObject('mc.receive~')
@@ -6343,8 +5849,6 @@ Outlets:
 Messages: (mouse), set, signal
 
 Attributes: chans, name
-
-See also: mc.send~, send~, receive~
 """
 
 mc_record_tilde = MaxObject('mc.record~')
@@ -6368,8 +5872,6 @@ Outlets:
 Messages: int, float, list, anything, (mouse), reset, set, signal
 
 Attributes: append, loop, loopend, loopstart, transport
-
-See also: 2d.wave~, buffer~, groove~, play~, transport
 """
 
 mc_rect_tilde = MaxObject('mc.rect~')
@@ -6391,8 +5893,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, signal, synctrig
-
-See also: cycle~, phasor~, saw~, techno~, tri~
 """
 
 mc_resize_tilde = MaxObject('mc.resize~')
@@ -6413,8 +5913,6 @@ Outlets:
 Messages: signal
 
 Attributes: chans, replicate, select
-
-See also: mc.dup~, mc.combine~, mc.pack~, mc.separate~, mc.unpack~
 """
 
 mc_reson_tilde = MaxObject('mc.reson~')
@@ -6440,8 +5938,6 @@ Outlets:
 Messages: int, float, list, clear, signal
 
 Attributes: cf, gain, q
-
-See also: biquad~, comb~, cross~, onepole~, lores~, reson~, svf~
 """
 
 mc_retune_tilde = MaxObject('mc.retune~')
@@ -6466,8 +5962,6 @@ Outlets:
 Messages: list, defaulttuning, flush, getlatency, signal
 
 Attributes: correction_ambience_threshold, correction_amount, correction_bypass, correction_threshold, enablednotes, notebase, notelist, pitchdetection, quality, reportlatency, retune, use_16bit, windowsize
-
-See also: fbinshift~, freqshift~, fzero~, gizmo~, hilbert~, pitchshift~
 """
 
 mc_rminus_tilde = MaxObject('mc.rminus~')
@@ -6487,8 +5981,6 @@ Outlets:
   0 (signal): (signal) Difference Out
 
 Messages: int, float, signal
-
-See also: +~, -~
 """
 
 mc_round_tilde = MaxObject('mc.round~')
@@ -6510,8 +6002,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: nearest
-
-See also: rampsmooth~, slide~, trunc~, round
 """
 
 mc_route = MaxObject('mc.route')
@@ -6532,8 +6022,6 @@ Outlets:
   1 (int): Output for Voice 2
 
 Messages: bang, int, float, list, anything, voice
-
-See also: mc/mc_events_newobjects, mc/mc_events_newfunctions, mc.assign, mc.target, mc.makelist
 """
 
 mc_sah_tilde = MaxObject('mc.sah~')
@@ -6555,8 +6043,6 @@ Outlets:
 Messages: float, signal
 
 Attributes: duration, thresh, triggermode
-
-See also: gate~, phasor~, stash~, thresh~, what~
 """
 
 mc_sampstoms_tilde = MaxObject('mc.sampstoms~')
@@ -6573,8 +6059,6 @@ Outlets:
   1 (double): (float) Milliseconds At Input signal or Current Sampling Rate
 
 Messages: int, float, list, signal
-
-See also: dspstate~, mstosamps~, translate
 """
 
 mc_sash_tilde = MaxObject('mc.sash~')
@@ -6594,8 +6078,6 @@ Outlets:
 Messages: int, float, list, signal
 
 Attributes: advancelevel, dir, maxsize, mode, samplelevel, size
-
-See also: gate~, phasor~, sah~, subdiv~, thresh~
 """
 
 mc_saw_tilde = MaxObject('mc.saw~')
@@ -6615,8 +6097,6 @@ Outlets:
   0 (signal): (signal) Input signal
 
 Messages: int, float, signal, synctrig
-
-See also: cycle~, phasor~, rect~, saw~, techno~, tri~
 """
 
 mc_scale_tilde = MaxObject('mc.scale~')
@@ -6646,8 +6126,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: classic
-
-See also: scale, clip, clip~
 """
 
 mc_selector_tilde = MaxObject('mc.selector~')
@@ -6672,8 +6150,6 @@ Outlets:
 Messages: bang, int, float, next, signal
 
 Attributes: ramptime, stepmode
-
-See also: gate~, crosspatch, mcs.selector~, switch
 """
 
 mc_send_tilde = MaxObject('mc.send~')
@@ -6690,8 +6166,6 @@ Inlets:
 Messages: clear, (mouse), set, signal
 
 Attributes: name
-
-See also: mc.receive~, receive~, send~
 """
 
 mc_separate_tilde = MaxObject('mc.separate~')
@@ -6713,8 +6187,6 @@ Outlets:
 Messages: signal
 
 Attributes: chans
-
-See also: mc.unpack~, mc.combine~, mc.deinterleave~, mc.resize~
 """
 
 mc_seq_tilde = MaxObject('mc.seq~')
@@ -6732,8 +6204,6 @@ Outlets:
   2 (symbol): id on read, (bang) when done reading
 
 Messages: bang, int, float, list, anything, add, clear, delete, dump, erase, offset, overdub, play, read, record, seq, seqnum, signal, symbol, write
-
-See also: phasor~, techno~
 """
 
 mc_sfizz_tilde = MaxObject('mc.sfizz~')
@@ -6766,8 +6236,6 @@ Outlets:
 Messages: int, float, list, (drag), (mouse), dictionary, midievent, read, readagain, signal
 
 Attributes: base, defaultpathname, filename, map, mapname, mid, outputs, pathmode, ref, scale, scalename, silent, voices, volume
-
-See also: makenote, midiformat, mc.midiplayer~, mtof~
 """
 
 mc_sfplay_tilde = MaxObject('mc.sfplay~')
@@ -6794,8 +6262,6 @@ Outlets:
 Messages: int, float, list, anything, (drag), clear, dictionary, embed, fclose, loopone, modout, offset, open, openraw, pause, preload, preloadn, print, resume, samptype, seek, set, signal, srate, srcchans
 
 Attributes: audiofile, basictuning, chans, followglobaltempo, formant, formantcorrection, loop, mode, name, originallength, originaltempo, pitchcorrection, pitchshift, pitchshiftcent, quality, slurtime, speed, timestretch
-
-See also: sfplay~, buffer~, groove~, play~, sfinfo~, sflist~, sfrecord~, mc.sfrecord~
 """
 
 mc_sfrecord_tilde = MaxObject('mc.sfrecord~')
@@ -6817,8 +6283,6 @@ Outlets:
 Messages: int, loop, open, print, record, samptype, signal
 
 Attributes: beginramp, bitdepth, dither, endramp, nchans, quantization, resample, sortloop
-
-See also: sfplay~, mc.sfplay~, sfrecord~
 """
 
 mc_shape_tilde = MaxObject('mc.shape~')
@@ -6836,8 +6300,6 @@ Outlets:
 Messages: int, float, list, signal
 
 Attributes: constant, curvemode, syncupdate
-
-See also: function, curve~, line~, mc.pattern~, phasor~, ramp~, techno~, zigzag~
 """
 
 mc_sig_tilde = MaxObject('mc.sig~')
@@ -6856,8 +6318,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, list, set, signal
-
-See also: line~, mcs.sig~, snapshot~
 """
 
 mc_sinh_tilde = MaxObject('mc.sinh~')
@@ -6873,8 +6333,6 @@ Outlets:
   0 (OUTLET_TYPE): Sinh (x) Out
 
 Messages: signal
-
-See also: asin~, asinh~, sinx~
 """
 
 mc_sinx_tilde = MaxObject('mc.sinx~')
@@ -6890,8 +6348,6 @@ Outlets:
   0 (OUTLET_TYPE): Sin (x) Out
 
 Messages: signal
-
-See also: asin~, asinh~, sinh~
 """
 
 mc_slide_tilde = MaxObject('mc.slide~')
@@ -6915,8 +6371,6 @@ Outlets:
 Messages: int, float, reset, signal
 
 Attributes: slidedown, slideup
-
-See also: rampsmooth~
 """
 
 mc_snapshot_tilde = MaxObject('mc.snapshot~')
@@ -6938,8 +6392,6 @@ Outlets:
 Messages: bang, int, float, list, anything, sampleinterval, signal, start, stop
 
 Attributes: active, interval, offset
-
-See also: capture~, number~, sig~
 """
 
 mc_snowfall_tilde = MaxObject('mc.snowfall~')
@@ -6978,8 +6430,6 @@ Outlets:
 Messages: signal
 
 Attributes: busymapname, chans, interval, intervalcycle, intervaldev, mode, perchantriggers, prob, probdev, rampdev, ramptime, rate, ratedev, threshold, usebusymap
-
-See also: change~, line~, phasor~, snowfall~, updown~
 """
 
 mc_spike_tilde = MaxObject('mc.spike~')
@@ -6999,8 +6449,6 @@ Outlets:
   0 (double): (float) Outputs interval on zero to non-zero transition
 
 Messages: bang, ft1, in1, signal
-
-See also: change~, edge~, zerox~
 """
 
 mc_sqrt_tilde = MaxObject('mc.sqrt~')
@@ -7016,8 +6464,6 @@ Outlets:
   0 (signal): (signal) Square Root
 
 Messages: signal
-
-See also: curve~, log~, pow~
 """
 
 mc_stash_tilde = MaxObject('mc.stash~')
@@ -7061,8 +6507,6 @@ Outlets:
 Messages: bang, int, float, list, signal, what
 
 Attributes: curvemode, loop, pattern, syncupdate
-
-See also: stepfun~, phasor~, subdiv~, function, shape~
 """
 
 mc_stepfun_tilde = MaxObject('mc.stepfun~')
@@ -7082,8 +6526,6 @@ Outlets:
 Messages: bang, int, float, list, signal, step
 
 Attributes: curvemode, curvepattern, pattern, syncupdate
-
-See also: stepdiv~, function, phasor~, subdiv~, shape~
 """
 
 mc_stereo_tilde = MaxObject('mc.stereo~')
@@ -7100,8 +6542,6 @@ Outlets:
 Messages: signal
 
 Attributes: activechans, autogain, busymapname, chans, linearpanmode, linearpanscalefactor, pancontrolmode, pans, usebusymap
-
-See also: bogus
 """
 
 mc_stutter_tilde = MaxObject('mc.stutter~')
@@ -7126,8 +6566,6 @@ Outlets:
   0 (signal): (signal) Playback Output 1
 
 Messages: bang, int, ampvar, clear, dropout, maxsize, polarity, print, repeat, setbuf, signal
-
-See also: buffer~, phasor~, record~
 """
 
 mc_subdiv_tilde = MaxObject('mc.subdiv~')
@@ -7150,8 +6588,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: div, lockprob, pattern, prob, silentmode, syncupdate
-
-See also: phasor~, kink~, line~, mc.snowphasor~, pong~, rate~, swing~, wrap~
 """
 
 mc_svf_tilde = MaxObject('mc.svf~')
@@ -7179,8 +6615,6 @@ Outlets:
   3 (signal): (signal) Notch Output
 
 Messages: int, float, Hz, clear, linear, radians, signal
-
-See also: biquad~, comb~, cross~, onepole~, lores~, reson~, svf~
 """
 
 mc_swing_tilde = MaxObject('mc.swing~')
@@ -7203,8 +6637,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: swing, syncupdate
-
-See also: phasor~, kink~, line~, mc.snowphasor~, subdiv~
 """
 
 mc_sync_tilde = MaxObject('mc.sync~')
@@ -7224,8 +6656,6 @@ Outlets:
 Messages: bang, int, float, bpm, midioffset, offset, ppq, signal, start, stop
 
 Attributes: rtport
-
-See also: midiout, phasor~, rate~, rtin, seq, transport, wave~
 """
 
 mc_table_tilde = MaxObject('mc.table~')
@@ -7243,8 +6673,6 @@ Outlets:
 Messages: bang, int, float, (mouse), goto, next, prev, signal
 
 Attributes: annotation_name, embed, extend, inmap, inputmode, interp, name, outscale, parameter_enable, parameter_mappable, range, signed, size, triggermode
-
-See also: buffer~, index~, itable, lookup~, table
 """
 
 mc_tanh_tilde = MaxObject('mc.tanh~')
@@ -7260,8 +6688,6 @@ Outlets:
   0 (OUTLET_TYPE): Tanh (x) Out
 
 Messages: signal
-
-See also: atan~, atanh~, atan2~, tanx~
 """
 
 mc_tanx_tilde = MaxObject('mc.tanx~')
@@ -7277,8 +6703,6 @@ Outlets:
   0 (OUTLET_TYPE): Tan (x) Out
 
 Messages: signal
-
-See also: atan~, atanh~, atan2~, tanh~
 """
 
 mc_tapin_tilde = MaxObject('mc.tapin~')
@@ -7297,8 +6721,6 @@ Outlets:
   0 (OUTLET_TYPE): Connect To One Or More mc.tapout~ Objects
 
 Messages: int, float, clear, freeze, signal
-
-See also: delay~, mc.tapout~, tapin~, tapout~
 """
 
 mc_tapout_tilde = MaxObject('mc.tapout~')
@@ -7322,8 +6744,6 @@ Outlets:
 Messages: int, float, list, signal, tapconnect
 
 Attributes: unique
-
-See also: delay~, tapin~, tapout~, mc.tapin~
 """
 
 mc_target = MaxObject('mc.target')
@@ -7347,8 +6767,6 @@ Outlets:
 Messages: bang, int, float, list, anything, voice
 
 Attributes: append, prepend
-
-See also: mc/mc_events_newobjects, mc/mc_events_newfunctions, mc/mc_poly_without_polytilde, mc.makelist, mc.targetlist, mc.voiceallocator~, mc.noteallocator~
 """
 
 mc_targetlist = MaxObject('mc.targetlist')
@@ -7373,8 +6791,6 @@ Outlets:
 Messages: bang, int, float, list, anything
 
 Attributes: listmode
-
-See also: mc/mc_events_newobjects, mc/mc_events_newfunctions, mc/mc_poly_without_polytilde, mc.makelist, mc.target, mc.voiceallocator~, mc.noteallocator~
 """
 
 mc_teeth_tilde = MaxObject('mc.teeth~')
@@ -7403,8 +6819,6 @@ Outlets:
   0 (signal): (signal) Filter Output
 
 Messages: int, float, clear, signal, list
-
-See also: allpass~, comb~, delay~, reson~
 """
 
 mc_thresh_tilde = MaxObject('mc.thresh~')
@@ -7426,8 +6840,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, list, signal
-
-See also: >~, change~, edge~
 """
 
 mc_times_tilde = MaxObject('mc.times~')
@@ -7447,8 +6859,6 @@ Outlets:
   0 (Signal): (signal) Multiplication Result
 
 Messages: int, float, signal
-
-See also: /~, !/~
 """
 
 mc_train_tilde = MaxObject('mc.train~')
@@ -7474,8 +6884,6 @@ Outlets:
 Messages: bang, int, float, signal
 
 Attributes: interval, phase, resetmode, width
-
-See also: <~, >~, clip~, phasor~
 """
 
 mc_transpose_tilde = MaxObject('mc.transpose~')
@@ -7497,8 +6905,6 @@ Outlets:
   1 (multi-channel signal): Transposed Output 2
 
 Messages: signal
-
-See also: mc/mc_mixing_panning, mc/mc_signals_newobjects, mc.deinterleave~, mc.resize~, mc.separate~, mc.unpack~
 """
 
 mc_trapezoid_tilde = MaxObject('mc.trapezoid~')
@@ -7522,8 +6928,6 @@ Outlets:
 Messages: float, signal
 
 Attributes: hi, lo, wrapmode
-
-See also: buffer~, cos~, phasor~, updown~, wave~
 """
 
 mc_tri_tilde = MaxObject('mc.tri~')
@@ -7545,8 +6949,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, signal
-
-See also: cycle~, phasor~, rect~, saw~, techno~, triangle~
 """
 
 mc_triangle_tilde = MaxObject('mc.triangle~')
@@ -7568,8 +6970,6 @@ Outlets:
 Messages: float, signal
 
 Attributes: hi, lo
-
-See also: buffer~, cos~, phasor~, trapezoid~, tri~, wave~
 """
 
 mc_trunc_tilde = MaxObject('mc.trunc~')
@@ -7585,8 +6985,6 @@ Outlets:
   0 (signal): (signal) Integer Part of Input
 
 Messages: signal
-
-See also: clip~, round~
 """
 
 mc_twist_tilde = MaxObject('mc.twist~')
@@ -7605,8 +7003,6 @@ Outlets:
 Messages: int, float, signal, test
 
 Attributes: curve, shapemode, syncupdate
-
-See also: curve~, ramp~, shape~
 """
 
 mc_unpack_tilde = MaxObject('mc.unpack~')
@@ -7628,8 +7024,6 @@ Outlets:
 Messages: signal
 
 Attributes: replicate, select
-
-See also: mc/mc_signals_newobjects, mc, join, mc.combine~, mc.pack~, mc.resize~, mc.separate~, pack, pak, unjoin, unpack
 """
 
 mc_updown_tilde = MaxObject('mc.updown~')
@@ -7650,8 +7044,6 @@ Outlets:
 Messages: bang, signal
 
 Attributes: down, level, reset, up
-
-See also: phasor~, trapezoid~, kink~, line~, subdiv~, zigzag~
 """
 
 mc_vectral_tilde = MaxObject('mc.vectral~')
@@ -7672,8 +7064,6 @@ Outlets:
   0 (signal): (signal) Output Value
 
 Messages: clear, deltaclip, rampsmooth, signal, size, slide
-
-See also: cartopol, cartopol~, deltaclip~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, pfft~, poltocar, poltocar~, rampsmooth~, slide~
 """
 
 mc_voiceallocator_tilde = MaxObject('mc.voiceallocator~')
@@ -7695,8 +7085,6 @@ Outlets:
 Messages: bang, int, float, list, anything, endevent, event, holdevent, printbusymap, release, releaseevent, signal
 
 Attributes: initialbusystate, name, steal, voices
-
-See also: mc/mc_poly_without_polytilde, mc/mc_polyphony, mc.noteallocator~
 """
 
 mc_vst_tilde = MaxObject('mc.vst~')
@@ -7727,8 +7115,6 @@ Outlets:
 Messages: int, float, list, anything, (drag), (mouse), disable, drop, get, getsubnames, midievent, mpeevent, open, params, pgmnames, plug, plug_au, plug_vst, plug_vst3, presetnames, printids, read, scan, set, signal, subname, sysexevent, unplug, wclose, write, writebank, writepgm
 
 Attributes: annotation_name, autosave, bypass, currentplug, enablehscroll, enablevscroll, floateditorwindow, genericeditor, legacytransport, mcisolate, parameter_enable, prefer, transport, valuemode
-
-See also: amxd~
 """
 
 mc_wave_tilde = MaxObject('mc.wave~')
@@ -7754,8 +7140,6 @@ Outlets:
 Messages: int, float, list, (mouse), set, signal
 
 Attributes: interp, interp_bias, interp_tension
-
-See also: 2d.wave~, buffer~, buffir~, groove~, phasor~, play~, sync~
 """
 
 mc_what_tilde = MaxObject('mc.what~')
@@ -7777,8 +7161,6 @@ Outlets:
 Messages: int, float, list, clear, signal
 
 Attributes: matches, syncupdate, triggermode
-
-See also: click~, edge~, delta~, phasor~, sah~, stash~, where~
 """
 
 mc_where_tilde = MaxObject('mc.where~')
@@ -7795,8 +7177,6 @@ Outlets:
   1 (signal): Predicted Time Until Reset
 
 Messages: signal
-
-See also: phasor~, spike~, timer, what~
 """
 
 mc_zerox_tilde = MaxObject('mc.zerox~')
@@ -7816,8 +7196,6 @@ Outlets:
   1 (signal): Clicks at Zero-Crossings
 
 Messages: set, signal
-
-See also: change~, edge~, spike~
 """
 
 mc_zigzag_tilde = MaxObject('mc.zigzag~')
@@ -7842,8 +7220,6 @@ Outlets:
 Messages: bang, int, float, list, append, bangdelta, bound, delete, dump, end, insert, jump, jumpend, jumpstart, line, next, prev, print, ramptime, set, setindex, setline, signal, skip, speed, start, stop
 
 Attributes: loopmode, maxpoints, mode
-
-See also: adsr~, curve~, kink~, line~
 """
 
 mcs_2d_wave_tilde = MaxObject('mcs.2d.wave~')
@@ -7868,8 +7244,6 @@ Outlets:
   0 (multi-channel signal): (signal) Channel 1 Output
 
 Messages: int, float, list, (mouse), rows, set, signal
-
-See also: buffer~, groove~, phasor~, play~, wave~
 """
 
 mcs_amxd_tilde = MaxObject('mcs.amxd~')
@@ -7893,8 +7267,6 @@ Outlets:
 Messages: anything, (drag), (mouse), drag_replace, getinfo, getparams, getvalue, midievent, midiin, open, signal
 
 Attributes: active, annotation_name, autosize, mcisolate, parameter_enable, patchername, showheader
-
-See also: vst~, amxd~
 """
 
 mcs_fffb_tilde = MaxObject('mcs.fffb~')
@@ -7917,8 +7289,6 @@ Outlets:
   0 (multi-channel signal): signal output from filter 0
 
 Messages: list, anything, Q, QAll, clear, freq, freqAll, freqRatio, gain, gainAll, signal
-
-See also: reson~
 """
 
 mcs_gate_tilde = MaxObject('mcs.gate~')
@@ -7943,8 +7313,6 @@ Outlets:
 Messages: bang, int, float, next, signal
 
 Attributes: ramptime, stepmode
-
-See also: crosspatch, gate, matrix~, gate~, selector~
 """
 
 mcs_gen_tilde = MaxObject('mcs.gen~')
@@ -7965,8 +7333,6 @@ Outlets:
 Messages: int, float, (mouse), exportcode, open, reload, reset, reset_param, signal, wclose
 
 Attributes: autoexport, cpu, cpumeasure, dumpoutlet, exportfolder, exportname, exportnotifier, exportscript, exportscriptargs, gen, nocache, poll, title
-
-See also: gen/gen_common_operators, gen/gen_overview, gen/gen~_operators, gen~, mc.gen~, jit.gen, jit.pix
 """
 
 mcs_groove_tilde = MaxObject('mcs.groove~')
@@ -7991,8 +7357,6 @@ Outlets:
 Messages: int, float, list, anything, clearspeedcues, (mouse), dictionary, endloop, printspeedcues, reset, set, setloop, signal, startloop, stop
 
 Attributes: basictuning, followglobaltempo, formant, formantcorrection, lock, loop, loopend, loopinterp, loopstart, mode, name, originallength, originaltempo, phase, pitchcorrection, pitchshift, pitchshiftcent, quality, slurtime, timestretch, transport
-
-See also: 2d.wave~, buffer~, groove~, mc.groove~, play~, wave~, index~, record~, transport
 """
 
 mcs_limi_tilde = MaxObject('mcs.limi~')
@@ -8014,8 +7378,6 @@ Outlets:
 Messages: clear, signal
 
 Attributes: bypass, dcblock, lookahead, mode, postamp, preamp, release, threshold
-
-See also: limi~, mc.limi~, omx.peaklim~
 """
 
 mcs_matrix_tilde = MaxObject('mcs.matrix~')
@@ -8041,8 +7403,6 @@ Outlets:
 Messages: list, clear, connect, dictionary, disconnect, dump, dumpconnections, dumptarget, print
 
 Attributes: exclusive, numouts, ramp
-
-See also: crosspatch, gate~, mcs.matrix~, matrix, matrixctrl, receive~, router, selector~, send~
 """
 
 mcs_play_tilde = MaxObject('mcs.play~')
@@ -8067,8 +7427,6 @@ Outlets:
 Messages: int, (mouse), pause, resume, set, signal, start, stop
 
 Attributes: interptime, loop, loopinterp
-
-See also: 2d.wave~, buffer~, buffir~, groove~, record~, wave~, index~
 """
 
 mcs_poly_tilde = MaxObject('mcs.poly~')
@@ -8091,8 +7449,6 @@ Inlets:
 Messages: bang, int, float, list, anything, (drag), allnotesoff, assignpatcher, busymap, bypass, (mouse), down, exclude, midievent, midinote, mpeevent, mute, mutemap, note, notemessage, open, setvalue, threadcount, up, wclose
 
 Attributes: args, filterparams, legacynotemode, midimode, mpemode, parallel, patchername, replicate, resampling, steal, target, voices, vs, zone
-
-See also: in, in~, out, out~, mc.poly~, patcher, poly~, thispoly~
 """
 
 mcs_selector_tilde = MaxObject('mcs.selector~')
@@ -8117,8 +7473,6 @@ Outlets:
 Messages: bang, int, float, next, signal
 
 Attributes: ramptime, stepmode
-
-See also: gate~, crosspatch, selector~, switch
 """
 
 mcs_sig_tilde = MaxObject('mcs.sig~')
@@ -8139,8 +7493,6 @@ Outlets:
 Messages: int, float, list, set, signal
 
 Attributes: chans
-
-See also: line~, sig~, snapshot~
 """
 
 mcs_tapout_tilde = MaxObject('mcs.tapout~')
@@ -8167,8 +7519,6 @@ Outlets:
 Messages: int, float, list, signal, tapconnect
 
 Attributes: unique
-
-See also: delay~, tapin~
 """
 
 mcs_vst_tilde = MaxObject('mcs.vst~')
@@ -8197,8 +7547,6 @@ Outlets:
 Messages: int, float, list, anything, (drag), (mouse), disable, drop, get, getsubnames, midievent, mpeevent, open, params, pgmnames, plug, plug_au, plug_vst, plug_vst3, presetnames, printids, read, scan, set, signal, subname, sysexevent, unplug, wclose, write, writebank, writepgm
 
 Attributes: annotation_name, autosave, bypass, currentplug, enablehscroll, enablevscroll, floateditorwindow, genericeditor, legacytransport, mcisolate, parameter_enable, prefer, transport, valuemode
-
-See also: amxd~
 """
 
 mcs_wave_tilde = MaxObject('mcs.wave~')
@@ -8224,8 +7572,6 @@ Outlets:
 Messages: int, float, list, (mouse), set, signal
 
 Attributes: interp, interp_bias, interp_tension
-
-See also: 2d.wave~, buffer~, buffir~, groove~, phasor~, play~, sync~
 """
 
 meter_tilde = MaxObject('meter~')
@@ -8243,8 +7589,6 @@ Outlets:
 Messages: int, float, (mouse), signal
 
 Attributes: bgcolor, bordercolor, coldcolor, dbperled, hotcolor, interval, monotone, nhotleds, ntepidleds, numleds, nwarmleds, offcolor, oncolor, orientation, overloadcolor, style, tepidcolor, warmcolor
-
-See also: average~, gridmeter~, scope~
 """
 
 minimum_tilde = MaxObject('minimum~')
@@ -8264,8 +7608,6 @@ Outlets:
   0 (Signal): (signal) Minimum of Left and Right Signals
 
 Messages: int, float, signal
-
-See also: <=~, >~, >=~, ==~, !=~, maximum~
 """
 
 minmax_tilde = MaxObject('minmax~')
@@ -8285,8 +7627,6 @@ Outlets:
   3 (double): (float) Maximum
 
 Messages: bang, reset, signal
-
-See also: meter~, peakamp~, snapshot~
 """
 
 minus_tilde = MaxObject('minus~')
@@ -8306,8 +7646,6 @@ Outlets:
   0 (signal): (signal) Subtraction Result
 
 Messages: int, float, signal
-
-See also: +~, !-~
 """
 
 modulo_tilde = MaxObject('modulo~')
@@ -8327,8 +7665,6 @@ Outlets:
   0 (signal): (signal) Modulo Result
 
 Messages: int, float, signal
-
-See also: !/~, /~
 """
 
 mstosamps_tilde = MaxObject('mstosamps~')
@@ -8345,8 +7681,6 @@ Outlets:
   1 (double): (float) Samples At Input signal or Current Sampling Rate
 
 Messages: int, float, list, signal
-
-See also: dspstate~, sampstoms~
 """
 
 mtof_tilde = MaxObject('mtof~')
@@ -8364,8 +7698,6 @@ Outlets:
 Messages: signal
 
 Attributes: base, map, mapname, mid, ref, scale, scalename
-
-See also: expr, ftom, ftom~, mtof
 """
 
 mute_tilde = MaxObject('mute~')
@@ -8381,8 +7713,6 @@ Outlets:
   0 (OUTLET_TYPE): Connect To patcher
 
 Messages: int, list
-
-See also: pass~
 """
 
 mxj_tilde = MaxObject('mxj~')
@@ -8396,8 +7726,6 @@ Args:
   attributes (list, required)
 
 Messages: bang, int, float, list, anything, benchmark, (mouse), exceptioncheck, get, viewsource, zap
-
-See also: mxj
 """
 
 noise_tilde = MaxObject('noise~')
@@ -8413,8 +7741,6 @@ Outlets:
   0 (signal): (signal) The Noise
 
 Attributes: classic
-
-See also: biquad~, pink~, reson~
 """
 
 normalize_tilde = MaxObject('normalize~')
@@ -8434,8 +7760,6 @@ Outlets:
   0 (signal): (signal) Normalized Output
 
 Messages: int, float, reset, signal
-
-See also: *~
 """
 
 notequals_tilde = MaxObject('notequals~')
@@ -8457,8 +7781,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: fuzzy
-
-See also: ==~, <~, <=~, >~, >=~, change~, edge~
 """
 
 number_tilde = MaxObject('number~')
@@ -8478,8 +7800,6 @@ Outlets:
 Messages: bang, int, float, list, allow, flags, ft1, max, min, mode, (mouse), set, signal
 
 Attributes: bgcolor, bgcolor2, bordercolor, ft1, hbgcolor, htextcolor, interval, maximum, minimum, monitormode, numdecimalplaces, sigoutmode, style, textcolor
-
-See also: line~, sig~, snapshot~
 """
 
 omx_4band_tilde = MaxObject('omx.4band~')
@@ -8499,8 +7819,6 @@ Outlets:
   3 (list): (list) Meter Output
 
 Messages: bypass, choosePreset, gating_threshold, inagc_b1_atk, inagc_b1_rel, inagc_range, lim_drive, mbagc_b1_atk, mbagc_b1_drv, mbagc_b1_rel, mbagc_b2_atk, mbagc_b2_drv, mbagc_b2_rel, mbagc_b3_atk, mbagc_b3_drv, mbagc_b3_rel, mbagc_b4_atk, mbagc_b4_drv, mbagc_b4_rel, mbagc_range, meterData, meterRate, meters, ngenabled, ngthresh1, ngthresh2, noisegate, outmix1, outmix2, outmix3, outmix4, saveSettings, signal
-
-See also: omx.5band~, omx.comp~, omx.peaklim~
 """
 
 omx_5band_tilde = MaxObject('omx.5band~')
@@ -8520,8 +7838,6 @@ Outlets:
   3 (list): (list) Meter Output
 
 Messages: bands_enum, bassenhancement, bassenhancement_mixlevel, bypass, choosePreset, freeze_threshold, gating_threshold, inagc_atk, inagc_progressive, inagc_range, inagc_ratio, inagc_rel, inagc_threshold, inf_ratio_above_threshold_1, inf_ratio_above_threshold_2, inf_ratio_above_threshold_3, inf_ratio_above_threshold_4, inf_ratio_above_threshold_5, lim_drive, lim_smoothrelease, mbagc_b1_atk, mbagc_b1_drv, mbagc_b1_rel, mbagc_b1_threshold, mbagc_b2_atk, mbagc_b2_drv, mbagc_b2_rel, mbagc_b2_threshold, mbagc_b3_atk, mbagc_b3_drv, mbagc_b3_rel, mbagc_b3_threshold, mbagc_b4_atk, mbagc_b4_drv, mbagc_b4_rel, mbagc_b4_threshold, mbagc_b5_atk, mbagc_b5_drv, mbagc_b5_rel, mbagc_b5_threshold, mbagc_progressive, mbclip_b1_threshold, mblim_b1_threshold, mblim_b2_threshold, mblim_b3_threshold, mblim_b4_threshold, mblim_b5_threshold, mbrange, mbratio, meterData, meterRate, meters, multiband_limiters, ng_enabled_maxch, ngenabled, ngthresh1, ngthresh2, ngthresh3, ngthresh4, ngthresh5, outlevel_lf, outlevel_rf, outmix1, outmix2, outmix3, outmix4, outmix5, output_level, saveSettings, signal, spatial_desired, spatial_enabled, spatial_maximum, spatial_speed
-
-See also: omx.4band~, omx.comp~, omx.peaklim~
 """
 
 omx_comp_tilde = MaxObject('omx.comp~')
@@ -8541,8 +7857,6 @@ Outlets:
   3 (list): (list) Meter Output
 
 Messages: agcEnabled, agcThreshold, attack, bypass, channelCoupling, choosePreset, delay, dualBandEnabled, freezeLevel, gatingLevel, limEnabled, limMode, meterData, meterRate, meters, ngEnabled, ngThreshold, progressiveRelease, range, ratio, release, saveSettings, sidechainFilterEnabled, signal, smoothGain
-
-See also: omx.4band~, omx.5band~, omx.peaklim~
 """
 
 omx_peaklim_tilde = MaxObject('omx.peaklim~')
@@ -8562,8 +7876,6 @@ Outlets:
   3 (list): (list) Meter Output
 
 Messages: bypass, ingain, meterData, meterRate, meters, mode, outgain, saveSettings, signal, threshold
-
-See also: omx.4band~, omx.5band~, omx.comp~
 """
 
 onepole_tilde = MaxObject('onepole~')
@@ -8584,8 +7896,6 @@ Outlets:
   0 (signal): (signal) filter output
 
 Messages: int, float, Hz, clear, linear, radians, signal
-
-See also: biquad~, comb~, cross~, lores~, reson~, svf~
 """
 
 oscbank_tilde = MaxObject('oscbank~')
@@ -8610,8 +7920,6 @@ Outlets:
   0 (signal): (signal) output
 
 Messages: int, float, clear, copybuf, framesync, freqsmooth, magsmooth, set, signal, silence, size, tabpoints
-
-See also: ioscbank~
 """
 
 out = MaxObject('out')
@@ -8626,8 +7934,6 @@ Inlets:
 Messages: bang, int, float, list, anything, comment
 
 Attributes: attr_comment
-
-See also: in, in~, out, out~, pfft~, poly~, thispoly~
 """
 
 out_tilde = MaxObject('out~')
@@ -8645,8 +7951,6 @@ Inlets:
 Messages: comment, signal
 
 Attributes: attr_comment, chans
-
-See also: in, in~, out, poly~, thispoly~
 """
 
 overdrive_tilde = MaxObject('overdrive~')
@@ -8667,8 +7971,6 @@ Outlets:
   0 (OUTLET_TYPE): Signal Output
 
 Messages: int, float, signal
-
-See also: kink~, lookup~
 """
 
 pass_tilde = MaxObject('pass~')
@@ -8684,8 +7986,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: signal
-
-See also: mute~, pcontrol
 """
 
 peakamp_tilde = MaxObject('peakamp~')
@@ -8707,8 +8007,6 @@ Outlets:
 Messages: bang, ft1, in1, signal
 
 Attributes: interval, signed
-
-See also: meter~, levelmeter~, snapshot~, loudness~, average~, avg~
 """
 
 peek_tilde = MaxObject('peek~')
@@ -8731,8 +8029,6 @@ Outlets:
   0 (OUTLET_TYPE): buffer~ Value at Sample Index
 
 Messages: int, float, list, clip, (mouse), set
-
-See also: buffer~, buffir~, index~, poke~, table
 """
 
 pfft_tilde = MaxObject('pfft~')
@@ -8755,8 +8051,6 @@ Inlets:
 Messages: bang, int, float, list, anything, clear, (mouse), mute, open, wclose
 
 Attributes: args, fftsize, float32, fullspectrum, legacy, overlap, patchername, startoffset
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, in, out, poltocar, poltocar~, vectral~
 """
 
 phasegroove_tilde = MaxObject('phasegroove~')
@@ -8774,8 +8068,6 @@ Outlets:
 Messages: signal
 
 Attributes: conflict
-
-See also: buffer~, groove~, mcs.groove~, phasor~, ramp~
 """
 
 phaseshift_tilde = MaxObject('phaseshift~')
@@ -8797,8 +8089,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: float, clear, signal
-
-See also: allpass~, comb~
 """
 
 phasewrap_tilde = MaxObject('phasewrap~')
@@ -8814,8 +8104,6 @@ Outlets:
   0 (OUTLET_TYPE): Phase-Wrapped Signal Out
 
 Messages: signal
-
-See also: cartopol~, pfft~, pong~
 """
 
 phasor_tilde = MaxObject('phasor~')
@@ -8837,8 +8125,6 @@ Outlets:
 Messages: bang, int, float, list, anything, reset, signal
 
 Attributes: frequency, jitter, limit, lock, phaseoffset, syncupdate, transport
-
-See also: 2d.wave~, cycle~, kink~, line~, saw~, subdiv~, swing~, sync~, techno~, transport, trapezoid~, triangle~, updown~, wave~
 """
 
 pink_tilde = MaxObject('pink~')
@@ -8852,8 +8138,6 @@ Inlets:
 
 Outlets:
   0 (signal): (signal) The Noise
-
-See also: noise~
 """
 
 pitchshift_tilde = MaxObject('pitchshift~')
@@ -8876,8 +8160,6 @@ Outlets:
 Messages: getlatency, signal
 
 Attributes: constantlatency, enabled, pitchshift, pitchshiftcent, quality, reportlatency, usecents
-
-See also: retune~
 """
 
 play_tilde = MaxObject('play~')
@@ -8902,8 +8184,6 @@ Outlets:
 Messages: int, (mouse), pause, resume, set, signal, start, stop
 
 Attributes: interptime, loop, loopinterp
-
-See also: 2d.wave~, buffer~, buffir~, groove~, record~, wave~, index~
 """
 
 playlist_tilde = MaxObject('playlist~')
@@ -8925,8 +8205,6 @@ Outlets:
 Messages: int, append, clear, (drag), getcontent, (mouse), next, pause, remove, resume, selection, selectionms, setclip, signal
 
 Attributes: accentcolor, allowreorder, annotation_name, basictuning, bgcolor, candicane2, candicane3, candicane4, candicane5, candicane6, candicane7, candicane8, candycane, channelcount, clipheight, color, elementcolor, expansion, followglobaltempo, formant, formantcorrection, loop, loopreport, mode, name, originallength, originaltempo, parameter_enable, parameter_mappable, pitchcorrection, pitchshift, pitchshiftcent, quality, reportprogress, selectioncolor, shadowalpha, shadowblend, shadowproportion, showname, slurtime, speed, style, textcolor, timestretch, waveformdisplay
-
-See also: mc.playlist~, jit.playlist, sfplay~, mc.sfplay~, waveform~
 """
 
 plot_tilde = MaxObject('plot~')
@@ -8944,8 +8222,6 @@ Outlets:
 Messages: int, float, list, definecolor, definedomain, definefilter, defineline, definenumber, definepoint, definerange, definethickness, definexgrid, definexlabels, definexorigin, defineygrid, defineylabels, defineyorigin, dictionary, edit, getdictionary, (mouse), refer, signal
 
 Attributes: applyfont, audioframerate, audioframesize, bgcolor, domainlabel, fillhorizontalspace, fontname, fontsize, gridcolor, gridorigincolor, margins, numplots, numpoints, rangelabel, thinmode, thinthresh, thinto
-
-See also: filterdetail, scope~, multislider, waveform~, filtergraph~, spectroscope~
 """
 
 plugin_tilde = MaxObject('plugin~')
@@ -8968,8 +8244,6 @@ Outlets:
 Messages: signal
 
 Attributes: chans
-
-See also: plugout~
 """
 
 plugout_tilde = MaxObject('plugout~')
@@ -8992,8 +8266,6 @@ Outlets:
 Messages: signal
 
 Attributes: chans
-
-See also: plugin~
 """
 
 plugphasor_tilde = MaxObject('plugphasor~')
@@ -9008,8 +8280,6 @@ Inlets:
 Outlets:
   0 (signal): Beat-Synchronized 0-1 Ramp
   1 (list): Debug Output
-
-See also: plugsync~
 """
 
 plugreceive_tilde = MaxObject('plugreceive~')
@@ -9029,8 +8299,6 @@ Outlets:
   0 (signal): Receive From plugsend~
 
 Messages: set, signal
-
-See also: plugsend~
 """
 
 plugsend_tilde = MaxObject('plugsend~')
@@ -9047,8 +8315,6 @@ Inlets:
   0 (signal): Send To plugreceive~
 
 Messages: signal
-
-See also: plugreceive~
 """
 
 plugsync_tilde = MaxObject('plugsync~')
@@ -9072,8 +8338,6 @@ Outlets:
   8 (long): (long) Flags Indicating Which Data Are Valid
 
 Messages: bang
-
-See also: plugphasor~
 """
 
 plus_tilde = MaxObject('plus~')
@@ -9093,8 +8357,6 @@ Outlets:
   0 (signal): (signal) Addition Result
 
 Messages: int, float, signal
-
-See also: +=~, -~, !-~
 """
 
 plusequals_tilde = MaxObject('plusequals~')
@@ -9114,8 +8376,6 @@ Outlets:
   0 (signal): (signal) Accumulator Output
 
 Messages: bang, set, signal
-
-See also: +~
 """
 
 poke_tilde = MaxObject('poke~')
@@ -9137,8 +8397,6 @@ Outlets:
   0 (signal): Channel
 
 Messages: int, float, list, (mouse), set, signal
-
-See also: buffer~, buffir~, peek~
 """
 
 poltocar_tilde = MaxObject('poltocar~')
@@ -9156,8 +8414,6 @@ Outlets:
   1 (OUTLET_TYPE): imaginary/y output
 
 Messages: signal
-
-See also: cartopol, cartopol~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, pfft~, poltocar, vectral~
 """
 
 poly_tilde = MaxObject('poly~')
@@ -9179,8 +8435,6 @@ Inlets:
 Messages: bang, int, float, list, anything, (drag), allnotesoff, assignpatcher, busymap, bypass, (mouse), down, exclude, midievent, midinote, mpeevent, mute, mutemap, note, notemessage, open, setvalue, threadcount, up, wclose
 
 Attributes: args, filterparams, legacynotemode, midimode, mpemode, parallel, patchername, replicate, resampling, steal, target, voices, vs, zone
-
-See also: in, in~, out, out~, mc.poly~, mcs.poly~, patcher, thispoly~, param
 """
 
 polybuffer_tilde = MaxObject('polybuffer~')
@@ -9202,8 +8456,6 @@ Outlets:
 Messages: (drag), append, appendempty, clear, (mouse), dump, getbufferlist, getcount, getshortname, getsize, open, readfolder, send, wclose, writetofolder
 
 Attributes: embed, quiet
-
-See also: buffer~
 """
 
 pong_tilde = MaxObject('pong~')
@@ -9228,8 +8480,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: mode, range
-
-See also: phasewrap~
 """
 
 pow_tilde = MaxObject('pow~')
@@ -9249,8 +8499,6 @@ Outlets:
   0 (signal): (signal) Base raised to Input
 
 Messages: int, float, signal
-
-See also: log~, curve~
 """
 
 ramp_tilde = MaxObject('ramp~')
@@ -9275,8 +8523,6 @@ Outlets:
 Messages: int, float, anything, signal
 
 Attributes: curve, duration, end, interval, mode, reset, retrigger, start
-
-See also: click~, line~, mc.snowphasor~, rate~, phasor~, pong~, trapezoid~, triangle~, zigzag~
 """
 
 rampsmooth_tilde = MaxObject('rampsmooth~')
@@ -9300,8 +8546,6 @@ Outlets:
 Messages: int, float, ramp, signal
 
 Attributes: rampdown, rampup
-
-See also: line~, slide~
 """
 
 rand_tilde = MaxObject('rand~')
@@ -9320,8 +8564,6 @@ Outlets:
   0 (signal): (signal) The Noise Path
 
 Messages: int, float, signal
-
-See also: line~, noise~, pink~
 """
 
 rate_tilde = MaxObject('rate~')
@@ -9344,8 +8586,6 @@ Outlets:
 Messages: int, float, goto, oneshot, reset, signal
 
 Attributes: sync
-
-See also: phasor~, sync~, techno~
 """
 
 rdiv_tilde = MaxObject('rdiv~')
@@ -9365,8 +8605,6 @@ Outlets:
   0 (signal): (signal) Quotient Out
 
 Messages: int, float, signal
-
-See also: *~
 """
 
 receive_tilde = MaxObject('receive~')
@@ -9387,8 +8625,6 @@ Outlets:
 Messages: (mouse), set, signal
 
 Attributes: chans, name
-
-See also: mc.receive~, send~
 """
 
 record_tilde = MaxObject('record~')
@@ -9412,8 +8648,6 @@ Outlets:
 Messages: int, float, list, anything, (mouse), reset, set, signal
 
 Attributes: append, loop, loopend, loopstart, transport
-
-See also: 2d.wave~, buffer~, groove~, play~, transport
 """
 
 rect_tilde = MaxObject('rect~')
@@ -9435,8 +8669,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, signal, synctrig
-
-See also: cycle~, phasor~, saw~, techno~, tri~
 """
 
 reson_tilde = MaxObject('reson~')
@@ -9462,8 +8694,6 @@ Outlets:
 Messages: int, float, list, clear, signal
 
 Attributes: cf, gain, q
-
-See also: biquad~, comb~, cross~, onepole~, lores~, reson~, svf~
 """
 
 retune_tilde = MaxObject('retune~')
@@ -9488,8 +8718,6 @@ Outlets:
 Messages: list, defaulttuning, flush, getlatency, signal
 
 Attributes: correction_ambience_threshold, correction_amount, correction_bypass, correction_threshold, enablednotes, notebase, notelist, pitchdetection, quality, reportlatency, retune, use_16bit, windowsize
-
-See also: fbinshift~, freqshift~, fzero~, gizmo~, hilbert~, pitchshift~
 """
 
 rminus_tilde = MaxObject('rminus~')
@@ -9509,8 +8737,6 @@ Outlets:
   0 (signal): (signal) Difference Out
 
 Messages: int, float, signal
-
-See also: +~, -~
 """
 
 round_tilde = MaxObject('round~')
@@ -9532,8 +8758,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: nearest
-
-See also: rampsmooth~, slide~, trunc~, round
 """
 
 sah_tilde = MaxObject('sah~')
@@ -9555,8 +8779,6 @@ Outlets:
 Messages: float, signal
 
 Attributes: duration, thresh, triggermode
-
-See also: gate~, phasor~, stash~, thresh~, what~
 """
 
 sampstoms_tilde = MaxObject('sampstoms~')
@@ -9573,8 +8795,6 @@ Outlets:
   1 (double): (float) Milliseconds At Input signal or Current Sampling Rate
 
 Messages: int, float, list, signal
-
-See also: dspstate~, mstosamps~, translate
 """
 
 sash_tilde = MaxObject('sash~')
@@ -9594,8 +8814,6 @@ Outlets:
 Messages: int, float, list, signal
 
 Attributes: advancelevel, dir, maxsize, mode, samplelevel, size
-
-See also: gate~, phasor~, sah~, subdiv~, thresh~
 """
 
 saw_tilde = MaxObject('saw~')
@@ -9615,8 +8833,6 @@ Outlets:
   0 (signal): (signal) Input signal
 
 Messages: int, float, signal, synctrig
-
-See also: cycle~, phasor~, rect~, saw~, techno~, tri~
 """
 
 scale_tilde = MaxObject('scale~')
@@ -9646,8 +8862,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: classic
-
-See also: scale, clip, clip~
 """
 
 scope_tilde = MaxObject('scope~')
@@ -9663,8 +8877,6 @@ Inlets:
 Messages: int, (mouse), signal
 
 Attributes: automatic, bgcolor, bordercolor, bufsize, calccount, delay, displaychan, displaysinglechannel, drawstyle, fgcolor, gridcolor, inactivealpha, mctrigchan, range, rounded, style, trigger, triglevel
-
-See also: gridmeter~, meter~
 """
 
 selector_tilde = MaxObject('selector~')
@@ -9689,8 +8901,6 @@ Outlets:
 Messages: bang, int, float, next, signal
 
 Attributes: ramptime, stepmode
-
-See also: gate~, crosspatch, mcs.selector~, switch
 """
 
 send_tilde = MaxObject('send~')
@@ -9708,8 +8918,6 @@ Inlets:
 Messages: clear, (mouse), set, signal
 
 Attributes: name
-
-See also: receive~
 """
 
 seq_tilde = MaxObject('seq~')
@@ -9727,8 +8935,6 @@ Outlets:
   2 (symbol): id on read, (bang) when done reading
 
 Messages: bang, int, float, list, anything, add, clear, delete, dump, erase, offset, overdub, play, read, record, seq, seqnum, signal, symbol, write
-
-See also: phasor~, techno~
 """
 
 sfinfo_tilde = MaxObject('sfinfo~')
@@ -9752,8 +8958,6 @@ Outlets:
   5 (OUTLET_TYPE): File Name
 
 Messages: bang, (drag), getnamed, open
-
-See also: info~, sflist~, sfplay~
 """
 
 sfizz_tilde = MaxObject('sfizz~')
@@ -9786,8 +8990,6 @@ Outlets:
 Messages: int, float, list, (drag), (mouse), dictionary, midievent, read, readagain, signal
 
 Attributes: base, defaultpathname, filename, map, mapname, mid, outputs, pathmode, ref, scale, scalename, silent, voices, volume
-
-See also: makenote, midiformat, mc.midiplayer~, mtof~
 """
 
 sflist_tilde = MaxObject('sflist~')
@@ -9809,8 +9011,6 @@ Outlets:
 Messages: clear, embed, fclose, open, openraw, preload, print
 
 Attributes: name
-
-See also: buffer~, groove~, play~, sfinfo~, sfplay~, sfrecord~
 """
 
 sfplay_tilde = MaxObject('sfplay~')
@@ -9837,8 +9037,6 @@ Outlets:
 Messages: int, float, list, anything, (drag), clear, dictionary, embed, fclose, loopone, modout, offset, open, openraw, pause, preload, preloadn, print, resume, samptype, seek, set, signal, srate, srcchans
 
 Attributes: audiofile, basictuning, followglobaltempo, formant, formantcorrection, loop, mode, name, originallength, originaltempo, pitchcorrection, pitchshift, pitchshiftcent, quality, slurtime, speed, timestretch
-
-See also: buffer~, groove~, mc.sfplay~, play~, sfinfo~, sflist~, sfrecord~, mc.sfrecord~
 """
 
 sfrecord_tilde = MaxObject('sfrecord~')
@@ -9860,8 +9058,6 @@ Outlets:
 Messages: int, loop, open, print, record, samptype, signal
 
 Attributes: beginramp, bitdepth, dither, endramp, nchans, quantization, resample, sortloop
-
-See also: sfplay~, mc.sfplay~, mc.sfrecord~
 """
 
 shape_tilde = MaxObject('shape~')
@@ -9879,8 +9075,6 @@ Outlets:
 Messages: int, float, list, signal
 
 Attributes: constant, curvemode, syncupdate
-
-See also: function, curve~, line~, mc.pattern~, phasor~, ramp~, techno~, zigzag~
 """
 
 sig_tilde = MaxObject('sig~')
@@ -9899,8 +9093,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, list, set, signal
-
-See also: line~, mcs.sig~, snapshot~
 """
 
 sinh_tilde = MaxObject('sinh~')
@@ -9916,8 +9108,6 @@ Outlets:
   0 (OUTLET_TYPE): Sinh (x) Out
 
 Messages: signal
-
-See also: asin~, asinh~, sinx~
 """
 
 sinx_tilde = MaxObject('sinx~')
@@ -9933,8 +9123,6 @@ Outlets:
   0 (OUTLET_TYPE): Sin (x) Out
 
 Messages: signal
-
-See also: asin~, asinh~, sinh~
 """
 
 slide_tilde = MaxObject('slide~')
@@ -9958,8 +9146,6 @@ Outlets:
 Messages: int, float, reset, signal
 
 Attributes: slidedown, slideup
-
-See also: rampsmooth~
 """
 
 snapshot_tilde = MaxObject('snapshot~')
@@ -9981,8 +9167,6 @@ Outlets:
 Messages: bang, int, float, list, anything, sampleinterval, signal, start, stop
 
 Attributes: active, interval, offset
-
-See also: capture~, number~, sig~
 """
 
 snowfall_tilde = MaxObject('snowfall~')
@@ -10021,8 +9205,6 @@ Outlets:
 Messages: (mouse), signal
 
 Attributes: bgcolor, border, bordercolor, curvecolor, displaychan, domain, fgcolor, interval, logamp, logfreq, markercolor, monochrome, orientation, phasespect, range, rounded, scroll, sono, sonohicolor, sonolocolor, sonomedcolor, sonomedhicolor, sonomedlocolor, sonomonobgcolor, sonomonofgcolor, style
-
-See also: meter~, scope~
 """
 
 spike_tilde = MaxObject('spike~')
@@ -10042,8 +9224,6 @@ Outlets:
   0 (double): (float) Outputs interval on zero to non-zero transition
 
 Messages: bang, ft1, in1, signal
-
-See also: change~, edge~, zerox~
 """
 
 sqrt_tilde = MaxObject('sqrt~')
@@ -10059,8 +9239,6 @@ Outlets:
   0 (signal): (signal) Square Root
 
 Messages: signal
-
-See also: curve~, log~, pow~
 """
 
 stash_tilde = MaxObject('stash~')
@@ -10106,8 +9284,6 @@ Outlets:
 Messages: reset, signal
 
 Attributes: direction, seq, startmode, syncupdate, thresh
-
-See also: stepdiv~, stepfun~, phasor~, subdiv~, click~, stepcounter
 """
 
 stepdiv_tilde = MaxObject('stepdiv~')
@@ -10126,8 +9302,6 @@ Outlets:
 Messages: bang, int, float, list, signal, what
 
 Attributes: curvemode, loop, pattern, syncupdate
-
-See also: stepfun~, phasor~, subdiv~, function, shape~
 """
 
 stepfun_tilde = MaxObject('stepfun~')
@@ -10147,8 +9321,6 @@ Outlets:
 Messages: bang, int, float, list, signal, step
 
 Attributes: curvemode, curvepattern, pattern, syncupdate
-
-See also: stepdiv~, function, phasor~, subdiv~, shape~
 """
 
 stretch_tilde = MaxObject('stretch~')
@@ -10170,8 +9342,6 @@ Outlets:
 Messages: bang, apply, cancel, (mouse), dictionary, set
 
 Attributes: basictuning, followglobaltempo, formant, formantcorrection, mode, originallength, originaltempo, pitchcorrection, pitchshift, pitchshiftcent, progress_enable, quality, readagain, slurtime, stretch
-
-See also: buffer~, groove~, pitchshift~
 """
 
 stutter_tilde = MaxObject('stutter~')
@@ -10196,8 +9366,6 @@ Outlets:
   0 (signal): (signal) Playback Output 1
 
 Messages: bang, int, ampvar, clear, dropout, maxsize, polarity, print, repeat, setbuf, signal
-
-See also: buffer~, phasor~, record~
 """
 
 subdiv_tilde = MaxObject('subdiv~')
@@ -10220,8 +9388,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: div, lockprob, pattern, prob, silentmode, syncupdate
-
-See also: phasor~, kink~, line~, mc.snowphasor~, pong~, rate~, swing~, wrap~
 """
 
 svf_tilde = MaxObject('svf~')
@@ -10249,8 +9415,6 @@ Outlets:
   3 (signal): (signal) Notch Output
 
 Messages: int, float, Hz, clear, linear, radians, signal
-
-See also: biquad~, comb~, cross~, onepole~, lores~, reson~, svf~
 """
 
 swing_tilde = MaxObject('swing~')
@@ -10273,8 +9437,6 @@ Outlets:
 Messages: int, float, signal
 
 Attributes: swing, syncupdate
-
-See also: phasor~, kink~, line~, mc.snowphasor~, subdiv~
 """
 
 sync_tilde = MaxObject('sync~')
@@ -10294,8 +9456,6 @@ Outlets:
 Messages: bang, int, float, bpm, midioffset, offset, ppq, signal, start, stop
 
 Attributes: rtport
-
-See also: midiout, phasor~, rate~, rtin, seq, transport, wave~
 """
 
 table_tilde = MaxObject('table~')
@@ -10313,8 +9473,6 @@ Outlets:
 Messages: bang, int, float, (mouse), goto, next, prev, signal
 
 Attributes: annotation_name, embed, extend, inmap, inputmode, interp, name, outscale, parameter_enable, parameter_mappable, range, signed, size, triggermode
-
-See also: buffer~, index~, itable, lookup~, table
 """
 
 tanh_tilde = MaxObject('tanh~')
@@ -10330,8 +9488,6 @@ Outlets:
   0 (OUTLET_TYPE): Tanh (x) Out
 
 Messages: signal
-
-See also: atan~, atanh~, atan2~, tanx~
 """
 
 tanx_tilde = MaxObject('tanx~')
@@ -10347,8 +9503,6 @@ Outlets:
   0 (OUTLET_TYPE): Tan (x) Out
 
 Messages: signal
-
-See also: atan~, atanh~, atan2~, tanh~
 """
 
 tapin_tilde = MaxObject('tapin~')
@@ -10367,8 +9521,6 @@ Outlets:
   0 (OUTLET_TYPE): Connect To One Or More tapout~ Objects
 
 Messages: int, float, clear, freeze, signal
-
-See also: delay~, tapout~
 """
 
 tapout_tilde = MaxObject('tapout~')
@@ -10395,8 +9547,6 @@ Outlets:
 Messages: int, float, list, signal, tapconnect
 
 Attributes: unique
-
-See also: delay~, tapin~
 """
 
 techno_tilde = MaxObject('techno~')
@@ -10414,8 +9564,6 @@ Outlets:
   2 (signal): (signal) step position
 
 Messages: amplitude, attack, curve, decay, length, pitch, pos, repeatpos, signal
-
-See also: adsr~, cycle~, phasor~, rate~, rect~, saw~, seq~, svf~, tri~
 """
 
 teeth_tilde = MaxObject('teeth~')
@@ -10444,8 +9592,6 @@ Outlets:
   0 (signal): (signal) Filter Output
 
 Messages: int, float, clear, signal, list
-
-See also: allpass~, comb~, delay~, reson~
 """
 
 thispoly_tilde = MaxObject('thispoly~')
@@ -10465,8 +9611,6 @@ Outlets:
 Messages: bang, int, mute, signal
 
 Attributes: automute
-
-See also: in, in~, out, out~, poly~
 """
 
 thresh_tilde = MaxObject('thresh~')
@@ -10488,8 +9632,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, list, signal
-
-See also: >~, change~, edge~
 """
 
 times_tilde = MaxObject('times~')
@@ -10509,8 +9651,6 @@ Outlets:
   0 (Signal): (signal) Multiplication Result
 
 Messages: int, float, signal
-
-See also: /~, !/~
 """
 
 train_tilde = MaxObject('train~')
@@ -10536,8 +9676,6 @@ Outlets:
 Messages: bang, int, float, signal
 
 Attributes: interval, phase, resetmode, width
-
-See also: <~, >~, clip~, phasor~
 """
 
 trapezoid_tilde = MaxObject('trapezoid~')
@@ -10561,8 +9699,6 @@ Outlets:
 Messages: float, signal
 
 Attributes: hi, lo, wrapmode
-
-See also: buffer~, cos~, phasor~, updown~, wave~
 """
 
 tri_tilde = MaxObject('tri~')
@@ -10584,8 +9720,6 @@ Outlets:
   0 (signal): (signal) Output
 
 Messages: int, float, signal
-
-See also: cycle~, phasor~, rect~, saw~, techno~, triangle~
 """
 
 triangle_tilde = MaxObject('triangle~')
@@ -10607,8 +9741,6 @@ Outlets:
 Messages: float, signal
 
 Attributes: hi, lo
-
-See also: buffer~, cos~, phasor~, trapezoid~, tri~, wave~
 """
 
 trunc_tilde = MaxObject('trunc~')
@@ -10624,8 +9756,6 @@ Outlets:
   0 (signal): (signal) Integer Part of Input
 
 Messages: signal
-
-See also: clip~, round~
 """
 
 twist_tilde = MaxObject('twist~')
@@ -10644,8 +9774,6 @@ Outlets:
 Messages: int, float, signal, test
 
 Attributes: curve, shapemode, syncupdate
-
-See also: curve~, ramp~, shape~
 """
 
 typeroute_tilde = MaxObject('typeroute~')
@@ -10666,8 +9794,6 @@ Outlets:
   5 (list): (list) A list, if the input type is a list
 
 Messages: bang, int, float, list, anything, signal
-
-See also: route, select
 """
 
 updown_tilde = MaxObject('updown~')
@@ -10688,8 +9814,6 @@ Outlets:
 Messages: bang, signal
 
 Attributes: down, level, reset, up
-
-See also: phasor~, trapezoid~, kink~, line~, subdiv~, zigzag~
 """
 
 vectral_tilde = MaxObject('vectral~')
@@ -10710,8 +9834,6 @@ Outlets:
   0 (signal): (signal) Output Value
 
 Messages: clear, deltaclip, rampsmooth, signal, size, slide
-
-See also: cartopol, cartopol~, deltaclip~, fft~, fftin~, fftinfo~, fftout~, frameaccum~, framedelta~, ifft~, pfft~, poltocar, poltocar~, rampsmooth~, slide~
 """
 
 vst_tilde = MaxObject('vst~')
@@ -10742,8 +9864,6 @@ Outlets:
 Messages: int, float, list, anything, (drag), (mouse), disable, drop, get, getsubnames, midievent, mpeevent, open, params, pgmnames, plug, plug_au, plug_vst, plug_vst3, presetnames, printids, read, scan, set, signal, subname, sysexevent, unplug, wclose, write, writebank, writepgm
 
 Attributes: annotation_name, autosave, bypass, currentplug, enablehscroll, enablevscroll, floateditorwindow, genericeditor, legacytransport, mcisolate, parameter_enable, prefer, transport, valuemode
-
-See also: amxd~
 """
 
 wave_tilde = MaxObject('wave~')
@@ -10769,8 +9889,6 @@ Outlets:
 Messages: int, float, list, (mouse), set, signal
 
 Attributes: interp, interp_bias, interp_tension
-
-See also: 2d.wave~, buffer~, buffir~, groove~, phasor~, play~, sync~
 """
 
 waveform_tilde = MaxObject('waveform~')
@@ -10797,8 +9915,6 @@ Outlets:
 Messages: bang, int, float, list, (drag), bpm, buftime, crop, line, mode, (mouse), mouseoutput, name, normalize, replacebuffercontents, set, setbpm, snap, undo, unit
 
 Attributes: allowdrag, attr_bpm, beats, bgcolor, bordercolor, buffername, chanoffset, clipdraw, grid, gridcolor, invert, labelbgcolor, labels, labeltextcolor, linecolor, norulerclick, offset, outmode, quiet, reflection, reflectioncolor, selectalpha, selectioncolor, setmode, setunit, shadowalpha, shadowblend, shadowline, shadowproportion, snapto, style, ticks, vlabels, voffset, vticks, vzoom, waveformcolor, zoom_orientation, zoomstyle, zoomthresh
-
-See also: buffer~, groove~
 """
 
 what_tilde = MaxObject('what~')
@@ -10820,8 +9936,6 @@ Outlets:
 Messages: int, float, list, clear, signal
 
 Attributes: matches, syncupdate, triggermode
-
-See also: click~, edge~, delta~, phasor~, sah~, stash~, where~
 """
 
 where_tilde = MaxObject('where~')
@@ -10838,8 +9952,6 @@ Outlets:
   1 (signal): Predicted Time Until Reset
 
 Messages: signal
-
-See also: phasor~, spike~, timer, what~
 """
 
 windowed_fft_tilde = MaxObject('windowed-fft~')
@@ -10852,8 +9964,6 @@ Args:
   number-of-FFT-samples (int, required)
 
 Messages: signal
-
-See also: fft~, pfft~
 """
 
 zerox_tilde = MaxObject('zerox~')
@@ -10873,8 +9983,6 @@ Outlets:
   1 (signal): Clicks at Zero-Crossings
 
 Messages: set, signal
-
-See also: change~, edge~, spike~
 """
 
 zigzag_tilde = MaxObject('zigzag~')
@@ -10899,8 +10007,6 @@ Outlets:
 Messages: bang, int, float, list, append, bangdelta, bound, delete, dump, end, insert, jump, jumpend, jumpstart, line, next, prev, print, ramptime, set, setindex, setline, signal, skip, speed, start, stop
 
 Attributes: loopmode, maxpoints, mode
-
-See also: adsr~, curve~, kink~, line~
 """
 
 zplane_tilde = MaxObject('zplane~')
@@ -10925,8 +10031,6 @@ Outlets:
 Messages: bang, float, list, dictionary, ft1, ft2, ft3, ft4, logscale, (mouse), range
 
 Attributes: axiscolor, bgcolor, bordercolor, circlebordercolor, fgcolor, gridlinecolor, hlcolor, order, pconstrain, polezerocolor, rounded, style
-
-See also: biquad~, cascade~, filtercoeff~, filtergraph~
 """
 
 _sys.stdout = _old_stdout
