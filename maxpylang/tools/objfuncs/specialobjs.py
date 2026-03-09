@@ -252,6 +252,42 @@ def update_abstraction_from_file(self, text, extra_attribs, log_var=None):
 
     return
 
+def create_declared_abstraction(self, text, numinlets, numoutlets, extra_attribs):
+    """
+    Create an abstraction with user-declared I/O counts (no file needed).
+
+    Used when abstraction=True is passed to MaxObject, allowing users to declare
+    abstractions that don't exist in the current working directory.
+    """
+
+    #fill in ext_file
+    self._ext_file = self.name
+    if ".maxpat" not in self.name:
+        self._ext_file += ".maxpat"
+
+    #fill in dict
+    self._dict = copy.deepcopy(self.unknown_obj_dict)
+    self._dict['box']['numinlets'] = numinlets
+    self._dict['box']['numoutlets'] = numoutlets
+    self._dict['box']['outlettype'] = [""] * numoutlets
+    self._dict['box']['patching_rect'] = [0.0, 0.0]
+    self._dict['box']['text'] = self._name  #start with just the name
+
+    #fill in attribs
+    self._text_attribs, extra_attribs = self.get_all_valid_attribs(
+        self._text_attribs, extra_attribs, [{"name": "COMMON"}]
+    )
+    self.add_extra_attribs(extra_attribs)
+
+    #update text with args and attribs
+    self.update_text()
+
+    #create ins/outs from dict
+    self.make_xlets_from_self_dict()
+
+    return
+
+
 def get_abstraction_io(self):
     """
     Returns the number of inlets and outlets in an abstraction file.

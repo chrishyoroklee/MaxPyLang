@@ -11,7 +11,10 @@ Methods that deal with the MaxObject's reference file.
 
 import os
 import json
+import warnings
 from pathlib import Path
+
+from maxpylang.exceptions import UnknownObjectWarning
 
 
 def get_ref(self, name):
@@ -42,7 +45,7 @@ def get_ref(self, name):
         if os.path.exists(name) or os.path.exists(name + '.maxpat'):
             ref_file = "abstraction"
         else:
-            print("ObjectError:", name, ": creation : object unknown")
+            warnings.warn(f"Unknown Max object: '{name}'", UnknownObjectWarning, stacklevel=4)
             ref_file = "not_found"
 
     return ref_file

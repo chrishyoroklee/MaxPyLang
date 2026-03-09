@@ -29,7 +29,7 @@ class MaxObject():
     from .tools.constants import unknown_obj_dict   #dictionary of unknown object
 
 
-    def __init__(self, text, from_dict=False, **extra_attribs):
+    def __init__(self, text, from_dict=False, abstraction=False, inlets=None, outlets=None, **extra_attribs):
 
         """
         Initialize a MaxObject.
@@ -41,6 +41,10 @@ class MaxObject():
         from_dict = True --> initialize from given json dict representation of obj (for loading in from existing file)
             text --> json dict
             extra_attribs --> not used
+
+        abstraction = True --> treat as abstraction without needing the .maxpat file in cwd
+            inlets --> number of inlets (default 0)
+            outlets --> number of outlets (default 0)
 
         """
 
@@ -58,7 +62,7 @@ class MaxObject():
             self.build_from_dict(text)
 
         else:
-            self.build_from_specs(text, extra_attribs)
+            self.build_from_specs(text, extra_attribs, abstraction=abstraction, inlets=inlets, outlets=outlets)
 
         return
 
@@ -132,6 +136,7 @@ class MaxObject():
     from .tools.objfuncs.specialobjs import create_js, get_js_filename, get_js_io, update_js_from_file, link_js, \
                                             create_abstraction, get_abstraction_io, \
                                             update_abstraction_from_file, link_abstraction,  \
+                                            create_declared_abstraction, \
                                             get_trigger_out_types, get_unpack_out_types, update_vst
 
 

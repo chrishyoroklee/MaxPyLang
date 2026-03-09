@@ -385,13 +385,9 @@ def get_obj_from_spec(self, obj_spec):
     Helper function to get object from specification, either from string or from MaxObject.
     """
 
-    # if given as string, make object
+    # if given as string, make object (warning fires from MaxObject constructor)
     if isinstance(obj_spec, str):
         obj = MaxObject(obj_spec)
-
-        # report if object not known
-        if obj.notknown():
-            print(" PatchError: unknown obj : ", obj._dict["box"]["text"])
 
     # otherwise, make sure it's a MaxObject
     else:

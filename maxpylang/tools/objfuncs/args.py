@@ -8,7 +8,10 @@ Methods dealing with text args for MaxObjects.
 
 """
 
+import warnings
+
 from maxpylang.tools import typechecks as tc
+from maxpylang.exceptions import UnknownObjectWarning
 import tabulate
 
 def args_valid(self, name, args, arg_info):
@@ -22,31 +25,36 @@ def args_valid(self, name, args, arg_info):
 
     #check that we have enough args
     if len(args_req) > len(args):
-        print("ObjectError:", name, ": missing required arguments")
-        print()
-        print (tabulate.tabulate([[x['name'], x['type']] for x in args_req],
-                                 ['req arg', 'type'], tablefmt='pretty'))
+        req_table = tabulate.tabulate([[x['name'], x['type']] for x in args_req],
+                                      ['req arg', 'type'], tablefmt='pretty')
+        warnings.warn(
+            f"'{name}': missing required arguments\n{req_table}",
+            UnknownObjectWarning, stacklevel=4
+        )
         return False
 
     #check all type, argument pairs are valid
     req_types = [arg['type'] for arg in args_req]
     if not all([tc.check_type(t, a) for t, a in zip(req_types, args[:len(args_req)])]):
-        print("ObjectError:", name, ": bad type(s) for required arguments")
-        print()
-        print (tabulate.tabulate([[x['name'], x['type']] for x in args_req],
-                                 ['req arg', 'type'], tablefmt='pretty'))
+        req_table = tabulate.tabulate([[x['name'], x['type']] for x in args_req],
+                                      ['req arg', 'type'], tablefmt='pretty')
+        warnings.warn(
+            f"'{name}': bad type(s) for required arguments\n{req_table}",
+            UnknownObjectWarning, stacklevel=4
+        )
         return False
 
     #check remaining args against optional args
     opt_types = [arg['type'] for arg in args_opt]
     if not all([tc.check_type(t, a) for t, a in zip(opt_types, args[len(args_req):])]):
-        print("ObjectError:", name, ": bad type(s) for optional arguments")
-        print()
-        print (tabulate.tabulate([[x['name'], x['type']] for x in args_req],
-                                 ['req arg', 'type'], tablefmt='pretty'))
-        print()
-        print (tabulate.tabulate([[x['name'], x['type']] for x in args_opt],
-                                 ['opt arg', 'type'], tablefmt='pretty'))
+        req_table = tabulate.tabulate([[x['name'], x['type']] for x in args_req],
+                                      ['req arg', 'type'], tablefmt='pretty')
+        opt_table = tabulate.tabulate([[x['name'], x['type']] for x in args_opt],
+                                      ['opt arg', 'type'], tablefmt='pretty')
+        warnings.warn(
+            f"'{name}': bad type(s) for optional arguments\n{req_table}\n{opt_table}",
+            UnknownObjectWarning, stacklevel=4
+        )
         return False
 
     if self.arg_warning:

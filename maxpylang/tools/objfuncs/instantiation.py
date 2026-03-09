@@ -5,15 +5,21 @@ Methods related to object instantiation.
 """
 
 
-def build_from_specs(self, text, extra_attribs):
+def build_from_specs(self, text, extra_attribs, abstraction=False, inlets=None, outlets=None):
     """
     Helper function for initialization.
 
     Builds object from in-box text and extra attributes given.
     """
 
-    #parse into name, args, text_attribs 
+    #parse into name, args, text_attribs
     self._name, self._args, self._text_attribs = self.parse_text(text)
+
+    #if declared as abstraction, skip ref lookup and build directly
+    if abstraction:
+        self._ref_file = "abstraction"
+        self.create_declared_abstraction(text, inlets or 0, outlets or 0, extra_attribs)
+        return
 
     #find reference file
     ref_file = self.get_ref(self._name)
