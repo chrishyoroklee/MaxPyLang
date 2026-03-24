@@ -50,7 +50,7 @@ def load_template(self, t, verbose=True):
 def load_file(self, f, reorder=True, verbose=True):
     """
     Helper function for instantiation.
-    Loads in an existing .maxpat file.
+    Loads in an existing .maxpat or .amxd file.
 
     reorder --> re-number objects, starting from 1
     verbose --> log to console

@@ -38,7 +38,7 @@ def save(self, filename="default.maxpat", device_type=None, verbose=True, check=
             )
 
         if ".amxd" not in Path(filename).suffixes:
-            # strip .maxpat if present, add .amxd
+            # replace existing extension (e.g. .maxpat) with .amxd, or append .amxd if none
             filename = str(Path(filename).with_suffix(".amxd"))
 
         json_dict = self.get_json()
@@ -65,7 +65,7 @@ def save(self, filename="default.maxpat", device_type=None, verbose=True, check=
 
     #log messages
     if verbose:
-        if device_type:
+        if device_type is not None:
             print(f"maxpatch saved to {filename} (M4L {device_type})")
         else:
             print("maxpatch saved to", filename)

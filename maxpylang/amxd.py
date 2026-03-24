@@ -17,6 +17,8 @@ DEVICE_TYPES = {
 
 def save_amxd(patcher_json, filename, device_type="instrument"):
     """Wrap a patcher JSON dict in .amxd binary format and write to file."""
+    if not isinstance(patcher_json, dict):
+        raise TypeError(f"patcher_json must be a dict, got {type(patcher_json).__name__}")
     if device_type not in DEVICE_TYPES:
         raise ValueError(f"Unknown device_type {device_type!r}. "
                          f"Choose from: {', '.join(DEVICE_TYPES)}")
@@ -44,12 +46,14 @@ def load_amxd(filename):
         data = f.read()
 
     offset = 0
-    while offset < len(data):
-        field = data[offset:offset + 4].decode("ascii")
+    while offset + 8 <= len(data):
+        field = data[offset:offset + 4].decode("ascii", errors="replace")
         size = struct.unpack("<I", data[offset + 4:offset + 8])[0]
+        if offset + 8 + size > len(data):
+            raise ValueError(f"Chunk '{field}' size {size} extends past end of file")
         if field == "ptch":
             json_bytes = data[offset + 8:offset + 8 + size]
-            return json.loads(json_bytes.rstrip(b"\x00"))
+            return json.loads(json_bytes.removesuffix(b"\x00"))
         offset += 8 + size
 
     raise ValueError("No ptch chunk found in .amxd file")
