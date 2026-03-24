@@ -5,15 +5,16 @@ Functions for instantiation of a MaxPatch.
 
     load_template() --> create patch from template
 
-    load_file() --> create patch from existing .maxpat file
-        load_objs_from_dict() --> create objects from existing .maxpat file dict
-        load_patchcords_from_dict() --> create patchcords from existing .maxpat file dict
+    load_file() --> create patch from existing .maxpat or .amxd file
+        load_objs_from_dict() --> create objects from existing file dict
+        load_patchcords_from_dict() --> create patchcords from existing file dict
         clean_patcher_dict() --> get cleaned patcher dict
 
 """
 
 import os
 import json
+from pathlib import Path
 from maxpylang.maxobject import MaxObject
 
 
@@ -59,9 +60,13 @@ def load_file(self, f, reorder=True, verbose=True):
     if verbose:
         print("Patcher: loading patch from existing file:", os.path.split(f)[-1])
 
-    #read .maxpat file into dict
-    with open(f, 'r') as file:
-        patch_dict = json.loads(file.read())
+    #read .maxpat or .amxd file into dict
+    if Path(f).suffix == ".amxd":
+        from ...amxd import load_amxd
+        patch_dict = load_amxd(f)
+    else:
+        with open(f, 'r') as file:
+            patch_dict = json.loads(file.read())
 
 
     #load in objs
