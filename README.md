@@ -43,7 +43,29 @@ patch.save("hello_world.maxpat")
 MaxPy was published as a [demo paper](examples/NIME2023/MaxPy-NIME-2023-Paper.pdf) for NIME 2023.
 The package name was updated to MaxPyLang in 2025 to avoid confusion with other similarly named packages.
 
-## Video Demos 
+
+## Watch MaxPyLang in Action
+
+We post demos, tutorials, and generated patch examples on our YouTube channel:  
+-> https://youtube.com/@fishpyler
+
+## Video Demos
+
+### Simple Demo of Jitter Patch
+[![Simple Demo of Jitter Patch](https://img.youtube.com/vi/rMhSA1ZN5Mg/0.jpg)](https://www.youtube.com/watch?v=rMhSA1ZN5Mg)
+
+A demo showing MaxPyLang generating a Jitter patch programmatically, demonstrating dynamic patch creation and integration with visual systems.
+
+### Generating Your First Max Patch with Python
+[![First MaxPatch Generation](https://img.youtube.com/vi/e5arn3SkfJI/0.jpg)](https://www.youtube.com/watch?v=e5arn3SkfJI)
+
+Walkthrough of generating a basic Max patch using Python, including object placement and connections.
+
+
+More videos (including tutorials and advanced examples) coming soon!
+
+
+## Older Video Demos 
 ### [Basics](https://www.youtube.com/watch?v=F8Fpe0Udc4M)      
 [![Introduction to MaxPy](https://img.youtube.com/vi/F8Fpe0Udc4M/0.jpg)](https://www.youtube.com/watch?v=F8Fpe0Udc4M)     
 Mark demonstrates the basics of installing MaxPy, creating patches, and placing objects.   
