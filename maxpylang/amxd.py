@@ -47,13 +47,18 @@ def load_amxd(filename):
 
     offset = 0
     while offset + 8 <= len(data):
-        field = data[offset:offset + 4].decode("ascii", errors="replace")
+        tag = data[offset:offset + 4]
         size = struct.unpack("<I", data[offset + 4:offset + 8])[0]
         if offset + 8 + size > len(data):
-            raise ValueError(f"Chunk '{field}' size {size} extends past end of file")
-        if field == "ptch":
+            raise ValueError(f"Chunk {tag!r} size {size} extends past end of file")
+        if tag == b"ptch":
             json_bytes = data[offset + 8:offset + 8 + size]
-            return json.loads(json_bytes.removesuffix(b"\x00"))
+            try:
+                return json.loads(json_bytes.rstrip(b"\x00"))
+            except json.JSONDecodeError as e:
+                raise ValueError(
+                    f"ptch chunk in '{filename}' contains invalid JSON: {e}"
+                ) from e
         offset += 8 + size
 
-    raise ValueError("No ptch chunk found in .amxd file")
+    raise ValueError(f"No ptch chunk found in '{filename}'")
