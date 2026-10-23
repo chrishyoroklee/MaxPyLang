@@ -102,6 +102,12 @@ class MaxObject():
         for attrib, val in attribs.items():
             vals = val if isinstance(val, (list, tuple)) else [val]
             words += ["@" + attrib] + [str(v) for v in vals]
+
+        # an abstraction's inlets and outlets come from its contents, not its arguments
+        if self._ref_file == "abstraction":
+            return MaxObject(" ".join(words), abstraction=True,
+                             inlets=len(self._ins), outlets=len(self._outs))
+
         return MaxObject(" ".join(words))
 
     from .tools.objfuncs.exposed import move, edit, link, inspect #exposed functions for user use

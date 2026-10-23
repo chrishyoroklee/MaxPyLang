@@ -356,6 +356,7 @@ def place_obj(self, obj, position=[0.0, 0.0], verbose=False, replace_id=None):
 
     # get object from specification
     obj = self.get_obj_from_spec(obj)
+    obj._in_patch = True
 
     if replace_id == None:  # for just adding (not replacing)...
         self._num_objs += 1  # increment patch number of objects
@@ -397,11 +398,30 @@ def get_obj_from_spec(self, obj_spec):
         ), f"object must be specified as a string or a MaxObject"
         obj = obj_spec
 
-        # stubs and already-placed objects are copied, so one box never sits in two places
+        # stubs and objects already in a patch are copied, so a placed box is never shared
         if obj._is_stub or obj._in_patch:
-            obj = copy.deepcopy(obj)
-            obj._is_stub = False
-
-    obj._in_patch = True
+            obj = copy_without_cords(obj)
 
     return obj
+
+
+def copy_without_cords(obj):
+    """
+    Helper function for placing.
+
+    Deep copy of a MaxObject with no patchcords. Copying the cords would also copy every
+    object connected to it, recursively.
+    """
+
+    memo = {}
+    for inlet in obj.ins:
+        memo[id(inlet._sources)] = []
+        memo[id(inlet._midpoints)] = []
+    for outlet in obj.outs:
+        memo[id(outlet._destinations)] = []
+
+    new_obj = copy.deepcopy(obj, memo)
+    new_obj._is_stub = False
+    new_obj._in_patch = False
+
+    return new_obj
