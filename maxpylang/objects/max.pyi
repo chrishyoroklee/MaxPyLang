@@ -482,6 +482,31 @@ _NAMES: dict[str, str]
 
 class _T_abs_(MaxObject):
     """
+abs - Calculate an absolute value
+
+Outputs the absolute (non-negative) value of any given number. Floats will be output only if the argument to abs is a float.
+
+Args:
+  format (number, optional)
+
+Inlets:
+  0 (INLET_TYPE): Input for Absolute Value
+
+Outlets:
+  0 (OUTLET_TYPE): Absolute Value of Input
+
+Messages: int, float
+"""
+    @property
+    def ins(self) -> tuple[Inlet[Control]]: ...
+    @property
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_abs_: ...
+
+abs_: _T_abs_
+
+class _T_absolutepath(MaxObject):
+    """
 absolutepath - Convert a file name to an absolute path
 
 Converts a file name or path to an absolute path. If the file is not found, the symbol notfound is output.
@@ -498,11 +523,11 @@ Messages: anything, types
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_abs_: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_absolutepath: ...
 
-abs_: _T_abs_
+absolutepath: _T_absolutepath
 
-class _T_absolutepath(MaxObject):
+class _T_accum(MaxObject):
     """
 accum - Store, add to, and multiply a number
 
@@ -522,14 +547,14 @@ Outlets:
 Messages: bang, int, float, ft1, in1, in2, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_absolutepath: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_accum: ...
 
-absolutepath: _T_absolutepath
+accum: _T_accum
 
-class _T_accum(MaxObject):
+class _T_acos(MaxObject):
     """
 acos - Arc-cosine function
 
@@ -547,14 +572,14 @@ Outlets:
 Messages: bang, int, float
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_accum: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_acos: ...
 
-accum: _T_accum
+acos: _T_acos
 
-class _T_acos(MaxObject):
+class _T_acosh(MaxObject):
     """
 acosh - Hyperbolic arc-cosine function
 
@@ -575,11 +600,11 @@ Messages: bang, int, float
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_acos: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_acosh: ...
 
-acos: _T_acos
+acosh: _T_acosh
 
-class _T_acosh(MaxObject):
+class _T_active(MaxObject):
     """
 active - Send 1 when patcher window is active, 0 when inactive
 
@@ -591,11 +616,11 @@ Messages: int
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_acosh: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_active: ...
 
-acosh: _T_acosh
+active: _T_active
 
-class _T_active(MaxObject):
+class _T_anal(MaxObject):
     """
 anal - Make a histogram of number pairs
 
@@ -616,11 +641,11 @@ Messages: int, clear, reset
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_active: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_anal: ...
 
-active: _T_active
+anal: _T_anal
 
-class _T_anal(MaxObject):
+class _T_append(MaxObject):
     """
 append - Append arguments to the end of a message
 
@@ -641,11 +666,11 @@ Messages: bang, int, float, list, anything, set
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_anal: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_append: ...
 
-anal: _T_anal
+append: _T_append
 
-class _T_append(MaxObject):
+class _T_array(MaxObject):
     """
 array - Create or duplicate an array object
 
@@ -668,14 +693,14 @@ Messages: bang, int, float, list, anything, append, array, atoms, clear, delete,
 Attributes: name, parameter_enable, parameter_mappable, size
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_append: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array: ...
 
-append: _T_append
+array: _T_array
 
-class _T_array(MaxObject):
+class _T_array_change(MaxObject):
     """
 array.change - Detect array changes
 
@@ -694,14 +719,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: unordered
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_change: ...
 
-array: _T_array
+array_change: _T_array_change
 
-class _T_array_change(MaxObject):
+class _T_array_compare(MaxObject):
     """
 array.compare - Compare two arrays for equality
 
@@ -719,14 +744,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: unordered
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_change: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_compare: ...
 
-array_change: _T_array_change
+array_compare: _T_array_compare
 
-class _T_array_compare(MaxObject):
+class _T_array_concat(MaxObject):
     """
 array.concat - Concatenate two array objects
 
@@ -742,14 +767,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_compare: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_concat: ...
 
-array_compare: _T_array_compare
+array_concat: _T_array_concat
 
-class _T_array_concat(MaxObject):
+class _T_array_deserialize(MaxObject):
     """
 array.deserialize - Parse a string, symbol or list to an array.
 
@@ -764,14 +789,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_concat: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_deserialize: ...
 
-array_concat: _T_array_concat
+array_deserialize: _T_array_deserialize
 
-class _T_array_deserialize(MaxObject):
+class _T_array_every(MaxObject):
     """
 array.every - Tests all elements in the array
 
@@ -789,14 +814,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, cancel, dictionary, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_deserialize: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_every: ...
 
-array_deserialize: _T_array_deserialize
+array_every: _T_array_every
 
-class _T_array_every(MaxObject):
+class _T_array_expr(MaxObject):
     """
 array.expr - Evaluate a math expression for an array
 
@@ -821,14 +846,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: fillmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_every: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_expr: ...
 
-array_every: _T_array_every
+array_expr: _T_array_expr
 
-class _T_array_expr(MaxObject):
+class _T_array_fill(MaxObject):
     """
 array.fill - Generate an array of a specified length
 
@@ -850,14 +875,14 @@ Messages: bang, int, float, list, anything, array, dictionary, in1, string
 Attributes: mode, range, seed, urn
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_expr: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_fill: ...
 
-array_expr: _T_array_expr
+array_fill: _T_array_fill
 
-class _T_array_fill(MaxObject):
+class _T_array_filter(MaxObject):
     """
 array.filter - Output elements of an array matching a condition
 
@@ -875,14 +900,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, cancel, dictionary, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_fill: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_filter: ...
 
-array_fill: _T_array_fill
+array_filter: _T_array_filter
 
-class _T_array_filter(MaxObject):
+class _T_array_flatten(MaxObject):
     """
 array.flatten - Flatten a multi-dimensional array object to a single dimension
 
@@ -900,14 +925,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: mode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_filter: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_flatten: ...
 
-array_filter: _T_array_filter
+array_flatten: _T_array_flatten
 
-class _T_array_flatten(MaxObject):
+class _T_array_foreach(MaxObject):
     """
 array.foreach - Iterate the elements of an array
 
@@ -925,14 +950,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_flatten: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_foreach: ...
 
-array_flatten: _T_array_flatten
+array_foreach: _T_array_foreach
 
-class _T_array_foreach(MaxObject):
+class _T_array_frombuffer(MaxObject):
     """
 array.frombuffer - Read audio buffer values into an array object
 
@@ -954,14 +979,14 @@ Messages: bang, list
 Attributes: buffername, channelcount, channelstart, flatsinglechannel, framelength, frameoffset
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_foreach: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_frombuffer: ...
 
-array_foreach: _T_array_foreach
+array_frombuffer: _T_array_frombuffer
 
-class _T_array_frombuffer(MaxObject):
+class _T_array_group(MaxObject):
     """
 array.group - Output an array when it reaches a certain size
 
@@ -980,14 +1005,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, clear, dictionary, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_frombuffer: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_group: ...
 
-array_frombuffer: _T_array_frombuffer
+array_group: _T_array_group
 
-class _T_array_group(MaxObject):
+class _T_array_index(MaxObject):
     """
 array.index - Output the indexed element of an array object
 
@@ -1009,14 +1034,14 @@ Messages: bang, int, float, list, anything, array, dictionary, in1, string
 Attributes: remainder
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_group: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_index: ...
 
-array_group: _T_array_group
+array_index: _T_array_index
 
-class _T_array_index(MaxObject):
+class _T_array_indexmap(MaxObject):
     """
 array.indexmap - Reorder the elements of an array object based on an indexed map
 
@@ -1035,14 +1060,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_index: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_indexmap: ...
 
-array_index: _T_array_index
+array_indexmap: _T_array_indexmap
 
-class _T_array_indexmap(MaxObject):
+class _T_array_indexof(MaxObject):
     """
 array.indexof - Search for the index of an array element
 
@@ -1060,14 +1085,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: all, offset
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_indexmap: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_indexof: ...
 
-array_indexmap: _T_array_indexmap
+array_indexof: _T_array_indexof
 
-class _T_array_indexof(MaxObject):
+class _T_array_insert(MaxObject):
     """
 array.insert - Insert elements into an array object
 
@@ -1087,14 +1112,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, in2, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_indexof: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_insert: ...
 
-array_indexof: _T_array_indexof
+array_insert: _T_array_insert
 
-class _T_array_insert(MaxObject):
+class _T_array_iter(MaxObject):
     """
 array.iter - Iterate every element of an array object
 
@@ -1110,14 +1135,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_insert: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_iter: ...
 
-array_insert: _T_array_insert
+array_iter: _T_array_iter
 
-class _T_array_iter(MaxObject):
+class _T_array_join(MaxObject):
     """
 array.join - Convert an array object to a string object with an optional separator string
 
@@ -1133,14 +1158,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, clear, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_iter: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_join: ...
 
-array_iter: _T_array_iter
+array_join: _T_array_join
 
-class _T_array_join(MaxObject):
+class _T_array_length(MaxObject):
     """
 array.length - Determine the length of an array object
 
@@ -1155,14 +1180,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, clear, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_join: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_length: ...
 
-array_join: _T_array_join
+array_length: _T_array_length
 
-class _T_array_length(MaxObject):
+class _T_array_map(MaxObject):
     """
 array.map - Perform an operation on every element of an array object, replacing elements in-place
 
@@ -1180,14 +1205,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, cancel, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_length: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_map: ...
 
-array_length: _T_array_length
+array_map: _T_array_map
 
-class _T_array_map(MaxObject):
+class _T_array_max(MaxObject):
     """
 array.max - Calculate the maximum of the numerical elements of an array
 
@@ -1203,14 +1228,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_map: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_max: ...
 
-array_map: _T_array_map
+array_max: _T_array_max
 
-class _T_array_max(MaxObject):
+class _T_array_mean(MaxObject):
     """
 array.mean - Calculate the mean of the numerical elements of an array
 
@@ -1226,14 +1251,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_max: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_mean: ...
 
-array_max: _T_array_max
+array_mean: _T_array_mean
 
-class _T_array_mean(MaxObject):
+class _T_array_median(MaxObject):
     """
 array.median - Calculate the median of the numerical elements of an array
 
@@ -1251,14 +1276,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: evenmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_mean: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_median: ...
 
-array_mean: _T_array_mean
+array_median: _T_array_median
 
-class _T_array_median(MaxObject):
+class _T_array_min(MaxObject):
     """
 array.min - Calculate the minimum of the numerical elements of an array
 
@@ -1274,14 +1299,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_median: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_min: ...
 
-array_median: _T_array_median
+array_min: _T_array_min
 
-class _T_array_min(MaxObject):
+class _T_array_mode(MaxObject):
     """
 array.mode - Calculate the mode of the numerical elements of an array
 
@@ -1297,14 +1322,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_min: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_mode: ...
 
-array_min: _T_array_min
+array_mode: _T_array_mode
 
-class _T_array_mode(MaxObject):
+class _T_array_pop(MaxObject):
     """
 array.pop - Remove an element from the end of an array
 
@@ -1324,14 +1349,14 @@ Messages: bang, int, float, list, anything, array, clear, dictionary, string
 Attributes: wrapmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_mode: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_pop: ...
 
-array_mode: _T_array_mode
+array_pop: _T_array_pop
 
-class _T_array_pop(MaxObject):
+class _T_array_push(MaxObject):
     """
 array.push - Add one or more elements to the end of an array
 
@@ -1349,14 +1374,14 @@ Messages: bang, int, float, list, anything, array, clear, dictionary, string
 Attributes: wrapmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_pop: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_push: ...
 
-array_pop: _T_array_pop
+array_push: _T_array_push
 
-class _T_array_push(MaxObject):
+class _T_array_random(MaxObject):
     """
 array.random - Generate a random array of a specified length
 
@@ -1378,14 +1403,14 @@ Messages: bang, int, float, list, anything, array, dictionary, in1, string
 Attributes: mode, range, seed, urn
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_push: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_random: ...
 
-array_push: _T_array_push
+array_random: _T_array_random
 
-class _T_array_random(MaxObject):
+class _T_array_reduce(MaxObject):
     """
 array.reduce - Combine array elements based on a custom function
 
@@ -1406,14 +1431,14 @@ Messages: bang, int, float, list, anything, array, cancel, dictionary, string
 Attributes: initial
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_random: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_reduce: ...
 
-array_random: _T_array_random
+array_reduce: _T_array_reduce
 
-class _T_array_reduce(MaxObject):
+class _T_array_regexp(MaxObject):
     """
 array.regexp - Use regular expressions to process input
 
@@ -1440,14 +1465,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: re, substitute
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_reduce: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_regexp: ...
 
-array_reduce: _T_array_reduce
+array_regexp: _T_array_regexp
 
-class _T_array_regexp(MaxObject):
+class _T_array_remove(MaxObject):
     """
 array.remove - Remove a range of elements from an array object
 
@@ -1465,14 +1490,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, in1, in2, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_regexp: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_remove: ...
 
-array_regexp: _T_array_regexp
+array_remove: _T_array_remove
 
-class _T_array_remove(MaxObject):
+class _T_array_replace(MaxObject):
     """
 array.replace - Replace elements in an array
 
@@ -1487,14 +1512,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, in2, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_remove: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_replace: ...
 
-array_remove: _T_array_remove
+array_replace: _T_array_replace
 
-class _T_array_replace(MaxObject):
+class _T_array_reverse(MaxObject):
     """
 array.reverse - Reverse the order of elements in an array object
 
@@ -1510,14 +1535,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_replace: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_reverse: ...
 
-array_replace: _T_array_replace
+array_reverse: _T_array_reverse
 
-class _T_array_reverse(MaxObject):
+class _T_array_rotate(MaxObject):
     """
 array.rotate - Rotate the elements in any array object
 
@@ -1536,14 +1561,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_reverse: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_rotate: ...
 
-array_reverse: _T_array_reverse
+array_rotate: _T_array_rotate
 
-class _T_array_rotate(MaxObject):
+class _T_array_routepass(MaxObject):
     """
 array.routepass - Route a complete input array object based on input matching
 
@@ -1563,14 +1588,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: match
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_rotate: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_routepass: ...
 
-array_rotate: _T_array_rotate
+array_routepass: _T_array_routepass
 
-class _T_array_routepass(MaxObject):
+class _T_array_scramble(MaxObject):
     """
 array.scramble - Randomize the order of elements in an array object
 
@@ -1587,14 +1612,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_routepass: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_scramble: ...
 
-array_routepass: _T_array_routepass
+array_scramble: _T_array_scramble
 
-class _T_array_scramble(MaxObject):
+class _T_array_sect(MaxObject):
     """
 array.sect - Return the elements of an array object which intersect with another array object
 
@@ -1610,14 +1635,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_scramble: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_sect: ...
 
-array_scramble: _T_array_scramble
+array_sect: _T_array_sect
 
-class _T_array_sect(MaxObject):
+class _T_array_shift(MaxObject):
     """
 array.shift - Remove an element from the beginning of an array
 
@@ -1637,14 +1662,14 @@ Messages: bang, int, float, list, anything, array, clear, dictionary, string
 Attributes: wrapmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_sect: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_shift: ...
 
-array_sect: _T_array_sect
+array_shift: _T_array_shift
 
-class _T_array_shift(MaxObject):
+class _T_array_slice(MaxObject):
     """
 array.slice - Output a range of elements of an array object as a new array object
 
@@ -1663,14 +1688,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_shift: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_slice: ...
 
-array_shift: _T_array_shift
+array_slice: _T_array_slice
 
-class _T_array_slice(MaxObject):
+class _T_array_some(MaxObject):
     """
 array.some - Test the elements of an array object for a matching condition
 
@@ -1688,14 +1713,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, cancel, dictionary, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_slice: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_some: ...
 
-array_slice: _T_array_slice
+array_some: _T_array_some
 
-class _T_array_some(MaxObject):
+class _T_array_sort(MaxObject):
     """
 array.sort - Sort the elements of an array object according to a test
 
@@ -1715,14 +1740,14 @@ Messages: bang, int, float, list, anything, array, cancel, dictionary, in1, stri
 Attributes: simple
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_some: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_sort: ...
 
-array_some: _T_array_some
+array_sort: _T_array_sort
 
-class _T_array_sort(MaxObject):
+class _T_array_split(MaxObject):
     """
 array.split - Split an array object into two new array objects at a specified index
 
@@ -1742,14 +1767,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_sort: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_split: ...
 
-array_sort: _T_array_sort
+array_split: _T_array_split
 
-class _T_array_split(MaxObject):
+class _T_array_stddev(MaxObject):
     """
 array.stddev - Calculate the standard deviation of the numerical elements of an array
 
@@ -1765,14 +1790,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_split: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_stddev: ...
 
-array_split: _T_array_split
+array_stddev: _T_array_stddev
 
-class _T_array_stddev(MaxObject):
+class _T_array_stream(MaxObject):
     """
 array.stream - Make an array of a certain size
 
@@ -1792,14 +1817,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, clear, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_stddev: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_stream: ...
 
-array_stddev: _T_array_stddev
+array_stream: _T_array_stream
 
-class _T_array_stream(MaxObject):
+class _T_array_subarray(MaxObject):
     """
 array.subarray - Output a range of elements of an array object as a new array object
 
@@ -1818,14 +1843,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_stream: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_subarray: ...
 
-array_stream: _T_array_stream
+array_subarray: _T_array_subarray
 
-class _T_array_subarray(MaxObject):
+class _T_array_thin(MaxObject):
     """
 array.thin - Remove duplicated entries from an array object
 
@@ -1838,14 +1863,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_subarray: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_thin: ...
 
-array_subarray: _T_array_subarray
+array_thin: _T_array_thin
 
-class _T_array_thin(MaxObject):
+class _T_array_tobuffer(MaxObject):
     """
 array.tobuffer - Write array object values to an audio buffer
 
@@ -1866,14 +1891,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: buffername, channelstart, framelength, frameoffset, resize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_thin: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tobuffer: ...
 
-array_thin: _T_array_thin
+array_tobuffer: _T_array_tobuffer
 
-class _T_array_tobuffer(MaxObject):
+class _T_array_tolist(MaxObject):
     """
 array.tolist - Convert an array object to a list
 
@@ -1890,14 +1915,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: flatten, stringmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tobuffer: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tolist: ...
 
-array_tobuffer: _T_array_tobuffer
+array_tolist: _T_array_tolist
 
-class _T_array_tolist(MaxObject):
+class _T_array_tostring(MaxObject):
     """
 array.tostring - Convert an array object to a string object
 
@@ -1912,14 +1937,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tolist: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tostring: ...
 
-array_tolist: _T_array_tolist
+array_tostring: _T_array_tostring
 
-class _T_array_tostring(MaxObject):
+class _T_array_tosymbol(MaxObject):
     """
 array.tosymbol - Convert an array object to a symbol
 
@@ -1934,14 +1959,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tostring: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tosymbol: ...
 
-array_tostring: _T_array_tostring
+array_tosymbol: _T_array_tosymbol
 
-class _T_array_tosymbol(MaxObject):
+class _T_array_tuplewise(MaxObject):
     """
 array.tuplewise - Make an array of a certain size (counting iterations)
 
@@ -1959,14 +1984,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, clear, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tosymbol: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tuplewise: ...
 
-array_tosymbol: _T_array_tosymbol
+array_tuplewise: _T_array_tuplewise
 
-class _T_array_tuplewise(MaxObject):
+class _T_array_union(MaxObject):
     """
 array.union - Combine two arrays into a new array object containing non-duplicate entries of both arrays
 
@@ -1982,14 +2007,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_tuplewise: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_union: ...
 
-array_tuplewise: _T_array_tuplewise
+array_union: _T_array_union
 
-class _T_array_union(MaxObject):
+class _T_array_unique(MaxObject):
     """
 array.unique - Filtering duplicates and subtract arrays
 
@@ -2005,14 +2030,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_union: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_unique: ...
 
-array_union: _T_array_union
+array_unique: _T_array_unique
 
-class _T_array_unique(MaxObject):
+class _T_array_unshift(MaxObject):
     """
 array.unshift - Add one or more elements to the beginning of an array
 
@@ -2030,14 +2055,14 @@ Messages: bang, int, float, list, anything, array, clear, dictionary, string
 Attributes: wrapmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_unique: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_unshift: ...
 
-array_unique: _T_array_unique
+array_unshift: _T_array_unshift
 
-class _T_array_unshift(MaxObject):
+class _T_array_wrap(MaxObject):
     """
 array.wrap - Wrap an array inside of an array
 
@@ -2053,14 +2078,14 @@ Outlets:
 Messages: bang, int, float, list, anything, array, dictionary, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_unshift: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_array_wrap: ...
 
-array_unshift: _T_array_unshift
+array_wrap: _T_array_wrap
 
-class _T_array_wrap(MaxObject):
+class _T_asin(MaxObject):
     """
 asin - Arc-sine function
 
@@ -2081,11 +2106,11 @@ Messages: bang, int, float
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_array_wrap: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_asin: ...
 
-array_wrap: _T_array_wrap
+asin: _T_asin
 
-class _T_asin(MaxObject):
+class _T_asinh(MaxObject):
     """
 asinh - Hyperbolic arc-sine function
 
@@ -2106,11 +2131,11 @@ Messages: bang, int, float
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_asin: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_asinh: ...
 
-asin: _T_asin
+asinh: _T_asinh
 
-class _T_asinh(MaxObject):
+class _T_atan(MaxObject):
     """
 atan - Arc-tangent function
 
@@ -2131,11 +2156,11 @@ Messages: bang, int, float
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_asinh: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_atan: ...
 
-asinh: _T_asinh
+atan: _T_atan
 
-class _T_atan(MaxObject):
+class _T_atan2(MaxObject):
     """
 atan2 - Two-variable arc-tangent function
 
@@ -2154,14 +2179,14 @@ Outlets:
 Messages: bang, int, float, ft1, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_atan: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_atan2: ...
 
-atan: _T_atan
+atan2: _T_atan2
 
-class _T_atan2(MaxObject):
+class _T_atanh(MaxObject):
     """
 atanh - Hyperbolic arc-tangent function
 
@@ -2179,14 +2204,14 @@ Outlets:
 Messages: bang, int, float
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_atan2: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_atanh: ...
 
-atan2: _T_atan2
+atanh: _T_atanh
 
-class _T_atanh(MaxObject):
+class _T_atodb(MaxObject):
     """
 atodb - Convert a linear value to decibels
 
@@ -2204,11 +2229,11 @@ Messages: bang, int, float, list, set
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_atanh: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_atodb: ...
 
-atanh: _T_atanh
+atodb: _T_atodb
 
-class _T_atodb(MaxObject):
+class _T_atoi(MaxObject):
     """
 atoi - Convert characters to integers
 
@@ -2225,14 +2250,14 @@ Messages: bang, int, float, list, anything, clear
 Attributes: utf8
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_atodb: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_atoi: ...
 
-atodb: _T_atodb
+atoi: _T_atoi
 
-class _T_atoi(MaxObject):
+class _T_attrui(MaxObject):
     """
 attrui - Inspect attributes
 
@@ -2249,14 +2274,14 @@ Messages: int, float, list, anything, (mouse)
 Attributes: align, annotation_name, arrowcolor, attr, attr_display, attrfilter, bgcolor, bgcolor2, bordercolor, displaymode, htricolor, lock, menu_display, orientation, parameter_enable, paramonly, rounded, showcaption, showgetonly, storeinpreset, style, text_width, textcolor, textjustification, tricolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_atoi: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_attrui: ...
 
-atoi: _T_atoi
+attrui: _T_attrui
 
-class _T_attrui(MaxObject):
+class _T_autopattr(MaxObject):
     """
 autopattr - Expose multiple objects to the pattr system
 
@@ -2284,12 +2309,12 @@ Attributes: autoname, autorestore, dirty, greedy, name
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_attrui: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_autopattr: ...
 
-attrui: _T_attrui
+autopattr: _T_autopattr
 
-class _T_autopattr(MaxObject):
+class _T_bag(MaxObject):
     """
 bag - Store a collection of numbers
 
@@ -2308,14 +2333,14 @@ Outlets:
 Messages: bang, int, float, clear, cut, in1, length, send, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_autopattr: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bag: ...
 
-autopattr: _T_autopattr
+bag: _T_bag
 
-class _T_bag(MaxObject):
+class _T_bangbang(MaxObject):
     """
 bangbang - Output a bang from many outlets
 
@@ -2334,14 +2359,14 @@ Outlets:
 Messages: bang, int, float, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bag: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bangbang: ...
 
-bag: _T_bag
+bangbang: _T_bangbang
 
-class _T_bangbang(MaxObject):
+class _T_bendin(MaxObject):
     """
 bendin - Output MIDI pitch bend values
 
@@ -2368,11 +2393,11 @@ Attributes: matchport, name
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bangbang: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bendin: ...
 
-bangbang: _T_bangbang
+bendin: _T_bendin
 
-class _T_bendin(MaxObject):
+class _T_bendout(MaxObject):
     """
 bendout - Send MIDI pitch bend messages
 
@@ -2393,14 +2418,14 @@ Messages: int, float, anything, (mouse), in1, port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bendin: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bendout: ...
 
-bendin: _T_bendin
+bendout: _T_bendout
 
-class _T_bendout(MaxObject):
+class _T_bgcolor(MaxObject):
     """
 bgcolor - Set background color
 
@@ -2420,14 +2445,14 @@ Inlets:
 Messages: bang, int, list, ft3, in1, in2, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bendout: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bgcolor: ...
 
-bendout: _T_bendout
+bgcolor: _T_bgcolor
 
-class _T_bgcolor(MaxObject):
+class _T_bitand(MaxObject):
     """
 bitand - Bitwise intersection of two numbers
 
@@ -2446,14 +2471,14 @@ Outlets:
 Messages: bang, int, float, in1, set, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bgcolor: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bitand: ...
 
-bgcolor: _T_bgcolor
+bitand: _T_bitand
 
-class _T_bitand(MaxObject):
+class _T_bitor(MaxObject):
     """
 bitor - Bitwise union of two numbers
 
@@ -2475,11 +2500,11 @@ Messages: bang, int, float, in1, set, list
     def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bitand: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bitor: ...
 
-bitand: _T_bitand
+bitor: _T_bitor
 
-class _T_bitor(MaxObject):
+class _T_bline(MaxObject):
     """
 bline - Generate ramps using bang
 
@@ -2498,14 +2523,14 @@ Outlets:
 Messages: bang, int, float, list, set, stop
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bitor: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bline: ...
 
-bitor: _T_bitor
+bline: _T_bline
 
-class _T_bline(MaxObject):
+class _T_bondo(MaxObject):
     """
 bondo - Synchronize a group of messages
 
@@ -2527,14 +2552,14 @@ Outlets:
 Messages: bang, int, float, list, anything, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bline: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bondo: ...
 
-bline: _T_bline
+bondo: _T_bondo
 
-class _T_bondo(MaxObject):
+class _T_borax(MaxObject):
     """
 borax - Report note-on and note-off information
 
@@ -2561,14 +2586,14 @@ Messages: bang, int, delta, in1, list
 Attributes: size
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bondo: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_borax: ...
 
-bondo: _T_bondo
+borax: _T_borax
 
-class _T_borax(MaxObject):
+class _T_bpatcher(MaxObject):
     """
 bpatcher - Embed a subpatch with a visible UI
 
@@ -2579,14 +2604,14 @@ Messages: (drag), (mouse), replace
 Attributes: args, bgcolor, bgmode, border, clickthrough, embed, enablehscroll, enablevscroll, lockeddragscroll, lockedsize, name, offset
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_borax: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bpatcher: ...
 
-borax: _T_borax
+bpatcher: _T_bpatcher
 
-class _T_bpatcher(MaxObject):
+class _T_bucket(MaxObject):
     """
 bucket - Pass numbers from outlet to outlet
 
@@ -2605,14 +2630,14 @@ Outlets:
 Messages: bang, int, float, L2R, R2L, clear, freeze, l2r, r2l, roll, set, thaw
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bpatcher: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_bucket: ...
 
-bpatcher: _T_bpatcher
+bucket: _T_bucket
 
-class _T_bucket(MaxObject):
+class _T_buddy(MaxObject):
     """
 buddy - Synchronize arriving data
 
@@ -2632,14 +2657,14 @@ Outlets:
 Messages: bang, int, float, list, anything, clear
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_bucket: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_buddy: ...
 
-bucket: _T_bucket
+buddy: _T_buddy
 
-class _T_buddy(MaxObject):
+class _T_button(MaxObject):
     """
 button - Blink and send a bang
 
@@ -2656,14 +2681,14 @@ Messages: bang, int, float, list, anything, (mouse)
 Attributes: annotation_name, bgcolor, blinkcolor, blinktime, fgcolor, outlinecolor, param_connect, parameter_enable, parameter_mappable, style
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_buddy: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_button: ...
 
-buddy: _T_buddy
+button: _T_button
 
-class _T_button(MaxObject):
+class _T_capture(MaxObject):
     """
 capture - Store values to view or edit
 
@@ -2687,12 +2712,12 @@ Attributes: listout, precision, size
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_button: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_capture: ...
 
-button: _T_button
+capture: _T_capture
 
-class _T_capture(MaxObject):
+class _T_cartopol(MaxObject):
     """
 cartopol - Convert cartesian to polar coordinates
 
@@ -2709,14 +2734,14 @@ Outlets:
 Messages: bang, int, float
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_capture: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_cartopol: ...
 
-capture: _T_capture
+cartopol: _T_cartopol
 
-class _T_cartopol(MaxObject):
+class _T_change(MaxObject):
     """
 change - Filter out repetitions of a number
 
@@ -2737,14 +2762,14 @@ Outlets:
 Messages: int, float, mode, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_cartopol: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_change: ...
 
-cartopol: _T_cartopol
+change: _T_change
 
-class _T_change(MaxObject):
+class _T_chooser(MaxObject):
     """
 chooser - Display a scrolling list of selectable items
 
@@ -2768,12 +2793,12 @@ Attributes: autopopulate, bgcolor, collection, depth, enabledrag, factorycontent
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_change: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_chooser: ...
 
-change: _T_change
+chooser: _T_chooser
 
-class _T_chooser(MaxObject):
+class _T_clip(MaxObject):
     """
 clip - Limit numbers to a range
 
@@ -2794,14 +2819,14 @@ Messages: int, float, list, set
 Attributes: mode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_chooser: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_clip: ...
 
-chooser: _T_chooser
+clip: _T_clip
 
-class _T_clip(MaxObject):
+class _T_clocker(MaxObject):
     """
 clocker - Report elapsed time, at regular intervals
 
@@ -2822,14 +2847,14 @@ Messages: bang, int, float, list, anything, clock, reset, stop
 Attributes: active, autostart, autostarttime, defer, interval, quantize, transport
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_clip: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_clocker: ...
 
-clip: _T_clip
+clocker: _T_clocker
 
-class _T_clocker(MaxObject):
+class _T_closebang(MaxObject):
     """
 closebang - Send a bang on close
 
@@ -2844,14 +2869,14 @@ Outlets:
 Messages: bang, (mouse)
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_clocker: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_closebang: ...
 
-clocker: _T_clocker
+closebang: _T_closebang
 
-class _T_closebang(MaxObject):
+class _T_coll(MaxObject):
     """
 coll - Store and edit a collection of data
 
@@ -2875,14 +2900,14 @@ Messages: bang, int, float, list, anything, append, assoc, clear, (mouse), deass
 Attributes: embed, name, precision
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_closebang: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_coll: ...
 
-closebang: _T_closebang
+coll: _T_coll
 
-class _T_coll(MaxObject):
+class _T_coll_codebox(MaxObject):
     """
 coll.codebox - Store and edit a collection of data
 
@@ -2902,14 +2927,14 @@ Messages: int, float, list, (mouse), anything, append, assoc, bang, symbol, clea
 Attributes: bgcolor, editlocked, embed, linenumbers, linenumberwidth, margin, style, textcolor, precision, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_coll: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_coll_codebox: ...
 
-coll: _T_coll
+coll_codebox: _T_coll_codebox
 
-class _T_coll_codebox(MaxObject):
+class _T_colorpicker(MaxObject):
     """
 colorpicker - Select and output a color
 
@@ -2927,12 +2952,12 @@ Attributes: compatibility, currentcolor
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_coll_codebox: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_colorpicker: ...
 
-coll_codebox: _T_coll_codebox
+colorpicker: _T_colorpicker
 
-class _T_colorpicker(MaxObject):
+class _T_combine(MaxObject):
     """
 combine - Combine multiple items into a single symbol
 
@@ -2953,14 +2978,14 @@ Messages: bang, int, float, list, anything
 Attributes: padding, triggers
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_colorpicker: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_combine: ...
 
-colorpicker: _T_colorpicker
+combine: _T_combine
 
-class _T_combine(MaxObject):
+class _T_comment(MaxObject):
     """
 comment - Explanatory note or label
 
@@ -2976,12 +3001,12 @@ Attributes: bgcolor, bubble, bubble_bgcolor, bubble_outlinecolor, bubblepoint, b
     @property
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_combine: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_comment: ...
 
-combine: _T_combine
+comment: _T_comment
 
-class _T_comment(MaxObject):
+class _T_conformpath(MaxObject):
     """
 conformpath - Convert file paths styles
 
@@ -3001,14 +3026,14 @@ Outlets:
 Messages: anything, pathstyle, pathtype
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_comment: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_conformpath: ...
 
-comment: _T_comment
+conformpath: _T_conformpath
 
-class _T_conformpath(MaxObject):
+class _T_console(MaxObject):
     """
 console - Console Output in Patcher
 
@@ -3029,12 +3054,12 @@ Attributes: classfilter, patcherfilter, showonlyerrors, textfilter
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_conformpath: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_console: ...
 
-conformpath: _T_conformpath
+console: _T_console
 
-class _T_console(MaxObject):
+class _T_cos(MaxObject):
     """
 cos - Cosine function
 
@@ -3054,12 +3079,12 @@ Messages: bang, int, float
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_console: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_cos: ...
 
-console: _T_console
+cos: _T_cos
 
-class _T_cos(MaxObject):
+class _T_cosh(MaxObject):
     """
 cosh - Hyperbolic cosine function
 
@@ -3080,11 +3105,11 @@ Messages: bang, int, float
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_cos: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_cosh: ...
 
-cos: _T_cos
+cosh: _T_cosh
 
-class _T_cosh(MaxObject):
+class _T_counter(MaxObject):
     """
 counter - Keep count based on bang messages
 
@@ -3111,14 +3136,14 @@ Messages: bang, int, float, carrybang, carryint, dec, down, flags, goto, inc, ja
 Attributes: carryflag, compatmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_cosh: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_counter: ...
 
-cosh: _T_cosh
+counter: _T_counter
 
-class _T_counter(MaxObject):
+class _T_cpuclock(MaxObject):
     """
 cpuclock - Retrieve the CPU time
 
@@ -3133,14 +3158,14 @@ Outlets:
 Messages: bang, reset
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_counter: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_cpuclock: ...
 
-counter: _T_counter
+cpuclock: _T_cpuclock
 
-class _T_cpuclock(MaxObject):
+class _T_crosspatch(MaxObject):
     """
 crosspatch - Patching Editor for Matrix Objects
 
@@ -3160,12 +3185,12 @@ Attributes: allowdisabled, annotation_name, bgcolor, candycane, candycane2, cand
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_cpuclock: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_crosspatch: ...
 
-cpuclock: _T_cpuclock
+crosspatch: _T_crosspatch
 
-class _T_crosspatch(MaxObject):
+class _T_ctlin(MaxObject):
     """
 ctlin - Output received MIDI control values
 
@@ -3191,12 +3216,12 @@ Attributes: matchport, name
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_crosspatch: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_ctlin: ...
 
-crosspatch: _T_crosspatch
+ctlin: _T_ctlin
 
-class _T_ctlin(MaxObject):
+class _T_ctlout(MaxObject):
     """
 ctlout - Transmit MIDI controller messages
 
@@ -3217,14 +3242,14 @@ Messages: int, float, anything, (mouse), in1, in2, port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_ctlin: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_ctlout: ...
 
-ctlin: _T_ctlin
+ctlout: _T_ctlout
 
-class _T_ctlout(MaxObject):
+class _T_cycle(MaxObject):
     """
 cycle - Round-robin messages to outlets
 
@@ -3243,14 +3268,14 @@ Outlets:
 Messages: bang, int, float, list, anything, set, symbol, thresh
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_ctlout: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_cycle: ...
 
-ctlout: _T_ctlout
+cycle: _T_cycle
 
-class _T_cycle(MaxObject):
+class _T_date(MaxObject):
     """
 date - Report current date and time
 
@@ -3267,14 +3292,14 @@ Outlets:
 Messages: date, ticks, time
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_cycle: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_date: ...
 
-cycle: _T_cycle
+date: _T_date
 
-class _T_date(MaxObject):
+class _T_dbtoa(MaxObject):
     """
 dbtoa - Convert decibels to a linear value
 
@@ -3291,12 +3316,12 @@ Messages: bang, int, float, list, set
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_date: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dbtoa: ...
 
-date: _T_date
+dbtoa: _T_dbtoa
 
-class _T_dbtoa(MaxObject):
+class _T_decide(MaxObject):
     """
 decide - Choose randomly between 1 and 0
 
@@ -3315,14 +3340,14 @@ Outlets:
 Messages: bang, int, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dbtoa: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_decide: ...
 
-dbtoa: _T_dbtoa
+decide: _T_decide
 
-class _T_decide(MaxObject):
+class _T_decode(MaxObject):
     """
 decode - Send 1 or 0 out a specific outlet
 
@@ -3343,28 +3368,6 @@ Outlets:
 Messages: bang, int, in1, in2
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
-    @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_decide: ...
-
-decide: _T_decide
-
-class _T_decode(MaxObject):
-    """
-defer - Defer execution of a message
-
-Defers the output of all messages sent through it to the lower priority main thread. This is most applicable when using Overdrive mode.
-
-Inlets:
-  0 (INLET_TYPE): Message To Be Deferred
-
-Outlets:
-  0 (OUTLET_TYPE): The Deferred Message
-
-Messages: bang, int, float, list, anything
-"""
-    @property
     def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
@@ -3374,9 +3377,9 @@ decode: _T_decode
 
 class _T_defer(MaxObject):
     """
-deferlow - Defer the execution of a message (always)
+defer - Defer execution of a message
 
-The deferlow object places all incoming messages at the tail of the low priority queue. This is unlike the defer object, however, which places high priority messages at the front of the low priority queue, and passes low priority messages immediately. The deferlow object is useful to preserve message sequencing that might otherwise be reversed with the defer object and/or guarantee that an incoming message will be deferred to a future servicing of the low priority queue even if that message is low priority itself.
+Defers the output of all messages sent through it to the lower priority main thread. This is most applicable when using Overdrive mode.
 
 Inlets:
   0 (INLET_TYPE): Message To Be Deferred
@@ -3395,6 +3398,28 @@ Messages: bang, int, float, list, anything
 defer: _T_defer
 
 class _T_deferlow(MaxObject):
+    """
+deferlow - Defer the execution of a message (always)
+
+The deferlow object places all incoming messages at the tail of the low priority queue. This is unlike the defer object, however, which places high priority messages at the front of the low priority queue, and passes low priority messages immediately. The deferlow object is useful to preserve message sequencing that might otherwise be reversed with the defer object and/or guarantee that an incoming message will be deferred to a future servicing of the low priority queue even if that message is low priority itself.
+
+Inlets:
+  0 (INLET_TYPE): Message To Be Deferred
+
+Outlets:
+  0 (OUTLET_TYPE): The Deferred Message
+
+Messages: bang, int, float, list, anything
+"""
+    @property
+    def ins(self) -> tuple[Inlet[Control]]: ...
+    @property
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_deferlow: ...
+
+deferlow: _T_deferlow
+
+class _T_delay(MaxObject):
     """
 delay - Delay a bang
 
@@ -3415,14 +3440,14 @@ Messages: bang, int, float, list, anything, clock, stop
 Attributes: delaytime, quantize, transport
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_deferlow: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_delay: ...
 
-deferlow: _T_deferlow
+delay: _T_delay
 
-class _T_delay(MaxObject):
+class _T_detonate(MaxObject):
     """
 detonate - Play a score of note events
 
@@ -3454,14 +3479,14 @@ Outlets:
 Messages: bang, int, float, list, clear, (mouse), delay, export, follow, followat, import, in1, in2, in3, in4, in5, in6, in7, mute, next, nth, open, params, read, record, restore, setparam, start, startat, stop, unmute, unmuteall, wclose, write, writemax
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_delay: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_detonate: ...
 
-delay: _T_delay
+detonate: _T_detonate
 
-class _T_detonate(MaxObject):
+class _T_dial(MaxObject):
     """
 dial - Output numbers using an onscreen dial
 
@@ -3478,14 +3503,14 @@ Messages: bang, int, float, (mouse), resize, set, setminmax
 Attributes: annotation_name, bgcolor, clip, degrees, fgcolor, floatoutput, inputrangemode, min, mode, mult, needlecolor, outlinecolor, param_connect, parameter_enable, parameter_mappable, size, style, thickness, vtracking
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_detonate: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dial: ...
 
-detonate: _T_detonate
+dial: _T_dial
 
-class _T_dial(MaxObject):
+class _T_dialog(MaxObject):
     """
 dialog - Open a dialog box
 
@@ -3508,14 +3533,14 @@ Messages: bang, int, float, clearsymbol, in1, symbol
 Attributes: label, mask, mode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dial: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dialog: ...
 
-dial: _T_dial
+dialog: _T_dialog
 
-class _T_dialog(MaxObject):
+class _T_dict_(MaxObject):
     """
 dict - Create and access dictionaries
 
@@ -3544,11 +3569,11 @@ Attributes: annotation_name, embed, legacy, name, parameter_enable, parameter_ma
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dialog: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_: ...
 
-dialog: _T_dialog
+dict_: _T_dict_
 
-class _T_dict_(MaxObject):
+class _T_dict_codebox(MaxObject):
     """
 dict.codebox - Create and access dictionaries
 
@@ -3570,14 +3595,14 @@ Messages: bang, clear, remove, getkeys, contains, getnames, getsize, gettype, ge
 Attributes: bgcolor, editlocked, embed, linenumbers, linenumberwidth, margin, style, textcolor, legacy, name, parameter_enable, parameter_mappable, quiet
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_codebox: ...
 
-dict_: _T_dict_
+dict_codebox: _T_dict_codebox
 
-class _T_dict_codebox(MaxObject):
+class _T_dict_compare(MaxObject):
     """
 dict.compare - Compare two dictionaries for equivalence.
 
@@ -3595,14 +3620,14 @@ Messages: bang, dictionary
 Attributes: unordered
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_codebox: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_compare: ...
 
-dict_codebox: _T_dict_codebox
+dict_compare: _T_dict_compare
 
-class _T_dict_compare(MaxObject):
+class _T_dict_deserialize(MaxObject):
     """
 dict.deserialize - Create a dictionary from text
 
@@ -3622,14 +3647,14 @@ Messages: anything
 Attributes: name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_compare: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_deserialize: ...
 
-dict_compare: _T_dict_compare
+dict_deserialize: _T_dict_deserialize
 
-class _T_dict_deserialize(MaxObject):
+class _T_dict_group(MaxObject):
     """
 dict.group - Build a dictionary iteratively
 
@@ -3652,11 +3677,11 @@ Attributes: name
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_deserialize: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_group: ...
 
-dict_deserialize: _T_dict_deserialize
+dict_group: _T_dict_group
 
-class _T_dict_group(MaxObject):
+class _T_dict_iter(MaxObject):
     """
 dict.iter - Stream the content of a dictionary
 
@@ -3674,11 +3699,11 @@ Messages: array, dictionary
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_group: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_iter: ...
 
-dict_group: _T_dict_group
+dict_iter: _T_dict_iter
 
-class _T_dict_iter(MaxObject):
+class _T_dict_join(MaxObject):
     """
 dict.join - Merge the content of two dictionaries
 
@@ -3697,14 +3722,14 @@ Outlets:
 Messages: bang, array, dictionary
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_iter: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_join: ...
 
-dict_iter: _T_dict_iter
+dict_join: _T_dict_join
 
-class _T_dict_join(MaxObject):
+class _T_dict_pack(MaxObject):
     """
 dict.pack - Create a dictionary and set its values
 
@@ -3725,14 +3750,14 @@ Messages: bang, int, float, list, anything, array, dictionary, string
 Attributes: keys, name, triggers, unmatched
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_join: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_pack: ...
 
-dict_join: _T_dict_join
+dict_pack: _T_dict_pack
 
-class _T_dict_pack(MaxObject):
+class _T_dict_print(MaxObject):
     """
 dict.print - Post a dictionary to the Max Console
 
@@ -3747,14 +3772,14 @@ Inlets:
 Messages: array, dictionary
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_pack: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_print: ...
 
-dict_pack: _T_dict_pack
+dict_print: _T_dict_print
 
-class _T_dict_print(MaxObject):
+class _T_dict_route(MaxObject):
     """
 dict.route - Compare dictionaries
 
@@ -3774,14 +3799,14 @@ Outlets:
 Messages: dictionary
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_print: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_route: ...
 
-dict_print: _T_dict_print
+dict_route: _T_dict_route
 
-class _T_dict_route(MaxObject):
+class _T_dict_serialize(MaxObject):
     """
 dict.serialize - Convert a dictionary's content to text
 
@@ -3798,14 +3823,14 @@ Messages: dictionary
 Attributes: compress, mode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_route: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_serialize: ...
 
-dict_route: _T_dict_route
+dict_serialize: _T_dict_serialize
 
-class _T_dict_serialize(MaxObject):
+class _T_dict_slice(MaxObject):
     """
 dict.slice - Split a dictionary into two dictionaries
 
@@ -3825,12 +3850,12 @@ Attributes: keys
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_serialize: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_slice: ...
 
-dict_serialize: _T_dict_serialize
+dict_slice: _T_dict_slice
 
-class _T_dict_slice(MaxObject):
+class _T_dict_strip(MaxObject):
     """
 dict.strip - Remove keys from a dictionary
 
@@ -3854,11 +3879,11 @@ Attributes: keys
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_slice: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_strip: ...
 
-dict_slice: _T_dict_slice
+dict_strip: _T_dict_strip
 
-class _T_dict_strip(MaxObject):
+class _T_dict_unpack(MaxObject):
     """
 dict.unpack - Extract values from a dictionary
 
@@ -3882,12 +3907,12 @@ Attributes: keys, legacy, unmatched
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_strip: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_unpack: ...
 
-dict_strip: _T_dict_strip
+dict_unpack: _T_dict_unpack
 
-class _T_dict_unpack(MaxObject):
+class _T_dict_view(MaxObject):
     """
 dict.view - View the contents of a dictionary
 
@@ -3900,12 +3925,12 @@ Attributes: bgcolor, stripecolor, style, textcolor
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_unpack: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_view: ...
 
-dict_unpack: _T_dict_unpack
+dict_view: _T_dict_view
 
-class _T_dict_view(MaxObject):
+class _T_div(MaxObject):
     """
 div - Divide two numbers
 
@@ -3924,14 +3949,14 @@ Outlets:
 Messages: bang, int, float, in1, set, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dict_view: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_div: ...
 
-dict_view: _T_dict_view
+div: _T_div
 
-class _T_div(MaxObject):
+class _T_dropfile(MaxObject):
     """
 dropfile - Drag and drop files
 
@@ -3949,14 +3974,14 @@ Messages: (drag)
 Attributes: border, bordercolor, folderslash, rounded, types
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_div: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_dropfile: ...
 
-div: _T_div
+dropfile: _T_dropfile
 
-class _T_dropfile(MaxObject):
+class _T_drunk(MaxObject):
     """
 drunk - Output random numbers within a step range
 
@@ -3979,14 +4004,14 @@ Messages: bang, int, float, list, reset, set, setresetvalue
 Attributes: cycle, floatoutput, range, seed, stepsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_dropfile: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_drunk: ...
 
-dropfile: _T_dropfile
+drunk: _T_drunk
 
-class _T_drunk(MaxObject):
+class _T_equals(MaxObject):
     """
 equals - Compare numbers for equal-to condition
 
@@ -4007,14 +4032,14 @@ Messages: bang, int, float, in1, set, list
 Attributes: fuzzy
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_drunk: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_equals: ...
 
-drunk: _T_drunk
+equals: _T_equals
 
-class _T_equals(MaxObject):
+class _T_error(MaxObject):
     """
 error - Report Max errors
 
@@ -4032,14 +4057,14 @@ Outlets:
 Messages: int, float, error
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_equals: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_error: ...
 
-equals: _T_equals
+error: _T_error
 
-class _T_error(MaxObject):
+class _T_expr(MaxObject):
     """
 expr - Evaluate a mathematical expression
 
@@ -4061,14 +4086,14 @@ Outlets:
 Messages: bang, int, float, ft1, ft2, ft3, ft4, ft5, ft6, ft7, ft8, ft9, in1, in2, in3, in4, in5, in6, in7, in8, in9, set, sm1, sm2, sm3, sm4, sm5, sm6, sm7, sm8, sm9, symbol, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_error: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_expr: ...
 
-error: _T_error
+expr: _T_expr
 
-class _T_expr(MaxObject):
+class _T_filedate(MaxObject):
     """
 filedate - Report the modification date of a file
 
@@ -4081,14 +4106,14 @@ Outlets:
 Messages: anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_expr: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_filedate: ...
 
-expr: _T_expr
+filedate: _T_filedate
 
-class _T_filedate(MaxObject):
+class _T_filein(MaxObject):
     """
 filein - Read and access a file of binary data
 
@@ -4111,14 +4136,14 @@ Outlets:
 Messages: int, fclose, in1, in2, read, spool
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_filedate: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_filein: ...
 
-filedate: _T_filedate
+filein: _T_filein
 
-class _T_filein(MaxObject):
+class _T_filepath(MaxObject):
     """
 filepath - Manage and report on the Max search path
 
@@ -4137,14 +4162,14 @@ Outlets:
 Messages: bang, append, clear, revert, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_filein: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_filepath: ...
 
-filein: _T_filein
+filepath: _T_filepath
 
-class _T_filepath(MaxObject):
+class _T_filewatch(MaxObject):
     """
 filewatch - Watch a file for changes
 
@@ -4165,11 +4190,11 @@ Messages: bang, int, anything, stop
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_filepath: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_filewatch: ...
 
-filepath: _T_filepath
+filewatch: _T_filewatch
 
-class _T_filewatch(MaxObject):
+class _T_float_(MaxObject):
     """
 float - Store a decimal number
 
@@ -4188,14 +4213,14 @@ Outlets:
 Messages: bang, int, float, in1, send, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_filewatch: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_float_: ...
 
-filewatch: _T_filewatch
+float_: _T_float_
 
-class _T_float_(MaxObject):
+class _T_flonum(MaxObject):
     """
 flonum - Display and output a number
 
@@ -4213,14 +4238,14 @@ Messages: bang, int, float, max, min, (mouse), select, set
 Attributes: bgcolor, bordercolor, cantchange, hbgcolor, htextcolor, htricolor, maximum, minimum, mouseup, numdecimalplaces, outputonclick, parameter_enable, textcolor, triangle, tricolor, triscale
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_float_: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_flonum: ...
 
-float_: _T_float_
+flonum: _T_flonum
 
-class _T_flonum(MaxObject):
+class _T_flush(MaxObject):
     """
 flush - Output MIDI note-offs for held notes
 
@@ -4237,14 +4262,14 @@ Outlets:
 Messages: bang, int, clear, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_flonum: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_flush: ...
 
-flonum: _T_flonum
+flush: _T_flush
 
-class _T_flush(MaxObject):
+class _T_folder(MaxObject):
     """
 folder - List the files in a folder
 
@@ -4263,14 +4288,14 @@ Outlets:
 Messages: bang, int, anything, symbol, types
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_flush: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_folder: ...
 
-flush: _T_flush
+folder: _T_folder
 
-class _T_folder(MaxObject):
+class _T_follow(MaxObject):
     """
 follow - Compare a live performance to a recorded performance
 
@@ -4292,11 +4317,11 @@ Messages: bang, int, float, append, delay, dump, follow, in1, next, print, read,
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_folder: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_follow: ...
 
-folder: _T_folder
+follow: _T_follow
 
-class _T_follow(MaxObject):
+class _T_fontlist(MaxObject):
     """
 fontlist - List system fonts
 
@@ -4316,12 +4341,12 @@ Messages: bang
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_follow: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_fontlist: ...
 
-follow: _T_follow
+fontlist: _T_fontlist
 
-class _T_fontlist(MaxObject):
+class _T_forward(MaxObject):
     """
 forward - Send messages to specified receive objects
 
@@ -4338,12 +4363,12 @@ Messages: bang, int, float, list, anything, send
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_fontlist: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_forward: ...
 
-fontlist: _T_fontlist
+forward: _T_forward
 
-class _T_forward(MaxObject):
+class _T_fpic(MaxObject):
     """
 fpic - Display an image
 
@@ -4360,12 +4385,12 @@ Attributes: alpha, autofit, destrect, embed, forceaspect, pic, xoffset, yoffset
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_forward: ...
+    def outs(self) -> tuple[Outlet[Matrix], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_fpic: ...
 
-forward: _T_forward
+fpic: _T_fpic
 
-class _T_fpic(MaxObject):
+class _T_freebang(MaxObject):
     """
 freebang - Send a bang when a patcher is freed
 
@@ -4380,12 +4405,12 @@ Messages: bang, (mouse)
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Matrix], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_fpic: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_freebang: ...
 
-fpic: _T_fpic
+freebang: _T_freebang
 
-class _T_freebang(MaxObject):
+class _T_fromsymbol(MaxObject):
     """
 fromsymbol - Convert a symbol into numbers/messages
 
@@ -4405,11 +4430,11 @@ Attributes: separator
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_freebang: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_fromsymbol: ...
 
-freebang: _T_freebang
+fromsymbol: _T_fromsymbol
 
-class _T_fromsymbol(MaxObject):
+class _T_fswap(MaxObject):
     """
 fswap - Swap position of two numbers
 
@@ -4429,14 +4454,14 @@ Outlets:
 Messages: bang, int, float, ft1, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_fromsymbol: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_fswap: ...
 
-fromsymbol: _T_fromsymbol
+fswap: _T_fswap
 
-class _T_fswap(MaxObject):
+class _T_ftom(MaxObject):
     """
 ftom - Convert frequency to a MIDI note number
 
@@ -4456,14 +4481,14 @@ Messages: int, float, list
 Attributes: base, map, mapname, mid, ref, round, scale, scalename
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_fswap: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_ftom: ...
 
-fswap: _T_fswap
+ftom: _T_ftom
 
-class _T_ftom(MaxObject):
+class _T_funbuff(MaxObject):
     """
 funbuff - Store pairs of numbers
 
@@ -4484,14 +4509,14 @@ Outlets:
 Messages: bang, int, float, clear, copy, cut, delete, dump, embed, find, goto, in1, interp, interptab, max, min, next, paste, print, read, select, set, undo, write
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_ftom: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_funbuff: ...
 
-ftom: _T_ftom
+funbuff: _T_funbuff
 
-class _T_funbuff(MaxObject):
+class _T_function(MaxObject):
     """
 function - Breakpoint function editor
 
@@ -4511,14 +4536,14 @@ Messages: bang, int, float, list, clear, clearfix, clearsustain, color, copy, du
 Attributes: annotation_name, autosustain, bgcolor, bordercolor, classic_curve, clickadd, clickmove, clicksustain, constrainpointchanges, cursor, cursorcolor, domain, grid, gridcolor, gridstep_x, gridstep_y, legend, linecolor, linethickness, mode, mousemode, mousereport, outputmode, param_connect, parameter_enable, parameter_mappable, pointalign, pointcolor, pointsize, range, shadowalpha, shadowblend, shadowproportion, shadowreflectionpoint, shadowsigned, snap2grid, style, sustaincolor, textcolor, zoom_x, zoom_y
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_funbuff: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_function: ...
 
-funbuff: _T_funbuff
+function: _T_function
 
-class _T_function(MaxObject):
+class _T_funnel(MaxObject):
     """
 funnel - Tag data with its inlet number
 
@@ -4531,14 +4556,14 @@ Args:
 Messages: bang, int, float, list, anything, offset, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_function: ...
+    def outs(self) -> tuple[Outlet[Any]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_funnel: ...
 
-function: _T_function
+funnel: _T_funnel
 
-class _T_funnel(MaxObject):
+class _T_gamepad(MaxObject):
     """
 gamepad - Report gamepad controller events
 
@@ -4559,12 +4584,12 @@ Attributes: interval, rawdata
     @property
     def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_funnel: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_gamepad: ...
 
-funnel: _T_funnel
+gamepad: _T_gamepad
 
-class _T_gamepad(MaxObject):
+class _T_gate(MaxObject):
     """
 gate - Pass input to an outlet
 
@@ -4582,14 +4607,14 @@ Outlets:
 Messages: bang, int, float, next
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_gamepad: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_gate: ...
 
-gamepad: _T_gamepad
+gate: _T_gate
 
-class _T_gate(MaxObject):
+class _T_gestalt(MaxObject):
     """
 gestalt - Retrieve system information
 
@@ -4605,14 +4630,14 @@ Messages: bang, anything, keys, symbol
 Attributes: outputmode, selector
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_gate: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_gestalt: ...
 
-gate: _T_gate
+gestalt: _T_gestalt
 
-class _T_gestalt(MaxObject):
+class _T_getattr_(MaxObject):
     """
 getattr - Query object attributes
 
@@ -4636,12 +4661,12 @@ Attributes: attr, listen, prefix
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_gestalt: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_getattr_: ...
 
-gestalt: _T_gestalt
+getattr_: _T_getattr_
 
-class _T_getattr_(MaxObject):
+class _T_grab(MaxObject):
     """
 grab - Intercept the output of another object
 
@@ -4665,12 +4690,12 @@ Messages: bang, int, float, list, anything, set
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_getattr_: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_grab: ...
 
-getattr_: _T_getattr_
+grab: _T_grab
 
-class _T_grab(MaxObject):
+class _T_greaterthan(MaxObject):
     """
 greaterthan - Compare numbers for greater than condition
 
@@ -4689,14 +4714,14 @@ Outlets:
 Messages: bang, int, float, in1, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_grab: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_greaterthan: ...
 
-grab: _T_grab
+greaterthan: _T_greaterthan
 
-class _T_greaterthan(MaxObject):
+class _T_greaterthaneq(MaxObject):
     """
 greaterthaneq - Compare numbers for greater than or equal to condition
 
@@ -4720,11 +4745,11 @@ Attributes: fuzzy
     def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_greaterthan: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_greaterthaneq: ...
 
-greaterthan: _T_greaterthan
+greaterthaneq: _T_greaterthaneq
 
-class _T_greaterthaneq(MaxObject):
+class _T_gswitch(MaxObject):
     """
 gswitch - Select output from two inlets
 
@@ -4741,14 +4766,14 @@ Messages: bang, int, float, list, anything, (mouse)
 Attributes: annotation_name, bgcolor, color, inputs, int, param_connect, parameter_enable, parameter_mappable, style, switchcolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_greaterthaneq: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_gswitch: ...
 
-greaterthaneq: _T_greaterthaneq
+gswitch: _T_gswitch
 
-class _T_gswitch(MaxObject):
+class _T_gswitch2(MaxObject):
     """
 gswitch2 - Send input to one of two outlets
 
@@ -4767,14 +4792,14 @@ Messages: bang, int, float, (mouse)
 Attributes: annotation_name, bgcolor, color, int, outputs, param_connect, parameter_enable, parameter_mappable, style, switchcolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_gswitch: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_gswitch2: ...
 
-gswitch: _T_gswitch
+gswitch2: _T_gswitch2
 
-class _T_gswitch2(MaxObject):
+class _T_hi(MaxObject):
     """
 hi - Human Interface device input (legacy)
 
@@ -4793,14 +4818,14 @@ Outlets:
 Messages: bang, int, anything, clear, delta, ignore, info, menu, poll
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_gswitch2: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_hi: ...
 
-gswitch2: _T_gswitch2
+hi: _T_hi
 
-class _T_hi(MaxObject):
+class _T_hid(MaxObject):
     """
 hid - Human Interface Device input (modern)
 
@@ -4826,14 +4851,14 @@ Messages: bang, int, anything, close, info, menu, poll
 Attributes: exclusive
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_hi: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_hid: ...
 
-hi: _T_hi
+hid: _T_hid
 
-class _T_hid(MaxObject):
+class _T_hint(MaxObject):
     """
 hint - Display hint text
 
@@ -4849,12 +4874,12 @@ Attributes: delay, enabled
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_hid: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_hint: ...
 
-hid: _T_hid
+hint: _T_hint
 
-class _T_hint(MaxObject):
+class _T_histo(MaxObject):
     """
 histo - Create a histogram of numbers received
 
@@ -4874,14 +4899,14 @@ Outlets:
 Messages: bang, int, clear, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_hint: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_histo: ...
 
-hint: _T_hint
+histo: _T_histo
 
-class _T_histo(MaxObject):
+class _T_hover(MaxObject):
     """
 hover - Report object scripting names
 
@@ -4899,14 +4924,14 @@ Outlets:
 Attributes: mode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_histo: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_hover: ...
 
-histo: _T_histo
+hover: _T_hover
 
-class _T_hover(MaxObject):
+class _T_if_(MaxObject):
     """
 if - Conditional statement in if/then/else form
 
@@ -4922,14 +4947,14 @@ Args:
 Messages: bang, int, float, ft1, ft2, ft3, ft4, ft5, ft6, ft7, ft8, ft9, in1, in2, in3, in4, in5, in6, in7, in8, in9, set, symbol
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_hover: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_if_: ...
 
-hover: _T_hover
+if_: _T_if_
 
-class _T_if_(MaxObject):
+class _T_imovie(MaxObject):
     """
 imovie - Play video
 
@@ -4948,14 +4973,14 @@ Messages: bang, int, (drag), active, clear, dispose, duration, getduration, getr
 Attributes: autofit, border, moviedim, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_if_: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_imovie: ...
 
-if_: _T_if_
+imovie: _T_imovie
 
-class _T_imovie(MaxObject):
+class _T_incdec(MaxObject):
     """
 incdec - Increment and decrement a value
 
@@ -4974,12 +4999,12 @@ Attributes: annotation_name, bgcolor, bordercolor, elementcolor, fgcolor, increm
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_imovie: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_incdec: ...
 
-imovie: _T_imovie
+incdec: _T_incdec
 
-class _T_incdec(MaxObject):
+class _T_inlet(MaxObject):
     """
 inlet - Receive messages from outside a patcher
 
@@ -4996,14 +5021,14 @@ Messages: (mouse)
 Attributes: comment, cool, style, tricolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[()]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_incdec: ...
+    def outs(self) -> tuple[Outlet[Any]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_inlet: ...
 
-incdec: _T_incdec
+inlet: _T_inlet
 
-class _T_inlet(MaxObject):
+class _T_int_(MaxObject):
     """
 int - Store an integer value
 
@@ -5022,14 +5047,14 @@ Outlets:
 Messages: bang, int, float, in1, send, set
 """
     @property
-    def ins(self) -> tuple[()]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_inlet: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_int_: ...
 
-inlet: _T_inlet
+int_: _T_int_
 
-class _T_int_(MaxObject):
+class _T_itable(MaxObject):
     """
 itable - Data table editor
 
@@ -5051,14 +5076,14 @@ Messages: bang, int, float, list, clear, const, dump, fquantile, getbits, goto, 
 Attributes: annotation_name, autohint, bgcolor, bgcolor2, bordercolor, embed, legend, linecolor, name, notename, param_connect, parameter_enable, parameter_mappable, pointcolor, range, selectioncolor, setresizes, shadowalpha, shadowblend, shadowproportion, signed, size, style, textcolor, tool
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_int_: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_itable: ...
 
-int_: _T_int_
+itable: _T_itable
 
-class _T_itable(MaxObject):
+class _T_iter_(MaxObject):
     """
 iter - Break a list into individual messages
 
@@ -5073,14 +5098,14 @@ Outlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_itable: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_iter_: ...
 
-itable: _T_itable
+iter_: _T_iter_
 
-class _T_iter_(MaxObject):
+class _T_itoa(MaxObject):
     """
 itoa - Convert character codes to symbol
 
@@ -5099,14 +5124,14 @@ Messages: bang, int, float, list, clear
 Attributes: utf8
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_iter_: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_itoa: ...
 
-iter_: _T_iter_
+itoa: _T_itoa
 
-class _T_itoa(MaxObject):
+class _T_jit_cellblock(MaxObject):
     """
 jit.cellblock - Edit rows and columns of data
 
@@ -5127,14 +5152,14 @@ Messages: bang, list, append, cell, clear, col, deref, dump, jit_deref, jit_matr
 Attributes: automouse, bblend, bgcolor, border, bordercolor, colhead, cols, colwidth, datadirty, fblend, fgcolor, grid, gridlinecolor, hcellcolor, headercolor, hscroll, hsync, interval, just, neverdirty, outmode, precision, readonly, rowhead, rowheight, rows, savemode, sccolor, selmode, selsync, sgcolor, signalmode, signalusecols, stcolor, textcolor, vscroll, vsync
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], Inlet[Signal | Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_itoa: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_jit_cellblock: ...
 
-itoa: _T_itoa
+jit_cellblock: _T_jit_cellblock
 
-class _T_jit_cellblock(MaxObject):
+class _T_join(MaxObject):
     """
 join - Combine items into a list
 
@@ -5155,14 +5180,14 @@ Messages: bang, int, float, list, anything, set
 Attributes: triggers
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], Inlet[Signal | Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_jit_cellblock: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_join: ...
 
-jit_cellblock: _T_jit_cellblock
+join: _T_join
 
-class _T_join(MaxObject):
+class _T_js(MaxObject):
     """
 js - Execute Javascript (Legacy Engine)
 
@@ -5184,14 +5209,14 @@ Messages: bang, int, float, list, anything, autowatch, compile, delprop, editfon
 Attributes: annotation_name, parameter_enable, parameter_mappable, template
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_join: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_js: ...
 
-join: _T_join
+js: _T_js
 
-class _T_js(MaxObject):
+class _T_jstrigger(MaxObject):
     """
 jstrigger - Execute Javascript instructions sequentially
 
@@ -5206,14 +5231,14 @@ Inlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_js: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_jstrigger: ...
 
-js: _T_js
+jstrigger: _T_jstrigger
 
-class _T_jstrigger(MaxObject):
+class _T_jsui(MaxObject):
     """
 jsui - Javascript user interfaces and graphics (Legacy Engine)
 
@@ -5230,14 +5255,14 @@ Messages: bang, int, float, list, anything, (drag), autowatch, compile, delprop,
 Attributes: annotation_name, border, filename, jsarguments, nofsaa, param_connect, parameter_enable, parameter_mappable, template
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_jstrigger: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_jsui: ...
 
-jstrigger: _T_jstrigger
+jsui: _T_jsui
 
-class _T_jsui(MaxObject):
+class _T_jweb(MaxObject):
     """
 jweb - Web browser
 
@@ -5254,14 +5279,14 @@ Messages: anything, back, executejavascript, forward, gotohistory, (mouse), mute
 Attributes: disablefind, history, historysize, nonstandardoutletcalls, rendermode, url
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_jsui: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_jweb: ...
 
-jsui: _T_jsui
+jweb: _T_jweb
 
-class _T_jweb(MaxObject):
+class _T_jweb_tilde(MaxObject):
     """
 jweb~ - Web browser with audio output
 
@@ -5280,14 +5305,14 @@ Messages: anything, back, executejavascript, forward, gotohistory, (mouse), mute
 Attributes: disablefind, history, historysize, latency, rendermode, url
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_jweb: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_jweb_tilde: ...
 
-jweb: _T_jweb
+jweb_tilde: _T_jweb_tilde
 
-class _T_jweb_tilde(MaxObject):
+class _T_key(MaxObject):
     """
 key - Report keyboard presses
 
@@ -5302,14 +5327,14 @@ Outlets:
 Messages: (keyboard)
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
+    def ins(self) -> tuple[()]: ...
     @property
-    def outs(self) -> tuple[Outlet[Signal], Outlet[Signal], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_jweb_tilde: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_key: ...
 
-jweb_tilde: _T_jweb_tilde
+key: _T_key
 
-class _T_key(MaxObject):
+class _T_keyup(MaxObject):
     """
 keyup - Report key information on release
 
@@ -5327,11 +5352,11 @@ Messages: (keyboard)
     def ins(self) -> tuple[()]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_key: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_keyup: ...
 
-key: _T_key
+keyup: _T_keyup
 
-class _T_keyup(MaxObject):
+class _T_kslider(MaxObject):
     """
 kslider - Output numbers from an onscreen keyboard
 
@@ -5350,14 +5375,14 @@ Messages: bang, int, float, chord, clear, flush, ft1, in1, (mouse), set, size
 Attributes: annotation_name, blackkeycolor, bordercolor, hkeycolor, inputmode, mode, offset, param_connect, parameter_enable, parameter_mappable, range, selectioncolor, style, whitekeycolor
 """
     @property
-    def ins(self) -> tuple[()]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_keyup: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_kslider: ...
 
-keyup: _T_keyup
+kslider: _T_kslider
 
-class _T_kslider(MaxObject):
+class _T_lcd(MaxObject):
     """
 lcd - Display graphics (deprecated)
 
@@ -5375,14 +5400,14 @@ Messages: anything, ascii, backsprite, brgb, clear, clearpicts, clearsprites, cl
 Attributes: bgtransparent, border, enablesprites, idle, local
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_kslider: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_lcd: ...
 
-kslider: _T_kslider
+lcd: _T_lcd
 
-class _T_lcd(MaxObject):
+class _T_led(MaxObject):
     """
 led - Color on/off button
 
@@ -5399,12 +5424,12 @@ Attributes: annotation_name, bgcolor, blinktime, offcolor, oncolor, param_connec
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_lcd: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_led: ...
 
-lcd: _T_lcd
+led: _T_led
 
-class _T_led(MaxObject):
+class _T_lessthan(MaxObject):
     """
 lessthan - Compare numbers for less than condition
 
@@ -5423,14 +5448,14 @@ Outlets:
 Messages: bang, int, float, in1, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_led: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_lessthan: ...
 
-led: _T_led
+lessthan: _T_lessthan
 
-class _T_lessthan(MaxObject):
+class _T_lessthaneq(MaxObject):
     """
 lessthaneq - Compare numbers as less than or equal to
 
@@ -5454,11 +5479,11 @@ Attributes: fuzzy
     def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_lessthan: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_lessthaneq: ...
 
-lessthan: _T_lessthan
+lessthaneq: _T_lessthaneq
 
-class _T_lessthaneq(MaxObject):
+class _T_line(MaxObject):
     """
 line - Generate timed ramp
 
@@ -5482,14 +5507,14 @@ Messages: int, float, list, clock, pause, resume, set, stop
 Attributes: compatmode, floatoutput, grain, maxpoints
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_lessthaneq: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_line: ...
 
-lessthaneq: _T_lessthaneq
+line: _T_line
 
-class _T_line(MaxObject):
+class _T_linedrive(MaxObject):
     """
 linedrive - Scale numbers exponentially
 
@@ -5504,14 +5529,14 @@ Args:
 Messages: int, float, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_line: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_linedrive: ...
 
-line: _T_line
+linedrive: _T_linedrive
 
-class _T_linedrive(MaxObject):
+class _T_listbox(MaxObject):
     """
 listbox - Display and output numbers, lists, and messages
 
@@ -5529,14 +5554,14 @@ Messages: bang, int, float, list, anything, clear, max, min, (mouse), select, se
 Attributes: annotation_name, bgcolor, bordercolor, cantchange, format, hbgcolor, htextcolor, htricolor, maximum, minimum, mousefilter, numdecimalplaces, outputonclick, param_connect, parameter_enable, parameter_mappable, style, textcolor, triangle, tricolor, triscale
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_linedrive: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_listbox: ...
 
-linedrive: _T_linedrive
+listbox: _T_listbox
 
-class _T_listbox(MaxObject):
+class _T_listfunnel(MaxObject):
     """
 listfunnel - Index and output list elements
 
@@ -5558,14 +5583,14 @@ Outlets:
 Messages: int, float, list, anything, offset
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_listbox: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_listfunnel: ...
 
-listbox: _T_listbox
+listfunnel: _T_listfunnel
 
-class _T_listfunnel(MaxObject):
+class _T_loadbang(MaxObject):
     """
 loadbang - Send a bang when a patcher is loaded
 
@@ -5583,11 +5608,11 @@ Messages: bang, (mouse), loadbang
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_listfunnel: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_loadbang: ...
 
-listfunnel: _T_listfunnel
+loadbang: _T_loadbang
 
-class _T_loadbang(MaxObject):
+class _T_loadmess(MaxObject):
     """
 loadmess - Send a message when a patch is loaded
 
@@ -5610,11 +5635,11 @@ Attributes: defer
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_loadbang: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_loadmess: ...
 
-loadbang: _T_loadbang
+loadmess: _T_loadmess
 
-class _T_loadmess(MaxObject):
+class _T_logand(MaxObject):
     """
 logand - Perform a logical AND
 
@@ -5633,14 +5658,14 @@ Outlets:
 Messages: bang, int, float, in1, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_loadmess: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_logand: ...
 
-loadmess: _T_loadmess
+logand: _T_logand
 
-class _T_logand(MaxObject):
+class _T_logor(MaxObject):
     """
 logor - Perform a logical OR
 
@@ -5662,11 +5687,11 @@ Messages: bang, int, float, in1, set
     def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_logand: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_logor: ...
 
-logand: _T_logand
+logor: _T_logor
 
-class _T_logor(MaxObject):
+class _T_makenote(MaxObject):
     """
 makenote - Generate a note-on/note-off pair
 
@@ -5691,14 +5716,14 @@ Messages: int, float, list, anything, clear, clock, stop
 Attributes: duration, repeatmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_logor: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_makenote: ...
 
-logor: _T_logor
+makenote: _T_makenote
 
-class _T_makenote(MaxObject):
+class _T_mappings(MaxObject):
     """
 mappings - Utility object for Mappings
 
@@ -5709,14 +5734,14 @@ Messages: (mouse), key, midi, open, read, write
 Attributes: file
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_makenote: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mappings: ...
 
-makenote: _T_makenote
+mappings: _T_mappings
 
-class _T_mappings(MaxObject):
+class _T_match(MaxObject):
     """
 match - Watch for a message match, then output the message
 
@@ -5736,12 +5761,12 @@ Messages: int, float, list, anything, clear, set
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mappings: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_match: ...
 
-mappings: _T_mappings
+match: _T_match
 
-class _T_match(MaxObject):
+class _T_matrix(MaxObject):
     """
 matrix - Event routing matrix
 
@@ -5767,14 +5792,14 @@ Messages: list, clear, connect, dictionary, disconnect, dumpconnections
 Attributes: defaultgain, exclusive, inhibit, inrange, outscale, scalemode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_match: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_matrix: ...
 
-match: _T_match
+matrix: _T_matrix
 
-class _T_matrix(MaxObject):
+class _T_matrixctrl(MaxObject):
     """
 matrixctrl - Matrix switch control
 
@@ -5792,14 +5817,14 @@ Messages: bang, list, bkgndpicture, cellpicture, clear, dictionary, disable, dis
 Attributes: active, annotation_name, autosize, bgcolor, bkgndpict, cellpict, clickedimage, clickvalue, color, columns, dialmode, dialtracking, elementcolor, horizontalmargin, horizontalspacing, imagemask, inactiveimage, invisiblebkgnd, one/column, one/matrix, one/row, parameter_enable, range, rows, scale, style, verticalmargin, verticalspacing
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_matrix: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_matrixctrl: ...
 
-matrix: _T_matrix
+matrixctrl: _T_matrixctrl
 
-class _T_matrixctrl(MaxObject):
+class _T_maximum(MaxObject):
     """
 maximum - Output the highest value
 
@@ -5819,14 +5844,14 @@ Outlets:
 Messages: bang, int, float, list, ft1, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_matrixctrl: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_maximum: ...
 
-matrixctrl: _T_matrixctrl
+maximum: _T_maximum
 
-class _T_maximum(MaxObject):
+class _T_maxurl(MaxObject):
     """
 maxurl - Make HTTP requests
 
@@ -5852,14 +5877,14 @@ Outlets:
 Messages: abort, abortall, delete, dictionary, get, post, put, verbosity
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_maximum: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_maxurl: ...
 
-maximum: _T_maximum
+maxurl: _T_maxurl
 
-class _T_maxurl(MaxObject):
+class _T_mc_function(MaxObject):
     """
 mc.function - Breakpoint function editor
 
@@ -5882,12 +5907,12 @@ Attributes: annotation_name, autosustain, bgcolor, bordercolor, candycane, candy
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_maxurl: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mc_function: ...
 
-maxurl: _T_maxurl
+mc_function: _T_mc_function
 
-class _T_mc_function(MaxObject):
+class _T_mc_getattr(MaxObject):
     """
 mc.getattr - Query object attributes  (multichannel)
 
@@ -5909,14 +5934,14 @@ Messages: bang, getattrlist
 Attributes: attr, listen, prefix
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mc_function: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mc_getattr: ...
 
-mc_function: _T_mc_function
+mc_getattr: _T_mc_getattr
 
-class _T_mc_getattr(MaxObject):
+class _T_mc_line(MaxObject):
     """
 mc.line - Generate timed ramp  (multichannel)
 
@@ -5943,11 +5968,11 @@ Attributes: compatmode, floatoutput, grain, maxpoints
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mc_getattr: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mc_line: ...
 
-mc_getattr: _T_mc_getattr
+mc_line: _T_mc_line
 
-class _T_mc_line(MaxObject):
+class _T_mean(MaxObject):
     """
 mean - Calculate a running average
 
@@ -5963,14 +5988,14 @@ Outlets:
 Messages: bang, int, float, list, clear
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mc_line: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mean: ...
 
-mc_line: _T_mc_line
+mean: _T_mean
 
-class _T_mean(MaxObject):
+class _T_menubar(MaxObject):
     """
 menubar - Put up a custom menu bar
 
@@ -5993,12 +6018,12 @@ Messages: int, about, append, appendpermanent, apple, checkitem, closeitem, (mou
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mean: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_menubar: ...
 
-mean: _T_mean
+menubar: _T_menubar
 
-class _T_menubar(MaxObject):
+class _T_message(MaxObject):
     """
 message - Send any message
 
@@ -6022,14 +6047,14 @@ Messages: bang, int, float, list, anything, append, (mouse), prepend, set, setar
 Attributes: bgcolor, bgcolor2, bgfillcolor, convertobj, dontreplace, gradient, style
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_menubar: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_message: ...
 
-menubar: _T_menubar
+message: _T_message
 
-class _T_message(MaxObject):
+class _T_messageview(MaxObject):
     """
 messageview - View a stream of messages
 
@@ -6046,14 +6071,14 @@ Messages: bang, int, float, list, anything, append, clear, scrolltoend
 Attributes: autoscroll, bgcolor, stripe2, style, textcolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_message: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_messageview: ...
 
-message: _T_message
+messageview: _T_messageview
 
-class _T_messageview(MaxObject):
+class _T_metro(MaxObject):
     """
 metro - Output a bang message at regular intervals
 
@@ -6074,14 +6099,14 @@ Messages: bang, int, float, list, anything, clock, stop
 Attributes: active, autostart, autostarttime, defer, interval, quantize, transport
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_messageview: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_metro: ...
 
-messageview: _T_messageview
+metro: _T_metro
 
-class _T_metro(MaxObject):
+class _T_midiflush(MaxObject):
     """
 midiflush - Send MIDI note-offs for hanging note-ons
 
@@ -6096,14 +6121,14 @@ Outlets:
 Messages: bang, int, clear
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_metro: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_midiflush: ...
 
-metro: _T_metro
+midiflush: _T_midiflush
 
-class _T_midiflush(MaxObject):
+class _T_midiformat(MaxObject):
     """
 midiformat - Prepare data in the form of a MIDI message
 
@@ -6122,14 +6147,14 @@ Messages: int, float, list, in1, in2, in3, in4, in5, in7
 Attributes: hires
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_midiflush: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_midiformat: ...
 
-midiflush: _T_midiflush
+midiformat: _T_midiformat
 
-class _T_midiformat(MaxObject):
+class _T_midiin(MaxObject):
     """
 midiin - Output raw MIDI data
 
@@ -6150,14 +6175,14 @@ Messages: anything, (mouse), (MIDI), port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_midiformat: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_midiin: ...
 
-midiformat: _T_midiformat
+midiin: _T_midiin
 
-class _T_midiin(MaxObject):
+class _T_midiinfo(MaxObject):
     """
 midiinfo - Fill a pop-up menu with MIDI device names
 
@@ -6175,14 +6200,14 @@ Messages: bang, int, controllers
 Attributes: autopollcontrollers, autopollinput, autopolloutput
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_midiin: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_midiinfo: ...
 
-midiin: _T_midiin
+midiinfo: _T_midiinfo
 
-class _T_midiinfo(MaxObject):
+class _T_midiout(MaxObject):
     """
 midiout - Transmit raw MIDI data
 
@@ -6200,14 +6225,14 @@ Messages: int, float, list, anything, (mouse), port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_midiinfo: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_midiout: ...
 
-midiinfo: _T_midiinfo
+midiout: _T_midiout
 
-class _T_midiout(MaxObject):
+class _T_midiparse(MaxObject):
     """
 midiparse - Interpret raw MIDI data
 
@@ -6233,12 +6258,12 @@ Attributes: hires
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_midiout: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_midiparse: ...
 
-midiout: _T_midiout
+midiparse: _T_midiparse
 
-class _T_midiparse(MaxObject):
+class _T_minimum(MaxObject):
     """
 minimum - Output the smallest value
 
@@ -6258,14 +6283,14 @@ Outlets:
 Messages: bang, int, float, list, ft1, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_midiparse: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_minimum: ...
 
-midiparse: _T_midiparse
+minimum: _T_minimum
 
-class _T_minimum(MaxObject):
+class _T_minus(MaxObject):
     """
 minus - Subtract two numbers, output the result
 
@@ -6282,14 +6307,14 @@ Outlets:
 Messages: bang, int, float, in1, set, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_minimum: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_minus: ...
 
-minimum: _T_minimum
+minus: _T_minus
 
-class _T_minus(MaxObject):
+class _T_modifiers(MaxObject):
     """
 modifiers - Report modifier key presses
 
@@ -6311,14 +6336,14 @@ Outlets:
 Messages: bang, (keyboard), interval
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_minus: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_modifiers: ...
 
-minus: _T_minus
+modifiers: _T_modifiers
 
-class _T_modifiers(MaxObject):
+class _T_modulo(MaxObject):
     """
 modulo - Divide two numbers, output the remainder
 
@@ -6337,14 +6362,14 @@ Outlets:
 Messages: bang, int, float, in1, set, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_modifiers: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_modulo: ...
 
-modifiers: _T_modifiers
+modulo: _T_modulo
 
-class _T_modulo(MaxObject):
+class _T_mousefilter(MaxObject):
     """
 mousefilter - Gate messages with the mouse
 
@@ -6359,14 +6384,14 @@ Outlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_modulo: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mousefilter: ...
 
-modulo: _T_modulo
+mousefilter: _T_mousefilter
 
-class _T_mousefilter(MaxObject):
+class _T_mousestate(MaxObject):
     """
 mousestate - Report the mouse information
 
@@ -6392,12 +6417,12 @@ Messages: bang, mode, (mouse), nopoll, poll, reset, zero
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mousefilter: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mousestate: ...
 
-mousefilter: _T_mousefilter
+mousestate: _T_mousestate
 
-class _T_mousestate(MaxObject):
+class _T_movie(MaxObject):
     """
 movie - Play a movie in a window
 
@@ -6421,12 +6446,12 @@ Attributes: autofit, border, name
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mousestate: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_movie: ...
 
-mousestate: _T_mousestate
+movie: _T_movie
 
-class _T_movie(MaxObject):
+class _T_mpeconfig(MaxObject):
     """
 mpeconfig - Configure a MIDI device that supports Multidimensional Polyphonic Expression (MPE) messages
 
@@ -6446,12 +6471,12 @@ Attributes: chanrange, masterchan
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_movie: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mpeconfig: ...
 
-movie: _T_movie
+mpeconfig: _T_mpeconfig
 
-class _T_mpeconfig(MaxObject):
+class _T_mpeformat(MaxObject):
     """
 mpeformat - Prepare data in the form of a Multidimensional Polyphonic Expression (MPE) MIDI message
 
@@ -6487,14 +6512,14 @@ Messages: bang, int, float, midievent, mpeevent, reset
 Attributes: chanrange, masterchan, zone
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mpeconfig: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mpeformat: ...
 
-mpeconfig: _T_mpeconfig
+mpeformat: _T_mpeformat
 
-class _T_mpeformat(MaxObject):
+class _T_mpeparse(MaxObject):
     """
 mpeparse - Interpret raw MPE MIDI data
 
@@ -6520,14 +6545,14 @@ Messages: bang, int, float, mpeevent
 Attributes: hires, index, strict
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mpeformat: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mpeparse: ...
 
-mpeformat: _T_mpeformat
+mpeparse: _T_mpeparse
 
-class _T_mpeparse(MaxObject):
+class _T_mtof(MaxObject):
     """
 mtof - Convert a MIDI note number to frequency
 
@@ -6544,14 +6569,14 @@ Messages: int, float, list
 Attributes: base, map, mapname, mid, ref, scale, scalename
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mpeparse: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mtof: ...
 
-mpeparse: _T_mpeparse
+mtof: _T_mtof
 
-class _T_mtof(MaxObject):
+class _T_mtr(MaxObject):
     """
 mtr - Record and sequence messages
 
@@ -6575,12 +6600,12 @@ Attributes: autostart, autostarttime, bindto, embed, length, loop, mode, nextmod
     @property
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mtof: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mtr: ...
 
-mtof: _T_mtof
+mtr: _T_mtr
 
-class _T_mtr(MaxObject):
+class _T_multirange(MaxObject):
     """
 multirange - Graphical function breakpoint editor
 
@@ -6600,14 +6625,14 @@ Messages: bang, int, float, list, clear, dump, listdump, (mouse)
 Attributes: annotation_name, bgcolor, color, domain, elementcolor, legend, param_connect, parameter_enable, parameter_mappable, range, style, textcolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mtr: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_multirange: ...
 
-mtr: _T_mtr
+multirange: _T_multirange
 
-class _T_multirange(MaxObject):
+class _T_multislider(MaxObject):
     """
 multislider - Display data as sliders or a scrolling display
 
@@ -6627,12 +6652,12 @@ Attributes: annotation_name, bgcolor, border_bottom, border_left, border_right, 
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_multirange: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_multislider: ...
 
-multirange: _T_multirange
+multislider: _T_multislider
 
-class _T_multislider(MaxObject):
+class _T_mxj(MaxObject):
     """
 mxj - Execute Java in Max
 
@@ -6645,14 +6670,14 @@ Args:
 Messages: bang, int, float, list, anything, (mouse), get, viewsource, zap
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_multislider: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_mxj: ...
 
-multislider: _T_multislider
+mxj: _T_mxj
 
-class _T_mxj(MaxObject):
+class _T_next_(MaxObject):
     """
 next - Detect separation of messages
 
@@ -6668,14 +6693,14 @@ Outlets:
 Messages: bang, int, float, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_mxj: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_next_: ...
 
-mxj: _T_mxj
+next_: _T_next_
 
-class _T_next_(MaxObject):
+class _T_nodes(MaxObject):
     """
 nodes - Interpolate data graphically
 
@@ -6696,12 +6721,12 @@ Attributes: annotation_name, bgcolor, bordercolor, candycane, candycane2, candyc
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_next_: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_nodes: ...
 
-next_: _T_next_
+nodes: _T_nodes
 
-class _T_nodes(MaxObject):
+class _T_notein(MaxObject):
     """
 notein - Receive MIDI note messages
 
@@ -6728,12 +6753,12 @@ Attributes: matchport, name
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_nodes: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_notein: ...
 
-nodes: _T_nodes
+notein: _T_notein
 
-class _T_notein(MaxObject):
+class _T_noteout(MaxObject):
     """
 noteout - Transmit MIDI note messages
 
@@ -6755,14 +6780,14 @@ Messages: int, float, anything, (mouse), in1, in2, port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_notein: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_noteout: ...
 
-notein: _T_notein
+noteout: _T_noteout
 
-class _T_noteout(MaxObject):
+class _T_notequals(MaxObject):
     """
 notequals - Compare numbers for not-equal-to condition
 
@@ -6783,14 +6808,14 @@ Messages: bang, int, float, in1, set, list
 Attributes: fuzzy
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_noteout: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_notequals: ...
 
-noteout: _T_noteout
+notequals: _T_notequals
 
-class _T_notequals(MaxObject):
+class _T_nrpnin(MaxObject):
     """
 nrpnin - Output received NRPN values
 
@@ -6813,14 +6838,14 @@ Messages: int, list, set
 Attributes: hires, permissive
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_notequals: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_nrpnin: ...
 
-notequals: _T_notequals
+nrpnin: _T_nrpnin
 
-class _T_nrpnin(MaxObject):
+class _T_nrpnout(MaxObject):
     """
 nrpnout - Format 14-bit MIDI NRPN messages
 
@@ -6843,14 +6868,14 @@ Messages: bang, int, list, in1, in2, in3, set
 Attributes: hires, running
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_nrpnin: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_nrpnout: ...
 
-nrpnin: _T_nrpnin
+nrpnout: _T_nrpnout
 
-class _T_nrpnout(MaxObject):
+class _T_nslider(MaxObject):
     """
 nslider - Output numbers from a notation display
 
@@ -6869,14 +6894,14 @@ Messages: bang, int, float, list, anything, chord, clear, flush, ft1, in1, (mous
 Attributes: annotation_name, bgcolor, bordercolor, clefs, fgcolor, mode, param_connect, parameter_enable, parameter_mappable, rounded, staffs, style
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_nrpnout: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_nslider: ...
 
-nrpnout: _T_nrpnout
+nslider: _T_nslider
 
-class _T_nslider(MaxObject):
+class _T_number(MaxObject):
     """
 number - Display and output numbers, lists, and messages
 
@@ -6894,14 +6919,14 @@ Messages: bang, int, float, list, anything, clear, max, min, (mouse), select, se
 Attributes: annotation_name, bgcolor, bordercolor, cantchange, format, hbgcolor, htextcolor, htricolor, maximum, minimum, mousefilter, numdecimalplaces, outputonclick, param_connect, parameter_enable, parameter_mappable, style, textcolor, triangle, tricolor, triscale
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_nslider: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_number: ...
 
-nslider: _T_nslider
+number: _T_number
 
-class _T_number(MaxObject):
+class _T_numkey(MaxObject):
     """
 numkey - Interpret numbers typed on the keyboard
 
@@ -6921,11 +6946,11 @@ Messages: bang, int, clear
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_number: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_numkey: ...
 
-number: _T_number
+numkey: _T_numkey
 
-class _T_numkey(MaxObject):
+class _T_offer(MaxObject):
     """
 offer - Store one-time number pairs
 
@@ -6941,14 +6966,14 @@ Outlets:
 Messages: bang, int, clear, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_numkey: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_offer: ...
 
-numkey: _T_numkey
+offer: _T_offer
 
-class _T_offer(MaxObject):
+class _T_onebang(MaxObject):
     """
 onebang - Gate bangs using a bang
 
@@ -6970,26 +6995,26 @@ Messages: bang, int, float, list, anything, stop
     @property
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_offer: ...
-
-offer: _T_offer
-
-class _T_onebang(MaxObject):
-    """
-onecopy - Prevent multiple copies of the same patcher from being opened
-
-Use the onecopy object inside a patcher that you want to place in the extras folder for inclusion in the Extras menu. When the patcher's name is chosen using the Extras menu, its window will be brought to the front instead of opened a second time if it has already been loaded. The patch will be loaded if it is not currently open. The onecopy object cooperates with the Extras menu to ensure that only one copy of the patcher is opened at a time. However, opening the patcher containing a onecopy object by choosing Open... from the File menu will open additional copies.
-"""
-    @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
-    @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
     def __call__(self, *args: Any, **attribs: Any) -> _T_onebang: ...
 
 onebang: _T_onebang
 
 class _T_onecopy(MaxObject):
+    """
+onecopy - Prevent multiple copies of the same patcher from being opened
+
+Use the onecopy object inside a patcher that you want to place in the extras folder for inclusion in the Extras menu. When the patcher's name is chosen using the Extras menu, its window will be brought to the front instead of opened a second time if it has already been loaded. The patch will be loaded if it is not currently open. The onecopy object cooperates with the Extras menu to ensure that only one copy of the patcher is opened at a time. However, opening the patcher containing a onecopy object by choosing Open... from the File menu will open additional copies.
+"""
+    @property
+    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
+    @property
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_onecopy: ...
+
+onecopy: _T_onecopy
+
+class _T_opendialog(MaxObject):
     """
 opendialog - Open a dialog to ask for a file or folder
 
@@ -7010,14 +7035,14 @@ Outlets:
 Messages: bang, anything, path, set, setpath, sound, types
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_onecopy: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_opendialog: ...
 
-onecopy: _T_onecopy
+opendialog: _T_opendialog
 
-class _T_opendialog(MaxObject):
+class _T_osc_codebox(MaxObject):
     """
 osc.codebox - Display OSC packets as Dictionaries
 
@@ -7031,14 +7056,14 @@ Messages: FullPacket, clear, osc_packet
 Attributes: bgcolor, editlocked, embed, linenumbers, linenumberwidth, margin, style, textcolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_opendialog: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_osc_codebox: ...
 
-opendialog: _T_opendialog
+osc_codebox: _T_osc_codebox
 
-class _T_osc_codebox(MaxObject):
+class _T_osc_packet(MaxObject):
     """
 osc.packet - Store and recall an OSC packet
 
@@ -7056,14 +7081,14 @@ Messages: bang, FullPacket, clear, osc_packet
 Attributes: outputformat
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_osc_codebox: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_osc_packet: ...
 
-osc_codebox: _T_osc_codebox
+osc_packet: _T_osc_packet
 
-class _T_osc_packet(MaxObject):
+class _T_outlet(MaxObject):
     """
 outlet - Send messages out of a patcher
 
@@ -7078,14 +7103,14 @@ Messages: (mouse)
 Attributes: comment, style, tricolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_osc_packet: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_outlet: ...
 
-osc_packet: _T_osc_packet
+outlet: _T_outlet
 
-class _T_outlet(MaxObject):
+class _T_pack(MaxObject):
     """
 pack - Create a list
 
@@ -7104,14 +7129,14 @@ Outlets:
 Messages: bang, int, float, list, anything, nth, send, set, symbol
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_outlet: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pack: ...
 
-outlet: _T_outlet
+pack: _T_pack
 
-class _T_pack(MaxObject):
+class _T_pak(MaxObject):
     """
 pak - Output a list when any element changes
 
@@ -7133,11 +7158,11 @@ Messages: bang, int, float, list, anything, set
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pack: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pak: ...
 
-pack: _T_pack
+pak: _T_pak
 
-class _T_pak(MaxObject):
+class _T_panel(MaxObject):
     """
 panel - Colored background area
 
@@ -7153,12 +7178,12 @@ Attributes: angle, arrow_orientation, bgcolor, bgfillcolor, border, bordercolor,
     @property
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pak: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_panel: ...
 
-pak: _T_pak
+panel: _T_panel
 
-class _T_panel(MaxObject):
+class _T_param(MaxObject):
     """
 param - Define a polyphonic-compatible parameter in poly~
 
@@ -7183,12 +7208,12 @@ Attributes: annotation_name, default, max, min
     @property
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_panel: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_param: ...
 
-panel: _T_panel
+param: _T_param
 
-class _T_param(MaxObject):
+class _T_param_osc(MaxObject):
     """
 param.osc - Control and report info about parameters using OSC.
 
@@ -7205,14 +7230,14 @@ Messages: bang, anything, FullPacket, allparams, info, osc_packet, param, set
 Attributes: auto, outputformat, outputmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_param: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_param_osc: ...
 
-param: _T_param
+param_osc: _T_param_osc
 
-class _T_param_osc(MaxObject):
+class _T_past(MaxObject):
     """
 past - Notify when a threshold is passed
 
@@ -7234,11 +7259,11 @@ Messages: int, float, list, clear, set
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_param_osc: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_past: ...
 
-param_osc: _T_param_osc
+past: _T_past
 
-class _T_past(MaxObject):
+class _T_patcher(MaxObject):
     """
 patcher - Create a subpatch within a patch
 
@@ -7253,14 +7278,14 @@ Inlets:
 Attributes: accentcolor, assistshowspatchername, bgcolor, bgfillcolor, bottomtoolbarpinned, boxanimatetime, bubble_bgcolor, bubble_outlinecolor, clearcolor, cluebar, color, commentary, defaultfocusbox, description, digest, editing_bgcolor, elementcolor, enablehscroll, enabletransparentbgwithtitlebar, enablevscroll, filepath, fontface, fontname, fontsize, globalpatchername, gridonopen, gridsize, gridsnaponopen, helpsidebarclosed, integercoordinates, isolateaudio, lefttoolbarpinned, locked_bgcolor, objectsnaponopen, openinpresentation, openrect, openrectmode, oscdefer, oscparamenableddefault, oscprefix, oscprefixmode, oscqueryenable, oscreceivemode, oscreceivequantize, oscreceivethreshold, oscreceiveudpport, oscsendmode, oscsendthreshold, oscsendudpaddr, oscsendudpport, oscuseparamprefix, oscvaluemode, patchlinecolor, righttoolbarpinned, selectioncolor, showcommentary, showontab, stripecolor, style, subpatcher_template, syntax_attrargcolor, syntax_attributecolor, syntax_objargcolor, syntax_objectcolor, taborientation, tags, tallnewobj, textcolor, textcolor_inverse, textjustification, title, toolbarvisible, toptoolbarpinned, workspacedisabled, external_mpe_tuning_enabled, is_mpe, latency, minimum_live_version, minimum_max_version, platform_compatibility
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_past: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_patcher: ...
 
-past: _T_past
+patcher: _T_patcher
 
-class _T_patcher(MaxObject):
+class _T_patcherargs(MaxObject):
     """
 patcherargs - Retrieve patcher arguments
 
@@ -7279,14 +7304,14 @@ Outlets:
 Messages: bang, (mouse)
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_patcher: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_patcherargs: ...
 
-patcher: _T_patcher
+patcherargs: _T_patcherargs
 
-class _T_patcherargs(MaxObject):
+class _T_pattr(MaxObject):
     """
 pattr - Provide an alias with a named data wrapper
 
@@ -7310,12 +7335,12 @@ Attributes: annotation_name, autorestore, bindto, default_active, default_interp
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_patcherargs: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pattr: ...
 
-patcherargs: _T_patcherargs
+pattr: _T_pattr
 
-class _T_pattr(MaxObject):
+class _T_pattrforward(MaxObject):
     """
 pattrforward - Send any message to a named object
 
@@ -7337,12 +7362,12 @@ Attributes: send
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pattr: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pattrforward: ...
 
-pattr: _T_pattr
+pattrforward: _T_pattrforward
 
-class _T_pattrforward(MaxObject):
+class _T_pattrhub(MaxObject):
     """
 pattrhub - Access all pattr objects in a patcher
 
@@ -7362,12 +7387,12 @@ Attributes: bound, patcher
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pattrforward: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pattrhub: ...
 
-pattrforward: _T_pattrforward
+pattrhub: _T_pattrhub
 
-class _T_pattrhub(MaxObject):
+class _T_pattrmarker(MaxObject):
     """
 pattrmarker - Provide pattr communication between patchers
 
@@ -7389,12 +7414,12 @@ Attributes: invisible, name
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pattrhub: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pattrmarker: ...
 
-pattrhub: _T_pattrhub
+pattrmarker: _T_pattrmarker
 
-class _T_pattrmarker(MaxObject):
+class _T_pattrstorage(MaxObject):
     """
 pattrstorage - Save and recall pattr presets
 
@@ -7417,11 +7442,11 @@ Attributes: activewritemode, annotation_name, autopattr_vis, autorestore, autowa
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pattrmarker: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pattrstorage: ...
 
-pattrmarker: _T_pattrmarker
+pattrstorage: _T_pattrstorage
 
-class _T_pattrstorage(MaxObject):
+class _T_pcontrol(MaxObject):
     """
 pcontrol - Open and close subwindows
 
@@ -7439,11 +7464,11 @@ Messages: close, help, load, loadunique, open, shroud, shroudunique
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pattrstorage: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pcontrol: ...
 
-pattrstorage: _T_pattrstorage
+pcontrol: _T_pcontrol
 
-class _T_pcontrol(MaxObject):
+class _T_peak(MaxObject):
     """
 peak - Output larger numbers
 
@@ -7464,14 +7489,14 @@ Outlets:
 Messages: bang, int, float, ft1, in1, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pcontrol: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_peak: ...
 
-pcontrol: _T_pcontrol
+peak: _T_peak
 
-class _T_peak(MaxObject):
+class _T_pgmin(MaxObject):
     """
 pgmin - Receive MIDI program changes
 
@@ -7493,14 +7518,14 @@ Messages: anything, (mouse), (MIDI), port
 Attributes: matchport, name, zerobased
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_peak: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pgmin: ...
 
-peak: _T_peak
+pgmin: _T_pgmin
 
-class _T_pgmin(MaxObject):
+class _T_pgmout(MaxObject):
     """
 pgmout - Send MIDI program changes
 
@@ -7519,14 +7544,14 @@ Messages: int, float, anything, (mouse), in1, port, list
 Attributes: matchport, name, zerobased
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pgmin: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pgmout: ...
 
-pgmin: _T_pgmin
+pgmout: _T_pgmout
 
-class _T_pgmout(MaxObject):
+class _T_pictctrl(MaxObject):
     """
 pictctrl - Picture-based control
 
@@ -7543,14 +7568,14 @@ Messages: bang, int, float, (drag), link, (mouse), picture, read, readany, set
 Attributes: active, annotation_name, clickedimage, clickincrement, clip, degrees, frames, imagemask, inactiveimage, mode, multiplier, name, offset, param_connect, parameter_enable, parameter_mappable, range, ratio, snap, threshold, trackcircular, trackhorizontal, tracking, trackvertical
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pgmout: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pictctrl: ...
 
-pgmout: _T_pgmout
+pictctrl: _T_pictctrl
 
-class _T_pictctrl(MaxObject):
+class _T_pictslider(MaxObject):
     """
 pictslider - Picture-based slider control
 
@@ -7569,14 +7594,14 @@ Messages: bang, int, float, list, (drag), bkgndpicture, knobpicture, (mouse), re
 Attributes: active, annotation_name, bgcolor, bkgnddrag, bkgndpict, bkgndsize, bottommargin, bottomvalue, clickedimage, color, elementcolor, horizontaltracking, imagemask, inactiveimage, invisiblebkgnd, jump, knobpict, leftmargin, leftvalue, movehorizontal, movevertical, param_connect, parameter_enable, parameter_mappable, rightmargin, rightvalue, scaleknob, style, topmargin, topvalue, verticaltracking
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pictctrl: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pictslider: ...
 
-pictctrl: _T_pictctrl
+pictslider: _T_pictslider
 
-class _T_pictslider(MaxObject):
+class _T_pipe(MaxObject):
     """
 pipe - Delay numbers, lists or symbols
 
@@ -7597,14 +7622,14 @@ Messages: bang, int, float, list, anything, clear, flush, stop
 Attributes: clock, delaytime, quantize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pictslider: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pipe: ...
 
-pictslider: _T_pictslider
+pipe: _T_pipe
 
-class _T_pipe(MaxObject):
+class _T_playbar(MaxObject):
     """
 playbar - Control video or audio file playback
 
@@ -7622,14 +7647,14 @@ Messages: bang, loop, (mouse), palindrome
 Attributes: bgcolor, color, disabledcolor, hideloop, hiderwff, refreshrate, selectioncolor, style
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pipe: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_playbar: ...
 
-pipe: _T_pipe
+playbar: _T_playbar
 
-class _T_playbar(MaxObject):
+class _T_plus(MaxObject):
     """
 plus - Add two numbers, output the result
 
@@ -7646,14 +7671,14 @@ Outlets:
 Messages: bang, int, float, in1, set, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_playbar: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_plus: ...
 
-playbar: _T_playbar
+plus: _T_plus
 
-class _T_plus(MaxObject):
+class _T_poltocar(MaxObject):
     """
 poltocar - Convert polar to cartesian coordinates
 
@@ -7670,14 +7695,14 @@ Outlets:
 Messages: bang, int, float
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_plus: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_poltocar: ...
 
-plus: _T_plus
+poltocar: _T_poltocar
 
-class _T_poltocar(MaxObject):
+class _T_poly(MaxObject):
     """
 poly - Allocate notes to different voices
 
@@ -7702,12 +7727,12 @@ Messages: int, in1, stop
     @property
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_poltocar: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_poly: ...
 
-poltocar: _T_poltocar
+poly: _T_poly
 
-class _T_poly(MaxObject):
+class _T_polyin(MaxObject):
     """
 polyin - Received MIDI poly pressure
 
@@ -7731,14 +7756,14 @@ Messages: anything, (mouse), (MIDI), port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_poly: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_polyin: ...
 
-poly: _T_poly
+polyin: _T_polyin
 
-class _T_polyin(MaxObject):
+class _T_polymidiin(MaxObject):
     """
 polymidiin - Output Multidimensional Polyphonic Expression (MPE) MIDI data
 
@@ -7748,14 +7773,14 @@ Outlets:
   0 (OUTLET_TYPE): Raw MIDI Messages
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[()]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_polyin: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_polymidiin: ...
 
-polyin: _T_polyin
+polymidiin: _T_polymidiin
 
-class _T_polymidiin(MaxObject):
+class _T_polyout(MaxObject):
     """
 polyout - Send MIDI poly pressure
 
@@ -7775,14 +7800,14 @@ Messages: int, float, anything, (mouse), in1, in2, port, list
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[()]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_polymidiin: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_polyout: ...
 
-polymidiin: _T_polymidiin
+polyout: _T_polyout
 
-class _T_polyout(MaxObject):
+class _T_pong(MaxObject):
     """
 pong - Range limiting
 
@@ -7807,12 +7832,12 @@ Attributes: mode, range
     @property
     def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_polyout: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pong: ...
 
-polyout: _T_polyout
+pong: _T_pong
 
-class _T_pong(MaxObject):
+class _T_pow_(MaxObject):
     """
 pow - Computes input to the nth power
 
@@ -7831,14 +7856,14 @@ Outlets:
 Messages: bang, int, float, list, ft1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pong: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pow_: ...
 
-pong: _T_pong
+pow_: _T_pow_
 
-class _T_pow_(MaxObject):
+class _T_prepend(MaxObject):
     """
 prepend - Add a message in front of input
 
@@ -7856,14 +7881,14 @@ Outlets:
 Messages: bang, int, float, list, anything, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pow_: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_prepend: ...
 
-pow_: _T_pow_
+prepend: _T_prepend
 
-class _T_prepend(MaxObject):
+class _T_preset(MaxObject):
     """
 preset - Store and recall settings
 
@@ -7886,12 +7911,12 @@ Attributes: active1, active2, bgcolor, bordercolor, bubblesize, circlecolor, cli
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_prepend: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_preset: ...
 
-prepend: _T_prepend
+preset: _T_preset
 
-class _T_preset(MaxObject):
+class _T_print_(MaxObject):
     """
 print - Print any message in the Max Console
 
@@ -7908,14 +7933,14 @@ Messages: bang, int, float, list, anything, array, (mouse), dictionary, string
 Attributes: bettersymquotes, deltatime, floatprecision, level, popup, time
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_preset: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_print_: ...
 
-preset: _T_preset
+print_: _T_print_
 
-class _T_print_(MaxObject):
+class _T_prob(MaxObject):
     """
 prob - Create a weighted transition table
 
@@ -7933,20 +7958,6 @@ Messages: bang, int, list, clear, dump, reset
 Attributes: embed
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
-    @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_print_: ...
-
-print_: _T_print_
-
-class _T_prob(MaxObject):
-    """
-project
-
-Attributes: amxdtype, autolocalize, autoorganize, browsertext, devpath, devpathtype, hideprojectwindow, includepackages, readonly, showdependencies, sortmode
-"""
-    @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
@@ -7955,6 +7966,20 @@ Attributes: amxdtype, autolocalize, autoorganize, browsertext, devpath, devpatht
 prob: _T_prob
 
 class _T_project(MaxObject):
+    """
+project
+
+Attributes: amxdtype, autolocalize, autoorganize, browsertext, devpath, devpathtype, hideprojectwindow, includepackages, readonly, showdependencies, sortmode
+"""
+    @property
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    @property
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_project: ...
+
+project: _T_project
+
+class _T_pv(MaxObject):
     """
 pv - Share data within a patch hierarchy
 
@@ -7976,11 +8001,11 @@ Messages: bang, int, float, list, anything, status, symbol
     def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_project: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pv: ...
 
-project: _T_project
+pv: _T_pv
 
-class _T_pv(MaxObject):
+class _T_pvar(MaxObject):
     """
 pvar - Connect to a named object in a patcher
 
@@ -7999,14 +8024,14 @@ Outlets:
 Messages: bang, int, float, list, anything, loadbang, setname
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pv: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_pvar: ...
 
-pv: _T_pv
+pvar: _T_pvar
 
-class _T_pvar(MaxObject):
+class _T_qlim(MaxObject):
     """
 qlim - Queue-based message limiter
 
@@ -8027,14 +8052,14 @@ Messages: bang, int, float, list, anything
 Attributes: defer, quantize, threshold, usurp
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_pvar: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_qlim: ...
 
-pvar: _T_pvar
+qlim: _T_qlim
 
-class _T_qlim(MaxObject):
+class _T_qlist(MaxObject):
     """
 qlist - Store a collection of messages
 
@@ -8051,14 +8076,14 @@ Outlets:
 Messages: bang, append, clear, (mouse), fwd, insert, next, open, read, rewind, set, stop, tempo, wclose, write
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_qlim: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_qlist: ...
 
-qlim: _T_qlim
+qlist: _T_qlist
 
-class _T_qlist(MaxObject):
+class _T_qmetro(MaxObject):
     """
 qmetro - Queue-based metronome
 
@@ -8079,14 +8104,14 @@ Messages: bang, int, float, list, anything, clock, reset, stop
 Attributes: active, autostart, autostarttime, defer, interval, quantize, transport
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_qlist: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_qmetro: ...
 
-qlist: _T_qlist
+qmetro: _T_qmetro
 
-class _T_qmetro(MaxObject):
+class _T_quickthresh(MaxObject):
     """
 quickthresh - Fast chord detection
 
@@ -8109,14 +8134,14 @@ Outlets:
 Messages: bang, int, float, ft1, ft2, ft3, in1, in2, in3, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_qmetro: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_quickthresh: ...
 
-qmetro: _T_qmetro
+quickthresh: _T_quickthresh
 
-class _T_quickthresh(MaxObject):
+class _T_radiogroup(MaxObject):
     """
 radiogroup - Radio button or check box
 
@@ -8133,14 +8158,14 @@ Messages: bang, int, list, disableitem, enableitem, (mouse), set
 Attributes: activecolor, annotation_name, bgcolor, elementcolor, enabled, flagmode, inactive, inactivecolor, itemtype, offset, param_connect, parameter_enable, parameter_mappable, selection, shape, size, style
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_quickthresh: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_radiogroup: ...
 
-quickthresh: _T_quickthresh
+radiogroup: _T_radiogroup
 
-class _T_radiogroup(MaxObject):
+class _T_random(MaxObject):
     """
 random - Generate a random number
 
@@ -8162,14 +8187,14 @@ Messages: bang, int, float, list, reset
 Attributes: classic, cycle, floatoutput, range, seed
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_radiogroup: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_random: ...
 
-radiogroup: _T_radiogroup
+random: _T_random
 
-class _T_random(MaxObject):
+class _T_rdiv(MaxObject):
     """
 rdiv - Divide input from a number
 
@@ -8188,14 +8213,14 @@ Outlets:
 Messages: bang, int, float, ft1, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_random: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_rdiv: ...
 
-random: _T_random
+rdiv: _T_rdiv
 
-class _T_rdiv(MaxObject):
+class _T_receive(MaxObject):
     """
 receive - Receive messages without patch cords
 
@@ -8213,14 +8238,14 @@ Outlets:
 Messages: (mouse), set
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_rdiv: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_receive: ...
 
-rdiv: _T_rdiv
+receive: _T_receive
 
-class _T_receive(MaxObject):
+class _T_regexp(MaxObject):
     """
 regexp - Use regular expressions to process input
 
@@ -8245,14 +8270,14 @@ Messages: int, float, list, anything
 Attributes: binary, legacyoutputorder, re, substitute, tosymbol
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_receive: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_regexp: ...
 
-receive: _T_receive
+regexp: _T_regexp
 
-class _T_regexp(MaxObject):
+class _T_relativepath(MaxObject):
     """
 relativepath - Convert an absolute to a relative path
 
@@ -8269,12 +8294,12 @@ Messages: anything
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_regexp: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_relativepath: ...
 
-regexp: _T_regexp
+relativepath: _T_relativepath
 
-class _T_relativepath(MaxObject):
+class _T_repl(MaxObject):
     """
 repl - Send, receive and output Max Console commands
 
@@ -8296,14 +8321,14 @@ Messages: anything, array, string
 Attributes: defer, exec, global, mirror, name, print
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_relativepath: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_repl: ...
 
-relativepath: _T_relativepath
+repl: _T_repl
 
-class _T_repl(MaxObject):
+class _T_rminus(MaxObject):
     """
 rminus - Subtraction object (inlets reversed)
 
@@ -8322,14 +8347,14 @@ Outlets:
 Messages: bang, int, float, ft1, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_repl: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_rminus: ...
 
-repl: _T_repl
+rminus: _T_rminus
 
-class _T_rminus(MaxObject):
+class _T_round_(MaxObject):
     """
 round - Round to a value
 
@@ -8350,14 +8375,14 @@ Messages: int, float, list, anything
 Attributes: nearest
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_rminus: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_round_: ...
 
-rminus: _T_rminus
+round_: _T_round_
 
-class _T_round_(MaxObject):
+class _T_route(MaxObject):
     """
 route - Select outlet based on input matching
 
@@ -8377,14 +8402,14 @@ Outlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_round_: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_route: ...
 
-round_: _T_round_
+route: _T_route
 
-class _T_route(MaxObject):
+class _T_routepass(MaxObject):
     """
 routepass - Route a complete incoming message based on input matching
 
@@ -8407,11 +8432,11 @@ Messages: bang, int, float, list, anything
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_route: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_routepass: ...
 
-route: _T_route
+routepass: _T_routepass
 
-class _T_routepass(MaxObject):
+class _T_router(MaxObject):
     """
 router - Route messages to multiple locations
 
@@ -8433,11 +8458,11 @@ Messages: bang, int, float, list, anything, clear, connect, disconnect, dump, pa
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_routepass: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_router: ...
 
-routepass: _T_routepass
+router: _T_router
 
-class _T_router(MaxObject):
+class _T_rpnin(MaxObject):
     """
 rpnin - Output received RPN values
 
@@ -8460,14 +8485,14 @@ Messages: int, list, set
 Attributes: hires, permissive
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_router: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_rpnin: ...
 
-router: _T_router
+rpnin: _T_rpnin
 
-class _T_rpnin(MaxObject):
+class _T_rpnout(MaxObject):
     """
 rpnout - Format 14-bit MIDI RPN messages
 
@@ -8490,14 +8515,14 @@ Messages: bang, int, list, in1, in2, in3, set
 Attributes: hires, running
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_rpnin: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_rpnout: ...
 
-rpnin: _T_rpnin
+rpnout: _T_rpnout
 
-class _T_rpnout(MaxObject):
+class _T_rslider(MaxObject):
     """
 rslider - Display or change a range of numbers
 
@@ -8516,14 +8541,14 @@ Messages: bang, int, float, list, ft1, in1, (mouse), set, setminmax
 Attributes: annotation_name, bgcolor, bordercolor, drawline, fgcolor, floatoutput, listmode, min, mult, orientation, param_connect, parameter_enable, parameter_mappable, size, style, thickness
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_rpnout: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_rslider: ...
 
-rpnout: _T_rpnout
+rslider: _T_rslider
 
-class _T_rslider(MaxObject):
+class _T_rtin(MaxObject):
     """
 rtin - Receive MIDI real time messages
 
@@ -8544,14 +8569,14 @@ Messages: anything, (mouse), (MIDI), port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_rslider: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_rtin: ...
 
-rslider: _T_rslider
+rtin: _T_rtin
 
-class _T_rtin(MaxObject):
+class _T_savebang(MaxObject):
     """
 savebang - Send a bang on save
 
@@ -8569,11 +8594,11 @@ Messages: bang, (mouse)
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_rtin: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_savebang: ...
 
-rtin: _T_rtin
+savebang: _T_savebang
 
-class _T_savebang(MaxObject):
+class _T_savedialog(MaxObject):
     """
 savedialog - Open a dialog asking for a filename
 
@@ -8595,12 +8620,12 @@ Messages: bang, anything, name, path, set, setpath
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_savebang: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_savedialog: ...
 
-savebang: _T_savebang
+savedialog: _T_savedialog
 
-class _T_savedialog(MaxObject):
+class _T_scale(MaxObject):
     """
 scale - Map values to an output range
 
@@ -8629,14 +8654,14 @@ Messages: bang, int, float, list
 Attributes: classic
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_savedialog: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_scale: ...
 
-savedialog: _T_savedialog
+scale: _T_scale
 
-class _T_scale(MaxObject):
+class _T_schedule(MaxObject):
     """
 schedule - Schedule messages on high priority scheduler thread
 
@@ -8656,14 +8681,14 @@ Messages: bang, int, float, list, anything, clear, sendmessage
 Attributes: defer, delay
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_scale: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_schedule: ...
 
-scale: _T_scale
+schedule: _T_schedule
 
-class _T_schedule(MaxObject):
+class _T_screensize(MaxObject):
     """
 screensize - Output the monitor size
 
@@ -8681,12 +8706,12 @@ Messages: bang
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_schedule: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_screensize: ...
 
-schedule: _T_schedule
+screensize: _T_screensize
 
-class _T_screensize(MaxObject):
+class _T_select(MaxObject):
     """
 select - Output bangs based on input matching
 
@@ -8709,14 +8734,14 @@ Messages: bang, int, float, list, anything, in1, symbol
 Attributes: fuzzy, matchfloat
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_screensize: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_select: ...
 
-screensize: _T_screensize
+select: _T_select
 
-class _T_select(MaxObject):
+class _T_send(MaxObject):
     """
 send - Send messages without patch cords
 
@@ -8731,14 +8756,14 @@ Inlets:
 Messages: bang, int, float, list, anything, (mouse)
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_select: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_send: ...
 
-select: _T_select
+send: _T_send
 
-class _T_send(MaxObject):
+class _T_seq(MaxObject):
     """
 seq - Sequencer for recording and playing MIDI data
 
@@ -8760,14 +8785,14 @@ Messages: bang, int, float, addeventdelay, append, clear, delay, dump, hook, pri
 Attributes: overridetempo, sequencetempo, tempo
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_send: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_seq: ...
 
-send: _T_send
+seq: _T_seq
 
-class _T_seq(MaxObject):
+class _T_serial(MaxObject):
     """
 serial - Send and receive from a serial port
 
@@ -8793,12 +8818,12 @@ Attributes: asyncread, autoopen, baud, break_duration, bufsize, chunk, databits,
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_seq: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_serial: ...
 
-seq: _T_seq
+serial: _T_serial
 
-class _T_serial(MaxObject):
+class _T_setclock(MaxObject):
     """
 setclock - Create and control an alternative clock
 
@@ -8819,14 +8844,14 @@ Outlets:
 Messages: bang, int, float, clock, (mouse), ft1, reset, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_serial: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_setclock: ...
 
-serial: _T_serial
+setclock: _T_setclock
 
-class _T_setclock(MaxObject):
+class _T_shiftleft(MaxObject):
     """
 shiftleft - Bit shift to the left
 
@@ -8845,14 +8870,14 @@ Outlets:
 Messages: bang, int, float, in1, set, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_setclock: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_shiftleft: ...
 
-setclock: _T_setclock
+shiftleft: _T_shiftleft
 
-class _T_shiftleft(MaxObject):
+class _T_shiftright(MaxObject):
     """
 shiftright - Bit shift to the right
 
@@ -8874,11 +8899,11 @@ Messages: bang, int, float, in1, set, list
     def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_shiftleft: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_shiftright: ...
 
-shiftleft: _T_shiftleft
+shiftright: _T_shiftright
 
-class _T_shiftright(MaxObject):
+class _T_sin(MaxObject):
     """
 sin - Sine function
 
@@ -8896,14 +8921,14 @@ Outlets:
 Messages: bang, int, float
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_shiftright: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_sin: ...
 
-shiftright: _T_shiftright
+sin: _T_sin
 
-class _T_sin(MaxObject):
+class _T_sinh(MaxObject):
     """
 sinh - Hyperbolic sine function
 
@@ -8924,11 +8949,11 @@ Messages: bang, int, float
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_sin: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_sinh: ...
 
-sin: _T_sin
+sinh: _T_sinh
 
-class _T_sinh(MaxObject):
+class _T_slide(MaxObject):
     """
 slide - Smooth values logarithmically
 
@@ -8949,14 +8974,14 @@ Outlets:
 Messages: bang, int, float, ft1, ft2, reset, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_sinh: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_slide: ...
 
-sinh: _T_sinh
+slide: _T_slide
 
-class _T_slide(MaxObject):
+class _T_slider(MaxObject):
     """
 slider - Move a slider to output values
 
@@ -8973,14 +8998,14 @@ Messages: bang, int, float, (mouse), set, setminmax
 Attributes: annotation_name, bgcolor, bordercolor, drawoffcolor, elementcolor, floatoutput, inputrangemode, knobcolor, knobshape, min, mult, orientation, param_connect, parameter_enable, parameter_mappable, relative, size, style, thickness
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_slide: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_slider: ...
 
-slide: _T_slide
+slider: _T_slider
 
-class _T_slider(MaxObject):
+class _T_speedlim(MaxObject):
     """
 speedlim - Limit the speed of message throughput
 
@@ -9001,14 +9026,14 @@ Messages: bang, int, float, list, anything
 Attributes: defer, quantize, threshold, usurp
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_slider: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_speedlim: ...
 
-slider: _T_slider
+speedlim: _T_speedlim
 
-class _T_speedlim(MaxObject):
+class _T_spell(MaxObject):
     """
 spell - Convert input to UTF-8 (Unicode) codes
 
@@ -9027,14 +9052,14 @@ Outlets:
 Messages: int, list, anything, symbol
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_speedlim: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_spell: ...
 
-speedlim: _T_speedlim
+spell: _T_spell
 
-class _T_spell(MaxObject):
+class _T_split(MaxObject):
     """
 split - Look for a range of numbers
 
@@ -9056,14 +9081,14 @@ Outlets:
 Messages: int, float
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_spell: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_split: ...
 
-spell: _T_spell
+split: _T_split
 
-class _T_split(MaxObject):
+class _T_spray(MaxObject):
     """
 spray - Distribute a value to a numbered outlet
 
@@ -9084,14 +9109,14 @@ Outlets:
 Messages: int, list, offset
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_split: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_spray: ...
 
-split: _T_split
+spray: _T_spray
 
-class _T_spray(MaxObject):
+class _T_sprintf(MaxObject):
     """
 sprintf - Format a message of words and numbers
 
@@ -9110,14 +9135,14 @@ Outlets:
 Messages: bang, int, float, list, anything, symbol
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_spray: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_sprintf: ...
 
-spray: _T_spray
+sprintf: _T_sprintf
 
-class _T_sprintf(MaxObject):
+class _T_sqrt(MaxObject):
     """
 sqrt - Square root function
 
@@ -9135,14 +9160,14 @@ Outlets:
 Messages: bang, int, float
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_sprintf: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_sqrt: ...
 
-sprintf: _T_sprintf
+sqrt: _T_sqrt
 
-class _T_sqrt(MaxObject):
+class _T_standalone(MaxObject):
     """
 standalone - Configure parameters for standalone applications
 
@@ -9154,14 +9179,14 @@ Inlets:
 Attributes: allwindowsactive, appicon_mac, appicon_win, bundleidentifier, cantclosetoplevelpatchers, cefsupport, copysupport, database, gensupport, noloadbangdefeating, overdrive, preffilename, searchformissingfiles, statusvisible, usesearchpath
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_sqrt: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_standalone: ...
 
-sqrt: _T_sqrt
+standalone: _T_standalone
 
-class _T_standalone(MaxObject):
+class _T_stepcounter(MaxObject):
     """
 stepcounter - Count messages in a sequence
 
@@ -9181,14 +9206,14 @@ Messages: bang, int, float, anything, reset
 Attributes: seq, startmode, syncupdate
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_standalone: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_stepcounter: ...
 
-standalone: _T_standalone
+stepcounter: _T_stepcounter
 
-class _T_stepcounter(MaxObject):
+class _T_string(MaxObject):
     """
 string - Create or duplicate a string object
 
@@ -9211,14 +9236,14 @@ Messages: bang, int, float, list, anything, append, atoms, clear, prepend, strin
 Attributes: length, name, parameter_enable, parameter_mappable
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_stepcounter: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string: ...
 
-stepcounter: _T_stepcounter
+string: _T_string
 
-class _T_string(MaxObject):
+class _T_string_append(MaxObject):
     """
 string.append - Append a string to another string object, with an optional separator
 
@@ -9238,14 +9263,14 @@ Messages: bang, int, float, list, anything, string
 Attributes: separator
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_append: ...
 
-string: _T_string
+string_append: _T_string_append
 
-class _T_string_append(MaxObject):
+class _T_string_bytes(MaxObject):
     """
 string.bytes - Iterate the UTF-8 data in a string as bytes (ints)
 
@@ -9261,14 +9286,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_append: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_bytes: ...
 
-string_append: _T_string_append
+string_bytes: _T_string_bytes
 
-class _T_string_bytes(MaxObject):
+class _T_string_change(MaxObject):
     """
 string.change - Detect string changes
 
@@ -9288,14 +9313,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_bytes: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_change: ...
 
-string_bytes: _T_string_bytes
+string_change: _T_string_change
 
-class _T_string_change(MaxObject):
+class _T_string_compare(MaxObject):
     """
 string.compare - Compare two string objects for equality
 
@@ -9316,14 +9341,14 @@ Messages: bang, int, float, list, anything, string
 Attributes: casemode, cmpmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_change: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_compare: ...
 
-string_change: _T_string_change
+string_compare: _T_string_compare
 
-class _T_string_compare(MaxObject):
+class _T_string_concat(MaxObject):
     """
 string.concat - Concatenate two string objects
 
@@ -9339,14 +9364,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_compare: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_concat: ...
 
-string_compare: _T_string_compare
+string_concat: _T_string_concat
 
-class _T_string_concat(MaxObject):
+class _T_string_contains(MaxObject):
     """
 string.contains - Test whether a string object contains another string
 
@@ -9365,14 +9390,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_concat: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_contains: ...
 
-string_concat: _T_string_concat
+string_contains: _T_string_contains
 
-class _T_string_contains(MaxObject):
+class _T_string_endswith(MaxObject):
     """
 string.endswith - Test whether a string object ends with a substring
 
@@ -9389,14 +9414,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_contains: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_endswith: ...
 
-string_contains: _T_string_contains
+string_endswith: _T_string_endswith
 
-class _T_string_endswith(MaxObject):
+class _T_string_frombytes(MaxObject):
     """
 string.frombytes - Construct a new string object from bytes (ints)
 
@@ -9412,14 +9437,14 @@ Outlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_endswith: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_frombytes: ...
 
-string_endswith: _T_string_endswith
+string_frombytes: _T_string_frombytes
 
-class _T_string_frombytes(MaxObject):
+class _T_string_fromsymlist(MaxObject):
     """
 string.fromsymlist - Construct a new string from a list of symbols
 
@@ -9434,14 +9459,14 @@ Outlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_frombytes: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_fromsymlist: ...
 
-string_frombytes: _T_string_frombytes
+string_fromsymlist: _T_string_fromsymlist
 
-class _T_string_fromsymlist(MaxObject):
+class _T_string_fromutf8(MaxObject):
     """
 string.fromutf8 - Construct a new string object from UTF-8 characters, as integer values
 
@@ -9457,14 +9482,14 @@ Outlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_fromsymlist: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_fromutf8: ...
 
-string_fromsymlist: _T_string_fromsymlist
+string_fromutf8: _T_string_fromutf8
 
-class _T_string_fromutf8(MaxObject):
+class _T_string_index(MaxObject):
     """
 string.index - Output the character at an index in a string object (0-based)
 
@@ -9484,14 +9509,14 @@ Outlets:
 Messages: bang, int, float, list, anything, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_fromutf8: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_index: ...
 
-string_fromutf8: _T_string_fromutf8
+string_index: _T_string_index
 
-class _T_string_index(MaxObject):
+class _T_string_indexof(MaxObject):
     """
 string.indexof - Search for the index of a string
 
@@ -9507,14 +9532,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_index: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_indexof: ...
 
-string_index: _T_string_index
+string_indexof: _T_string_indexof
 
-class _T_string_indexof(MaxObject):
+class _T_string_iter(MaxObject):
     """
 string.iter - Iterate the UTF-8 characters of a string object as individual symbols
 
@@ -9527,14 +9552,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_indexof: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_iter: ...
 
-string_indexof: _T_string_indexof
+string_iter: _T_string_iter
 
-class _T_string_iter(MaxObject):
+class _T_string_length(MaxObject):
     """
 string.length - Determine the length of a string object
 
@@ -9550,14 +9575,14 @@ Outlets:
 Messages: bang, int, float, list, anything, clear, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_iter: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_length: ...
 
-string_iter: _T_string_iter
+string_length: _T_string_length
 
-class _T_string_length(MaxObject):
+class _T_string_prepend(MaxObject):
     """
 string.prepend - Prepend a string to another string object, with an optional separator
 
@@ -9577,14 +9602,14 @@ Messages: bang, int, float, list, anything, string
 Attributes: separator
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_length: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_prepend: ...
 
-string_length: _T_string_length
+string_prepend: _T_string_prepend
 
-class _T_string_prepend(MaxObject):
+class _T_string_regexp(MaxObject):
     """
 string.regexp - Use regular expressions to process input
 
@@ -9609,14 +9634,14 @@ Messages: bang, int, float, list, anything, string
 Attributes: re, substitute
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_prepend: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_regexp: ...
 
-string_prepend: _T_string_prepend
+string_regexp: _T_string_regexp
 
-class _T_string_regexp(MaxObject):
+class _T_string_remove(MaxObject):
     """
 string.remove - Remove a range of characters from a string object
 
@@ -9637,14 +9662,14 @@ Outlets:
 Messages: bang, int, float, list, anything, in1, in2, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_regexp: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_remove: ...
 
-string_regexp: _T_string_regexp
+string_remove: _T_string_remove
 
-class _T_string_remove(MaxObject):
+class _T_string_replace(MaxObject):
     """
 string.replace - Replace the first instance of a substring with a substitution string
 
@@ -9665,14 +9690,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_remove: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_replace: ...
 
-string_remove: _T_string_remove
+string_replace: _T_string_replace
 
-class _T_string_replace(MaxObject):
+class _T_string_replaceall(MaxObject):
     """
 string.replaceall - Replace all instances of a substring with a substitution string
 
@@ -9690,14 +9715,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_replace: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_replaceall: ...
 
-string_replace: _T_string_replace
+string_replaceall: _T_string_replaceall
 
-class _T_string_replaceall(MaxObject):
+class _T_string_reverse(MaxObject):
     """
 string.reverse - Reverse a string
 
@@ -9713,14 +9738,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_replaceall: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_reverse: ...
 
-string_replaceall: _T_string_replaceall
+string_reverse: _T_string_reverse
 
-class _T_string_reverse(MaxObject):
+class _T_string_rotate(MaxObject):
     """
 string.rotate - Rotate the characters within a string object
 
@@ -9739,14 +9764,14 @@ Outlets:
 Messages: bang, int, float, list, anything, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_reverse: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_rotate: ...
 
-string_reverse: _T_string_reverse
+string_rotate: _T_string_rotate
 
-class _T_string_rotate(MaxObject):
+class _T_string_slice(MaxObject):
     """
 string.slice - Generate a new string from a range of characters in an incoming string
 
@@ -9762,14 +9787,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_rotate: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_slice: ...
 
-string_rotate: _T_string_rotate
+string_slice: _T_string_slice
 
-class _T_string_slice(MaxObject):
+class _T_string_split(MaxObject):
     """
 string.split - Split a string object
 
@@ -9789,14 +9814,14 @@ Outlets:
 Messages: bang, int, float, list, anything, in1, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_slice: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_split: ...
 
-string_slice: _T_string_slice
+string_split: _T_string_split
 
-class _T_string_split(MaxObject):
+class _T_string_sprintf(MaxObject):
     """
 string.sprintf - Generate a string using C-style message formatting
 
@@ -9815,14 +9840,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_split: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_sprintf: ...
 
-string_split: _T_string_split
+string_sprintf: _T_string_sprintf
 
-class _T_string_sprintf(MaxObject):
+class _T_string_startswith(MaxObject):
     """
 string.startswith - Test whether a string object starts with a substring
 
@@ -9839,14 +9864,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_sprintf: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_startswith: ...
 
-string_sprintf: _T_string_sprintf
+string_startswith: _T_string_startswith
 
-class _T_string_startswith(MaxObject):
+class _T_string_substring(MaxObject):
     """
 string.substring - Generate a new string from a range of characters in an incoming string
 
@@ -9865,14 +9890,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_startswith: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_substring: ...
 
-string_startswith: _T_string_startswith
+string_substring: _T_string_substring
 
-class _T_string_substring(MaxObject):
+class _T_string_toarray(MaxObject):
     """
 string.toarray - Construct a new array object from a string object
 
@@ -9888,14 +9913,14 @@ Outlets:
 Messages: bang, int, float, list, anything, clear, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_substring: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_toarray: ...
 
-string_substring: _T_string_substring
+string_toarray: _T_string_toarray
 
-class _T_string_toarray(MaxObject):
+class _T_string_tolist(MaxObject):
     """
 string.tolist - Construct a new list from a string object
 
@@ -9911,14 +9936,14 @@ Outlets:
 Messages: bang, int, float, list, anything, clear, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_toarray: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_tolist: ...
 
-string_toarray: _T_string_toarray
+string_tolist: _T_string_tolist
 
-class _T_string_tolist(MaxObject):
+class _T_string_tolower(MaxObject):
     """
 string.tolower - Convert uppercase characters in a string object to lowercase
 
@@ -9933,14 +9958,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_tolist: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_tolower: ...
 
-string_tolist: _T_string_tolist
+string_tolower: _T_string_tolower
 
-class _T_string_tolower(MaxObject):
+class _T_string_tosymbol(MaxObject):
     """
 string.tosymbol - Convert a string to a symbol
 
@@ -9956,14 +9981,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_tolower: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_tosymbol: ...
 
-string_tolower: _T_string_tolower
+string_tosymbol: _T_string_tosymbol
 
-class _T_string_tosymbol(MaxObject):
+class _T_string_toupper(MaxObject):
     """
 string.toupper - Convert lowercase characters in a string object to uppercase
 
@@ -9978,14 +10003,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_tosymbol: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_toupper: ...
 
-string_tosymbol: _T_string_tosymbol
+string_toupper: _T_string_toupper
 
-class _T_string_toupper(MaxObject):
+class _T_string_trim(MaxObject):
     """
 string.trim - Trim whitespace from the beginning and end of a string object
 
@@ -9999,14 +10024,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_toupper: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_trim: ...
 
-string_toupper: _T_string_toupper
+string_trim: _T_string_trim
 
-class _T_string_trim(MaxObject):
+class _T_string_trimend(MaxObject):
     """
 string.trimend - Trim whitespace from the end of a string object
 
@@ -10022,14 +10047,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_trim: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_trimend: ...
 
-string_trim: _T_string_trim
+string_trimend: _T_string_trimend
 
-class _T_string_trimend(MaxObject):
+class _T_string_trimstart(MaxObject):
     """
 string.trimstart - Remove whitespace from the beginning of a string object
 
@@ -10044,14 +10069,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_trimend: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_trimstart: ...
 
-string_trimend: _T_string_trimend
+string_trimstart: _T_string_trimstart
 
-class _T_string_trimstart(MaxObject):
+class _T_string_utf8(MaxObject):
     """
 string.utf8 - Iterate the UTF-8 characters in a string as integers
 
@@ -10066,14 +10091,14 @@ Outlets:
 Messages: bang, int, float, list, anything, string
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_trimstart: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_utf8: ...
 
-string_trimstart: _T_string_trimstart
+string_utf8: _T_string_utf8
 
-class _T_string_utf8(MaxObject):
+class _T_string_withpass(MaxObject):
     """
 string.withpass - Route a string by a matching substring
 
@@ -10093,14 +10118,14 @@ Messages: bang, int, float, list, anything, string
 Attributes: match
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_utf8: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_string_withpass: ...
 
-string_utf8: _T_string_utf8
+string_withpass: _T_string_withpass
 
-class _T_string_withpass(MaxObject):
+class _T_stripnote(MaxObject):
     """
 stripnote - Filter out note-off messages
 
@@ -10117,14 +10142,14 @@ Outlets:
 Messages: int, float, ft1, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_string_withpass: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_stripnote: ...
 
-string_withpass: _T_string_withpass
+stripnote: _T_stripnote
 
-class _T_stripnote(MaxObject):
+class _T_strippath(MaxObject):
     """
 strippath - Separate filename from a full pathname
 
@@ -10140,14 +10165,14 @@ Outlets:
 Messages: anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_stripnote: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_strippath: ...
 
-stripnote: _T_stripnote
+strippath: _T_strippath
 
-class _T_strippath(MaxObject):
+class _T_substitute(MaxObject):
     """
 substitute - Substitute symbols within a message
 
@@ -10169,14 +10194,14 @@ Outlets:
 Messages: bang, int, float, list, anything, set
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_strippath: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_substitute: ...
 
-strippath: _T_strippath
+substitute: _T_substitute
 
-class _T_substitute(MaxObject):
+class _T_suckah(MaxObject):
     """
 suckah - Get a pixel from the display
 
@@ -10193,14 +10218,14 @@ Messages: list, (mouse)
 Attributes: boundmode, compatibility, outputalpha
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_substitute: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_suckah: ...
 
-substitute: _T_substitute
+suckah: _T_suckah
 
-class _T_suckah(MaxObject):
+class _T_suspend(MaxObject):
     """
 suspend - Reports when the application is in the background or foreground
 
@@ -10213,14 +10238,14 @@ Outlets:
   0 (OUTLET_TYPE): 1 When Application Is In Foreground, 0 When In Background
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_suckah: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_suspend: ...
 
-suckah: _T_suckah
+suspend: _T_suspend
 
-class _T_suspend(MaxObject):
+class _T_sustain(MaxObject):
     """
 sustain - Hold note-off messages for release
 
@@ -10240,14 +10265,14 @@ Messages: int, float, list, clear, flush
 Attributes: repeatmode, sustain
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_suspend: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_sustain: ...
 
-suspend: _T_suspend
+sustain: _T_sustain
 
-class _T_sustain(MaxObject):
+class _T_swap(MaxObject):
     """
 swap - Swap position of two numbers
 
@@ -10267,14 +10292,14 @@ Outlets:
 Messages: bang, int, float, ft1, in1, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_sustain: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_swap: ...
 
-sustain: _T_sustain
+swap: _T_swap
 
-class _T_swap(MaxObject):
+class _T_swatch(MaxObject):
     """
 swatch - Choose a color
 
@@ -10294,14 +10319,14 @@ Messages: bang, int, float, list, alpha, ft1, ft2, hsl, in1, in2, (mouse), set, 
 Attributes: annotation_name, compatibility, param_connect, parameter_enable, parameter_mappable, saturation
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_swap: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_swatch: ...
 
-swap: _T_swap
+swatch: _T_swatch
 
-class _T_swatch(MaxObject):
+class _T_switch(MaxObject):
     """
 switch - Accept messages from a specific inlet
 
@@ -10320,14 +10345,14 @@ Outlets:
 Messages: bang, int, float, next
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_swatch: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_switch: ...
 
-swatch: _T_swatch
+switch: _T_switch
 
-class _T_switch(MaxObject):
+class _T_sxformat(MaxObject):
     """
 sxformat - Prepare MIDI system exclusive messages
 
@@ -10348,11 +10373,11 @@ Messages: bang, int, in1, in2, in3, in4, in5, in6, in7, in8, in9, list
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_switch: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_sxformat: ...
 
-switch: _T_switch
+sxformat: _T_sxformat
 
-class _T_sxformat(MaxObject):
+class _T_sysexin(MaxObject):
     """
 sysexin - Receive MIDI system exclusive messages
 
@@ -10373,14 +10398,14 @@ Messages: anything, (mouse), (MIDI), port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_sxformat: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_sysexin: ...
 
-sxformat: _T_sxformat
+sysexin: _T_sysexin
 
-class _T_sysexin(MaxObject):
+class _T_tab(MaxObject):
     """
 tab - Tab control
 
@@ -10401,12 +10426,12 @@ Attributes: activesafe, annotation_name, bgcolor, border, bordercolor, borderonc
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_sysexin: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_tab: ...
 
-sysexin: _T_sysexin
+tab: _T_tab
 
-class _T_tab(MaxObject):
+class _T_tabcontroller(MaxObject):
     """
 tabcontroller - Define and manage patcher tabs
 
@@ -10420,14 +10445,14 @@ Messages: add, addfolder, clear, dictionary, remove, setactive, setactivefilenam
 Attributes: disableinternals, exclusivemidi, folder, orientation, recursive, showroot
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_tab: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_tabcontroller: ...
 
-tab: _T_tab
+tabcontroller: _T_tabcontroller
 
-class _T_tabcontroller(MaxObject):
+class _T_table(MaxObject):
     """
 table - Store and edit an array of numbers
 
@@ -10447,14 +10472,14 @@ Messages: bang, int, float, list, cancel, clear, const, (mouse), dump, flags, fq
 Attributes: annotation_name, embed, name, notename, parameter_enable, parameter_mappable, range, setresizes, signed, size
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_tabcontroller: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_table: ...
 
-tabcontroller: _T_tabcontroller
+table: _T_table
 
-class _T_table(MaxObject):
+class _T_tan(MaxObject):
     """
 tan - Tangent function
 
@@ -10472,14 +10497,14 @@ Outlets:
 Messages: bang, int, float
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_table: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_tan: ...
 
-table: _T_table
+tan: _T_tan
 
-class _T_tan(MaxObject):
+class _T_tanh(MaxObject):
     """
 tanh - Hyperbolic tangent function
 
@@ -10500,11 +10525,11 @@ Messages: bang, int, float
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_tan: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_tanh: ...
 
-tan: _T_tan
+tanh: _T_tanh
 
-class _T_tanh(MaxObject):
+class _T_tempo(MaxObject):
     """
 tempo - Output numbers at a metronomic tempo
 
@@ -10525,14 +10550,14 @@ Outlets:
 Messages: bang, int, float, clock, stop, tempo
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_tanh: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_tempo: ...
 
-tanh: _T_tanh
+tempo: _T_tempo
 
-class _T_tempo(MaxObject):
+class _T_text(MaxObject):
     """
 text - Format messages as a text file
 
@@ -10554,14 +10579,14 @@ Messages: int, float, list, anything, clear, cr, (mouse), dump, filetype, line, 
 Attributes: precision, stringout
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_tempo: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_text: ...
 
-tempo: _T_tempo
+text: _T_text
 
-class _T_text(MaxObject):
+class _T_text_codebox(MaxObject):
     """
 text.codebox - Display and edit text
 
@@ -10581,14 +10606,14 @@ Messages: bang, int, float, list, anything, append, atoms, clear, prepend, strin
 Attributes: autowatch, autowrite, bgcolor, editlocked, embed, filename, linenumbers, linenumberwidth, margin, style, syntax, textcolor, length, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_text: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_text_codebox: ...
 
-text: _T_text
+text_codebox: _T_text_codebox
 
-class _T_text_codebox(MaxObject):
+class _T_textbox(MaxObject):
     """
 textbox - Display and output numbers, lists, and messages
 
@@ -10606,14 +10631,14 @@ Messages: bang, int, float, list, anything, clear, max, min, (mouse), select, se
 Attributes: annotation_name, bgcolor, bordercolor, cantchange, format, hbgcolor, htextcolor, htricolor, maximum, minimum, mousefilter, numdecimalplaces, outputonclick, param_connect, parameter_enable, parameter_mappable, style, textcolor, triangle, tricolor, triscale
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_text_codebox: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_textbox: ...
 
-text_codebox: _T_text_codebox
+textbox: _T_textbox
 
-class _T_textbox(MaxObject):
+class _T_textbutton(MaxObject):
     """
 textbutton - Button with text
 
@@ -10630,14 +10655,14 @@ Messages: bang, int, float, (mouse), set, setsymbol, symbol
 Attributes: active, align, annotation_name, bgcolor, bgoncolor, bgovercolor, bgoveroncolor, blinktime, border, bordercolor, borderoncolor, fontlink, legacytextcolor, mode, outputmode, param_connect, parameter_enable, parameter_mappable, rounded, spacing_x, spacing_y, style, text, textcolor, texton, textoncolor, textovercolor, textoveroncolor, tosymbol, truncate, underline, usebgoncolor, usetextovercolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_textbox: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_textbutton: ...
 
-textbox: _T_textbox
+textbutton: _T_textbutton
 
-class _T_textbutton(MaxObject):
+class _T_textedit(MaxObject):
     """
 textedit - Enter text
 
@@ -10659,12 +10684,12 @@ Attributes: annotation_name, autoscroll, bangmode, bgcolor, border, bordercolor,
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_textbutton: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_textedit: ...
 
-textbutton: _T_textbutton
+textedit: _T_textedit
 
-class _T_textedit(MaxObject):
+class _T_themecolor(MaxObject):
     """
 themecolor - Change and/or listen for changes in interface colors
 
@@ -10687,12 +10712,12 @@ Attributes: color
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_textedit: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_themecolor: ...
 
-textedit: _T_textedit
+themecolor: _T_themecolor
 
-class _T_themecolor(MaxObject):
+class _T_thisobject(MaxObject):
     """
 thisobject - Monitor and control named objects
 
@@ -10714,14 +10739,14 @@ Messages: bang, int, float, list, anything, targetattach, targetattrdict, target
 Attributes: attr, listen, listenvalue, prefix, target
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_themecolor: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_thisobject: ...
 
-themecolor: _T_themecolor
+thisobject: _T_thisobject
 
-class _T_thisobject(MaxObject):
+class _T_thispatcher(MaxObject):
     """
 thispatcher - Send messages to a patcher
 
@@ -10740,11 +10765,11 @@ Messages: anything, end, savewindow, setactivetab
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_thisobject: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_thispatcher: ...
 
-thisobject: _T_thisobject
+thispatcher: _T_thispatcher
 
-class _T_thispatcher(MaxObject):
+class _T_threadcheck(MaxObject):
     """
 threadcheck - Report the thread of execution for a message
 
@@ -10762,14 +10787,14 @@ Outlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_thispatcher: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_threadcheck: ...
 
-thispatcher: _T_thispatcher
+threadcheck: _T_threadcheck
 
-class _T_threadcheck(MaxObject):
+class _T_thresh(MaxObject):
     """
 thresh - Combine numbers, symbols and lists when received close together
 
@@ -10789,14 +10814,14 @@ Outlets:
 Messages: int, float, list, anything, symbol
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_threadcheck: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_thresh: ...
 
-threadcheck: _T_threadcheck
+thresh: _T_thresh
 
-class _T_thresh(MaxObject):
+class _T_timepoint(MaxObject):
     """
 timepoint - Bang at a specific time
 
@@ -10816,14 +10841,14 @@ Messages: int, float, list, anything
 Attributes: time, transport
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_thresh: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_timepoint: ...
 
-thresh: _T_thresh
+timepoint: _T_timepoint
 
-class _T_timepoint(MaxObject):
+class _T_timer(MaxObject):
     """
 timer - Report elapsed time between two events
 
@@ -10842,14 +10867,14 @@ Messages: bang, clock
 Attributes: format, transport
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_timepoint: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_timer: ...
 
-timepoint: _T_timepoint
+timer: _T_timer
 
-class _T_timer(MaxObject):
+class _T_times(MaxObject):
     """
 times - Multiply two numbers
 
@@ -10868,14 +10893,14 @@ Outlets:
 Messages: bang, int, float, in1, set, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Any], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_timer: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_times: ...
 
-timer: _T_timer
+times: _T_times
 
-class _T_times(MaxObject):
+class _T_togedge(MaxObject):
     """
 togedge - Report zero/non-zero transitions
 
@@ -10891,14 +10916,14 @@ Outlets:
 Messages: bang, int
 """
     @property
-    def ins(self) -> tuple[Inlet[Any], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_times: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_togedge: ...
 
-times: _T_times
+togedge: _T_togedge
 
-class _T_togedge(MaxObject):
+class _T_toggle(MaxObject):
     """
 toggle - Switch between off and on (0 and 1)
 
@@ -10917,12 +10942,12 @@ Attributes: annotation_name, bgcolor, bordercolor, checkedcolor, param_connect, 
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_togedge: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_toggle: ...
 
-togedge: _T_togedge
+toggle: _T_toggle
 
-class _T_toggle(MaxObject):
+class _T_tosymbol(MaxObject):
     """
 tosymbol - Convert messages, numbers, or lists to a single symbol
 
@@ -10942,11 +10967,11 @@ Attributes: separator
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_toggle: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_tosymbol: ...
 
-toggle: _T_toggle
+tosymbol: _T_tosymbol
 
-class _T_tosymbol(MaxObject):
+class _T_touchin(MaxObject):
     """
 touchin - Receive MIDI aftertouch values
 
@@ -10972,12 +10997,12 @@ Attributes: matchport, name
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_tosymbol: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_touchin: ...
 
-tosymbol: _T_tosymbol
+touchin: _T_touchin
 
-class _T_touchin(MaxObject):
+class _T_touchout(MaxObject):
     """
 touchout - Transmit MIDI aftertouch messages
 
@@ -10998,14 +11023,14 @@ Messages: int, float, anything, (mouse), in1, port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_touchin: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_touchout: ...
 
-touchin: _T_touchin
+touchout: _T_touchout
 
-class _T_touchout(MaxObject):
+class _T_translate(MaxObject):
     """
 translate - Convert between different time formats
 
@@ -11026,14 +11051,14 @@ Messages: bang, int, float, list, anything
 Attributes: in, listen, listmode, mode, out, transport
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_touchout: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_translate: ...
 
-touchout: _T_touchout
+translate: _T_translate
 
-class _T_translate(MaxObject):
+class _T_transport(MaxObject):
     """
 transport - Control a clock
 
@@ -11059,14 +11084,14 @@ Messages: bang, int, float, list, (mouse), dump, getclocksources, timesig
 Attributes: clocksource, name, resetbarcount, tempo
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_translate: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_transport: ...
 
-translate: _T_translate
+transport: _T_transport
 
-class _T_transport(MaxObject):
+class _T_trigger(MaxObject):
     """
 trigger - Send input to many places
 
@@ -11086,14 +11111,14 @@ Outlets:
 Messages: bang, int, float, list, anything
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_transport: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_trigger: ...
 
-transport: _T_transport
+trigger: _T_trigger
 
-class _T_trigger(MaxObject):
+class _T_trough(MaxObject):
     """
 trough - Output a number if it is less than previous numbers
 
@@ -11114,14 +11139,14 @@ Outlets:
 Messages: bang, int, float, ft1, in1
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_trigger: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_trough: ...
 
-trigger: _T_trigger
+trough: _T_trough
 
-class _T_trough(MaxObject):
+class _T_ubutton(MaxObject):
     """
 ubutton - Transparent button
 
@@ -11141,14 +11166,14 @@ Messages: bang, int, float, anything, (mouse), set
 Attributes: annotation_name, dragtrack, hilite, hltcolor, param_connect, parameter_enable, parameter_mappable, rounded, stay, toggle
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_trough: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_ubutton: ...
 
-trough: _T_trough
+ubutton: _T_ubutton
 
-class _T_ubutton(MaxObject):
+class _T_udpreceive(MaxObject):
     """
 udpreceive - Receive messages over a network
 
@@ -11171,12 +11196,12 @@ Attributes: defer, outputformat, quiet
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_ubutton: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_udpreceive: ...
 
-ubutton: _T_ubutton
+udpreceive: _T_udpreceive
 
-class _T_udpreceive(MaxObject):
+class _T_udpsend(MaxObject):
     """
 udpsend - Send messages over a network
 
@@ -11189,14 +11214,14 @@ Args:
 Messages: bang, int, float, list, anything, FullPacket, host, maxpacketsize, maxqueuesize, osc_packet, port, rawbytes
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_udpreceive: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_udpsend: ...
 
-udpreceive: _T_udpreceive
+udpsend: _T_udpsend
 
-class _T_udpsend(MaxObject):
+class _T_umenu(MaxObject):
     """
 umenu - Pop-up menu
 
@@ -11215,14 +11240,14 @@ Messages: bang, int, float, (drag), append, checkitem, clear, clearchecks, count
 Attributes: align, allowdrag, annotation_name, applycolors, arrow, arrowbgcolor, arrowcolor, arrowframe, arrowlink, autopopulate, bgcolor, bgcolor2, bgfillcolor, blanksym, collection, color, depth, discolor, elementcolor, framecolor, hltcolor, items, labelclick, menumode, param_connect, parameter_enable, parameter_mappable, pattrmode, prefix, prefix_mode, rounded, showdotfiles, style, textcolor, textcolor2, togcolor, truncate, types, underline
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_udpsend: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_umenu: ...
 
-udpsend: _T_udpsend
+umenu: _T_umenu
 
-class _T_umenu(MaxObject):
+class _T_universal(MaxObject):
     """
 universal - Send messages to all objects of the same type
 
@@ -11241,12 +11266,12 @@ Attributes: descend
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_umenu: ...
+    def outs(self) -> tuple[()]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_universal: ...
 
-umenu: _T_umenu
+universal: _T_universal
 
-class _T_universal(MaxObject):
+class _T_unjoin(MaxObject):
     """
 unjoin - Break a list into messages
 
@@ -11270,12 +11295,12 @@ Attributes: outsize
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[()]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_universal: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_unjoin: ...
 
-universal: _T_universal
+unjoin: _T_unjoin
 
-class _T_unjoin(MaxObject):
+class _T_unpack(MaxObject):
     """
 unpack - Break a list into individual messages
 
@@ -11297,11 +11322,11 @@ Messages: bang, int, float, list, anything
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_unjoin: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_unpack: ...
 
-unjoin: _T_unjoin
+unpack: _T_unpack
 
-class _T_unpack(MaxObject):
+class _T_urn(MaxObject):
     """
 urn - Generate random numbers without duplicates
 
@@ -11322,14 +11347,14 @@ Outlets:
 Messages: bang, int, clear, in1, seed
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_unpack: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_urn: ...
 
-unpack: _T_unpack
+urn: _T_urn
 
-class _T_urn(MaxObject):
+class _T_uzi(MaxObject):
     """
 uzi - Send many bang messages
 
@@ -11351,14 +11376,14 @@ Outlets:
 Messages: bang, int, break, continue, in1, offset, pause, resume
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_urn: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_uzi: ...
 
-urn: _T_urn
+uzi: _T_uzi
 
-class _T_uzi(MaxObject):
+class _T_v8(MaxObject):
     """
 v8 - Execute Javascript (Modern Engine)
 
@@ -11380,14 +11405,14 @@ Messages: bang, int, float, list, anything, array, assiststr, compile, (mouse), 
 Attributes: embed, parameter_enable, parameter_mappable
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_uzi: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_v8: ...
 
-uzi: _T_uzi
+v8: _T_v8
 
-class _T_v8(MaxObject):
+class _T_v8_codebox(MaxObject):
     """
 v8.codebox - Execute Javascript (Modern Engine)
 
@@ -11405,14 +11430,14 @@ Messages: wclose, open, int, float, bang, list, anything, compile, setprop, getp
 Attributes: bgcolor, linenumbers, linenumberwidth, margin, textcolor
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_v8: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_v8_codebox: ...
 
-v8: _T_v8
+v8_codebox: _T_v8_codebox
 
-class _T_v8_codebox(MaxObject):
+class _T_v8ui(MaxObject):
     """
 v8ui - Javascript user interfaces and graphics (Modern Engine)
 
@@ -11429,14 +11454,14 @@ Messages: bang, int, float, list, anything, (drag), array, assiststr, compile, (
 Attributes: border, embed, filename, jsarguments, nofsaa, param_connect, parameter_enable, parameter_mappable
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_v8_codebox: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_v8ui: ...
 
-v8_codebox: _T_v8_codebox
+v8ui: _T_v8ui
 
-class _T_v8ui(MaxObject):
+class _T_value(MaxObject):
     """
 value - Share data between other value objects
 
@@ -11458,11 +11483,11 @@ Messages: bang, int, float, list, anything, (mouse), symbol
     def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_v8ui: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_value: ...
 
-v8ui: _T_v8ui
+value: _T_value
 
-class _T_value(MaxObject):
+class _T_vdp(MaxObject):
     """
 vdp - Control a videodisk player through a serial port
 
@@ -11487,14 +11512,14 @@ Outlets:
 Messages: int, chapter, clear, cmd, control, fps, frame, name, play, restrict, scan, search, setskip, skip, step, stop
 """
     @property
-    def ins(self) -> tuple[Inlet[Signal | Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_value: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_vdp: ...
 
-value: _T_value
+vdp: _T_vdp
 
-class _T_vdp(MaxObject):
+class _T_vexpr(MaxObject):
     """
 vexpr - Evaluate a math expression for a list
 
@@ -11518,14 +11543,14 @@ Messages: bang, int, float, list, anything
 Attributes: maxsize, scalarmode
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control], Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_vdp: ...
+    def outs(self) -> tuple[Outlet[Any], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_vexpr: ...
 
-vdp: _T_vdp
+vexpr: _T_vexpr
 
-class _T_vexpr(MaxObject):
+class _T_vstscan(MaxObject):
     """
 vstscan - Audio Plugin Scanner
 
@@ -11541,14 +11566,14 @@ Outlets:
 Messages: cancel, listau, listvst, listvst3, scan, skip
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Any], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_vexpr: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_vstscan: ...
 
-vexpr: _T_vexpr
+vstscan: _T_vstscan
 
-class _T_vstscan(MaxObject):
+class _T_when(MaxObject):
     """
 when - Report the current transport time
 
@@ -11572,11 +11597,11 @@ Attributes: transport
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_vstscan: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_when: ...
 
-vstscan: _T_vstscan
+when: _T_when
 
-class _T_when(MaxObject):
+class _T_xbendin(MaxObject):
     """
 xbendin - Interpret extra precision MIDI pitch bend values
 
@@ -11598,12 +11623,12 @@ Messages: int
     @property
     def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_when: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_xbendin: ...
 
-when: _T_when
+xbendin: _T_xbendin
 
-class _T_xbendin(MaxObject):
+class _T_xbendout(MaxObject):
     """
 xbendout - Format extra precision MIDI pitch bend messages
 
@@ -11623,14 +11648,14 @@ Outlets:
 Messages: bang, int, in1, in2, list
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_xbendin: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_xbendout: ...
 
-xbendin: _T_xbendin
+xbendout: _T_xbendout
 
-class _T_xbendout(MaxObject):
+class _T_xctlin(MaxObject):
     """
 xctlin - Output received 14-bit MIDI control values
 
@@ -11652,14 +11677,14 @@ Messages: int, list, set
 Attributes: lsbfirst
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_xbendout: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_xctlin: ...
 
-xbendout: _T_xbendout
+xctlin: _T_xctlin
 
-class _T_xctlin(MaxObject):
+class _T_xctlout(MaxObject):
     """
 xctlout - Format 14-bit MIDI controller messages
 
@@ -11681,14 +11706,14 @@ Messages: bang, int, float, list, in1, in2
 Attributes: lsbfirst, running
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_xctlin: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_xctlout: ...
 
-xctlin: _T_xctlin
+xctlout: _T_xctlout
 
-class _T_xctlout(MaxObject):
+class _T_xmidiin(MaxObject):
     """
 xmidiin - Output raw MIDI data
 
@@ -11710,14 +11735,14 @@ Messages: anything, (mouse), (MIDI), lastport, port
 Attributes: matchport, name
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_xctlout: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_xmidiin: ...
 
-xctlout: _T_xctlout
+xmidiin: _T_xmidiin
 
-class _T_xmidiin(MaxObject):
+class _T_xnotein(MaxObject):
     """
 xnotein - Interpret MIDI note messages with release velocity
 
@@ -11736,14 +11761,14 @@ Outlets:
 Messages: int
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_xmidiin: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_xnotein: ...
 
-xmidiin: _T_xmidiin
+xnotein: _T_xnotein
 
-class _T_xnotein(MaxObject):
+class _T_xnoteout(MaxObject):
     """
 xnoteout - Format MIDI note messages with release velocity
 
@@ -11762,14 +11787,14 @@ Outlets:
 Messages: bang, int, list, in1, in2, in3
 """
     @property
-    def ins(self) -> tuple[Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_xnotein: ...
+    def outs(self) -> tuple[Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_xnoteout: ...
 
-xnotein: _T_xnotein
+xnoteout: _T_xnoteout
 
-class _T_xnoteout(MaxObject):
+class _T_zl(MaxObject):
     """
 zl - Process lists in many ways
 
@@ -11794,14 +11819,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_xnoteout: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl: ...
 
-xnoteout: _T_xnoteout
+zl: _T_zl
 
-class _T_zl(MaxObject):
+class _T_zl_change(MaxObject):
     """
 zl.change - Filter out list repetitions
 
@@ -11824,11 +11849,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_change: ...
 
-zl: _T_zl
+zl_change: _T_zl_change
 
-class _T_zl_change(MaxObject):
+class _T_zl_compare(MaxObject):
     """
 zl.compare - Compare two lists
 
@@ -11851,11 +11876,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_change: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_compare: ...
 
-zl_change: _T_zl_change
+zl_compare: _T_zl_compare
 
-class _T_zl_compare(MaxObject):
+class _T_zl_delace(MaxObject):
     """
 zl.delace - De-interleave a list
 
@@ -11877,11 +11902,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_compare: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_delace: ...
 
-zl_compare: _T_zl_compare
+zl_delace: _T_zl_delace
 
-class _T_zl_delace(MaxObject):
+class _T_zl_ecils(MaxObject):
     """
 zl.ecils - Slice a list in reverse order
 
@@ -11906,11 +11931,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_delace: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_ecils: ...
 
-zl_delace: _T_zl_delace
+zl_ecils: _T_zl_ecils
 
-class _T_zl_ecils(MaxObject):
+class _T_zl_filter(MaxObject):
     """
 zl.filter - Remove items in a list
 
@@ -11933,11 +11958,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_ecils: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_filter: ...
 
-zl_ecils: _T_zl_ecils
+zl_filter: _T_zl_filter
 
-class _T_zl_filter(MaxObject):
+class _T_zl_group(MaxObject):
     """
 zl.group - Store and output a list
 
@@ -11962,11 +11987,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_filter: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_group: ...
 
-zl_filter: _T_zl_filter
+zl_group: _T_zl_group
 
-class _T_zl_group(MaxObject):
+class _T_zl_indexmap(MaxObject):
     """
 zl.indexmap - Create new list from list of indexes
 
@@ -11991,11 +12016,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_group: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_indexmap: ...
 
-zl_group: _T_zl_group
+zl_indexmap: _T_zl_indexmap
 
-class _T_zl_indexmap(MaxObject):
+class _T_zl_iter(MaxObject):
     """
 zl.iter - Successively output lists of specific size
 
@@ -12020,11 +12045,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_indexmap: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_iter: ...
 
-zl_indexmap: _T_zl_indexmap
+zl_iter: _T_zl_iter
 
-class _T_zl_iter(MaxObject):
+class _T_zl_join(MaxObject):
     """
 zl.join - Combine two lists
 
@@ -12049,11 +12074,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_iter: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_join: ...
 
-zl_iter: _T_zl_iter
+zl_join: _T_zl_join
 
-class _T_zl_join(MaxObject):
+class _T_zl_lace(MaxObject):
     """
 zl.lace - Interleave two lists
 
@@ -12078,11 +12103,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_join: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_lace: ...
 
-zl_join: _T_zl_join
+zl_lace: _T_zl_lace
 
-class _T_zl_lace(MaxObject):
+class _T_zl_len(MaxObject):
     """
 zl.len - Get list length
 
@@ -12102,11 +12127,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_lace: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_len: ...
 
-zl_lace: _T_zl_lace
+zl_len: _T_zl_len
 
-class _T_zl_len(MaxObject):
+class _T_zl_lookup(MaxObject):
     """
 zl.lookup - Output elements of a list
 
@@ -12131,11 +12156,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_len: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_lookup: ...
 
-zl_len: _T_zl_len
+zl_lookup: _T_zl_lookup
 
-class _T_zl_lookup(MaxObject):
+class _T_zl_median(MaxObject):
     """
 zl.median - Get the median value of a list of numbers
 
@@ -12152,14 +12177,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_lookup: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_median: ...
 
-zl_lookup: _T_zl_lookup
+zl_median: _T_zl_median
 
-class _T_zl_median(MaxObject):
+class _T_zl_mth(MaxObject):
     """
 zl.mth - Extract item from list
 
@@ -12182,14 +12207,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_median: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_mth: ...
 
-zl_median: _T_zl_median
+zl_mth: _T_zl_mth
 
-class _T_zl_mth(MaxObject):
+class _T_zl_nth(MaxObject):
     """
 zl.nth - Extract item from list
 
@@ -12215,11 +12240,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_mth: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_nth: ...
 
-zl_mth: _T_zl_mth
+zl_nth: _T_zl_nth
 
-class _T_zl_nth(MaxObject):
+class _T_zl_queue(MaxObject):
     """
 zl.queue - Output elements of a list in the order they are received
 
@@ -12238,14 +12263,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_nth: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_queue: ...
 
-zl_nth: _T_zl_nth
+zl_queue: _T_zl_queue
 
-class _T_zl_queue(MaxObject):
+class _T_zl_reg(MaxObject):
     """
 zl.reg - Store and output a list
 
@@ -12267,14 +12292,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_queue: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_reg: ...
 
-zl_queue: _T_zl_queue
+zl_reg: _T_zl_reg
 
-class _T_zl_reg(MaxObject):
+class _T_zl_rev(MaxObject):
     """
 zl.rev - Reverse a list
 
@@ -12294,11 +12319,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_reg: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_rev: ...
 
-zl_reg: _T_zl_reg
+zl_rev: _T_zl_rev
 
-class _T_zl_rev(MaxObject):
+class _T_zl_rot(MaxObject):
     """
 zl.rot - Rotate a list
 
@@ -12323,11 +12348,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_rev: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_rot: ...
 
-zl_rev: _T_zl_rev
+zl_rot: _T_zl_rot
 
-class _T_zl_rot(MaxObject):
+class _T_zl_scramble(MaxObject):
     """
 zl.scramble - Scramble a list
 
@@ -12352,11 +12377,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_rot: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_scramble: ...
 
-zl_rot: _T_zl_rot
+zl_scramble: _T_zl_scramble
 
-class _T_zl_scramble(MaxObject):
+class _T_zl_sect(MaxObject):
     """
 zl.sect - Find common items between two lists
 
@@ -12378,14 +12403,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_scramble: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_sect: ...
 
-zl_scramble: _T_zl_scramble
+zl_sect: _T_zl_sect
 
-class _T_zl_sect(MaxObject):
+class _T_zl_slice(MaxObject):
     """
 zl.slice - Slice a list in two
 
@@ -12407,14 +12432,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_sect: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_slice: ...
 
-zl_sect: _T_zl_sect
+zl_slice: _T_zl_slice
 
-class _T_zl_slice(MaxObject):
+class _T_zl_sort(MaxObject):
     """
 zl.sort - Arrange a list in alphanumeric order
 
@@ -12439,11 +12464,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_slice: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_sort: ...
 
-zl_slice: _T_zl_slice
+zl_sort: _T_zl_sort
 
-class _T_zl_sort(MaxObject):
+class _T_zl_stack(MaxObject):
     """
 zl.stack - Output elements of a list in reverse order
 
@@ -12462,14 +12487,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_sort: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_stack: ...
 
-zl_sort: _T_zl_sort
+zl_stack: _T_zl_stack
 
-class _T_zl_stack(MaxObject):
+class _T_zl_stream(MaxObject):
     """
 zl.stream - Make a list of a certain size
 
@@ -12494,11 +12519,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_stack: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_stream: ...
 
-zl_stack: _T_zl_stack
+zl_stream: _T_zl_stream
 
-class _T_zl_stream(MaxObject):
+class _T_zl_sub(MaxObject):
     """
 zl.sub - Output position for each occurance of right list in left
 
@@ -12520,14 +12545,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
+    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_stream: ...
+    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_sub: ...
 
-zl_stream: _T_zl_stream
+zl_sub: _T_zl_sub
 
-class _T_zl_sub(MaxObject):
+class _T_zl_sum(MaxObject):
     """
 zl.sum - Sum a list of numbers
 
@@ -12549,11 +12574,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_sub: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_sum: ...
 
-zl_sub: _T_zl_sub
+zl_sum: _T_zl_sum
 
-class _T_zl_sum(MaxObject):
+class _T_zl_swap(MaxObject):
     """
 zl.swap - Swap two list indexes
 
@@ -12578,11 +12603,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_sum: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_swap: ...
 
-zl_sum: _T_zl_sum
+zl_swap: _T_zl_swap
 
-class _T_zl_swap(MaxObject):
+class _T_zl_thin(MaxObject):
     """
 zl.thin - Remove duplicates from list
 
@@ -12604,11 +12629,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_swap: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_thin: ...
 
-zl_swap: _T_zl_swap
+zl_thin: _T_zl_thin
 
-class _T_zl_thin(MaxObject):
+class _T_zl_union(MaxObject):
     """
 zl.union - Combine two lists without duplicating shared items
 
@@ -12633,11 +12658,11 @@ Attributes: fuzzy, zlmaxsize
     def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
     @property
     def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_thin: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_union: ...
 
-zl_thin: _T_zl_thin
+zl_union: _T_zl_union
 
-class _T_zl_union(MaxObject):
+class _T_zl_unique(MaxObject):
     """
 zl.unique - Remove items from a list
 
@@ -12659,14 +12684,14 @@ Messages: bang, int, float, list, anything, mode, zlclear, zlreset
 Attributes: fuzzy, zlmaxsize
 """
     @property
-    def ins(self) -> tuple[Inlet[Control], Inlet[Control]]: ...
+    def ins(self) -> tuple[Inlet[Control], ...]: ...
     @property
-    def outs(self) -> tuple[Outlet[Control], Outlet[Control]]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_union: ...
+    def outs(self) -> tuple[Outlet[Control], ...]: ...
+    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_unique: ...
 
-zl_union: _T_zl_union
+zl_unique: _T_zl_unique
 
-class _T_zl_unique(MaxObject):
+class _T_zmap(MaxObject):
     """
 zmap - Maps input range of values to output range
 
@@ -12690,15 +12715,6 @@ Outlets:
 
 Messages: bang, int, float, list, ft1, ft2, ft3, ft4
 """
-    @property
-    def ins(self) -> tuple[Inlet[Control], ...]: ...
-    @property
-    def outs(self) -> tuple[Outlet[Control], ...]: ...
-    def __call__(self, *args: Any, **attribs: Any) -> _T_zl_unique: ...
-
-zl_unique: _T_zl_unique
-
-class _T_zmap(MaxObject):
     @property
     def ins(self) -> tuple[Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control], Inlet[Control]]: ...
     @property

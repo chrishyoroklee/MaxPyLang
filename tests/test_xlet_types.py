@@ -57,6 +57,20 @@ def test_inlet_and_outlet_objects_pass_audio():
     assert object_types("inlet", sig([], ["control"])) == {"ins": [], "outs": ["any"]}
 
 
-def test_curated_rows_override_the_signature_table():
-    row = sig(["control"], ["multichannelsignal", "multichannelsignal"], methods=("signal",))
-    assert object_types("mcs.play~", row)["outs"] == ["mc", "control"]
+def test_refpage_audio_outlet_that_sends_a_bang_is_control():
+    # mc.sfplay~'s refpage types its done-bang outlet as a signal
+    row = sig(["control"], ["multichannelsignal", "signal"], methods=("signal",))
+    row["outlets"][1].update(type_source="refpage", digest="bang When Done Playing")
+    assert object_types("mc.sfplay~", row)["outs"] == ["mc", "control"]
+
+
+def test_refpage_audio_dumpout_outlet_is_control():
+    row = sig(["control"], ["signal", "signal"], methods=("signal",))
+    row["outlets"][1].update(type_source="refpage", digest="dumpout")
+    assert object_types("jit.peek~", row)["outs"] == ["signal", "control"]
+
+
+def test_saved_audio_outlet_stays_audio_whatever_its_digest():
+    row = sig(["control"], ["signal"], methods=("signal",))
+    row["outlets"][0]["digest"] = "bang-rate pulse train"
+    assert object_types("x~", row)["outs"] == ["signal"]

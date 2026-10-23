@@ -25,8 +25,11 @@ Outlet rates are "signal", "mc", "matrix", "control" or "any".
 import argparse
 import ast
 import contextlib
+import functools
 import json
 import os
+import re
+import subprocess
 import warnings
 from pathlib import Path
 
@@ -36,6 +39,7 @@ _HERE = Path(__file__).resolve().parent
 OBJECTS_DIR = _HERE.parent / "objects"
 DATA_PATH = _HERE.parent / "data" / "xlet_types.json"
 OBJ_INFO_DIR = _HERE.parent / "data" / "OBJ_INFO"
+REPO_ROOT = _HERE.parent.parent
 
 _INLET = {"control": "Control", "any": "Signal | Control"}
 _OUTLET = {"signal": "Signal", "mc": "MCSignal", "matrix": "Matrix", "control": "Control", "any": "Any"}
@@ -74,12 +78,6 @@ def build_xlet_types(signatures):
 # objects that pass on whatever they are given, audio included
 _PASS_THROUGH = {"inlet", "outlet"}
 
-# rows checked by hand where the refpage is wrong, found by checking the rules against
-# every patch cord in Max's own shipped patchers
-_CURATED = {
-    "mcs.play~": {"outs": ["mc", "control"]},  # right outlet bangs when playback is done
-}
-
 
 def object_types(max_name, sig):
     """Static rates of one object's inlets ("ins") and outlets ("outs") from its signature row."""
@@ -88,7 +86,6 @@ def object_types(max_name, sig):
     if max_name in _PASS_THROUGH:
         for side, rates in types.items():
             types[side] = ["any"] * len(rates) if isinstance(rates, list) else "any"
-    types.update(_CURATED.get(max_name, {}))
     return types
 
 
@@ -127,8 +124,15 @@ def _inlet_rate(sig, inlet):
     return "any"
 
 
+# refpage digests of outlets that send messages, though some refpages type them as signals
+# (the done bang of play~, mc.sfplay~ and mc.train~, the dumpout of jit.peek~)
+_MESSAGE_DIGEST = re.compile(r"\s*(bang|dumpout)\b", re.IGNORECASE)
+
+
 def _outlet_rate(outlet):
     kind = outlet["type"]
+    if outlet.get("type_source") != "patchers" and _MESSAGE_DIGEST.match(outlet.get("digest") or ""):
+        return "control"
     if kind == "signal":
         return "signal"
     if kind in ("multichannelsignal", "multi-channel signal"):
@@ -139,16 +143,62 @@ def _outlet_rate(outlet):
 
 
 def _open_runtime_disagreements(package, max_name, types):
-    """Replace a fixed count with an open one where maxpylang's runtime object differs."""
+    """
+    Replace a fixed count with an open one where maxpylang's runtime object may differ: the
+    object is not in a clean install's object database (so it has no xlets), its count
+    changes with arguments at runtime, or its default count differs.
+    """
 
     counts = runtime_xlet_counts(package, max_name)
-    if counts is None:
-        return
+    rule_sides = runtime_rule_sides(package, max_name)
 
-    for side, count in zip(("ins", "outs"), counts):
-        if isinstance(types[side], list) and len(types[side]) != count:
-            print(f"\t{max_name} {side}: Max has {len(types[side])}, maxpylang has {count}; left open")
-            types[side] = "any"
+    for i, side in enumerate(("ins", "outs")):
+        if not isinstance(types[side], list):
+            continue
+        if counts is None:
+            reason = "not in the tracked object database"
+        elif side in rule_sides:
+            reason = "count changes with arguments at runtime"
+        elif len(types[side]) != counts[i]:
+            reason = f"Max has {len(types[side])}, maxpylang has {counts[i]}"
+        else:
+            continue
+        print(f"\t{max_name} {side}: {reason}; left open")
+        types[side] = "any"
+
+
+@functools.lru_cache(maxsize=None)
+def known_objects():
+    """
+    (package, Max name) of every object in a clean install's object database: the OBJ_INFO
+    files tracked by git, or, outside a git checkout, the files on disk.
+    """
+
+    try:
+        listing = subprocess.run(["git", "ls-files", "-z", "--", str(OBJ_INFO_DIR)], cwd=REPO_ROOT,
+                                 capture_output=True, check=True).stdout.decode()
+        paths = [Path(p) for p in listing.split("\0") if p.endswith(".json")]
+    except (OSError, subprocess.CalledProcessError):
+        paths = []
+    if not paths:
+        paths = list(OBJ_INFO_DIR.glob("*/*.json"))
+    return {(path.parent.name, path.stem) for path in paths}
+
+
+def _obj_info(package, max_name):
+    """The object's OBJ_INFO json, or None when a clean install does not know it."""
+
+    if (package, max_name) not in known_objects():
+        return None
+    with open(OBJ_INFO_DIR / package / f"{max_name}.json") as f:
+        return json.load(f)
+
+
+def runtime_rule_sides(package, max_name):
+    """Sides ("ins", "outs") whose count maxpylang's runtime changes with arguments."""
+
+    rules = (_obj_info(package, max_name) or {}).get("in/out") or {}
+    return {side for side, key in (("ins", "numinlets"), ("outs", "numoutlets")) if rules.get(key)}
 
 
 # placeholder values for required arguments, by documented type
@@ -161,12 +211,11 @@ def runtime_xlet_counts(package, max_name):
     required arguments. None when this install does not know the object.
     """
 
-    info_path = OBJ_INFO_DIR / package / f"{max_name}.json"
-    if not info_path.exists():
+    info = _obj_info(package, max_name)
+    if info is None:
         return None
 
-    with open(info_path) as f:
-        required = json.load(f).get("args", {}).get("required", [])
+    required = info.get("args", {}).get("required", [])
     words = [max_name] + [_PLACEHOLDER_ARGS.get((arg.get("type") or ["any"])[0], "1") for arg in required]
 
     from maxpylang.maxobject import MaxObject

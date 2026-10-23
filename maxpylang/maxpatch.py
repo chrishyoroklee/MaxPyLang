@@ -18,6 +18,9 @@ _Obj = TypeVar("_Obj", bound=MaxObject)
 # The outlet and inlet share a rate variable, so a type checker rejects audio into an
 # inlet that takes no audio. Each argument position gets its own variable.
 _Conn = Union[tuple[Outlet[R], Inlet[R]], tuple[Outlet[R], Inlet[R], list[Any]], list[Any]]
+# An unpacked list, connect(*pairs), resolves to the 9+ overload. mypy joins the inlets of
+# pairs with different rates to `object`, so that overload leaves the inlet unconstrained.
+_AnyConn = Union[tuple[Outlet[Any], object], tuple[Outlet[Any], object, list[Any]], list[Any]]
 _R0 = TypeVar("_R0")
 _R1 = TypeVar("_R1")
 _R2 = TypeVar("_R2")
@@ -176,9 +179,9 @@ class MaxPatch:
                 verbose: bool = ...) -> None: ...
     # Nine or more connections in one call are checked at runtime only.
     @overload
-    def connect(self, c0: _Conn[Any], c1: _Conn[Any], c2: _Conn[Any], c3: _Conn[Any],
-                c4: _Conn[Any], c5: _Conn[Any], c6: _Conn[Any], c7: _Conn[Any], c8: _Conn[Any],
-                /, *more: _Conn[Any], verbose: bool = ...) -> None: ...
+    def connect(self, c0: _AnyConn, c1: _AnyConn, c2: _AnyConn, c3: _AnyConn, c4: _AnyConn,
+                c5: _AnyConn, c6: _AnyConn, c7: _AnyConn, c8: _AnyConn, /, *more: _AnyConn,
+                verbose: bool = ...) -> None: ...
 
     def connect(self, *connections, verbose=True):
         return _connect(self, *connections, verbose=verbose)

@@ -51,11 +51,28 @@ def test_fixed_counts_agree_with_runtime(package):
     for name, types in typedstubs.load_xlet_types()[package].items():
         counts = typedstubs.runtime_xlet_counts(package, name)
         if counts is None:
-            continue  # unknown to this install, so it has no xlets at runtime
+            counts = (0, 0)  # not in a clean install's object database: no xlets at runtime
         for side, count in zip(("ins", "outs"), counts):
             if isinstance(types[side], list) and len(types[side]) != count:
                 disagree.append((name, side, len(types[side]), count))
     assert disagree == []
+
+
+@pytest.mark.parametrize("package", typedstubs.PACKAGES)
+def test_counts_that_change_with_arguments_at_runtime_are_open(package):
+    fixed = [(name, side) for name, types in typedstubs.load_xlet_types()[package].items()
+             for side in typedstubs.runtime_rule_sides(package, name)
+             if isinstance(types[side], list)]
+    assert fixed == []
+
+
+@pytest.mark.parametrize("package", typedstubs.PACKAGES)
+def test_each_stub_docstring_describes_its_own_object(package):
+    stubs = typedstubs.read_stub_module(package)
+    missing = [py_name for py_name, _, doc in stubs if not doc]
+    wrong = [(py_name, max_name) for py_name, max_name, doc in stubs
+             if doc and doc.strip().splitlines()[0].split(" - ")[0] != max_name]
+    assert (missing, wrong) == ([], [])
 
 
 def test_stub_module_puts_each_docstring_after_its_stub():
