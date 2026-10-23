@@ -23,6 +23,13 @@ dependencies = [
     "tabulate",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "mypy",
+    "ty",
+]
+
 [project.scripts]
 maxpylang = "maxpylang.cli:main"
 
