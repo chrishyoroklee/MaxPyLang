@@ -19,6 +19,7 @@ Methods related to placing objects in a MaxPatch.
 """
 from __future__ import annotations
 
+import copy
 import random
 from maxpylang.maxobject import MaxObject
 
@@ -395,5 +396,12 @@ def get_obj_from_spec(self, obj_spec):
             obj_spec, MaxObject
         ), f"object must be specified as a string or a MaxObject"
         obj = obj_spec
+
+        # stubs and already-placed objects are copied, so one box never sits in two places
+        if obj._is_stub or obj._in_patch:
+            obj = copy.deepcopy(obj)
+            obj._is_stub = False
+
+    obj._in_patch = True
 
     return obj
